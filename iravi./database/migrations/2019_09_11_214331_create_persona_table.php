@@ -23,7 +23,7 @@ class CreatePersonaTable extends Migration
             $table-> string('correoelectronico',100);
             $table-> string('telefono',25);
     
-            $table-> integer('fkgenero');
+            $table-> integer('fkgenero')->unsigned();
             $table-> foreign('fkgenero')->references('idgenero')->on('genero');
         });
     }

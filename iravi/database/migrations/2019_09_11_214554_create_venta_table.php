@@ -21,10 +21,10 @@ class CreateVentaTable extends Migration
             $table-> double('costo',8,5);
             $table-> datetime('fecha');
             
-            $table-> integer('fkbonificacion');
+            $table-> integer('fkbonificacion')->unsigned();
             $table-> foreign('fkbonificacion')->references('idbonificacion')->on('bonificacion');
 
-            $table-> integer('fkproducto');
+            $table-> integer('fkproducto')->unsigned();
             $table-> foreign('fkproducto')->references('idproducto')->on('producto');
 
         });

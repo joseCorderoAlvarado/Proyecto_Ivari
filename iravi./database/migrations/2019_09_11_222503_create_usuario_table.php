@@ -22,7 +22,7 @@ class CreateUsuarioTable extends Migration
             $table->foreign('fkpersona')->references('idpersona')->on('persona');
             
             $table->integer('fkrol')->unsigned();
-            $table->foreign('fkrol')->references('idrol')->on('rol');
+            $table->foreign('fkrol')->references('idrol')->on('roles');
             
         });
     }

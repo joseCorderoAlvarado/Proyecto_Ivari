@@ -22,14 +22,14 @@ class CreateProductoTable extends Migration
             $table-> binary('imagen');
             
             
-            $table-> integer('fkcategoria');
+            $table-> integer('fkcategoria')->unsigned();
             $table-> foreign('fkcategoria')->references('idcategoria')->on('categoria');
 
-            $table-> integer('fkproveedores');
+            $table-> integer('fkproveedores')->unsigned();
             $table-> foreign('fkproveedores')->references('idproveedores')->on('proveedores');
 
-            $table-> integer('fkestatus');
-            $table-> foreign('fkestatus')->references('idestatus')->on('estatus');
+            $table-> integer('fkestatus')->unsigned();
+            $table-> foreign('fkestatus')->references('id')->on('estatus');
         });
     }
 

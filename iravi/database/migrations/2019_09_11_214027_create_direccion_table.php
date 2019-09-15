@@ -25,7 +25,7 @@ class CreateDireccionTable extends Migration
             $table-> string('pais',50);
             $table-> string('codigopostal',8);
     
-            $table-> integer('fktipo');
+            $table-> integer('fktipo')->unsigned();
             $table-> foreign('fktipo')->references('idtipo')->on('tipodireccion');
         });
     }

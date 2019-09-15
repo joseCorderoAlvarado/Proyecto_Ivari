@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBonificacionTable extends Migration
+class CreateEstatusTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateBonificacionTable extends Migration
      */
     public function up()
     {
-        Schema::create('bonificacion', function (Blueprint $table) {
-                 $table-> increments('idbonificacion');
-                 $table->integer('porcentaje');
+        Schema::create('estatus', function (Blueprint $table) {
+            $table->increments('id');
+            $table-> string('descripcion',100);
         });
     }
 
@@ -26,6 +26,6 @@ class CreateBonificacionTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bonificacion');
+        Schema::dropIfExists('estatus');
     }
 }

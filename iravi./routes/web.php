@@ -14,3 +14,48 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('alta_Producto', function () {
+    return view('alta_Producto',['numero'=>15]);
+});
+
+Route::get('alta_Usuarios', function () {
+    return view('alta_Usuarios',['numero'=>15]);
+});
+
+Route::get('bonificaciones', function () {
+    return view('bonificaciones',['numero'=>15]);
+});
+
+Route::get('compras_Carrito', function () {
+    return view('compras_Carrito',['numero'=>15]);
+});
+
+Route::get('descripcion_Producto', function () {
+    return view('descripcion_Producto',['numero'=>15]);
+});
+
+Route::get('footer', function () {
+    return view('footer',['numero'=>15]);
+});
+
+Route::get('index_Admin', function () {
+    return view('index_Admin',['numero'=>15]);
+});
+
+Route::get('login', function () {
+    return view('login',['numero'=>15]);
+});
+
+Route::get('modificar_Producto', function () {
+    return view('modificar_Producto',['numero'=>15]);
+});
+
+Route::get('perfil_Usuario', function () {
+    return view('perfil_Usuario',['numero'=>15]);
+});
+
+Route::get('registro', function () {
+    return view('registro',['numero'=>15]);
+});

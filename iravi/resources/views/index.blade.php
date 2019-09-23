@@ -15,7 +15,7 @@
 			<img src="images/iconoHome.png" width="30" height="30"	class="d-inline-block align-top">
             </a>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<a href="#">
+			<a href="{{ url('/login/')}}">
 			<img src="images/iconoLogin.png" width="30" height="30"	class="d-inline-block align-top">
             </a>
 			<li	class="nav-item">

@@ -36,7 +36,9 @@
 	  	Enviamos pedidos de lunes a domingo
 	    </p>
 	     <p align="center">
-	  	enlace a redes sociales no se como se ponen 
+	  	<img src="images/iconoFacebook.png" width="30" height="30"	class="d-inline-block align-top">
+	  	<img src="images/iconoInstagram.png" width="30" height="30"	class="d-inline-block align-top">
+	  	<img src="images/iconoTwiter.png" width="30" height="30"	class="d-inline-block align-top">
 	    </p>
 	  </div>
 	  <div class="col-md-4">

@@ -22,7 +22,7 @@
 				<a	class="nav-link">Bienvenido</a>
 			</li>
 			<a href="#">
-			<img src="images/iconoCarrito.png" width="30" height="30"	class="d-inline-block align-top">
+			<img src="images/iconoSalir.png" width="30" height="30"	class="d-inline-block align-top">
             </a>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <a href="#">
@@ -36,7 +36,7 @@
 </div>
 {{-----------------------FinMenú de navegación---------------------------}}
 
-{{-------------------------Login---------------------------}}
+{{-------------------------Registro de Productos---------------------------}}
 <div class="container-fluid">
 <div class="row">
 <div class="col-md-2">
@@ -75,16 +75,31 @@
     </div>
     </div>
     </div>
+	<div class="form-group">
     <div class="input-group">
         <div class="input-group-prepend">
           <span class="input-group-text" id="validationTooltipUsernamePrepend">$</span>
         </div>
         <input type="text" class="form-control" id="" placeholder="Precio"required>
     </div>
-	<div class="form-group">
-	<button type="submit" class="btn btn-primary btn-block">Iniciar sesión</button>
 	</div>
-	<p class="text-center"><a href="#" class="btn">¿Olvidaste la Contraseña?</a></p>
+	<div class="form-group">
+	 <div class="photo">
+	 	<div class="input-group">
+			<span class="input-group-text">Introduce la imagén del producto	</span>
+		<input type="file" class="form-control" name="foto" id="foto">
+        	<div class="container-fluid">
+					<img src="images/LogoIravi.png" class="img-rounded">
+			</div>
+       	</div>
+	 </div>
+        
+        <div id="form_alert"></div>
+</div>
+	</div>
+	<div class="form-group">
+	<button type="submit" class="btn btn-primary btn-block">Registrar producto</button>
+	</div>
 	</form>
 </article>
 </div>

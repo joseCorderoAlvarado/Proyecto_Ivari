@@ -38,7 +38,7 @@
 </div>
 {{-----------------------FinMenú de navegación---------------------------}}
 
-{{-------------------------Alta Usuarios Administrador---------------------------}}
+{{-------------------------Alta Usuarios---------------------------}}
 <div class="container-fluid">
 <div class="row">
 <div class="col-md-2">
@@ -46,7 +46,7 @@
 <div class="col-md-6"> 
 <div class="card">
   <article class="card-body">
-	<h4 class="card-title text-center mb-4 mt-1">Registro Usuario </h4>
+	<h4 class="card-title text-center mb-4 mt-1">Modificar Usuario </h4>
 	<hr>
 	<form>
 	<div class="form-group">
@@ -92,12 +92,12 @@
 
 	</div>
 	<div class="form-group">
-	<button type="submit" class="btn btn-primary btn-block">Registrar</button>
+	<button type="submit" class="btn btn-primary btn-block">Modificar</button>
 	</div>
 	</form>
 </article>
 </div>
 </div>
 </div>
-{{-------------------------Fin de alta usuario administrador---------------------------}}
+{{-------------------------Fin de modificar producto---------------------------}}
 @extends('layouts.footer')

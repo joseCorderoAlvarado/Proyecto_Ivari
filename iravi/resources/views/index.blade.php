@@ -1,5 +1,6 @@
 @extends('layouts.head')
 {{-------------------------Menú de navegación---------------------------}}
+
 <div class="container-fluid">
 <div class="row">
 <div class="col-md-12">
@@ -58,8 +59,40 @@
     </div>
 </div>
 {{------------------------Fin de Buscador---------------------------}}
-
-{{------------------------Carrusel---------------------------}}
+<div class="col-md-auto">
+  {{-------------------------Menu---------------------------}}
+<div class="col-auto">
+  <div class="row">
+    <div class="col-md-auto">
+        
+        <button type="button" class="btn btn-primary">Pedidos</button>
+        
+        </div>
+  </div>
+        <div class="row">
+    <div class="col-md-12">
+        
+      <button type="button" class="btn btn-primary">Ventas</button>
+        
+        </div>
+  </div>
+        <div class="row">
+    <div class="col-md-12">
+       
+          <button type="button" class="btn btn-primary">Productos</button>
+       
+        </div>
+  </div>
+        <div class="row">
+    <div class="col-md-12">
+        
+        <button type="button" class="btn btn-primary">Mi Perfil</button>
+      
+    </div>
+  </div>
+</div>
+{{-------------------------FinMenu---------------------------}}
+ {{------------------------Carrusel---------------------------}}
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -93,7 +126,7 @@
   </a>
 </div>
 <div class="container-fluid">
-	<hr>
+  <hr>
 </div>
 {{------------------------Fin del carrusel---------------------------}}
 
@@ -110,10 +143,12 @@
     <p class="card-text">Precio</p>
     <a href="#" class="btn btn-primary">Añadir al carrito</a>
   </div>
-</div>	
+</div>  
 </div>
 </div>
 </div>
-{{--------------------Fin Productos---------------------------}}
+{{--------------------Fin Productos---------------------------}} 
+</div>
+
 @extends('layouts.footer')
 

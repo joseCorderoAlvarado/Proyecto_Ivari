@@ -1,10 +1,27 @@
 @extends('layouts.head')
-@include('layouts.menu_Navegacion')	
-<div class="container">
-	<span><h1>VENTAS</h1></span>
-</div>	
-<div class="container">
+@include('layouts.menu_NavegacionAdm')	
+<div class="container-fluid">
 	<div class="row">
+	<div class="col-md-6"></div>
+	<div class="col-md-4">
+	<span><h1>VENTAS</h1></span>	
+	</div>
+	<div class="col-md-2">
+	</div>
+    </div>
+</div>	
+<div class="container-fluid">
+	<div class="row">
+	    <div class="col-md-2 d-inline-block">
+	    	<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+      <a class="nav-link" href="{{ url('alta_Producto')}}">Alta Productos</a>
+      <a class="nav-link"  href="{{ url('modificar_Producto')}}">Modificar Productos</a>
+      <a class="nav-link "  href="{{ url('alta_Usuarios')}}">Alta Usuario</a>
+      <a class="nav-link" href="{{ url('modificar_UsuarioAdm')}}">Modificar Usuario</a>
+      <a class="nav-link active" href="{{ url('historial_Ventas')}}"> Ver Ventas</a>
+      <a class="nav-link"  href="{{ url('seguimiento_Pedidos')}}"> Ver Pedidos</a>
+    </div>
+	    </div>
 		<div class="col-md-3 d-inline-block">
 			<div class="dropdown">
 <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButt
@@ -84,4 +101,34 @@ Ordenar por
 	</div>
 	
 </div>
+	<div class="row" style="height: 3em"><div class="col-md-12"></div></div>
+{{--------------------Inicio de Paginación----------------------}}
+<div class="container-fluid">
+ <div class="row">
+   <div class="col-md-4">     
+   </div>
+   <div class="col-md-4">
+    <nav aria-label="Page navigation example">
+       <ul class="pagination">
+         <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+            </a>
+         </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+        <a class="page-link" href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+        </a>
+        </li>
+      </ul>
+   </nav>    
+  </div>
+  <div class="col-md-4">     
+  </div>
+ </div> 
+</div>
+{{--------------------Fin de Paginación----------------------}}
 @extends('layouts.footer')

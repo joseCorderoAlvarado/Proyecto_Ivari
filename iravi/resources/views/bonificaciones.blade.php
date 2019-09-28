@@ -17,7 +17,7 @@
 					<div class="form-group row">
 <label  class="col-sm-5 col-form-label">N&uacute;mero de compras hechas</label>
 <div class="col-sm-5">
-<label style="background: gray; width: auto;">7</label>
+<label>7</label>
 </div>
 </div>
 <div class="form-group row">

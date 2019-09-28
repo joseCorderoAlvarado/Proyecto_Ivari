@@ -1,41 +1,5 @@
 @extends('layouts.head')
-{{-------------------------Menú de navegación---------------------------}}
-
-<div class="container-fluid">
-<div class="row">
-<div class="col-md-12">
-<nav class="navbar navbar-expand-lg	navbar-light bg-light">
-	<img src="images/LogoIravi.png" width="30" height="30"	class="d-inline-block align-top" alt="">
-	<a	class="navbar-brand" href="#">Artesanias Iravi</a>
-	<button	class="navbar-toggler"	type="button"	data-toggle="collapse"data-target="#navbarSupportedContent"	aria-controls="navbarSupportedContent" aria-expanded="false"	aria-label="Toggle	navigation">
-	<span class="navbar-toggler-icon"></span>
-	</button>
-	<div class="collapse navbar-collapse" id="navbarSupportedContent">
-		<ul	class="navbar-nav ml-auto">
-			<a href="#">
-			<img src="images/iconoHome.png" width="30" height="30"	class="d-inline-block align-top">
-            </a>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<a href="{{ url('/login/')}}">
-			<img src="images/iconoLogin.png" width="30" height="30"	class="d-inline-block align-top">
-            </a>
-			<li	class="nav-item">
-				<a	class="nav-link">Bienvenido</a>
-			</li>
-			<a href="#">
-			<img src="images/iconoCarrito.png" width="30" height="30"	class="d-inline-block align-top">
-            </a>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="#">
-            <img src="images/iconoSalir.png" width="30" height="30"	class="d-inline-block align-top">
-            </a>
-		</ul>
-	</div>
-</nav>
-</div>
-</div>
-</div>
-{{-----------------------FinMenú de navegación---------------------------}}
+@include('layouts.menu_Navegacion')
 
 {{-------------------------Buscador---------------------------}}
 <div class="container-fluid">
@@ -59,76 +23,8 @@
     </div>
 </div>
 {{------------------------Fin de Buscador---------------------------}}
-<div class="col-md-auto">
-  {{-------------------------Menu---------------------------}}
-<div class="col-auto">
-  <div class="row">
-    <div class="col-md-auto">
-        
-        <button type="button" class="btn btn-primary">Pedidos</button>
-        
-        </div>
-  </div>
-        <div class="row">
-    <div class="col-md-12">
-        
-      <button type="button" class="btn btn-primary">Ventas</button>
-        
-        </div>
-  </div>
-        <div class="row">
-    <div class="col-md-12">
-       
-          <button type="button" class="btn btn-primary">Productos</button>
-       
-        </div>
-  </div>
-        <div class="row">
-    <div class="col-md-12">
-        
-        <button type="button" class="btn btn-primary">Mi Perfil</button>
-      
-    </div>
-  </div>
-</div>
-{{-------------------------FinMenu---------------------------}}
- {{------------------------Carrusel---------------------------}}
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner" style="height: 300px;">
-    <div class="carousel-item active">
-       <div class="container">
-      <img class="d-block w-70" src="..." alt="First slide">
-       </div>
-    </div>
-    <div class="carousel-item">
-       <div class="container">
-      <img class="d-block w-100" src="..." alt="Second slide">
-       </div>
-    </div>
-    <div class="carousel-item">
-      <div class="container">
-      <img class="d-block w-100" src="..." alt="Third slide">
-      </div>
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-<div class="container-fluid">
-  <hr>
-</div>
-{{------------------------Fin del carrusel---------------------------}}
+
+@include('layouts.Carrusel') 
 
 {{------------------------Productos---------------------------}}
 <div class="container">
@@ -148,7 +44,35 @@
 </div>
 </div>
 {{--------------------Fin Productos---------------------------}} 
+{{--------------------Inicio de Paginación----------------------}}
+<div class="container-fluid">
+ <div class="row">
+   <div class="col-md-4">     
+   </div>
+   <div class="col-md-4">
+    <nav aria-label="Page navigation example">
+       <ul class="pagination">
+         <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+            </a>
+         </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+        <a class="page-link" href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+        </a>
+        </li>
+      </ul>
+   </nav>    
+  </div>
+  <div class="col-md-4">     
+  </div>
+ </div> 
 </div>
+{{--------------------Fin de Paginación----------------------}}
 
 @extends('layouts.footer')
 

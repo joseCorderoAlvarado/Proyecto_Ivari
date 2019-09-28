@@ -14,18 +14,19 @@
 			<img src="images/iconoHome.png" width="30" height="30"	class="d-inline-block align-top">
             </a>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<a href="#">
+			<li class="nav-item dropdown">
+			<a lass="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			<img src="images/iconoLogin.png" width="30" height="30"	class="d-inline-block align-top">
             </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="{{ url('login')}}">Iniciar Sesión</a>
+            <a class="dropdown-item" href="#">Registrarse</a>
+            </li>
 			<li	class="nav-item">
 				<a	class="nav-link">Bienvenido</a>
 			</li>
 			<a href="#">
 			<img src="images/iconoCarrito.png" width="30" height="30"	class="d-inline-block align-top">
-            </a>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="#">
-            <img src="images/iconoSalir.png" width="30" height="30"	class="d-inline-block align-top">
             </a>
 		</ul>
 	</div>

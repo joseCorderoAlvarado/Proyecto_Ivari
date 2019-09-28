@@ -1,6 +1,17 @@
 {{------------------------Carrusel---------------------------}}
-<div>
-  
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-2">
+    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+      <a class="nav-link active" href="{{ url('alta_Producto')}}">Alta Productos</a>
+      <a class="nav-link"  href="{{ url('modificar_Producto')}}">Modificar Productos</a>
+      <a class="nav-link"  href="{{ url('alta_Usuarios')}}">Alta Usuario</a>
+      <a class="nav-link" href="{{ url('modificar_UsuarioAdm')}}">Modificar Usuario</a>
+      <a class="nav-link" href="{{ url('historial_Ventas')}}"> Ver Ventas</a>
+      <a class="nav-link"  href="{{ url('seguimiento_Pedidos')}}"> Ver Pedidos</a>
+    </div>
+</div>
+<div class="col-md-10">
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -32,6 +43,9 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
+</div>
+</div>
+</div>
 </div>
 <div class="container-fluid">
   <hr>

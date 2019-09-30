@@ -29,7 +29,7 @@ Route::get('bonificaciones', function () {
 });
 
 Route::get('compras_Carrito', function () {
-    return view('compras_Carrito',['numero'=>15]);
+    return view('carrito_Compras',['numero'=>15]);
 });
 
 Route::get('descripcion_Producto', function () {
@@ -62,4 +62,7 @@ Route::get('registro', function () {
 });
 Route::get('seguimiento_Pedidos', function () {
     return view('seguimiento_Pedidos',['numero'=>15]);
+});
+Route::get('Cliente', function () {
+    return view('index_Cliente',['numero'=>15]);
 });

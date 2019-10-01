@@ -61,7 +61,9 @@
 		<div class="col-md-4">
 		</div>
 		<div class="col-md-6">
+		<a href="{{ url('confirmacion_Compra')}}">
 		<button type="button" class="btn btn-primary">Proceder al pago </button>
+		</a>
 		</div>
 		<div class="col-md-2">
 			<br>

@@ -19,7 +19,7 @@
 			<img src="images/iconoLogin.png" width="30" height="30"	class="d-inline-block align-top">
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Iniciar Sesión</a>
+            <a class="dropdown-item" href="#">Cerrar sesión</a>
             </li>
 			<li	class="nav-item">
 				<a	class="nav-link">Bienvenido</a>

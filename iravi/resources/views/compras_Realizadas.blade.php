@@ -1,5 +1,5 @@
 @extends('layouts.head')
-@include('layouts.menu_Navegacion')
+@include('layouts.menu_NavegacionCliente')
 <style type="text/css">
 	.contenedor
 	{
@@ -35,9 +35,9 @@
 	<div class="row">
 		<div class="col-3">
 			<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-				<a  class="nav-link" href="{{ url('compras_Realizadas')}}">Compras realizadas</a>
+				<a  class="nav-link active" href="{{ url('compras_Realizadas')}}">Compras realizadas</a>
 				<a  class="nav-link" href="{{ url('perfil_Usuario')}}">Mi Perfil</a>
-				<a  class="nav-link" href="{{ url('historia')}}">Acerca de Iravi</a>
+				<a  class="nav-link" href="{{ url('Historia')}}">Acerca de Iravi</a>
 			</div>
 		</div>
 		<div class="col-6">

@@ -1,5 +1,5 @@
 @extends('layouts.head')
-@include('layouts.menu_Navegacion')
+@include('layouts.menu_NavegacionCliente')
 <br><br><br>
 <div class="container-fluid">
 	<div class="row">
@@ -7,7 +7,7 @@
 			<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 				<a  class="nav-link" href="{{ url('compras_Realizadas')}}">Compras realizadas</a>
 				<a  class="nav-link" href="{{ url('perfil_Usuario')}}">Mi Perfil</a>
-				<a  class="nav-link" href="{{ url('historia')}}">Acerca de Iravi</a>
+				<a  class="nav-link" href="{{ url('Historia')}}">Acerca de Iravi</a>
 			</div>
 		</div>
 		<div class="col-6">
@@ -24,7 +24,9 @@
 								<label>Precio</label>
 								<br><br>
 								<button class="btn btn-primary">Agregar al carrito</button>
+								<a href="{{ url('compras_Carrito')}}">
 								<button class="btn btn-primary">Comprar ahora</button>
+								</a>
 							</div>
 						</div>
 					</div>

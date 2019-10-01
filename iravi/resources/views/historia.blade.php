@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 @extends('layouts.head')
-@include('layouts.menu_NavegacionAdm')
-{{-------------------------Alta Usuarios Administrador---------------------------}}
+@include('layouts.menu_NavegacionCliente')
 <div class="container-fluid">
 <div class="row">
 <div class="col-md-2">
 	<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 		<a class="nav-link" href="{{ url('alta_Producto')}}">Compras realizadas</a>
 		<a class="nav-link" href="{{ url('modificar_Producto')}}">Mi Perfil</a>
-		<a class="nav-link" href="{{ url('alta_Usuarios')}}">Acerca de Iravi</a>
+		<a class="nav-link active" href="{{ url('Historia')}}">Acerca de Iravi</a>
 	</div>
 </div>
 <div class="col-md-8"> 
@@ -23,10 +22,8 @@
 		<p>Significado de Jala</p>
 		<h5>Amatlán de Cañas <small>Historia</small></h1>
 		<p>Significado de Amatlán de Cañas</p>
-	
   </article>
 </div>
 </div>
 </div>
-{{-------------------------Fin de alta usuario administrador---------------------------}}
 @extends('layouts.footer')

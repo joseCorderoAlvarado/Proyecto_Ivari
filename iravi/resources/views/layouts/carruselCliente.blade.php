@@ -3,9 +3,9 @@
 <div class="row">
 <div class="col-md-2">
     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-      <a class="nav-link" href="{{ url('alta_Producto')}}">Compras realizadas</a>
-      <a class="nav-link"  href="{{ url('modificar_Producto')}}">Mi perfil</a>
-      <a class="nav-link"  href="{{ url('alta_Usuarios')}}">Acerca de Iravi</a>
+      <a class="nav-link" href="{{ url('compras_Realizadas')}}">Compras realizadas</a>
+      <a class="nav-link"  href="{{ url('perfil_Usuario')}}">Mi perfil</a>
+      <a class="nav-link"  href="{{ url('Historia')}}">Acerca de Iravi</a>
     </div>
 </div>
 <div class="col-md-10">

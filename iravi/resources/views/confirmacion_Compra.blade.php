@@ -1,5 +1,5 @@
 @extends('layouts.head')
-@include('layouts.menu_Navegacion')
+@include('layouts.menu_NavegacionCliente')
 
 {{-------------------------Buscador---------------------------}}
 <div class="container-fluid">

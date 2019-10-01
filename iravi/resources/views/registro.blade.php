@@ -1,16 +1,11 @@
 
 <!DOCTYPE html>
 @extends('layouts.head')
-@include('layouts.menu_NavegacionAdm')
+@include('layouts.menu_Navegacion')
 {{-------------------------Alta Usuarios Administrador---------------------------}}
 <div class="container-fluid">
 <div class="row">
 <div class="col-md-2">
-	<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-		<a class="nav-link" href="{{ url('alta_Producto')}}">Compras realizadas</a>
-		<a class="nav-link" href="{{ url('modificar_Producto')}}">Mi Perfil</a>
-		<a class="nav-link" href="{{ url('alta_Usuarios')}}">Acerca de Iravi</a>
-	</div>
 </div>
 <div class="col-md-6"> 
 <div class="card">
@@ -101,7 +96,7 @@
 
 	</div>
 	<div class="form-group">
-	<button type="submit" class="btn btn-primary btn-block">Registrar</button>
+	<button type="submit" class="btn btn-primary btn-block">Registrarse</button>
 	</div>
 	</form>
 </article>

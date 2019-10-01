@@ -66,3 +66,21 @@ Route::get('seguimiento_Pedidos', function () {
 Route::get('Cliente', function () {
     return view('index_Cliente',['numero'=>15]);
 });
+Route::get('Historia', function () {
+    return view('historia',['numero'=>15]);
+});
+Route::get('perfil_Usuario', function () {
+    return view('perfil_Usuario',['numero'=>15]);
+});
+Route::get('compras_Realizadas', function () {
+    return view('compras_Realizadas',['numero'=>15]);
+});
+Route::get('vista_Producto', function () {
+    return view('vista_Producto',['numero'=>15]);
+});
+Route::get('confirmacion_Compra', function () {
+    return view('confirmacion_Compra',['numero'=>15]);
+});
+Route::get('registro', function () {
+    return view('registro',['numero'=>15]);
+});

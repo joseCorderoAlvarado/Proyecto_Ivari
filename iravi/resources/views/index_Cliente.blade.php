@@ -36,7 +36,7 @@
   <div class="card-body">
     <h5 class="card-title">Titulo</h5>
     <p class="card-text">Precio</p>
-    <a href="#" class="btn btn-primary">Añadir al carrito</a>
+    <a href="{{ url('vista_Producto')}}" class="btn btn-primary">Añadir al carrito</a>
   </div>
 </div>  
 </div>

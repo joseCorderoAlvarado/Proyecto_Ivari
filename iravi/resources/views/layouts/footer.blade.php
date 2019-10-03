@@ -1,11 +1,13 @@
-<div class="container-fluid">
-	<hr>
+<div class="container-fluid" style="background-color: #003366"	 >
+	
 </div>
-<div class="container-fluid">
+
+<div class="container-fluid" style="background-color: #99cc33"	>
+	<hr style="border-color: #003366; width: 100%; border-width: 3px">
    <div class="row">
 	  <div class="col-md-4">
 	   <p align="center">
-	    <b> Paga con Tarjeta de debito y Paypal </b>
+	    <b style="color: #003366"> Paga con Tarjeta de debito y Paypal </b>
 	   </p>
        <p align="center">
 	  	 Con los mejores métodos de pago con tarjeta de credito o si tienes 
@@ -27,7 +29,7 @@
         <img src="images/LogoIravi.png" style=" width: 100px; height: 100px;">	
         </p>
 	  	<p align="center">
-	      <b>Contacto</b>
+	      <b style="color: #003366">Contacto</b>
 	    </p>
         <p align="center">
 	  	Tel: 324-102-3790
@@ -43,7 +45,7 @@
 	  </div>
 	  <div class="col-md-4">
 	  	<p align="center">
-	      <b>Seguridad y rapidez </b>
+	      <b style="color: #003366">Seguridad y rapidez </b>
 	    </p>
 	     <p align="center">
 	  	En artesanias Iravi, tu compra esta protegida en todo momento y con la mayor rapidez.

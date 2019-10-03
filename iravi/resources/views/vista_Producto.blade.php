@@ -18,14 +18,14 @@
 							<div class="col-6">
 								<img src="" class="card-img-left" style="width: 300px; height: 300px;">
 							</div>
-							<div class="col-6">
+							<div class="col-6" >
 								<label><h3>Nombre del producto</h3></label>
 								<label><h5>Descripci&oacute;n del producto</h5><br>Esta ser&aacute; la descripci&oacute;n del producto</label><br>
 								<label>Precio</label>
 								<br><br>
-								<button class="btn btn-primary">Agregar al carrito</button>
+								<button class="btn btn-primary"style="background:#003366" ">Agregar al carrito</button>
 								<a href="{{ url('compras_Carrito')}}">
-								<button class="btn btn-primary">Comprar ahora</button>
+								<button class="btn btn-primary" " style="background:#003366">Comprar ahora</button>
 								</a>
 							</div>
 						</div>

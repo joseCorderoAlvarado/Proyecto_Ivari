@@ -1,5 +1,16 @@
 @extends('layouts.head')
 @include('layouts.menu_NavegacionCliente')
+<style type="text/css">
+	#text{color: #003366;}
+	
+	.nav-link.active{
+		background-color:#92d050 !important;
+		border-color: #92d050 !important; 
+		border-style:solid;
+		font-weight: bold;
+	}
+
+</style>
 
 {{-------------------------Buscador---------------------------}}
 <div class="container-fluid">
@@ -27,25 +38,25 @@
 	<div class="row">
 		<div class="col-3">
 			<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-				<a  class="nav-link" href="{{ url('compras_Realizadas')}}">Compras realizadas</a>
-				<a  class="nav-link" href="{{ url('perfil_Usuario')}}">Mi Perfil</a>
-				<a  class="nav-link" href="{{ url('historia')}}">Acerca de Iravi</a>
+				<a  style="color: 92d050; font-weight:bold;" class="nav-link" href="{{ url('compras_Realizadas')}}">Compras realizadas</a>
+				<a  style="color: 92d050; font-weight:bold;" class="nav-link" href="{{ url('perfil_Usuario')}}">Mi Perfil</a>
+				<a  style="color: 92d050; font-weight:bold;" class="nav-link" href="{{ url('historia')}}">Acerca de Iravi</a>
 			</div>
 		</div>
 		<div class="col-6">
-			<h2 class="text-center">Art&iacute;culos elegidos </h2>
+			<h2 id="text" class="text-center">Art&iacute;culos elegidos </h2>
 {{------------------------Productos---------------------------}}
 <div class="container">
 <div class="row">
 
 <div class="col-md-4">
-<div class="card" style="width: 15rem;">
+<div class="card" style="width: 15rem; border-color: #003366; border-width: 5px;">
   <a href="#">
   <img class="card-img-top" src="images/iconoCarrito.png" alt="Card image cap">
   </a>
   <div class="card-body">
-    <h5 class="card-title">T&iacute;tulo</h5>
-    <p class="card-text">Precio</p>
+    <h5 id="text" class="card-title">T&iacute;tulo</h5>
+    <p id="text" class="card-text">Precio</p>
   </div>
 </div>
 </div>
@@ -58,7 +69,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4">
-      <label>Cantidad de productos:</label>
+      <label id="text">Cantidad de productos:</label>
     </div>
     <div class="col-md-4">
       <label>1</label>
@@ -91,13 +102,13 @@
 </div>
 {{--------------------Fin Informacion de Productos---------------------------}}
 <br><br><br><br>
-<h2 class="text-center">Por favor seleccione su método de pago</h2>
+<h2 id="text" class="text-center">Por favor seleccione su método de pago</h2>
 <br><br>
 {{------------------------Seleccion de metodo de Pago---------------------------}}
 <div class="container">
 <div class="row">
 <div class="col-md-6">
-<div class="card" style="width: 15rem; height: 15em; padding: 8px">
+<div class="card" style="width: 15rem; height: 15em; padding: 8px; border-color: #003366; border-width: 5px;">
     <input type="radio" id="metodoPago" name="metodoPago" value="sss"
         checked>
   <div class="card-body">
@@ -110,7 +121,7 @@
 
 
 <div class="col-md-6">
-<div class="card" style="width: 15rem; height: 15em; padding: 8px" name="metodoPago" value="sss"
+<div class="card" style="width: 15rem; height: 15em; padding: 8px; border-color: #003366; border-width: 5px;" name="metodoPago" value="sss"
         checked>
         <input type="radio" id="metodoPago" name="metodoPago" value="sss"
         checked>
@@ -126,14 +137,14 @@
 {{--------------------Fin metodo de Pago---------------------------}}
 
 <br><br><br><br>
-<h2 class="text-center">Por favor seleccione su método de env&iacute;o </h2>
+<h2 id="text" class="text-center">Por favor seleccione su método de env&iacute;o </h2>
 <br><br>
 {{------------------------Seleccion de envio---------------------------}}
 <div class="container">
 <div class="row">
 
 <div class="col-md-3">
-<div class="card" style="width: 10rem; height: 10em; padding: 8px">
+<div class="card" style="width: 10rem; height: 10em; padding: 8px; border-color: #003366; border-width: 5px;">
     <input type="radio" id="metodoEnvio" name="metodoEnvio" value="sss"
         checked>
   <div class="card-body">
@@ -145,7 +156,7 @@
 
 
 <div class="col-md-3">
-<div class="card" style="width: 10rem; height: 10em; padding: 8px">
+<div class="card" style="width: 10rem; height: 10em; padding: 8px; border-color: #003366; border-width: 5px;">
   <input type="radio" id="metodoEnvio" name="metodoEnvio" value="sss"
         checked>
   <div class="card-body">
@@ -157,7 +168,7 @@
 
 
 <div class="col-md-3">
-<div class="card" style="width: 10rem; height: 10em; padding: 8px">
+<div class="card" style="width: 10rem; height: 10em; padding: 8px; border-color: #003366; border-width: 5px;">
    <input type="radio" id="metodoEnvio" name="metodoEnvio" value="sss"
         checked>
   <div class="card-body">
@@ -168,7 +179,7 @@
 </div>
 
 <div class="col-md-3">
-<div class="card" style="width: 10rem; height: 10em; padding: 8px">
+<div class="card" style="width: 10rem; height: 10em; padding: 8px; border-color: #003366; border-width: 5px;">
     <input type="radio" id="metodoEnvio" name="metodoEnvio" value="sss"
         checked>
   <div class="card-body ">
@@ -182,14 +193,14 @@
 </div>
 {{--------------------Fin de envio---------------------------}}
 <br><br><br><br>
-<h2 class="text-center">Por favor seleccione su direcci&oacute;n de env&iacute;o</h2>
+<h2 id="text" class="text-center">Por favor seleccione su direcci&oacute;n de env&iacute;o</h2>
 <br><br>
 {{------------------------Seleccion de direccion de envio---------------------------}}
 <div class="container">
 <div class="row">
 
 <div class="col-md-6">
-<div class="card" style="width: 15rem; padding: 8px">
+<div class="card" style="width: 15rem; padding: 8px; border-color: #003366; border-width: 5px;">
     <input type="radio" id="metodoPago" name="metodoPago" value="sss"
         checked>
   <div class="card-body">
@@ -207,7 +218,7 @@
 </div>
 
 <div class="col-md-6">
-<div class="card" style="width: 15rem; padding: 8px">
+<div class="card" style="width: 15rem; padding: 8px; border-color: #003366; border-width: 5px;">
     <input type="radio" id="metodoPago" name="metodoPago" value="sss"
         checked>
   <div class="card-body">
@@ -235,8 +246,8 @@
 <div class="container text-center">
 <div class="row">
 
-<div class="col-md-12">
-  <a href="#" class="btn btn-primary">Realizar pedido</a>
+<div class="col-md-12" ">
+  <a href="#" class="btn btn-primary" style="border-color: #003366; background-color:#003366;">Realizar pedido</a>
 </div>
 
 </div>

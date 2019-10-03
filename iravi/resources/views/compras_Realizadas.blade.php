@@ -11,6 +11,8 @@
 		padding-top: 5px;
 		padding-right: 10px;
 		padding-left: 10px;
+		border-style:solid; 
+		border-color: #003366;
 	}
 	.texto
 	{
@@ -20,6 +22,21 @@
 	.alingCol
 	{
 		text-align: left;
+	}
+	.nav-link.active{
+		background-color:#92d050 !important;
+		border-color: #92d050 !important; 
+		border-style:solid;
+		font-weight: bold;
+	}
+	
+	h2 {color: #003366; text-align: center;}
+	h3 {color: #003366;}
+	
+	.card-body
+	{
+		border-style: solid; 
+		border-color: #003366;
 	}
 </style>
 <br><br><br>
@@ -36,8 +53,8 @@
 		<div class="col-3">
 			<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 				<a  class="nav-link active" href="{{ url('compras_Realizadas')}}">Compras realizadas</a>
-				<a  class="nav-link" href="{{ url('perfil_Usuario')}}">Mi Perfil</a>
-				<a  class="nav-link" href="{{ url('Historia')}}">Acerca de Iravi</a>
+				<a  style="color: 92d050; font-weight:bold;" class="nav-link" href="{{ url('perfil_Usuario')}}">Mi Perfil</a>
+				<a  style="color: 92d050; font-weight:bold;" class="nav-link" href="{{ url('Historia')}}">Acerca de Iravi</a>
 			</div>
 		</div>
 		<div class="col-6">

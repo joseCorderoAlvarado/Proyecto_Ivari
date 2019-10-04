@@ -1,18 +1,12 @@
 
 <!DOCTYPE html>
 @extends('layouts.head')
-@include('layouts.menu_NavegacionAdm')
+@include('layouts.menu_Navegacion')
 {{-------------------------Alta Usuarios Administrador---------------------------}}
 <div class="container-fluid">
 <div class="row">
-<div class="col-md-2">
-	<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-		<a class="nav-link" href="{{ url('alta_Producto')}}" style="color: #003366">Compras realizadas</a>
-		<a class="nav-link" href="{{ url('modificar_Producto')}}" style="color: #003366">Mi Perfil</a>
-		<a class="nav-link" href="{{ url('alta_Usuarios')}}" style="color: #003366">Acerca de Iravi</a>
-	</div>
-</div>
-<div class="col-md-6"> 
+<div class="col-md-2"></div>	
+<div class="col-md-8"> 
 <div class="card" style="border-color: #003366">
   <article class="card-body">
 	<h4 class="card-title text-center mb-4 mt-1" style="color: #003366">Registro Usuario </h4>

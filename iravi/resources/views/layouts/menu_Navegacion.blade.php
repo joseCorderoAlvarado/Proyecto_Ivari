@@ -20,7 +20,7 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="{{ url('login')}}">Iniciar Sesión</a>
-            <a class="dropdown-item" href="#">Registrarse</a>
+            <a class="dropdown-item" href="{{ url('registro')}}">Registrarse</a>
             </li>
 			<li	class="nav-item">
 				<a	class="nav-link">Bienvenido</a>

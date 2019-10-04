@@ -72,12 +72,22 @@ Route::get('perfil_Usuario', function () {
     return view('perfil_Usuario',['numero'=>15]);
 });
 
-Route::get('registro', function () {
-    return view('registro',['numero'=>15]);
+Route::get('sss', function () {
+    return view('sss',['numero'=>15]);
 });
+
+Route::get('registro','registroUsuario@mostrar');
+Route::post('registroGuardar','registroUsuario@guardar');
+
+
+
 Route::get('seguimiento_Pedidos', function () {
     return view('seguimiento_Pedidos',['numero'=>15]);
 });
 Route::get('Cliente', function () {
     return view('index_Cliente',['numero'=>15]);
 });
+
+
+Route::post('InicioSesion','iniciarSesion@verificar');
+

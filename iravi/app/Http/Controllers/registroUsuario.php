@@ -13,15 +13,10 @@ class registroUsuario extends Controller
 public function mostrar(){
 
  return view('registro');
-
 }	
-
-
 public function guardar(Request $datos){
 //dd($datos->all());
-
 $persona = new persona;
-
 $persona->nombrepersona=$datos->input('nombre');
 $persona->apellidopaterno=$datos->input('app');
 $persona->apellidomaterno=$datos->input('apm');
@@ -31,16 +26,12 @@ $persona->correoelectronico=$datos->input('correo');
 $persona->fkgenero=$datos->input('genero');
 $persona->save();
 $ultimoidpersona=$persona->id;
-
-
-
 $usuario = new usuario;
 $usuario->idusuario = $datos->input('idusuario');
-$usuario->contrasena = $datos->input('contraseña');
+$usuario->contraseña = $datos->input('contraseña');
 $usuario->fkpersona =  $ultimoidpersona;
 $usuario->fkrol = 3;
 $usuario->save();
-
 $direccion = new direccion;
 $direccion->calle = $datos->input('calle');
 $direccion->numint = $datos->input('ninterior');
@@ -53,13 +44,11 @@ $direccion->codigopostal = $datos->input('cp');
 $direccion->fktipo = $datos->input('tipodireccion');
 $direccion->save();
 $ultimoiddireccion=$direccion->id;
-
 $detallepersonadireccion= new detallepersonadireccion;
 $detallepersonadireccion->fkpersona=$ultimoidpersona;
 $detallepersonadireccion->fk_direccion=$ultimoiddireccion;
 $detallepersonadireccion->save();
-
+return view('registro');
 }	
-
 }
 ?>

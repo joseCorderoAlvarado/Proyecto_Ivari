@@ -34,9 +34,9 @@ use Illuminate\Http\Request;
 
 			$resultadoUsuario = usuario::
 		    join('persona', 'persona.idpersona', '=', 'usuario.fkpersona')
-		    ->select('persona.correoelectronico', 'usuario.contrasena')
+		    ->select('persona.correoelectronico', 'usuario.contraseña')
 		    ->where('persona.correoelectronico', '=', $correo_Electronico)
-		    ->where('usuario.contrasena', '=', $contraseña) 
+		    ->where('usuario.contraseña', '=', $contraseña) 
 		    ->get();
 
 		    //Este es el inner join realizado de una manera cosnulta directa a SQL
@@ -63,17 +63,15 @@ use Illuminate\Http\Request;
 
 				if ($resultadoRol=='[{"fkrol":1}]') 
 				{
-					return view ('vista_Producto');
+					return view ('index_Admin');
 				}
 				else if ($resultadoRol=='[{"fkrol":2}]') 
 				{
-
 					return view ('vista_Producto');
 				}
 				else if ($resultadoRol=='[{"fkrol":3}]') 
 				{
-
-					return view ('vista_Producto');
+					return view ('index_Cliente');
 				}
 			}
 			else

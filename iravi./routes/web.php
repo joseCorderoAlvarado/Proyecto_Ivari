@@ -10,11 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
     return view('index');
 });
-
 Route::get('alta_Producto', function () {
     return view('alta_Producto',['numero'=>15]);
 });
@@ -56,7 +54,6 @@ Route::get('historial_Ventas', function () {
 Route::get('index_Admin', function () {
     return view('index_Admin',['numero'=>15]);
 });
-
 Route::get('login', function () {
     return view('login',['numero'=>15]);
 });
@@ -80,19 +77,13 @@ Route::get('perfil_Usuario', function () {
 Route::get('sss', function () {
     return view('sss',['numero'=>15]);
 });
-
 Route::get('registro','registroUsuario@mostrar');
 Route::post('registroGuardar','registroUsuario@guardar');
-
-
-
 Route::get('seguimiento_Pedidos', function () {
     return view('seguimiento_Pedidos',['numero'=>15]);
 });
 Route::get('Cliente', function () {
     return view('index_Cliente',['numero'=>15]);
 });
-
-
 Route::post('InicioSesion','iniciarSesion@verificar');
 

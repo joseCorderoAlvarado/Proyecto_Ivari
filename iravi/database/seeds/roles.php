@@ -14,6 +14,6 @@ class roles extends Seeder
     {
          DB::table('roles')-> insert(array('rol'=>'Administrador'));
          DB::table('roles')-> insert(array('rol'=>'Editor'));
-         
+          DB::table('roles')-> insert(array('rol'=>'Cliente'));
     }
 }

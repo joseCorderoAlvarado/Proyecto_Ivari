@@ -24,7 +24,7 @@ Route::get('historia', function () {
 });
 
 Route::get('compras_Realizadas', function () {
-    return view('Compras',['numero'=>15]);
+    return view('compras_Realizadas',['numero'=>15]);
 });
 
 Route::get('confirmacion_Compra', function () {
@@ -43,7 +43,7 @@ Route::get('bonificaciones', function () {
     return view('bonificaciones',['numero'=>15]);
 });
 
-Route::get('compras_Carrito', function () {
+Route::get('carrito_Compras', function () {
     return view('carrito_Compras',['numero'=>15]);
 });
 
@@ -64,6 +64,11 @@ Route::get('login', function () {
 Route::get('modificar_Producto', function () {
     return view('modificar_Producto',['numero'=>15]);
 });
+
+Route::get('lista_Productos', function () {
+    return view('lista_Productos',['numero'=>15]);
+});
+
 Route::get('modificar_UsuarioAdm', function () {
     return view('modificar_UsuarioAdm',['numero'=>15]);
 });

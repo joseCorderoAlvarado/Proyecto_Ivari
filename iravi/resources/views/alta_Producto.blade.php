@@ -19,13 +19,14 @@
   <article class="card-body">
 	<h4 class="card-title text-center mb-4 mt-1">Registro de Productos</h4>
 	<hr>
-	<form>
+	<form action="registroProductoGuardar" method="post" enctype="multipart/form-data">
+		{{ csrf_field() }}
 	<div class="form-group">
 	<div class="input-group">
 		<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
 		</div>
-		<input name="" class="form-control" placeholder="Nombre Producto" type="text">
+		<input name="nombreproducto" class="form-control" placeholder="Nombre Producto" type="text">
 	</div> 
 	</div>
 	<div class="form-group">
@@ -33,34 +34,52 @@
 		<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 		 </div>
-		<textarea class="form-control" placeholder="Descripción del Producto"></textarea>
+		<textarea name="descripcionproducto" class="form-control" placeholder="Descripción del Producto"></textarea>
 	</div>
 	</div>
+	
 	<div class="form-group">
 	<div class="input-group">
 	<div class="input-group-prepend">
-	   <select class="custom-select">
+	   <select  name="fkcategoria" class="custom-select">
          <option selected>Selecciona una Categoria</option>
-         <option value="1">One</option>
-         <option value="2">Two</option>
-         <option value="3">Three</option>
+         <option value="1">Artesania</option>
+         <option value="2">Vino</option>
+         <option value="3">Mueble</option>
        </select>
     </div>
     </div>
     </div>
+	
+		<div class="form-group">
+	<div class="input-group">
+	<div class="input-group-prepend">
+	   <select  name="fkproveedores" class="custom-select">
+         <option selected>Selecciona un proveedor</option>
+         <option value="1">Felipe</option>
+         <option value="2">La plaza</option>
+         <option value="3">Las vias</option>
+       </select>
+	   
+    </div>
+    </div>
+    </div>
+	
 	<div class="form-group">
     <div class="input-group">
         <div class="input-group-prepend">
           <span class="input-group-text" id="validationTooltipUsernamePrepend">$</span>
         </div>
-        <input type="text" class="form-control" id="" placeholder="Precio"required>
+        <input name="precio" type="text" class="form-control" id="" placeholder="Precio"required>
     </div>
 	</div>
+	
+
 	<div class="form-group">
 	 <div class="photo">
 	 	<div class="input-group">
-			<span class="input-group-text">Introduce la imagén del producto	</span>
-		<input type="file" class="form-control" name="foto" id="foto">
+			<span class="input-group-text">Introduce la(s) imagén(es) del producto	</span>
+		<input multiple="multiple" name="fotos[]" type="file">
         	<div class="container-fluid">
 					<img src="images/LogoIravi.png" class="img-rounded">
 			</div>

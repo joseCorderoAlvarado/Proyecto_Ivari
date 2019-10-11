@@ -20,56 +20,30 @@
     </div>
 </div>	
 <br><br>
-<div class="container" style="border: 1px #ccc solid; border-radius: 3px; padding: 10px; margin: auto;">
+@foreach ($productos as $producto)
+	<div class="container" style="border: 1px #ccc solid; border-radius: 3px; padding: 10px; margin: auto;">
 		<div class="row">
-		<div class="col-md-4">
-			<CENTER><span><h5>Clave</h5></span></CENTER>
+			<div class="col-md-4">
+				<CENTER><span><h5>{{ $producto->idproducto }}</h5></span></CENTER>
+			</div>
+			<div class="col-md-4">
+				<CENTER>
+				
+					<img src="\storage\{{$producto->ruta}}" width="50em" height="50em" class="d-inline-block align-top">
+					
+					<span class="d-inline-block align-top"><h3>{{ $producto->nombreproducto }}</h3></span>
+				</CENTER>
+			</div>
+			<div class="col-md-4">
+				<CENTER><button class="btn btn-primary">Modificar</button></CENTER>
+			</div>
 		</div>
-		<div class="col-md-4">
-			<CENTER>
-			<img src="images/Iravi.png" width="50em" height="50em" class="d-inline-block align-top">
-			<span class="d-inline-block align-top"><h3>Nombre del producto</h3></span>
-			</CENTER>
-		</div>		
-		<div class="col-md-4">
-			<CENTER><button class="btn btn-primary">Modificar</button></CENTER>
-		</div>
-		</div>
-</div>
-<br><br>
-<div class="container" style="border: 1px #ccc solid; border-radius: 3px; padding: 10px; margin: auto;">
-		<div class="row">
-		<div class="col-md-4">
-			<CENTER><span><h5>Clave</h5></span></CENTER>
-		</div>
-		<div class="col-md-4">
-			<CENTER>
-			<img src="images/Iravi.png" width="50em" height="50em" class="d-inline-block align-top">
-			<span class="d-inline-block align-top"><h3>Nombre del producto</h3></span>
-			</CENTER>
-		</div>		
-		<div class="col-md-4">
-			<CENTER><button class="btn btn-primary">Modificar</button></CENTER>
-		</div>
-		</div>
-</div>
-<br><br>
-<div class="container" style="border: 1px #ccc solid; border-radius: 3px; padding: 10px; margin: auto;">
-		<div class="row">
-		<div class="col-md-4">
-			<CENTER><span><h5>Clave</h5></span></CENTER>
-		</div>
-		<div class="col-md-4">
-			<CENTER>
-			<img src="images/Iravi.png" width="50em" height="50em" class="d-inline-block align-top">
-			<span class="d-inline-block align-top"><h3>Nombre del producto</h3></span>
-			</CENTER>
-		</div>		
-		<div class="col-md-4">
-			<CENTER><button class="btn btn-primary">Modificar</button></CENTER>
-		</div>
-		</div>
-</div>
+	</div>
+	<br><br>
+
+
+
+@endforeach
 <br><br>
 <div class="container-fluid">
  <div class="row">

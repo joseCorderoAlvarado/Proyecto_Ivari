@@ -19,7 +19,6 @@ class CreateProductoTable extends Migration
             $table-> string('nombreproducto',100);
             $table-> string('descripcionproducto',200);
             $table-> double('precio',8,5);
-            $table-> binary('imagen');
             
             
             $table-> integer('fkcategoria')->unsigned();

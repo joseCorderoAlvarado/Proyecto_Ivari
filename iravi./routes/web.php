@@ -13,9 +13,7 @@
 Route::get('/', function () {
     return view('index');
 });
-Route::get('alta_Producto', function () {
-    return view('alta_Producto',['numero'=>15]);
-});
+
 
 Route::get('historia', function () {
     return view('historia',['numero'=>15]);
@@ -77,8 +75,13 @@ Route::get('perfil_Usuario', function () {
 Route::get('sss', function () {
     return view('sss',['numero'=>15]);
 });
+
 Route::get('registro','registroUsuario@mostrar');
 Route::post('registroGuardar','registroUsuario@guardar');
+
+Route::get('registroProducto','registroProducto@mostrar');
+Route::post('registroProductoGuardar','registroProducto@guardar');
+
 Route::get('seguimiento_Pedidos', function () {
     return view('seguimiento_Pedidos',['numero'=>15]);
 });
@@ -87,3 +90,4 @@ Route::get('Cliente', function () {
 });
 Route::post('InicioSesion','iniciarSesion@verificar');
 
+Route::get('listaProductos','listaProductos@mostrar');

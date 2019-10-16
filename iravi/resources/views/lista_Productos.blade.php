@@ -4,7 +4,7 @@
 	<div class="row">
 	<div class="col-md-2">
 	<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-      <a class="nav-link" href="{{ url('alta_Producto')}}">Alta Productos</a>
+      <a class="nav-link" href="{{ url('registroProducto')}}">Alta Productos</a>
       <a class="nav-link active"  href="{{ url('lista_Productos')}}">Modificar Productos</a>
       <a class="nav-link "  href="{{ url('alta_Usuarios')}}">Alta Usuario</a>
       <a class="nav-link" href="{{ url('modificar_UsuarioAdm')}}">Modificar Usuario</a>
@@ -18,7 +18,7 @@
 	<div class="col-md-4">
 	</div>
     </div>
-</div>	
+</div>	 
 <br><br>
 @foreach ($productos as $producto)
 	<div class="container" style="border: 1px #ccc solid; border-radius: 3px; padding: 10px; margin: auto;">
@@ -29,7 +29,7 @@
 			<div class="col-md-4">
 				<CENTER>
 				
-					<img src="\storage\{{$producto->ruta}}" width="50em" height="50em" class="d-inline-block align-top">
+					<img src="storage/{{$producto->ruta}}" width="50em" height="50em" class="d-inline-block align-top">
 					
 					<span class="d-inline-block align-top"><h3>{{ $producto->nombreproducto }}</h3></span>
 				</CENTER>
@@ -40,9 +40,6 @@
 		</div>
 	</div>
 	<br><br>
-
-
-
 @endforeach
 <br><br>
 <div class="container-fluid">

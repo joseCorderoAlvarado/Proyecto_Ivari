@@ -1,14 +1,46 @@
 <!DOCTYPE html>
 @extends('layouts.head')
-@include('layouts.menu_NavegacionAdm')
-{{-------------------------Alta Usuarios Administrador---------------------------}}
+@include('layouts.menu_NavegacionCliente')
+<style type="text/css">
+	input
+	{
+		border-radius: 3px;
+		border: 1px gray;
+		border-style: solid;
+		background-color: #eee;
+		color: #003366;
+		border-color: #003366;
+	}
+	#text {
+		color: #003366; 
+	}
+	#button{
+		background-color: #003366; 
+		border-color: #003366; 
+		border-style:solid;
+	}
+	
+	.nav-link.active{
+		background-color:#92d050 !important;
+		border-color: #92d050 !important; 
+		border-style:solid;
+		font-weight: bold;
+	}
+	
+	.card-body{
+		border-color: #003366; 
+		border-style:solid;
+	}
+	
+</style>
+<br><br><br>
 <div class="container-fluid">
 <div class="row">
 <div class="col-md-2">
 	<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-		<a class="nav-link" href="{{ url('alta_Producto')}}">Compras realizadas</a>
-		<a class="nav-link" href="{{ url('modificar_Producto')}}">Mi Perfil</a>
-		<a class="nav-link" href="{{ url('alta_Usuarios')}}">Acerca de Iravi</a>
+		<a  style="color: 92d050; font-weight:bold;" class="nav-link" href="{{ url('compras_Realizadas')}}">Compras realizadas</a>
+				<a  class="nav-link" href="{{ url('perfil_Usuario')}}">Mi Perfil</a>
+				<a  style="color: 92d050; font-weight:bold;" class="nav-link active" href="{{ url('historia')}}">Acerca de Iravi</a>
 	</div>
 </div>
 <div class="col-md-8"> 

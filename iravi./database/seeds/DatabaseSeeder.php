@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
         $this-> call (genero::class);
         $this-> call (roles::class);
         $this-> call (tipodireccion::class);
+        $this-> call (Categorias::class);
 
     }
 }

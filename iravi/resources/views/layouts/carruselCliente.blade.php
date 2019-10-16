@@ -3,9 +3,9 @@
 <div class="row">
 <div class="col-md-2">
     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-      <a class="nav-link" href="{{ url('alta_Producto')}}">Compras realizadas</a>
-      <a class="nav-link"  href="{{ url('modificar_Producto')}}">Mi perfil</a>
-      <a class="nav-link"  href="{{ url('alta_Usuarios')}}">Acerca de Iravi</a>
+      <a class="nav-link" href="{{ url('compras_Realizadas')}}">Compras realizadas</a>
+      <a class="nav-link"  href="{{ url('perfil_Usuario')}}">Mi perfil</a>
+      <a class="nav-link"  href="{{ url('historia')}}">Acerca de Iravi</a>
     </div>
 </div>
 <div class="col-md-10">
@@ -18,17 +18,17 @@
   <div class="carousel-inner" style="height: 300px;">
     <div class="carousel-item active">
        <div class="container">
-      <img class="d-block w-70" src="..." alt="First slide">
+      <img class="d-block w-100" src="images/bannerDulces.png" alt="First slide">
        </div>
     </div>
     <div class="carousel-item">
        <div class="container">
-      <img class="d-block w-100" src="..." alt="Second slide">
+      <img class="d-block w-100" src="images/banner1.png" alt="Second slide">
        </div>
     </div>
     <div class="carousel-item">
       <div class="container">
-      <img class="d-block w-100" src="..." alt="Third slide">
+      <img class="d-block w-100" src="public/images/banner2.png" alt="Third slide">
       </div>
     </div>
   </div>

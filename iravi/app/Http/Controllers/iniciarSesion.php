@@ -53,26 +53,12 @@ use Illuminate\Http\Request;
 			    ->select('usuario.fkrol')
 			    ->where('persona.correoelectronico', '=', $correo_Electronico)
 			    ->get();
-
-		       	/*
-		       	while($infoRol=($resultadoRol))
-		       	{
-		       		$pagina=$infoRol['usuario.fkrol'];
-		       	}
-		       	*/	    
-
-				if ($resultadoRol=='[{"fkrol":1}]') 
-				{
-					return view ('index_Admin');
-				}
-				else if ($resultadoRol=='[{"fkrol":2}]') 
-				{
-					return view ('vista_Producto');
-				}
-				else if ($resultadoRol=='[{"fkrol":3}]') 
-				{
-					return view ('index_Cliente');
-				}
+			   if($resultadoRol =='[{"fkrol":"1"}]'){
+			       return view('index_Admin');
+			   }
+			   elseif($resultadoRol =='[{"fkrol":"3"}]'){
+			       return view('index_Cliente'); 
+			   }
 			}
 			else
 			{

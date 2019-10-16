@@ -34,7 +34,6 @@ Route::get('vista_Producto', function () {
 Route::get('alta_Usuarios', function () {
     return view('alta_Usuarios',['numero'=>15]);
 });
-
 Route::get('bonificaciones', function () {
     return view('bonificaciones',['numero'=>15]);
 });
@@ -59,11 +58,6 @@ Route::get('login', function () {
 Route::get('modificar_Producto', function () {
     return view('modificar_Producto',['numero'=>15]);
 });
-
-Route::get('lista_Productos', function () {
-    return view('lista_Productos',['numero'=>15]);
-});
-
 Route::get('modificar_UsuarioAdm', function () {
     return view('modificar_UsuarioAdm',['numero'=>15]);
 });
@@ -90,4 +84,4 @@ Route::get('Cliente', function () {
 });
 Route::post('InicioSesion','iniciarSesion@verificar');
 
-Route::get('listaProductos','listaProductos@mostrar');
+Route::get('lista_Productos','listaProductos@mostrar');

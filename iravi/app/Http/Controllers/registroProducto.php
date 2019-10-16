@@ -23,7 +23,6 @@ public function mostrar(){
     {
 		
 		$producto = new producto;
-
 		$producto->nombreproducto=$datos->input('nombreproducto');
 		$producto->descripcionproducto=$datos->input('descripcionproducto');
 		$producto->fkcategoria=$datos->input('fkcategoria');

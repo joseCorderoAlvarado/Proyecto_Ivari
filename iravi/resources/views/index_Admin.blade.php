@@ -1,3 +1,4 @@
+
 @extends('layouts.head')
 @include('layouts.menu_NavegacionAdm')
 
@@ -27,6 +28,8 @@
 @include('layouts.carruselAdm') 
 
 {{------------------------Productos---------------------------}}
+
+
 <div class="container">
 <div class="row">
 <div class="col-md-4">
@@ -76,3 +79,9 @@
 
 @extends('layouts.footer')
 
+<?php
+
+    
+
+
+?>

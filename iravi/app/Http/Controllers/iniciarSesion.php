@@ -5,12 +5,18 @@ use App\usuario;
 use App\persona;
 use Illuminate\Http\Request;
 
+
 	class iniciarSesion extends Controller
 	{
-		public function mostrar()
-		{
-			return view ('registro');
-		}
+		public function mostrar(){
+		if (session()->has('S_Rol') ) {
+		return redirect ('/');
+	}else{
+		
+		return view ('login');
+	}
+
+}	
 
 		public function verificar (Request $datos)
 		{
@@ -53,11 +59,21 @@ use Illuminate\Http\Request;
 			    ->select('usuario.fkrol')
 			    ->where('persona.correoelectronico', '=', $correo_Electronico)
 			    ->get();
-			   if($resultadoRol =='[{"fkrol":"1"}]'){
-			       return view('index_Admin');
+				
+				//echo $resultadoRol;
+				
+				//Se va a utilizar la sesion global
+			   if($resultadoRol =='[{"fkrol":3}]'){
+				    session(['S_Rol' => '3']);
+
+			       return redirect('/');
 			   }
-			   elseif($resultadoRol =='[{"fkrol":"3"}]'){
-			       return view('index_Cliente'); 
+			   elseif($resultadoRol =='[{"fkrol":1}]'){
+				   
+				   session(['S_Rol' => '1']);
+
+			       return redirect('/'); 
+				   
 			   }
 			}
 			else
@@ -65,6 +81,14 @@ use Illuminate\Http\Request;
 				header("Location: login.blade.php");
 			}
 		
+		}
+		
+		
+		public function cerrarSesion (Request $datos)
+		{
+			//Matamos todos los datos de la sesion
+			Session()->flush();
+			  return redirect('/'); 
 		}
 	}
 ?>

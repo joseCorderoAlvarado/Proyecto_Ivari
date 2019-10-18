@@ -12,10 +12,24 @@ use App\Http\Requests\subidaFotoRequest;
 class registroProducto extends Controller
 {
 	
-public function mostrar(){
 
- return view('alta_Producto');
+public function mostrar(){
+		
+if (session()->has('S_Rol') ) {
+
+		if(session('S_Rol')==1){
+		
+			return view('alta_Producto');
+		}
+
+
+
 }	
+return redirect ('/');
+
+}	
+
+	
 
 
 
@@ -48,7 +62,7 @@ public function mostrar(){
         }
 		//echo Storage::disk('fotoProducto')->path("");
         //return 'Upload successful!';
-		return redirect('/registroProducto');
+		return redirect('registroProducto');
     }
 
 

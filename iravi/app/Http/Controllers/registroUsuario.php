@@ -11,9 +11,15 @@ class registroUsuario extends Controller
 {
 	
 public function mostrar(){
+if (session()->has('S_Rol') ) {
+	return redirect ('/');
+	}else{
+		
+		return view ('registroUsuario');
+	}
 
- return view('registro');
 }	
+
 public function guardar(Request $datos){
 //dd($datos->all());
 $persona = new persona;
@@ -48,7 +54,7 @@ $detallepersonadireccion= new detallepersonadireccion;
 $detallepersonadireccion->fkpersona=$ultimoidpersona;
 $detallepersonadireccion->fk_direccion=$ultimoiddireccion;
 $detallepersonadireccion->save();
-return view('registro');
+return redirect('registroUsuario');
 }	
 }
 ?>

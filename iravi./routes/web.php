@@ -10,78 +10,80 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return view('index');
-});
+
+//Todas las validaciones de a que paginas pueden o no entrar los usuarios, deben de ir con controladores
+
+//Este index controla todos
+Route::get('/','index@mostrar');
 
 
-Route::get('historia', function () {
-    return view('historia',['numero'=>15]);
-});
+//Controladores del registro de usuario
+Route::get('registroUsuario','registroUsuario@mostrar');
+Route::post('registroUsuarioGuardar','registroUsuario@guardar');
 
-Route::get('compras_Realizadas', function () {
-    return view('compras_Realizadas',['numero'=>15]);
-});
+//Controladores realacionados con el inicio y cierre de sesion
+Route::post('InicioSesion','iniciarSesion@verificar');
+Route::Get('CerrarSesion','iniciarSesion@cerrarSesion');
 
-Route::get('confirmacion_Compra', function () {
-    return view('confirmacion_Compra',['numero'=>15]);
-});
+//Login inicio de sesion
+Route::Get('login','iniciarSesion@mostrar');
 
-Route::get('vista_Producto', function () {
-    return view('vista_Producto',['numero'=>15]);
-});
 
-Route::get('alta_Usuarios', function () {
-    return view('alta_Usuarios',['numero'=>15]);
-});
-Route::get('bonificaciones', function () {
-    return view('bonificaciones',['numero'=>15]);
-});
 
-Route::get('carrito_Compras', function () {
-    return view('carrito_Compras',['numero'=>15]);
-});
+//Historia
+Route::Get('historia','historia@mostrar');
 
-Route::get('descripcion_Producto', function () {
-    return view('descripcion_Producto',['numero'=>15]);
-});
-Route::get('historial_Ventas', function () {
-    return view('historial_Ventas',['numero'=>15]);
-});
-Route::get('index_Admin', function () {
-    return view('index_Admin',['numero'=>15]);
-});
-Route::get('login', function () {
-    return view('login',['numero'=>15]);
-});
+//Compras Realizadas
+Route::Get('comprasRealizadas','comprasRealizadas@mostrar');
 
-Route::get('modificar_Producto', function () {
-    return view('modificar_Producto',['numero'=>15]);
-});
-Route::get('modificar_UsuarioAdm', function () {
-    return view('modificar_UsuarioAdm',['numero'=>15]);
-});
+//Confirmacion de Compras
+Route::Get('confirmacionCompra','confirmacionCompra@mostrar');
 
-Route::get('perfil_Usuario', function () {
-    return view('perfil_Usuario',['numero'=>15]);
-});
 
-Route::get('sss', function () {
-    return view('sss',['numero'=>15]);
-});
+//Vista Producto
+Route::Get('vistaProducto','vistaProducto@mostrar');
 
-Route::get('registro','registroUsuario@mostrar');
-Route::post('registroGuardar','registroUsuario@guardar');
+//Perfil de usuario
+Route::Get('perfilUsuario','perfilUsuario@mostrar');
 
+
+//Bonificaciones
+Route::Get('bonificaciones','bonificaciones@mostrar');
+
+//Carrito de COmpras
+Route::Get('carritoCompras','carritoCompras@mostrar');
+
+//Descripcion Producto
+Route::Get('descripcionProducto','descripcionProducto@mostrar'); //Khe?
+
+
+
+//Alta de usuario de amdin
+Route::Get('registroUsuarioAdmin','registroUsuarioAdmin@mostrar');
+
+//Historial de ventas
+Route::Get('historialVentas','historialVentas@mostrar');
+
+
+//Controladores del registro de productos
 Route::get('registroProducto','registroProducto@mostrar');
 Route::post('registroProductoGuardar','registroProducto@guardar');
 
-Route::get('seguimiento_Pedidos', function () {
-    return view('seguimiento_Pedidos',['numero'=>15]);
-});
-Route::get('Cliente', function () {
-    return view('index_Cliente',['numero'=>15]);
-});
-Route::post('InicioSesion','iniciarSesion@verificar');
 
-Route::get('lista_Productos','listaProductos@mostrar');
+//Lista de productos para modificar
+Route::get('listaModificarProductos','listaModificarProductos@mostrar');
+
+//Seguimiento de pedidos
+Route::get('seguimientoPedidos','seguimientoPedidos@mostrar');
+
+
+//Modificar Usuario de Admin
+Route::get('modificarUsuarioAdm','modificarUsuarioAdm@mostrar');
+
+
+
+
+
+
+
+?>

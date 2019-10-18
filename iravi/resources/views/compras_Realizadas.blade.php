@@ -52,8 +52,8 @@
 	<div class="row">
 		<div class="col-3">
 			<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-				<a  class="nav-link active" href="{{ url('compras_Realizadas')}}">Compras realizadas</a>
-				<a  style="color: 92d050; font-weight:bold;" class="nav-link" href="{{ url('perfil_Usuario')}}">Mi Perfil</a>
+				<a  class="nav-link active" href="{{ url('comprasRealizadas')}}">Compras realizadas</a>
+				<a  style="color: 92d050; font-weight:bold;" class="nav-link" href="{{ url('perfilUsuario')}}">Mi Perfil</a>
 				<a  style="color: 92d050; font-weight:bold;" class="nav-link" href="{{ url('historia')}}">Acerca de Iravi</a>
 			</div>
 		</div>

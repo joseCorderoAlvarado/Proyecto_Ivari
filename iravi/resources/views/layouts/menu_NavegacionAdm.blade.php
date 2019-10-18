@@ -10,7 +10,7 @@
 	</button>
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul	class="navbar-nav ml-auto">
-			<a href="{{ url('index_Admin')}}">
+			<a href="{{ url('/')}}">
 			<img src="images/iconoHome.png" width="30" height="30"	class="d-inline-block align-top">
             </a>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -19,7 +19,7 @@
 			<img src="images/iconoLogin.png" width="30" height="30"	class="d-inline-block align-top">
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="{{ url('/')}}">Cerrar sesión</a>
+            <a class="dropdown-item" href="{{ url('CerrarSesion')}}">Cerrar sesión</a>
             </li>
 			<li	class="nav-item">
 				<a	class="nav-link">Bienvenido</a>

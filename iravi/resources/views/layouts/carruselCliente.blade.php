@@ -28,7 +28,7 @@
     </div>
     <div class="carousel-item">
       <div class="container">
-      <img class="d-block w-100" src="public/images/banner2.png" alt="Third slide">
+      <img class="d-block w-100" src="images/banner2.png" alt="Third slide">
       </div>
     </div>
   </div>

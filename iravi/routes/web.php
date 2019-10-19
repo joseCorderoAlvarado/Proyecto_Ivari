@@ -64,6 +64,8 @@ Route::Get('registroUsuarioAdmin','registroUsuarioAdmin@mostrar');
 //Historial de ventas
 Route::Get('historialVentas','historialVentas@mostrar');
 
+//Alta Proveedores
+Route::get('altaProveedores','altaProveedores@mostrar');
 
 //Controladores del registro de productos
 Route::get('registroProducto','registroProducto@mostrar');

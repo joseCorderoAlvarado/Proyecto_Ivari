@@ -76,10 +76,9 @@ use Illuminate\Http\Request;
 				   
 			   }
 			}
-			else
-			{
-				header("Location: login.blade.php");
-			}
+		
+				 return redirect('login');
+			
 		
 		}
 		

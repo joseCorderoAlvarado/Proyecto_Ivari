@@ -14,14 +14,15 @@ use DB;
 			
 			if (session()->has('S_Rol') ) {
 			if (session('S_Rol')==1 ) {
-				$productos = DB::select('select    p.*, f.ruta 
+				$productos = DB::select('select    p.*, f.ruta
 		from producto p  inner join fotoproducto f on f.idfotoproducto=(
 		SELECT idfotoproducto
 		FROM fotoproducto AS f2
 		WHERE f2.fkproducto = p.idproducto
-   
+		order by idfotoproducto asc
 		LIMIT 1
 		)
+		order by idproducto desc
 		');
 		
 			return view('lista_Productos',['productos'=>$productos]);

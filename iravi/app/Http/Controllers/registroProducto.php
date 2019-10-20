@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 use DateTime;
 use App\Http\Requests\subidaFotoRequest;
+use DB;
 
 class registroProducto extends Controller
 {
@@ -18,8 +19,14 @@ public function mostrar(){
 if (session()->has('S_Rol') ) {
 
 		if(session('S_Rol')==1){
-		
-			return view('alta_Producto');
+					
+				
+				$listaCategoria = DB::select('select idcategoria, descripcion from categoria
+				order by idcategoria desc ');
+					
+				$listaProveedor = DB::select('select idproveedores, nombreproveedor from proveedores
+		order by idproveedores desc ');
+			return view('alta_Producto',['listaProveedor'=>$listaProveedor, 'listaCategoria'=>$listaCategoria]);
 		}
 
 
@@ -60,8 +67,7 @@ return redirect ('/');
 			$fotoproducto->save();
 			
         }
-		//echo Storage::disk('fotoProducto')->path("");
-        //return 'Upload successful!';
+	
 		return redirect('registroProducto');
     }
 

@@ -44,9 +44,10 @@
 	<div class="input-group-prepend">
 	   <select  name="fkcategoria" class="custom-select">
          <option selected>Selecciona una Categoria</option>
-         <option value="1">Accesorios</option>
-         <option value="2">Muebles</option>
-         <option value="3">Dulces</option>
+		   @foreach ($listaCategoria as $categoria)
+         <option value={{ $categoria->idcategoria }}>
+		 {{ $categoria->descripcion }} </option>
+		  @endforeach
        </select>
     </div>
     </div>
@@ -57,9 +58,10 @@
 	<div class="input-group-prepend">
 	   <select  name="fkproveedores" class="custom-select">
          <option selected>Selecciona un proveedor</option>
-         <option value="1">Felipe</option>
-         <option value="2">La plaza</option>
-         <option value="3">Las vias</option>
+		  @foreach ($listaProveedor as $proveedor)
+         <option value={{ $proveedor->idproveedores }}>
+		 {{ $proveedor->nombreproveedor }} </option>
+		  @endforeach
        </select>
 	   
     </div>

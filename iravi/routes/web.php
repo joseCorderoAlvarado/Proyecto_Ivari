@@ -61,19 +61,30 @@ Route::Get('descripcionProducto','descripcionProducto@mostrar'); //Khe?
 //Alta de usuario de amdin
 Route::Get('registroUsuarioAdmin','registroUsuarioAdmin@mostrar');
 
+
 //Historial de ventas
 Route::Get('historialVentas','historialVentas@mostrar');
 
 //Alta Proveedores
 Route::get('altaProveedores','altaProveedores@mostrar');
+Route::post('altaProveedoresGuardar','altaProveedores@guardarProveedor');
+
 
 //Controladores del registro de productos
 Route::get('registroProducto','registroProducto@mostrar');
 Route::post('registroProductoGuardar','registroProducto@guardar');
 
 
-//Lista de productos para modificar
+
+ //Lista de productos para modificar
 Route::get('listaModificarProductos','listaModificarProductos@mostrar');
+
+
+//Controladores  de modificar productos
+Route::post('modificarProducto','modificarProducto@mostrar');
+Route::post('modificarProductoGuardar','modificarProducto@modificar');
+
+
 
 //Seguimiento de pedidos
 Route::get('seguimientoPedidos','seguimientoPedidos@mostrar');

@@ -30,14 +30,19 @@
 			<div class="col-md-4">
 				<CENTER>
 				
-					<img src="storage/{{$producto->ruta}}" width="50em" height="50em" class="d-inline-block align-top">
+					<img src="storage{{$producto->ruta}}" width="50em" height="50em" class="d-inline-block align-top">
 					
 					<span class="d-inline-block align-top"><h3>{{ $producto->nombreproducto }}</h3></span>
 				</CENTER>
 			</div>
 			<div class="col-md-4">
-				<CENTER><button class="btn btn-primary">Modificar</button></CENTER>
-			</div>
+				<form action="modificarProducto" method="post" enctype="multipart/form-data">
+				{{ csrf_field() }}
+				 <input type="hidden" name="id" value={{ $producto->idproducto }}>
+				<CENTER> <button type="submit" class="btn btn-primary btn-block">Modificar</button>  </CENTER>
+		
+				</form>
+			</div> 
 		</div>
 	</div>
 	<br><br>

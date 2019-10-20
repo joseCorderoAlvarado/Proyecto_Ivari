@@ -20,7 +20,8 @@
   <article class="card-body">
 	<h4 class="card-title text-center mb-4 mt-1">Alta Proveedores </h4>
 	<hr>
-	<form>
+		<form action="altaProveedoresGuardar" method="post" enctype="multipart/form-data">
+	{{ csrf_field() }}
 	<div class="form-group">
 	<div class="input-group">
 		<div class="input-group-prepend">
@@ -50,7 +51,7 @@
 		<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 		 </div>
-		<input name="fechaI" name="fechaI" class="form-control" placeholder="Fecha de ingreso">
+		<input type="date" name="fechaI" name="fechaI" class="form-control" placeholder="Fecha de ingreso">
 	</div>
 	</div>
 	<div class="form-group">
@@ -58,7 +59,7 @@
 		<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 		 </div>
-		<input name="fechaE" id="fechaE" class="form-control" placeholder="Fecha de egreso">
+		<input type="date" name="fechaE" id="fechaE" class="form-control" placeholder="Fecha de egreso">
 	</div>
 	</div>
     <div class="form-group">

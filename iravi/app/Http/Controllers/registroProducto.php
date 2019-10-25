@@ -51,7 +51,7 @@ return redirect ('/');
 		$producto->precio=$datos->input('precio');
 		$producto->fkestatus=1;
 		$producto->save();
-		$ultimoidproducto=$producto->id;	
+		$ultimoidproducto=$producto->idproducto;	
      
         foreach ($datos->fotos as $photo) {
             $nombreOriginal = $photo->getClientOriginalName();

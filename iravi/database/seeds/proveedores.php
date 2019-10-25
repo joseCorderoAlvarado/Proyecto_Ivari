@@ -13,25 +13,10 @@ class proveedores extends Seeder
     public function run()
     {
         //
-        DB::table('proveedores')-> insert(string('nombreproveedor'=>'PulserasFelipe'));
-        DB::table('proveedores')-> insert(string('sucursal'=>'Ixtlan del Rio'));
-        DB::table('proveedores')-> insert(string('encargado'=>'Felipe Carrillo'));
-        DB::table('proveedores')-> insert(datetime('fechaingreso'=>'2019-10-01 00:00:00'));
-        DB::table('proveedores')-> insert(datetime('fechaegreso'=>'2020-09-30 00:00:00'));
-        DB::table('proveedores')-> insert(string('sedeprincipal'=>'Ixtlan del Rio'));
+        DB::table('proveedores')-> insert(array('nombreproveedor'=>'PulserasFelipe','sucursal'=>'Ixtlan del Rio','encargado'=>'Felipe Carrillo','fechaingreso'=>'2019-10-01 00:00:00','fechaegreso'=>'2020-09-30 00:00:00','sedeprincipal'=>'Ixtlan del Rio'));
 
-        DB::table('proveedores')-> insert(string('nombreproveedor'=>'Kiosco'));
-        DB::table('proveedores')-> insert(string('sucursal'=>'Ixtlan del Rio'));
-        DB::table('proveedores')-> insert(string('encargado'=>'Presidencia Municipal Ixtlan del Rio'));
-        DB::table('proveedores')-> insert(datetime('fechaingreso'=>'2019-10-01 00:00:00'));
-        DB::table('proveedores')-> insert(datetime('fechaegreso'=>'2020-09-30 00:00:00'));
-        DB::table('proveedores')-> insert(string('sedeprincipal'=>'Ixtlan del Rio'));
+        DB::table('proveedores')-> insert(array('nombreproveedor'=>'Kiosco','sucursal'=>'Ixtlan del Rio','encargado'=>'Presidencia Municipal Ixtlan del Rio','fechaingreso'=>'2019-10-01 00:00:00','fechaegreso'=>'2020-09-30 00:00:00','sedeprincipal'=>'Ixtlan del Rio'));
 
-        DB::table('proveedores')-> insert(string('nombreproveedor'=>'EquipalesMexpan'));
-        DB::table('proveedores')-> insert(string('sucursal'=>'Mexpan'));
-        DB::table('proveedores')-> insert(string('encargado'=>'Señor Mexpeño'));
-        DB::table('proveedores')-> insert(datetime('fechaingreso'=>'2019-10-01 00:00:00'));
-        DB::table('proveedores')-> insert(datetime('fechaegreso'=>'2020-09-30 00:00:00'));
-        DB::table('proveedores')-> insert(string('sedeprincipal'=>'Mexpan'));
+        DB::table('proveedores')-> insert(array('nombreproveedor'=>'EquipalesMexpan','sucursal'=>'Mexpan','encargado'=>'Señor Mexpeño','fechaingreso'=>'2019-10-01 00:00:00','fechaegreso'=>'2020-09-30 00:00:00','sedeprincipal'=>'Mexpan'));
     }
 }

@@ -13,7 +13,7 @@ class proveedores extends Seeder
     public function run()
     {
         //
-        DB::table('proveedores')-> insert(array('nombreproveedor'=>'Pulseras Felipe'));
+        DB::table('proveedores')-> insert(array('nombreproveedor'=>'PulserasFelipe'));
         DB::table('proveedores')-> insert(array('sucursal'=>'Ixtlan del Rio'));
         DB::table('proveedores')-> insert(array('encargado'=>'Felipe Carrillo'));
         DB::table('proveedores')-> insert(array('fechaingreso'=>'2019-10-01 00:00:00'));
@@ -27,7 +27,7 @@ class proveedores extends Seeder
         DB::table('proveedores')-> insert(array('fechaegreso'=>'2020-09-30 00:00:00'));
         DB::table('proveedores')-> insert(array('sedeprincipal'=>'Ixtlan del Rio'));
 
-        DB::table('proveedores')-> insert(array('nombreproveedor'=>'Equipales Mexpan'));
+        DB::table('proveedores')-> insert(array('nombreproveedor'=>'EquipalesMexpan'));
         DB::table('proveedores')-> insert(array('sucursal'=>'Mexpan'));
         DB::table('proveedores')-> insert(array('encargado'=>'Señor Mexpeño'));
         DB::table('proveedores')-> insert(array('fechaingreso'=>'2019-10-01 00:00:00'));

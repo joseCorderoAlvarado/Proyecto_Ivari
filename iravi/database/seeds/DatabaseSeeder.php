@@ -18,5 +18,6 @@ class DatabaseSeeder extends Seeder
         $this-> call (tipodireccion::class);
         $this-> call (Categorias::class);
         $this-> call (proveedores::class);
+        
     }
 }

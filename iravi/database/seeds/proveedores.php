@@ -16,22 +16,22 @@ class proveedores extends Seeder
         DB::table('proveedores')-> insert(array('nombreproveedor'=>'Pulseras Felipe'));
         DB::table('proveedores')-> insert(array('sucursal'=>'Ixtlan del Rio'));
         DB::table('proveedores')-> insert(array('encargado'=>'Felipe Carrillo'));
-        DB::table('proveedores')-> insert(date('fechaingreso'=>'2019-10-01'));
-        DB::table('proveedores')-> insert(date('fechaegreso'=>'2020-09-30'));
+        DB::table('proveedores')-> insert(datetime('fechaingreso'=>'2019-10-01 00:00:00'));
+        DB::table('proveedores')-> insert(datetime('fechaegreso'=>'2020-09-30 00:00:00'));
         DB::table('proveedores')-> insert(array('sedeprincipal'=>'Ixtlan del Rio'));
 
         DB::table('proveedores')-> insert(array('nombreproveedor'=>'Kiosco'));
         DB::table('proveedores')-> insert(array('sucursal'=>'Ixtlan del Rio'));
         DB::table('proveedores')-> insert(array('encargado'=>'Presidencia Municipal Ixtlan del Rio'));
-        DB::table('proveedores')-> insert(date('fechaingreso'=>'2019-10-01'));
-        DB::table('proveedores')-> insert(date('fechaegreso'=>'2020-09-30'));
+        DB::table('proveedores')-> insert(datetime('fechaingreso'=>'2019-10-01 00:00:00'));
+        DB::table('proveedores')-> insert(datetime('fechaegreso'=>'2020-09-30 00:00:00'));
         DB::table('proveedores')-> insert(array('sedeprincipal'=>'Ixtlan del Rio'));
 
         DB::table('proveedores')-> insert(array('nombreproveedor'=>'Equipales Mexpan'));
         DB::table('proveedores')-> insert(array('sucursal'=>'Mexpan'));
         DB::table('proveedores')-> insert(array('encargado'=>'Señor Mexpeño'));
-        DB::table('proveedores')-> insert(date('fechaingreso'=>'2019-10-01'));
-        DB::table('proveedores')-> insert(date('fechaegreso'=>'2020-09-30'));
+        DB::table('proveedores')-> insert(datetime('fechaingreso'=>'2019-10-01 00:00:00'));
+        DB::table('proveedores')-> insert(datetime('fechaegreso'=>'2020-09-30 00:00:00'));
         DB::table('proveedores')-> insert(array('sedeprincipal'=>'Mexpan'));
     }
 }

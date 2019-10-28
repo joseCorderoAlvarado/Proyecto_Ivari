@@ -7,11 +7,8 @@ use Illuminate\Http\Request;
 class vistaProducto extends Controller
 {
 	
-public function mostrar(){
-
-return view ('vista_Producto');
-
-
-}
+	public function mostrar(){
+		return view ('vista_Producto');
+	}
 }
 ?>

@@ -1,5 +1,7 @@
+
 @extends('layouts.head')
-@include('layouts.menu_NavegacionCliente')
+@include('layouts.menu_NavegacionAdm')
+
 {{-------------------------Buscador---------------------------}}
 <div class="container-fluid">
 	<div class="row justify-content-center">
@@ -23,59 +25,28 @@
 </div>
 {{------------------------Fin de Buscador---------------------------}}
 
-@include('layouts.carruselCliente') 
+@include('layouts.carruselAdm') 
 
 {{------------------------Productos---------------------------}}
 
-<?php
-$i=0;
-?>
-<table>
-@foreach ($productos as $producto)
-  <tr>
-  <?php
-  if($i==1 || $i==2 || $i==3)
-  {
-  ?>
-    <td>
-    <div class="container" class="nav-link active">
-      <div class="row">
-        <div class="col-md-5">
-          <div class="card" style="width: 15rem;">
-            <center>
-              <a href="#">
-                <img src="storage{{$producto->ruta}}"  class="card-img-top" alt="Card image cap">
-              </a>
-              <div class="card-body">
-                <span class="d-inline-block align-top"><h4>{{ $producto->nombreproducto }}</h4></span>
-                <class="card-text"><h5>${{ $producto->precio }}</h5></class="card-text">
-                <a href="{{ url('vista_Producto')}}" class="btn btn-primary" style="background:#003366">Ver descripción</a>
-              </div>
-            </center>
-          </div>  
-        </div>
-      </div>
-    </div>
-    </td>
 
-  <?php
-  }
-  else
-  {
-  ?>
-    </tr>
-
-  <?php
-  $i=0;
-  }
-  $i = $i+1;
-  ?>
-@endforeach
-</table>
-
+<div class="container">
+<div class="row">
+<div class="col-md-4">
+<div class="card" style="width: 15rem;">
+  <a href="#">
+  <img class="card-img-top" src="images/iconoCarrito.png" alt="Card image cap">
+  </a>
+  <div class="card-body">
+    <h5 class="card-title">Titulo</h5>
+    <p class="card-text">Precio</p>
+    <a href="#" class="btn btn-primary">Añadir al carrito</a>
+  </div>
+</div>  
+</div>
+</div>
+</div>
 {{--------------------Fin Productos---------------------------}} 
-
-
 {{--------------------Inicio de Paginación----------------------}}
 <div class="container-fluid">
  <div class="row">
@@ -108,3 +79,9 @@ $i=0;
 
 @extends('layouts.footer')
 
+<?php
+
+    
+
+
+?>

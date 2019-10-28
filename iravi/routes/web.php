@@ -95,7 +95,8 @@ Route::get('modificarUsuarioAdm','modificarUsuarioAdm@mostrar');
 
 
 
-
+ //Cuadricula de prodcutos
+Route::get('index_Cliente_Consulta','index_Cliente_Consulta@mostrar');
 
 
 

@@ -15,6 +15,7 @@
 
 //Este index controla todos
 Route::get('/','index@mostrar');
+Route::get('/pagina{p}',['uses' =>'index@mostrarPaginacion']);
 
 
 //Controladores del registro de usuario

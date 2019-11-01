@@ -40,9 +40,9 @@ use Illuminate\Http\Request;
 
 			$resultadoUsuario = usuario::
 		    join('persona', 'persona.idpersona', '=', 'usuario.fkpersona')
-		    ->select('persona.correoelectronico', 'usuario.contraseña')
+		    ->select('persona.correoelectronico', 'usuario.contrasena')
 		    ->where('persona.correoelectronico', '=', $correo_Electronico)
-		    ->where('usuario.contraseña', '=', $contraseña) 
+		    ->where('usuario.contrasena', '=', $contraseña) 
 		    ->get();
 
 		    //Este es el inner join realizado de una manera cosnulta directa a SQL
@@ -58,17 +58,19 @@ use Illuminate\Http\Request;
 			    join('usuario', 'usuario.idusuario', '=', 'persona.idpersona')
 			    ->select('usuario.fkrol')
 			    ->where('persona.correoelectronico', '=', $correo_Electronico)
+				->where('usuario.contrasena', '=', $contraseña)
 			    ->get();
 				
 				//echo $resultadoRol;
 				
 				//Se va a utilizar la sesion global
-			   if($resultadoRol =='[{"fkrol":3}]'){
+			   if(strpos($resultadoRol, '3') == true){
 				    session(['S_Rol' => '3']);
 
 			       return redirect('/');
 			   }
-			   elseif($resultadoRol =='[{"fkrol":1}]'){
+			   
+			   elseif  (strpos($resultadoRol, '1') == true){
 				   
 				   session(['S_Rol' => '1']);
 

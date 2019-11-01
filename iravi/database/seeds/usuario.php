@@ -12,6 +12,6 @@ class usuario extends Seeder
     public function run()
     {
         //
-        DB::table('usuario')-> insert(array('contraseña'=>'1234', 'fkpersona'=>'1', 'fkrol'=>'1'));
+        DB::table('usuario')-> insert(array('contrasena'=>'1234', 'fkpersona'=>'1', 'fkrol'=>'1'));
     }
 }

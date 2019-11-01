@@ -31,20 +31,20 @@
 <div class="container">
 <div class="row">
 	{{------------------------Cosas que se repiten---------------------------}}
-@foreach ($tablaProductos as $producto)
-<div class="col-md-4">
-<div class="card" style="width: 15rem;">
-  <a href="#">
-  <img class="card-img-top" src="storage{{$producto->ruta}}" alt="Card image cap">
-  </a>
-  <div class="card-body">
-    <h5 class="card-title">{{$producto->nombreproducto}}</h5>
-    <p class="card-text">${{$producto->precio}}</p>
-    <a href="#" class="btn btn-primary">Añadir al carrito</a>
-  </div>
-</div>
-</div>
-@endforeach
+	@foreach ($tablaProductos as $producto)
+	<div class="col-md-4">
+	<div class="card" style="width: 15rem;">
+
+	  <img class="card-img-top" src="storage{{$producto->ruta}}" alt="Card image cap">
+	 
+	  <div class="card-body">
+	    <h5 class="card-title">{{$producto->nombreproducto}}</h5>
+	    <p class="card-text">${{$producto->precio}}</p>
+
+	  </div>
+	</div>
+	</div>
+	@endforeach
 	{{------------------------Fin de Cosas que se repiten---------------------------}}
 
 </div>
@@ -69,7 +69,7 @@
 					<span aria-hidden="true">&laquo;</span>
 					</a>
 			 </li>
-      	@else 
+      	@else
 				<li class="page-item">
 					<a class="page-link" href="/pagina{{$paginaActual-1}}" aria-label="Previous">
 					<span aria-hidden="true">&laquo;</span>

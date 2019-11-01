@@ -34,7 +34,7 @@
 @foreach ($tablaProductos as $producto)
 <div class="col-md-4">
 <div class="card" style="width: 15rem;">
-  <a href="#">
+  <a href="vistaProducto{{$producto->idproducto}}">
   <img class="card-img-top" src="storage{{$producto->ruta}}" alt="Card image cap">
   </a>
   <div class="card-body">

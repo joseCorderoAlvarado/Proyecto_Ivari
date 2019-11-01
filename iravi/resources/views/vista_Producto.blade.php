@@ -16,12 +16,14 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-6">
-								<img src="" class="card-img-left" style="width: 300px; height: 300px;">
+								<img src="storage{{$tablaFotosProducto[0]->ruta }}" class="card-img-left" style="width: 300px; height: 300px;">
 							</div>
 							<div class="col-6" >
-								<label><h3>Nombre del producto</h3></label>
-								<label><h5>Descripci&oacute;n del producto</h5><br>Esta ser&aacute; la descripci&oacute;n del producto</label><br>
-								<label>Precio</label>
+								<p><label><h3> {{$tablaProductos[0]->nombreproducto }}</h3></label></p>
+
+								<label><h5>Descripci&oacute;n del producto</h5>
+								<p> {{$tablaProductos[0]->descripcionproducto }} </label></p>
+								<label> ${{$tablaProductos[0]->precio }}</label>
 								<br><br>
 								<button class="btn btn-primary"style="background:#003366" ">Agregar al carrito</button>
 								<a href="{{ url('compras_Carrito')}}">
@@ -30,13 +32,15 @@
 							</div>
 						</div>
 					</div>
-					
-					
+
+
 				</div>
 			</div>
 		</div>
 		<div class="col-3">
-			
+					@foreach ($tablaFotosProducto as $foto)
+					<img src="storage{{$foto->ruta }}" class="card-img-left" style="width: 100px; height: 100px;">
+					@endforeach
 		</div>
 	</div>
 </div>

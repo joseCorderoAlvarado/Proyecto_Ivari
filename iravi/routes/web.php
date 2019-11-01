@@ -42,7 +42,7 @@ Route::Get('confirmacionCompra','confirmacionCompra@mostrar');
 
 
 //Vista Producto
-Route::Get('vistaProducto','vistaProducto@mostrar');
+Route::get('/vistaProducto{d}',['uses' =>'vistaProducto@mostrar']);
 
 //Perfil de usuario
 Route::Get('perfilUsuario','perfilUsuario@mostrar');
@@ -96,8 +96,6 @@ Route::get('modificarUsuarioAdm','modificarUsuarioAdm@mostrar');
 
 
 
- //Cuadricula de prodcutos
-Route::get('index_Cliente_Consulta','index_Cliente_Consulta@mostrar');
 
 
 

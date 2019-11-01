@@ -15,6 +15,7 @@ class index extends Controller
 
 	public function mostrar(){
 		//Para sacar los elementos de la primera pagina
+		$inicio=0;
 		$paginaActual=1;
 		$productosPorPagina=9;
 		$tablaProductos = DB::select('select    p.*, f.ruta
@@ -25,7 +26,7 @@ class index extends Controller
 
 		LIMIT 1
 		) limit ?,?'
-		,[$paginaActual,$productosPorPagina]);
+		,[$inicio,$productosPorPagina]);
 			//Para sacar los elementos de la primera pagina
 
 
@@ -57,12 +58,12 @@ class index extends Controller
 			}
 			else if(session('S_Rol')==3)
 			{
-				return view('index_Cliente_Consulta',['tablaProductos'=>$tablaProductos,'paginaActual'=>$paginaActual,'numeroPaginas'=>$numeroPaginas]);
+				return view('index_Cliente',['tablaProductos'=>$tablaProductos,'paginaActual'=>$paginaActual,'numeroPaginas'=>$numeroPaginas]);
 
 			}
 
 		}
-		return view('index',['tablaProductos'=>$tablaProductos]);
+		return view('index',['tablaProductos'=>$tablaProductos,'paginaActual'=>$paginaActual,'numeroPaginas'=>$numeroPaginas]);
 	}
 
 
@@ -110,11 +111,11 @@ class index extends Controller
 			else if(session('S_Rol')==2)
 			{
 				return view('index_Editor',['tablaProductos'=>$tablaProductos,'paginaActual'=>$paginaActual,'numeroPaginas'=>$numeroPaginas]);
-			
+
 			}
 			else if(session('S_Rol')==3)
 			{
-				return view('index_Cliente_Consulta',['tablaProductos'=>$tablaProductos,'paginaActual'=>$paginaActual,'numeroPaginas'=>$numeroPaginas]);
+				return view('index_Cliente',['tablaProductos'=>$tablaProductos,'paginaActual'=>$paginaActual,'numeroPaginas'=>$numeroPaginas]);
 
 			}
 

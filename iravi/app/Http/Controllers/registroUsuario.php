@@ -9,16 +9,16 @@ use Illuminate\Http\Request;
 
 class registroUsuario extends Controller
 {
-	
+
 public function mostrar(){
 if (session()->has('S_Rol') ) {
 	return redirect ('/');
 	}else{
-		
+
 		return view ('registroUsuario');
 	}
 
-}	
+}
 
 public function guardar(Request $datos){
 //dd($datos->all());
@@ -34,7 +34,7 @@ $persona->save();
 $ultimoidpersona=$persona->id;
 $usuario = new usuario;
 $usuario->idusuario = $datos->input('idusuario');
-$usuario->contraseña = $datos->input('contraseña');
+$usuario->contrasena = $datos->input('contraseña');
 $usuario->fkpersona =  $ultimoidpersona;
 $usuario->fkrol = 3;
 $usuario->save();
@@ -55,6 +55,6 @@ $detallepersonadireccion->fkpersona=$ultimoidpersona;
 $detallepersonadireccion->fk_direccion=$ultimoiddireccion;
 $detallepersonadireccion->save();
 return redirect('registroUsuario');
-}	
+}
 }
 ?>

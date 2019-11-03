@@ -78,7 +78,8 @@ Route::post('registroProductoGuardar','registroProducto@guardar');
 
 
  //Lista de productos para modificar
-Route::get('listaModificarProductos','listaModificarProductos@mostrar');
+
+Route::get('listaModificarProductos-pagina{p}',['uses' =>'listaModificarProductos@mostrar']);
 
 
 //Controladores  de modificar productos

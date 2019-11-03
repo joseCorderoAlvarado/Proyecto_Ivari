@@ -1,21 +1,21 @@
 @extends('layouts.head')
-@include('layouts.menu_NavegacionAdm')	
+@include('layouts.menu_NavegacionAdm')
 <div class="container-fluid">
 	<div class="row">
 	<div class="col-md-6"></div>
 	<div class="col-md-4">
-	<span><h1>VENTAS</h1></span>	
+	<span><h1>VENTAS</h1></span>
 	</div>
 	<div class="col-md-2">
 	</div>
     </div>
-</div>	
+</div>
 <div class="container-fluid">
 	<div class="row">
 	    <div class="col-md-2 d-inline-block">
 	    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
       <a class="nav-link" href="{{ url('registroProducto')}}">Alta Productos</a>
-      <a class="nav-link"  href="{{ url('listaModificarProductos')}}">Modificar Productos</a>
+      <a class="nav-link"  href="{{ url('listaModificarProductos-pagina1')}}">Modificar Productos</a>
       <a class="nav-link"  href="{{ url('registroUsuarioAdmin')}}">Alta Usuario</a>
       <a class="nav-link" href="{{ url('modificarUsuarioAdm')}}">Modificar Usuario</a>
       <a class="nav-link" href="{{ url('altaProveedores')}}">Alta Proveedores</a>
@@ -44,7 +44,7 @@ Ordenar por
              </div>
             <div class="col-auto">
             <button class="btn" type="submit">
-            <img src="images/iconoBuscar.png" width="30" height="30"	class="d-inline-block align-top">	
+            <img src="images/iconoBuscar.png" width="30" height="30"	class="d-inline-block align-top">
             </button>
             </div>
            </div>
@@ -100,13 +100,13 @@ Ordenar por
 		</div>
 		</div>
 	</div>
-	
+
 </div>
 	<div class="row" style="height: 3em"><div class="col-md-12"></div></div>
 {{--------------------Inicio de Paginación----------------------}}
 <div class="container-fluid">
  <div class="row">
-   <div class="col-md-4">     
+   <div class="col-md-4">
    </div>
    <div class="col-md-4">
     <nav aria-label="Page navigation example">
@@ -125,11 +125,11 @@ Ordenar por
         </a>
         </li>
       </ul>
-   </nav>    
+   </nav>
   </div>
-  <div class="col-md-4">     
+  <div class="col-md-4">
   </div>
- </div> 
+ </div>
 </div>
 {{--------------------Fin de Paginación----------------------}}
 @extends('layouts.footer')

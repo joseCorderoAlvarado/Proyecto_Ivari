@@ -8,29 +8,52 @@ use DB;
 
 
 	class listaModificarProductos extends Controller
-	{
-				
-		public function mostrar(){
-			
-			if (session()->has('S_Rol') ) {
-			if (session('S_Rol')==1 ) {
-				$productos = DB::select('select    p.*, f.ruta
-		from producto p  inner join fotoproducto f on f.idfotoproducto=(
-		SELECT idfotoproducto
-		FROM fotoproducto AS f2
-		WHERE f2.fkproducto = p.idproducto
-		order by idfotoproducto asc
-		LIMIT 1
-		)
-		order by idproducto desc
-		');
-		
-			return view('lista_Productos',['productos'=>$productos]);
-		}		
-			}
-		return redirect ('/');
-		}	
-			
+{
 
+		public function mostrar($paginaActual)
+		{
+
+			if (session()->has('S_Rol') ) {//Solo si esta registrado puede entra
+				if (session('S_Rol')==1 ) {//Solo si es admin puede entrar
+
+
+
+					//Para sacar los elementos de la pagina n
+					$productosPorPagina=9;
+					$inicio=$paginaActual*$productosPorPagina-$productosPorPagina;
+					$tablaProductos = DB::select('select    p.*, f.ruta
+					from producto p  inner join fotoproducto f on f.idfotoproducto=(
+					SELECT idfotoproducto
+					FROM fotoproducto AS f2
+					WHERE f2.fkproducto = p.idproducto
+
+					LIMIT 1
+					) limit ?,?'
+					,[$inicio,$productosPorPagina]);
+					//Para sacar los elementos de la pagina n
+
+
+					//Todo esto es para sacar el total de paginas que se haran
+					$numeroPaginas = DB::select('select    p.*, f.ruta
+					from producto p  inner join fotoproducto f on f.idfotoproducto=(
+					SELECT idfotoproducto
+					FROM fotoproducto AS f2
+					WHERE f2.fkproducto = p.idproducto
+
+					LIMIT 1
+					)');
+
+					$numeroPaginas= count($numeroPaginas);
+					$numeroPaginas= ceil($numeroPaginas/$productosPorPagina);
+					////Todo esto es para sacar el total de paginas que se haran
+
+					return view('lista_Productos',['tablaProductos'=>$tablaProductos,'paginaActual'=>$paginaActual,'numeroPaginas'=>$numeroPaginas]);
+
+
+			}
+		}
+		return redirect ('/');
 	}
+}
+
 ?>

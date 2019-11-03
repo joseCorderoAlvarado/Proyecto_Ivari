@@ -78,7 +78,7 @@
 			 </li>
       	@else
 				<li class="page-item">
-					<a class="page-link" href="/pagina{{$paginaActual-1}}" aria-label="Previous">
+					<a class="page-link" href="listaModificarProductos-pagina{{$paginaActual-1}}" aria-label="Previous">
 					<span aria-hidden="true">&laquo;</span>
 					</a>
 			 </li>
@@ -88,7 +88,7 @@
 		@if ($i==$paginaActual)
 		<li class="page-item active"><a class="page-link">{{$i}}</a></li>
 		@else
-		<li class="page-item"><a class="page-link" href="/pagina{{$i}}">{{$i}}</a></li>
+		<li class="page-item"><a class="page-link" href="listaModificarProductos-pagina{{$i}}">{{$i}}</a></li>
     @endif
 
 
@@ -102,7 +102,7 @@
 						 </li>
 			      @else
 							<li class="page-item">
-								<a class="page-link" href="/pagina{{$paginaActual+1}}" aria-label="Next">
+								<a class="page-link" href="listaModificarProductos-pagina{{$paginaActual+1}}" aria-label="Next">
 								<span aria-hidden="true">&raquo;</span>
 								</a>
 						 </li>

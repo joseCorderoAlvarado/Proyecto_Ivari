@@ -26,7 +26,7 @@
 	  </div>
 	  <div class="col-md-4">
         <p align="center">
-        <img src="images/logoIravi.png" style=" width: 100px; height: 100px;">	
+        <img src="images/LogoIravi.png" style=" width: 100px; height: 100px;">	
         </p>
 	  	<p align="center">
 	      <b style="color: #003366">Contacto</b>

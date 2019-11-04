@@ -2,21 +2,26 @@
 @include('layouts.menu_Navegacion')
 {{-------------------------Login---------------------------}}
 <div class="container">
+	
 <div class="row">
 <div class="col-md-4"> </div>
 <div class="col-md-4"> 
+	<br>
+	<center><div class="toggle">
+            <span>Desplazar</span>
+        </div></center><br>
 <div class="card" style="width: 25em; height: 25em; border-color: #003366">
   <article class="card-body">
 	<h4 class="card-title text-center mb-4 mt-1" style="color: #003366">Inicio de sesión</h4>
 	<hr style="border-color: #666699">
-	<form action="InicioSesion" method="post" enctype="multipart/form-data">
+	<form class="formulario" action="InicioSesion" method="post" enctype="multipart/form-data">
 		{{csrf_field()}}
 	<div class="form-group">
 	<div class="input-group">
 		<div class="input-group-prepend">
 		    <span class="input-group-text" style="border-color: #666699"> <i class="fa fa-user"></i> </span>
 		</div>
-		<input name="txtUsuario" class="form-control" placeholder="Correo electronico" type="email" style="border-color: #666699">
+		<input id="username" name="txtUsuario" class="form-control" placeholder="Correo electronico" type="email" style="border-color: #666699">
 	</div> 
 	</div> 
 	<div class="form-group">
@@ -24,7 +29,7 @@
 		<div class="input-group-prepend">
 		    <span class="input-group-text" style="border-color: #666699"> <i class="fa fa-lock"></i> </span>
 		 </div>
-	    <input name="txtContrasena" class="form-control" placeholder="******" type="password" style="border-color: #666699">
+	    <input id="password" name="txtContrasena" class="form-control" placeholder="******" type="password" style="border-color: #666699" >
 	</div>
 	</div>
 	<div class="form-group">

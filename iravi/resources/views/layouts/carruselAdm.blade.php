@@ -4,12 +4,11 @@
 <div class="col-md-2">
     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
       <a class="nav-link" href="{{ url('registroProducto')}}">Alta Productos</a>
-      <a class="nav-link"  href="{{ url('listaModificarProductos-pagina1')}}">Modificar Productos</a>
-      <a class="nav-link"  href="{{ url('registroUsuarioAdmin')}}">Alta Usuario</a>
-      <a class="nav-link" href="{{ url('modificarUsuarioAdm')}}">Modificar Usuario</a>
-      <a class="nav-link" href="{{ url('altaProveedores')}}">Alta Proveedores</a>
-      <a class="nav-link" href="{{ url('historialVentas')}}"> Ver Ventas</a>
-      <a class="nav-link"  href="{{ url('seguimientoPedidos')}}"> Ver Pedidos</a>
+      <a class="nav-link"  href="{{ url('modificar_Producto')}}">Modificar Productos</a>
+      <a class="nav-link"  href="{{ url('alta_Usuarios')}}">Alta Usuario</a>
+      <a class="nav-link" href="{{ url('modificar_UsuarioAdm')}}">Modificar Usuario</a>
+      <a class="nav-link" href="{{ url('historial_Ventas')}}"> Ver Ventas</a>
+      <a class="nav-link"  href="{{ url('seguimiento_Pedidos')}}"> Ver Pedidos</a>
     </div>
 </div>
 <div class="col-md-10">
@@ -22,17 +21,17 @@
   <div class="carousel-inner" style="height: 300px;">
     <div class="carousel-item active">
        <div class="container">
-      <img class="d-block w-100" src="images/bannerDulces.png" alt="First slide">
+      <img class="d-block w-100" src="images/banner1.png" alt="First slide">
        </div>
     </div>
     <div class="carousel-item">
        <div class="container">
-      <img class="d-block w-100" src="images/banner1.png" alt="Second slide">
+      <img class="d-block w-100" src="images/banner2.png" alt="Second slide">
        </div>
     </div>
     <div class="carousel-item">
       <div class="container">
-      <img class="d-block w-100" src="images/banner2.png" alt="Third slide">
+      <img class="d-block w-100" src="images/banner3.png" alt="Third slide">
       </div>
     </div>
   </div>

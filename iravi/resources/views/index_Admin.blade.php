@@ -33,10 +33,10 @@
 	{{------------------------Cosas que se repiten---------------------------}}
 	@foreach ($tablaProductos as $producto)
 	<div class="col-md-4">
-	<div class="card" style="width: 15rem;">
+	<div class="card2" style="width: 15rem;">
 
-	  <img class="card-img-top" src="storage{{$producto->ruta}}" alt="Card image cap">
-	 
+	  <img class="card-img-top" src="storage{{$producto->ruta}}" alt="Card image cap" style="height:230px;">
+
 	  <div class="card-body">
 	    <h5 class="card-title">{{$producto->nombreproducto}}</h5>
 	    <p class="card-text">${{$producto->precio}}</p>

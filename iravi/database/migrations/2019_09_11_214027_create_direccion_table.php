@@ -17,7 +17,7 @@ class CreateDireccionTable extends Migration
         {
             $table-> increments('iddireccion');
             $table-> string('calle',50);
-            $table-> string('numint',50);
+            $table-> string('numint',50)->nullable();
             $table-> string('numext',50);
             $table-> string('colonia',50);
             $table-> string('municipio',50);

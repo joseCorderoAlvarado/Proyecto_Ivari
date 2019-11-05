@@ -18,7 +18,8 @@
 		<div class="input-group-prepend">
 		    <span class="input-group-text" style="border-color: #666699"> <i class="fa fa-user"></i> </span>
 		</div>
-		<input name="nombre" class="form-control" placeholder="Nombre" type="text" style="border-color: #666699">
+		
+		<input name="nombre"  pattern="[A-Za-z]{3}" class="form-control" placeholder="Nombre" type="text" style="border-color: #666699">
 	</div> 
 	</div>
 	<div class="form-group">

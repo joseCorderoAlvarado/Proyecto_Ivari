@@ -4,7 +4,7 @@
 {{-------------------------Registro de Productos---------------------------}}
 <div class="container-fluid">
 <div class="row">
-<div class="col-md-2">
+<div class="col-md-2"style="margin-right: 100px">
   <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
       <a class="nav-link active" href="{{ url('registroProducto')}}">Alta Productos</a>
       <a class="nav-link"  href="{{ url('listaModificarProductos-pagina1')}}">Modificar Productos</a>
@@ -16,8 +16,14 @@
     </div>
 </div>
 
-<div class="col-md-6">
-<div class="card" style="background: transparent;">
+
+<div class="col-md-6" >
+	<center><div class="mensaje2">Recuerda no dejar ningun Espacio vacio</div></center>
+	<center><div class="toggle toggle2">
+            <span>Abrir Formulario</span>
+
+</div></center>
+<div class="card formulario1" style="background: transparent;">
   <article class="card-body" >
 	<h4 class="card-title text-center mb-4 mt-1">Registro de Productos</h4>
 	<hr style="margin-bottom: 40px;">
@@ -88,19 +94,19 @@
 			<span class="input-group-text">Introduce la(s) imagén(es) del producto	</span>
 		<input multiple="multiple"  name="fotos[]" type="file">
         	<div class="container-fluid">
-					<img src="images/LogoIravi.png" class="img-rounded">
+					<img src="images/logoIravi.png" class="img-rounded">
 			</div>
        	</div>
 	 </div>
 
         <div id="form_alert"></div>
-</div>
-	</div>
+        </div>
 	<div class="form-group">
-	<button type="submit" class="btn btn-primary btn-block">Registrar producto</button>
+	<button type="submit" class="formulario_btn">Registrar producto</button>
 	</div>
 	</form>
-	<script src="js/form.js"></script>
+</div>
+
 </article>
 </div>
 </div>

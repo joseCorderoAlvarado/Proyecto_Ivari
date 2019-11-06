@@ -4,7 +4,7 @@
 .container .toggle2 .mensaje{
     display: none;
 }
-.container .toggle:hover {
+.toggle:hover {
     border-top: 2px solid #0075d9;
     border-bottom: 2px solid #0075d9;
 }
@@ -15,8 +15,15 @@
 
 .container .card{
 display: none;
-<<<<<<< HEAD
+
 }
+.mensaje2{
+	font-size: 3em;
+}
+.formulario1{
+display: none;
+}
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 .formulario_input,.formulario_label,.formulario_btn{

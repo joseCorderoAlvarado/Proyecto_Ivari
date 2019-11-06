@@ -16,8 +16,14 @@
     </div>
 </div>
 
+
 <div class="col-md-6">
-<div class="card" style="background: transparent;">
+	<center><div class="Mensaje2">Recuerda no dejar ningun Espacio vacio</div></center>
+	<center><div class="toggle toggle2">
+            <span>Abrir Formulario</span>
+
+</div></center>
+<div class="card formulario1" style="background: transparent;">
   <article class="card-body" >
 	<h4 class="card-title text-center mb-4 mt-1">Registro de Productos</h4>
 	<hr style="margin-bottom: 40px;">
@@ -94,12 +100,13 @@
 	 </div>
 
         <div id="form_alert"></div>
-</div>
-	</div>
+        </div>
 	<div class="form-group">
 	<button type="submit" class="btn btn-primary btn-block">Registrar producto</button>
 	</div>
 	</form>
+</div>
+	
 	<script src="js/form.js"></script>
 </article>
 </div>

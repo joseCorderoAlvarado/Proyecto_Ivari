@@ -7,9 +7,15 @@
 <div class="col-md-4"> </div>
 <div class="col-md-4"> 
 	<br>
-	<center><div class="toggle">
+	<center><div class="toggle toggle2">
             <span>Desplazar</span>
         </div></center><br>
+          <div class="mensaje">
+        	<br><br>
+        	<center><h2 >BIENVENIDO A IRAVI</h2><br>
+        	<h5>COMPRA LAS ARTESANIAS QUE QUIERAS <br>DE NUESTRO CATALOGO Y CUANDO QUIERAS</h5></center>
+        	<br><br><br><br>
+        </div>
 <div class="card" style="width: 25em; height: 25em; border-color: #003366">
   <article class="card-body">
 	<h4 class="card-title text-center mb-4 mt-1" style="color: #003366">Inicio de sesión</h4>

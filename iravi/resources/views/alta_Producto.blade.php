@@ -94,7 +94,7 @@
 			<span class="input-group-text">Introduce la(s) imagén(es) del producto	</span>
 		<input multiple="multiple"  name="fotos[]" type="file">
         	<div class="container-fluid">
-					<img src="images/LogoIravi.png" class="img-rounded">
+					<img src="images/logoIravi.png" class="img-rounded">
 			</div>
        	</div>
 	 </div>
@@ -106,7 +106,7 @@
 	</div>
 	</form>
 </div>
-<script src="js/form.js"></script>
+
 </article>
 </div>
 </div>

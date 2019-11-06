@@ -4,7 +4,7 @@
 {{-------------------------Registro de Productos---------------------------}}
 <div class="container-fluid">
 <div class="row">
-<div class="col-md-2">
+<div class="col-md-2"style="margin-right: 100px">
   <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
       <a class="nav-link active" href="{{ url('registroProducto')}}">Alta Productos</a>
       <a class="nav-link"  href="{{ url('listaModificarProductos-pagina1')}}">Modificar Productos</a>
@@ -17,7 +17,7 @@
 </div>
 
 
-<div class="col-md-6" style="margin-left: 200px">
+<div class="col-md-6" >
 	<center><div class="Mensaje2">Recuerda no dejar ningun Espacio vacio</div></center>
 	<center><div class="toggle toggle2">
             <span>Abrir Formulario</span>

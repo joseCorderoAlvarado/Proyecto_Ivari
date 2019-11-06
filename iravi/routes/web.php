@@ -91,9 +91,11 @@ Route::post('modificarProductoGuardar','modificarProducto@modificar');
 //Seguimiento de pedidos
 Route::get('seguimientoPedidos','seguimientoPedidos@mostrar');
 
-
 //Modificar Usuario de Admin
 Route::get('modificarUsuarioAdm','modificarUsuarioAdm@mostrar');
+
+//Modificar Usuario de Admin
+Route::get('listadoUsuario','listaUsuarios@mostrar');
 
 
 

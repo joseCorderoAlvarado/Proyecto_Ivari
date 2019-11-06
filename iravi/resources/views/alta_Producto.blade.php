@@ -15,19 +15,21 @@
       <a class="nav-link"  href="{{ url('seguimientoPedidos')}}"> Ver Pedidos</a>
     </div>
 </div>
+
 <div class="col-md-6">
-<div class="card">
-  <article class="card-body">
+<div class="card" style="background: transparent;">
+  <article class="card-body" >
 	<h4 class="card-title text-center mb-4 mt-1">Registro de Productos</h4>
-	<hr>
+	<hr style="margin-bottom: 40px;">
 	<form action="registroProductoGuardar" method="post" enctype="multipart/form-data">
 		{{ csrf_field() }}
-	<div class="form-group">
-	<div class="input-group">
+	<div class="form-group" >
+	<div class="input-group" style="background: transparent; margin-bottom: 40px;">
 		<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
 		</div>
-		<input name="nombreproducto" class="form-control" placeholder="Nombre Producto" type="text">
+		<input name="nombreproducto"  class="form-control formulario_input"  type="text">
+		<label class="formulario_label">Nombre del producto</label>
 	</div>
 	</div>
 	<div class="form-group">
@@ -35,14 +37,15 @@
 		<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 		 </div>
-		<textarea name="descripcionproducto" class="form-control" placeholder="Descripción del Producto"></textarea>
+		<textarea name="descripcionproducto"  class="form-control formulario_input" ></textarea>
+		<label class="formulario_label">Descripción del producto</label>
 	</div>
 	</div>
 
-	<div class="form-group">
+	<div class="form-group" >
 	<div class="input-group">
 	<div class="input-group-prepend">
-	   <select  name="fkcategoria" class="custom-select">
+	   <select  name="fkcategoria" class="custom-select ">
          <option selected>Selecciona una Categoria</option>
 		   @foreach ($listaCategoria as $categoria)
          <option value={{ $categoria->idcategoria }}>
@@ -53,7 +56,7 @@
     </div>
     </div>
 
-		<div class="form-group">
+		<div class="form-group"style="margin-bottom: 40px;">
 	<div class="input-group">
 	<div class="input-group-prepend">
 	   <select  name="fkproveedores" class="custom-select">
@@ -73,16 +76,17 @@
         <div class="input-group-prepend">
           <span class="input-group-text" id="validationTooltipUsernamePrepend">$</span>
         </div>
-        <input name="precio" type="text" class="form-control" id="" placeholder="Precio"required>
+        <input name="precio" type="text" class="form-control formulario_input" id="" required>
+        <label class="formulario_label">Precio</label>
     </div>
 	</div>
 
 
-	<div class="form-group">
+	<div class="form-group" align="center">
 	 <div class="photo">
 	 	<div class="input-group">
 			<span class="input-group-text">Introduce la(s) imagén(es) del producto	</span>
-		<input multiple="multiple" name="fotos[]" type="file">
+		<input multiple="multiple"  name="fotos[]" type="file">
         	<div class="container-fluid">
 					<img src="images/LogoIravi.png" class="img-rounded">
 			</div>
@@ -96,9 +100,11 @@
 	<button type="submit" class="btn btn-primary btn-block">Registrar producto</button>
 	</div>
 	</form>
+	<script src="js/form.js"></script>
 </article>
 </div>
 </div>
 </div>
+
 {{-------------------------Fin de login---------------------------}}
 @extends('layouts.footer')

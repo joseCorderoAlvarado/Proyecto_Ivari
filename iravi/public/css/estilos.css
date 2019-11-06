@@ -1,32 +1,9 @@
-* {
-    margin: 0;
-    padding: 0;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-
-
-/**.contenedor-form {
-    background: rgba(0,0,0,.7);
-    max-width: 500px;
-    width: 100%;
-    margin: 48px auto;
-    border-radius: 5px;
-    color: #fff;
-    position: relative;
-    padding: 40px;
-}*/
-.card{
-   
-}
-
 .container .toggle .card{
     display: block;
- }
 }
-
+.container .toggle2 .mensaje{
+    display: none;
+}
 .container .toggle:hover {
     border-top: 2px solid #0075d9;
     border-bottom: 2px solid #0075d9;
@@ -36,21 +13,48 @@
     letter-spacing: 1px;
 }
 
-
-
-
-.container button {
-  
-    transition: all .5s ease;
-}
-
-.container button:hover {
-    background: #007766
-}
-
 .container .card{
 display: none;
+<<<<<<< HEAD
+}
+<<<<<<< HEAD
+
+.formulario_input,.formulario_label,.formulario_btn{
+display: block;
+width: 100%;
+font-size: 1.1em;
+
+}
+.formulario_input{
+    padding: 20px;
+    margin-bottom: -40px;
+    background: transparent;
+}
+.formulario_input:focus + .formulario_label{
+margin-top: -30px;
+}
+.formulario_label{
+    padding-left: 40px;
+    position: absolute;
+    margin-top: 8px;
+    z-index: -20;
+    color: rgba(0,0,0,0.6);
+    transition: all 0.2s;
+}
+.fijar{
+    margin-top: -30px;
 }
 
 
+=======
+.container .mensaje{
+    display: block;
+}
+>>>>>>> a6e9869529daada6cbd6d604f20e17e03974f1b5
+=======
 
+
+.container .mensaje{
+    display: block;
+}
+>>>>>>> a6e9869529daada6cbd6d604f20e17e03974f1b5

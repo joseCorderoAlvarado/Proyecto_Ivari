@@ -28,11 +28,31 @@ display: none;
 <<<<<<< HEAD
 <<<<<<< HEAD
 
-.formulario_input,.formulario_label,.formulario_btn{
+.formulario_input,.formulario_label{
 display: block;
 width: 100%;
 font-size: 1.1em;
 
+}
+.formulario_btn{
+	border: none;
+	width: 350px;
+	display: block;
+	font-family: sans-serif;
+	background: linear-gradient(50deg,#0075d9,#65ff7b,#fbd72d);
+	padding: 20px 20px;
+	text-align: center;
+	margin:auto;
+	color: rgba(0,0,0,0.7);
+	font-size: 18px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	border-radius: 5px;
+	transition: all 300ms;
+}
+.formulario_btn:hover{
+	transform: translateY(10px);
+	box-shadow: 0px 30px 5px -15px rgba(0,0,0,0.3);
 }
 .formulario_input{
     padding: 20px;

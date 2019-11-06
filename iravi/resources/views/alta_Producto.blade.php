@@ -102,7 +102,7 @@
         <div id="form_alert"></div>
         </div>
 	<div class="form-group">
-	<button type="submit" class="btn btn-primary btn-block">Registrar producto</button>
+	<button type="submit" class="formulario_btn">Registrar producto</button>
 	</div>
 	</form>
 </div>

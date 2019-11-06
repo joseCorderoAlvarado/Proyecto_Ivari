@@ -18,7 +18,7 @@
 
 
 <div class="col-md-6" >
-	<center><div class="Mensaje2">Recuerda no dejar ningun Espacio vacio</div></center>
+	<center><div class="mensaje2">Recuerda no dejar ningun Espacio vacio</div></center>
 	<center><div class="toggle toggle2">
             <span>Abrir Formulario</span>
 
@@ -106,8 +106,7 @@
 	</div>
 	</form>
 </div>
-	
-	<script src="js/form.js"></script>
+<script src="js/form.js"></script>
 </article>
 </div>
 </div>

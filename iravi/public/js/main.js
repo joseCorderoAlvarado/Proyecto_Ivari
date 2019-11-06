@@ -1,8 +1,10 @@
 $('.toggle').click(function(){
     $('.card').animate({
-        height: "toggle",
-        'padding-top': 'toggle',
-        'padding-bottom': 'toggle',
-        opacity: 'toggle'
+        height: "toggle"
+    }, "slow");
+});
+$('.toggle2').click(function(){
+    $('.mensaje').animate({
+        height: "toggle"
     }, "slow");
 });

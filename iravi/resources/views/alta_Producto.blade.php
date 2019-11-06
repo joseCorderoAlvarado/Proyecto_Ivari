@@ -17,7 +17,7 @@
 </div>
 
 
-<div class="col-md-6">
+<div class="col-md-6" style="margin-left: 200px">
 	<center><div class="Mensaje2">Recuerda no dejar ningun Espacio vacio</div></center>
 	<center><div class="toggle toggle2">
             <span>Abrir Formulario</span>

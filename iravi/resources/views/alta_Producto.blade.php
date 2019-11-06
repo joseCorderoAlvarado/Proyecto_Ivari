@@ -15,15 +15,7 @@
       <a class="nav-link"  href="{{ url('seguimientoPedidos')}}"> Ver Pedidos</a>
     </div>
 </div>
-<center>
-	<a href="#">
-	<div class="toogle toogle2">
-		<span>
-			Ver Formulario
-		</span>
-	</div>
-	</a>
-</center>
+
 <div class="col-md-6">
 <div class="card" style="background: transparent;">
   <article class="card-body" >
@@ -105,7 +97,7 @@
 </div>
 	</div>
 	<div class="form-group">
-	<button type="submit" class="btn btn-primary btn-block formulario_btn">Registrar producto</button>
+	<button type="submit" class="btn btn-primary btn-block">Registrar producto</button>
 	</div>
 	</form>
 	<script src="js/form.js"></script>

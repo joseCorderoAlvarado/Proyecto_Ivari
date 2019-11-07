@@ -37,7 +37,7 @@ class registroUsuario extends Controller
 		$ultimoidpersona=$persona->id;
 		$usuario = new usuario;
 		$usuario->idusuario = $datos->input('idusuario');
-		$usuario->contrasena = $datos->input('contraseña');
+		$usuario->contraseña = $datos->input('contraseña');
 		$usuario->fkpersona =  $ultimoidpersona;
 		$usuario->fkrol = 3;
 		$usuario->save();
@@ -75,7 +75,7 @@ class registroUsuario extends Controller
 		$ultimoidpersona=$persona->id;
 		$usuario = new usuario;
 		$usuario->idusuario = $datos->input('idusuario');
-		$usuario->contrasena = $datos->input('contraseña');
+		$usuario->contraseña = $datos->input('contraseña');
 		$usuario->fkpersona =  $ultimoidpersona;
 		$usuario->fkrol = 1;
 		$usuario->save();

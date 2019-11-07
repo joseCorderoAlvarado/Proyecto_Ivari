@@ -27,7 +27,7 @@
 		<div class="input-group-prepend">
 		    <span class="input-group-text" style="border-color: #666699"> <i class="fa fa-user"></i> </span>
 		</div>
-		<input id="username" name="txtUsuario" class="form-control formulario-input"  type="email" style="border-color: #666699">
+		<input id="username" name="txtUsuario" class="form-control formulario-input"  type="email" style="border-color: #666699" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
 		<label class="formulario-label">Correo electrónico</label>
 	</div> 
 	</div> 
@@ -36,7 +36,7 @@
 		<div class="input-group-prepend">
 		    <span class="input-group-text" style="border-color: #666699"> <i class="fa fa-lock"></i> </span>
 		 </div>
-	    <input id="password" name="txtContrasena" class="form-control formulario-input" type="password" style="border-color: #666699" >
+	    <input id="password" name="txtContrasena" class="form-control formulario-input" type="password" style="border-color: #666699" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Debe contener al menos un n'umero, una minúscula, una mayúscula y un símbolo.">
 	    <label class="formulario-label">*******</label>
 	</div>
 	

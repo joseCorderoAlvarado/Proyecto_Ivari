@@ -3,7 +3,7 @@
 <div class="row">
 <div class="col-md-12">
 <nav class="navbar navbar-expand-lg	navbar-light bg-light" style="background-color: #92d050 !important">
-	<img src="images/logoIravi.png" width="30" height="30"	class="d-inline-block align-top" alt="">
+	<img src="images/iravi.png" width="30" height="30"	class="d-inline-block align-top" alt="">
 	<a	class="navbar-brand" href="#" style="color: #003366"><b>Artesanias Iravi</b></a>
 	<button	class="navbar-toggler"	type="button"	data-toggle="collapse"data-target="#navbarSupportedContent"	aria-controls="navbarSupportedContent" aria-expanded="false"	aria-label="Toggle	navigation">
 	<span class="navbar-toggler-icon"></span>
@@ -22,7 +22,7 @@
             <a class="dropdown-item" href="{{ url('CerrarSesion')}}">Cerrar sesión</a>
             </li>
 			<li	class="nav-item">
-				<a	class="nav-link">Bienvenido</a>
+				<a	class="nav-link" style="color: #fff">Bienvenido</a>
 			</li>
 			<a href="#">
 			<img src="images/iconoCarrito.png" width="30" height="30"	class="d-inline-block align-top">

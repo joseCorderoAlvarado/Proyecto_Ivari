@@ -92,7 +92,7 @@ Route::post('modificarProductoGuardar','modificarProducto@modificar');
 Route::get('seguimientoPedidos','seguimientoPedidos@mostrar');
 
 //Modificar Usuario de Admin
-Route::get('modificarUsuarioAdm','modificarUsuarioAdm@mostrar');
+Route::post('modificarUsuarioAdm','modificarUsuarioAdm@mostrar');
 
 //Modificar Usuario de Admin
 Route::get('listadoUsuario','listaUsuarios@mostrar');

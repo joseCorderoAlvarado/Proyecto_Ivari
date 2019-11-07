@@ -3,10 +3,20 @@
 @extends('layouts.head')
 @include('layouts.menu_Navegacion')
 {{-------------------------Alta Usuarios Administrador---------------------------}}
-<div class="container-fluid">
+<div class="container">	
 <div class="row">
-<div class="col-md-2"></div>	
-<div class="col-md-8"> 
+<div class="col-md-4"> </div>
+<div class="col-md-4"> 
+	<br>
+	<center><div class="toggle toggle2">
+            <span>Desplazar</span>
+        </div></center><br>
+          <div class="mensaje">
+        	<br><br>
+        	<center><h2 >BIENVENIDO A IRAVI</h2><br>
+        	<h5>COMPRA LAS ARTESANIAS QUE QUIERAS <br>DE NUESTRO CATALOGO Y CUANDO QUIERAS</h5></center>
+        	<br><br><br><br>
+        </div>
 <div class="card" style="border-color: #003366">
   <article class="card-body">
 	<h4 class="card-title text-center mb-4 mt-1" style="color: #003366">Registro Usuario </h4>
@@ -191,6 +201,7 @@
 	</form>
 </article>
 </div>
+<div class="col-md-4"></div>
 </div>
 </div>
 {{-------------------------Fin de alta usuario administrador---------------------------}}

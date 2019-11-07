@@ -27,7 +27,8 @@
 		<div class="input-group-prepend">
 		    <span class="input-group-text" style="border-color: #666699"> <i class="fa fa-user"></i> </span>
 		</div>
-		<input id="username" name="txtUsuario" class="form-control" placeholder="Correo electronico" type="email" style="border-color: #666699">
+		<input id="username" name="txtUsuario" class="form-control formulario-input"  type="email" style="border-color: #666699">
+		<label class="formulario-label">Correo electrónico</label>
 	</div> 
 	</div> 
 	<div class="form-group">
@@ -35,11 +36,13 @@
 		<div class="input-group-prepend">
 		    <span class="input-group-text" style="border-color: #666699"> <i class="fa fa-lock"></i> </span>
 		 </div>
-	    <input id="password" name="txtContrasena" class="form-control" placeholder="******" type="password" style="border-color: #666699" >
+	    <input id="password" name="txtContrasena" class="form-control formulario-input" type="password" style="border-color: #666699" >
+	    <label class="formulario-label">*******</label>
 	</div>
+	
 	</div>
 	<div class="form-group">
-	<button name="btnInicioSesion" type="submit" class="btn btn-primary btn-block" style="border-color: #003366; background-color: #003366">Iniciar sesión</button>
+	<button name="btnInicioSesion" type="submit" class="formulario-btn" style="border-color: #003366; background-color: #003366">Iniciar sesión</button>
 	</div>
 	<p class="text-center"><a href="#" class="btn">¿Olvidaste la Contraseña?</a></p>
 	</form>

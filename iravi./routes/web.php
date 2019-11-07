@@ -88,6 +88,7 @@ Route::post('modificarProductoGuardar','modificarProducto@modificar');
 
 
 
+
 //Seguimiento de pedidos
 Route::get('seguimientoPedidos','seguimientoPedidos@mostrar');
 
@@ -97,6 +98,8 @@ Route::post('modificarUsuarioAdm','modificarUsuarioAdm@mostrar');
 //Modificar Usuario de Admin
 Route::get('listadoUsuario','listaUsuarios@mostrar');
 
+//Guardar cambios usuario
+Route::post('guardarCambiosUsuario','modificarUsuarioAdm@guardar');
 
 
 

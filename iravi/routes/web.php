@@ -88,6 +88,7 @@ Route::post('modificarProductoGuardar','modificarProducto@modificar');
 
 
 
+
 //Seguimiento de pedidos
 Route::get('seguimientoPedidos','seguimientoPedidos@mostrar');
 

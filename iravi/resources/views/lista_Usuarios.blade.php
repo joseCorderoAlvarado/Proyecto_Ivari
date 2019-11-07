@@ -32,8 +32,9 @@
 					<td>{{ $usuarios->nombrecompleto }}</td>
 					<td>{{ $usuarios->correoelectronico }}</td>
 					<td>{{ $usuarios->rol }}</td>
-					<td><form action="modificarProducto" method="post" enctype="multipart/form-data">
-	 				<input type="hidden" name="id" value={{ $usuarios->idpersona }}>
+					<td><form action="modificarUsuarioAdm" method="post" enctype="multipart/form-data">
+							{{ csrf_field() }}
+							<input type="hidden" name="id" value={{ $usuarios->idpersona }}>
 					<CENTER> <button type="submit" class="btn btn-primary btn-block">Modificar</button>  </CENTER>
 
 	</form></td>

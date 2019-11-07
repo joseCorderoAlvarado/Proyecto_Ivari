@@ -68,13 +68,14 @@ class registroUsuario extends Controller
 		}
 		else
 		{
-			return view ('altaUsuarios');
+			return view ('registroUsuarioAdmin');
 		}
 	}	
 
 	public function guardarAdmin(Request $datos)
 	{
 		//dd($datos->all());
+
 		$persona = new persona;
 		$persona->nombrepersona=$datos->input('nombre');
 		$persona->apellidopaterno=$datos->input('app');
@@ -88,7 +89,9 @@ class registroUsuario extends Controller
 		$usuario = new usuario;
 		$usuario->idusuario = $datos->input('idusuario');
 		$usuario->contrasena = $datos->input('contraseña');
-		$usuario->fkpersona =  $ultimoidpersona;
+
+		$datosT= persona::all();
+		$usuario->fkpersona =  var_dump($datoT->last());
 		$usuario->fkrol = 1;
 		$usuario->save();
 		$direccion = new direccion;
@@ -104,10 +107,11 @@ class registroUsuario extends Controller
 		$direccion->save();
 		$ultimoiddireccion=$direccion->id;
 		$detallepersonadireccion= new detallepersonadireccion;
-		$detallepersonadireccion->fkpersona=$ultimoidpersona;
+
+		$detallepersonadireccion->fkpersona=var_dump($datoT->last());
 		$detallepersonadireccion->fk_direccion=$ultimoiddireccion;
 		$detallepersonadireccion->save();
-		return redirect('altaUsuarios');
+		return redirect('registroUsuarioAdmin');
 	}	
 }
 ?>

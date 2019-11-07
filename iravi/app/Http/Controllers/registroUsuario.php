@@ -58,6 +58,18 @@ class registroUsuario extends Controller
 		$detallepersonadireccion->fk_direccion=$ultimoiddireccion;
 		$detallepersonadireccion->save();
 		return redirect('registroUsuario');
+	}
+
+	public function mostrarAdmin()
+	{
+		if (session()->has('S_Rol') ) 
+		{
+			return redirect ('/');
+		}
+		else
+		{
+			return view ('altaUsuarios');
+		}
 	}	
 
 	public function guardarAdmin(Request $datos)
@@ -95,7 +107,7 @@ class registroUsuario extends Controller
 		$detallepersonadireccion->fkpersona=$ultimoidpersona;
 		$detallepersonadireccion->fk_direccion=$ultimoiddireccion;
 		$detallepersonadireccion->save();
-		return redirect('registroUsuario');
+		return redirect('altaUsuarios');
 	}	
 }
 ?>

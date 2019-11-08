@@ -7,8 +7,8 @@
 	 <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
       <a class="nav-link" href="{{ url('registroProducto')}}">Alta Productos</a>
       <a class="nav-link"  href="{{ url('listaModificarProductos-pagina1')}}">Modificar Productos</a>
-      <a class="nav-link active"  href="{{ url('registroUsuarioAdmin')}}">Alta Usuario</a>
-      <a class="nav-link" href="{{ url('modificarUsuarioAdm')}}">Modificar Usuario</a>
+      <a style="background: #003366" class="nav-link active"  href="{{ url('registroUsuarioAdmin')}}">Alta Usuario</a>
+      <a class="nav-link" href="{{ url('listadoUsuario')}}">Modificar Usuario</a>
       <a class="nav-link" href="{{ url('altaProveedores')}}">Alta Proveedores</a>
       <a class="nav-link" href="{{ url('historialVentas')}}"> Ver Ventas</a>
       <a class="nav-link"  href="{{ url('seguimientoPedidos')}}"> Ver Pedidos</a>

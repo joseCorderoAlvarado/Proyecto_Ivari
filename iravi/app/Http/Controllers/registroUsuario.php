@@ -31,7 +31,7 @@ $persona->telefono=$datos->input('telefono');
 $persona->correoelectronico=$datos->input('correo');
 $persona->fkgenero=$datos->input('genero');
 $persona->save();
-$ultimoidpersona=$persona->id;
+$ultimoidpersona=$persona->idpersona;
 $usuario = new usuario;
 $usuario->idusuario = $datos->input('idusuario');
 $usuario->contrasena = $datos->input('contraseña');

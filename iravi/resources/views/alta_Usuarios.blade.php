@@ -19,7 +19,7 @@
 	  <article class="card-body">
 		<h4 class="card-title text-center mb-4 mt-1" style="color: #003366">Registro Usuario </h4>
 		<hr style="border-color: #666699">
-			<form action="#" method="post" enctype="multipart/form-data">
+			<form action="registroUsuarioAdminGuardar" method="post" enctype="multipart/form-data">
 		{{ csrf_field() }}
 		<div class="form-group">
 		<div class="input-group">

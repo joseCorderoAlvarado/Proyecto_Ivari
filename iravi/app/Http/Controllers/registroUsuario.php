@@ -14,10 +14,8 @@ public function mostrar(){
 if (session()->has('S_Rol') ) {
 	return redirect ('/');
 	}else{
-
 		return view ('registroUsuario');
 	}
-
 }
 
 public function guardar(Request $datos){
@@ -56,5 +54,6 @@ $detallepersonadireccion->fk_direccion=$ultimoiddireccion;
 $detallepersonadireccion->save();
 return redirect('registroUsuario');
 }
+
 }
 ?>

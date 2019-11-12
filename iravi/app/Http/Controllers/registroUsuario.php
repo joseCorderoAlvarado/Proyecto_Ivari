@@ -34,7 +34,7 @@ class registroUsuario extends Controller
 		$persona->correoelectronico=$datos->input('correo');
 		$persona->fkgenero=$datos->input('genero');
 		$persona->save();
-		$ultimoidpersona=$persona->id;
+		$ultimoidpersona=$persona->idpersona;
 		$usuario = new usuario;
 		$usuario->idusuario = $datos->input('idusuario');
 		$usuario->contrasena = $datos->input('contraseña');
@@ -89,9 +89,7 @@ class registroUsuario extends Controller
 		$usuario = new usuario;
 		$usuario->idusuario = $datos->input('idusuario');
 		$usuario->contrasena = $datos->input('contraseña');
-
-		$datosT= persona::all();
-		$usuario->fkpersona =  var_dump($datoT->last());
+		$usuario->fkpersona =  $ultimoidpersona;
 		$usuario->fkrol = 1;
 		$usuario->save();
 		$direccion = new direccion;
@@ -108,7 +106,7 @@ class registroUsuario extends Controller
 		$ultimoiddireccion=$direccion->id;
 		$detallepersonadireccion= new detallepersonadireccion;
 
-		$detallepersonadireccion->fkpersona=var_dump($datoT->last());
+		$detallepersonadireccion->fkpersona=$ultimoidpersona;
 		$detallepersonadireccion->fk_direccion=$ultimoiddireccion;
 		$detallepersonadireccion->save();
 		return redirect('registroUsuarioAdmin');

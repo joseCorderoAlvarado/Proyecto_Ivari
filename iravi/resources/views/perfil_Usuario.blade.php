@@ -61,7 +61,7 @@
 			</center>
 			<br>
 			<br>
-			<div class="card formulario1" style="background: transparent;">
+			<div class="card formulario1" style="background: transparent;"
   				<article class="card-body" >
 					<h4 class="card-title text-center mb-4 mt-1">Mi perfil</h4>
 					<hr style="margin-bottom: 40px;">
@@ -77,7 +77,7 @@
 								</div>
 								
 								<div class="col-7">
-									<input id="text"type="text" name="txtNombre" readonly="true" value={{ $usuarioDatos[0]->nombrepersona }}>
+									<input id="text"type="text" name="txtNombre" placeholder="Javier Agustin" readonly="true" style="width: 400px">
 								</div>
 								<div class="col-1">
 									&rarr;
@@ -90,7 +90,7 @@
 								</div>
 								
 								<div class="col-7">
-									<input id="text" type="text" name="txtApellidoP" contenteditable="false" value={{ $usuarioDatos[0]->apellidopaterno }}>
+									<input id="text" type="text" name="txtApellidoP" placeholder="Ramirez" contenteditable="false" style="width: 400px">
 								</div>
 								<div class="col-1">
 									&rarr;
@@ -103,7 +103,7 @@
 								</div>
 				
 								<div class="col-7">
-									<input id="text" type="text" name="txtApellidoM" contenteditable="false" value={{ $usuarioDatos[0]->apellidomaterno }}>
+									<input id="text" type="text" name="txtApellidoM" placeholder="Martinez" contenteditable="false" style="width: 400px">
 								</div>
 								<div class="col-1">
 									&rarr;
@@ -112,102 +112,98 @@
 						</div>
 		
 						<div class="form-title">
+							<br>
+							<br>
 							<h5 id="text">Datos del domicilio</h5>
 						</div>
 			
 						<div class="form-group" style="background-color: #E0E0E0;">
 							<div class="row">
-								<div class="col-6">
+								<div class="col-2">
 									<label id="text">Calle:</label>
 								</div>
-								<div class="col-6">
-									<input id="text" type="text" name="txtCalle" contenteditable="false" >
+								<div class="col-4">
+									<input id="text" type="text" name="txtCalle" placeholder="Aldama" contenteditable="false" >
 								</div>
-							</div>
-							<div class="row">
-								<div class="col-6">
+								<div class="col-2">
 									<label id="text" >N&uacute;mero:</label>
 								</div>
-								<div class="col-6">
-									<input id="text" type="text" name="txtNumero" contenteditable="false" >
+								<div class="col-2">
+									<input id="text" type="text" name="txtNumero" placeholder="#492" contenteditable="false" >
 								</div>
 							</div>
 							<div class="row">
-								<div class="col-6">
+								<div class="col-2">
 									<label id="text">Colonia:</label>
 								</div>
-								<div class="col-6">
-									<input id="text" type="text" name="txtColonia" contenteditable="false">
+								<div class="col-4">
+									<input id="text" type="text" name="txtColonia" placeholder="Amado Nervo" contenteditable="false">
 								</div>
-							</div>
-							<div class="row">
-								<div class="col-6">
+								<div class="col-2">
 									<label id="text" >C&oacute;digo P&oacute;stal:</label>
 								</div>
-								<div class="col-6">
-									<input id="text" type="text" name="txtCodigoP" contenteditable="false" >
+								<div class="col-2">
+									<input id="text" type="text" name="txtCodigoP" placeholder="63940" contenteditable="false" >
 								</div>
 							</div>
 							<div class="row">
-								<div class="col-6">
+								
+							</div>
+							<div class="row">
+								<div class="col-2">
 									<label id="text">Municipio:</label>
 								</div>
-								<div class="col-6">
-									<input id="text" type="text" name="txtMunicipio" contenteditable="false" >
+								<div class="col-4">
+									<input id="text" type="text" name="txtMunicipio" placeholder="Ixtlán del Rio" contenteditable="false" >
 								</div>
-							</div>
-							<div class="row">
-								<div class="col-6">
+								<div class="col-2">
 									<label id="text">Estado:</label>
 								</div>
-								<div class="col-6">
-									<input id="text" type="text" name="txtEstado" contenteditable="false" >
+								<div class="col-2">
+									<input id="text" type="text" name="txtEstado" placeholder="Nayarit" contenteditable="false" >
+								</div>
+								
+							</div>
+							<div class="row">
+								<div class="col-12">
+									<br>
+									<center>
+										<button id="button" class="btn btn-primary">Modificar direcci&oacute;n</button>
+									</center>
 								</div>
 							</div>
 						</div>
+						<div class="form-title" style="color: blue">
+							Agregar otra dirección
+						</div>
 
 						<div class="form-title">
+							<br>
+							<br>
 							<h5 id="text">Datos de usuario</h5>
 						</div>
 		
 						<div class="form-group" style="background-color: #E0E0E0;">
 							<div class="row">
-								<div class="col-4">
+								<div class="col-2">
 									<label id="text">Correo electr&oacute;nico:</label>
 								</div>
-								<div class="col-7">
-									<input id="text" type="text" name="txtCorreoE"  contenteditable="false" value={{ $usuarioDatos[0]->correoelectronico }}>
+								<div class="col-9">
+									<input id="text" type="text" name="txtCorreoE" placeholder="javier_agustinrm@hotmail.com" contenteditable="false" style="width: 500px">
 								</div>
 								<div class="col-1">
 									&rarr;
 								</div>
 							</div>
 							<div class="row">
-								<div class="col-4">
+								<div class="col-2">
 									<label id="text">Contrase&ntilde;a:</label>
 								</div>
-								<div class="col-7">
-									<input id="text" type="password" name="txtContraseña" contenteditable="false">
+								<div class="col-9">
+									<input id="text" type="password" name="txtContraseña" placeholder="*****" contenteditable="false">
 								</div>
 								<div class="col-1">
 									&rarr;
-								</div>
-							</div>
-						</div>
-
-						<div class="form-group">
-							<div class="row">
-								<div class="col-3">
-									
-								</div>
-								<div class="col-3">
-									<button id="button" class="btn btn-primary">Modificar datos</button>
-								</div>
-								<div class="col-3">
-									<button id="button" class="btn btn-primary">Guardar</button>	
-								</div>
-								<div class="col-3">
-								
 								</div>
 							</div>
 						</div>

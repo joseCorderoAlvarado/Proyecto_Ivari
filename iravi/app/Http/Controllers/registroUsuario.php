@@ -14,10 +14,8 @@ public function mostrar(){
 if (session()->has('S_Rol') ) {
 	return redirect ('/');
 	}else{
-
 		return view ('registroUsuario');
 	}
-
 }
 
 public function guardar(Request $datos){
@@ -31,7 +29,7 @@ $persona->telefono=$datos->input('telefono');
 $persona->correoelectronico=$datos->input('correo');
 $persona->fkgenero=$datos->input('genero');
 $persona->save();
-$ultimoidpersona=$persona->id;
+$ultimoidpersona=$persona->idpersona;
 $usuario = new usuario;
 $usuario->idusuario = $datos->input('idusuario');
 $usuario->contrasena = $datos->input('contraseña');
@@ -56,5 +54,6 @@ $detallepersonadireccion->fk_direccion=$ultimoiddireccion;
 $detallepersonadireccion->save();
 return redirect('registroUsuario');
 }
+
 }
 ?>

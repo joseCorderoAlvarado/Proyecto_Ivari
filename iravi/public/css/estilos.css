@@ -15,19 +15,13 @@
     letter-spacing: 1px;
 }
 
-.container .card{
-display: none;
 
-}
-.mensaje2{
+.mensaje{
 	font-size: 3em;
 }
 .formulario1{
 display: none;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-
 .formulario_input,.formulario_label{
 display: block;
 width: 100%;
@@ -39,11 +33,11 @@ font-size: 1.1em;
 	width: 350px;
 	display: block;
 	font-family: sans-serif;
-	background: linear-gradient(50deg,#0075d9,#65ff7b,#fbd72d);
+	background: #003366;
 	padding: 20px 20px;
 	text-align: center;
 	margin:auto;
-	color: rgba(0,0,0,0.7);
+	color: #fff;
 	font-size: 18px;
 	text-transform: uppercase;
 	letter-spacing: 2px;
@@ -182,9 +176,8 @@ font-family: sans-serif;
 .container .mensaje{
     display: block;
 }
->>>>>>> a6e9869529daada6cbd6d604f20e17e03974f1b5
-=======
 
+<<<<<<< HEAD
 
 .container .mensaje{
     display: block;
@@ -192,3 +185,5 @@ font-family: sans-serif;
 >>>>>>> a6e9869529daada6cbd6d604f20e17e03974f1b5
 
 
+==========
+>>>>>>> 70f1a89ca4b62a1ab27efa3712498fd607e82b5f

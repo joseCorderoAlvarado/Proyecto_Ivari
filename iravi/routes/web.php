@@ -15,8 +15,11 @@
 
 //Este index controla todos
 Route::get('/','index@mostrar');
-Route::get('/pagina{p}',['uses' =>'index@mostrarPaginacion']);
+Route::get('pagina%{p}',['uses' =>'index@mostrarPaginacion']);
 
+//Buscar
+Route::post('buscarProducto','buscarProducto@mostrar');
+Route::get('busqueda%nombre%{n}%pagina%{p}',['uses' =>'buscarProducto@mostrarPaginacion']);
 
 //Controladores del registro de usuario
 Route::get('registroUsuario','registroUsuario@mostrar');
@@ -60,7 +63,8 @@ Route::Get('descripcionProducto','descripcionProducto@mostrar'); //Khe?
 
 
 //Alta de usuario de amdin
-Route::Get('registroUsuarioAdmin','registroUsuarioAdmin@mostrar');
+Route::Get('registroUsuarioAdmin','registroUsuario@mostrarAdmin');
+Route::post('registroUsuarioAdminGuardar','registroUsuario@guardarAdmin');
 
 
 //Historial de ventas
@@ -88,15 +92,18 @@ Route::post('modificarProductoGuardar','modificarProducto@modificar');
 
 
 
+
 //Seguimiento de pedidos
 Route::get('seguimientoPedidos','seguimientoPedidos@mostrar');
 
 //Modificar Usuario de Admin
-Route::get('modificarUsuarioAdm','modificarUsuarioAdm@mostrar');
+Route::post('modificarUsuarioAdm','modificarUsuarioAdm@mostrar');
 
 //Modificar Usuario de Admin
 Route::get('listadoUsuario','listaUsuarios@mostrar');
 
+//Guardar cambios usuario
+Route::post('guardarCambiosUsuario','modificarUsuarioAdm@guardar');
 
 
 

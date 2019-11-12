@@ -8,10 +8,11 @@
 	   <div class="col-md-4"></div>
 		<div class="col-md-4"></div>
         <div class="col-md-4">
-          <form>
+          <form action="buscarProducto" method="post" enctype="multipart/form-data">
+		{{ csrf_field() }}
             <div class="card-body row no-gutters align-items-center">
              <div class="col">
-              <input class="form-control" type="search" placeholder="Buscar">
+              <input class="form-control" type="search" placeholder="Buscar" name="txtBuscar">
              </div>
             <div class="col-auto">
             <button class="btn" type="submit">
@@ -64,24 +65,24 @@
 
 	 		@if ($i==1)
 				@if ($paginaActual==1)
-        <li class="page-item disabled">
+        		<li class="page-item disabled">
 					<a class="page-link" href="#" aria-label="Previous">
 					<span aria-hidden="true">&laquo;</span>
 					</a>
 			 </li>
       	@else
 				<li class="page-item">
-					<a class="page-link" href="/pagina{{$paginaActual-1}}" aria-label="Previous">
+					<a class="page-link" href="{{$rutaPaginacion}}{{$paginaActual-1}}" aria-label="Previous">
 					<span aria-hidden="true">&laquo;</span>
 					</a>
 			 </li>
 			@endif
-  	@endif
+  		@endif
 
 		@if ($i==$paginaActual)
 		<li class="page-item active"><a class="page-link">{{$i}}</a></li>
 		@else
-		<li class="page-item"><a class="page-link" href="/pagina{{$i}}">{{$i}}</a></li>
+		<li class="page-item"><a class="page-link" href="{{$rutaPaginacion}}{{$i}}">{{$i}}</a></li>
     @endif
 
 
@@ -95,7 +96,7 @@
 						 </li>
 			      @else
 							<li class="page-item">
-								<a class="page-link" href="/pagina{{$paginaActual+1}}" aria-label="Next">
+								<a class="page-link" href="{{$rutaPaginacion}}{{$paginaActual+1}}" aria-label="Next">
 								<span aria-hidden="true">&raquo;</span>
 								</a>
 						 </li>

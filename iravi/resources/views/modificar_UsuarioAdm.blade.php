@@ -8,7 +8,7 @@
       <a class="nav-link" href="{{ url('registroProducto')}}">Alta Productos</a>
       <a class="nav-link"  href="{{ url('listaModificarProductos-pagina1')}}">Modificar Productos</a>
       <a class="nav-link"  href="{{ url('registroUsuarioAdmin')}}">Alta Usuario</a>
-      <a class="nav-link active" href="{{ url('modificarUsuarioAdm')}}">Modificar Usuario</a>
+      <a style="background: #003366" class="nav-link active" href="{{ url('listadoUsuario')}}">Modificar Usuario</a>
       <a class="nav-link" href="{{ url('altaProveedores')}}">Alta Proveedores</a>
       <a class="nav-link" href="{{ url('historialVentas')}}"> Ver Ventas</a>
       <a class="nav-link"  href="{{ url('seguimientoPedidos')}}"> Ver Pedidos</a>
@@ -19,13 +19,19 @@
   <article class="card-body">
 	<h4 class="card-title text-center mb-4 mt-1">Modificar Usuario </h4>
 	<hr>
-	<form>
-	<div class="form-group">
+		<form action="guardarCambiosUsuario" method="post" enctype="multipart/form-data">
+			{{ csrf_field() }}
+
+			<input type="hidden" name="idp" value={{ $modificar[0]->idpersona }}>
+		<input type="hidden" name="idu" value={{ $modificar[0]->idusuario }}>
+
+
+		<div class="form-group">
 	<div class="input-group">
 		<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
 		</div>
-		<input name="" class="form-control" placeholder="Nombre" type="text">
+		<input name="nombrepersona" class="form-control" placeholder="Nombre" type="text" value="{{ $modificar[0]->nombrepersona }}">
 	</div>
 	</div>
 	<div class="form-group">
@@ -33,7 +39,7 @@
 		<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 		 </div>
-		<input name="" class="form-control" placeholder="Apellido Paterno">
+		<input name="apellidopaterno" class="form-control" placeholder="Apellido Paterno" value="{{ $modificar[0]->apellidopaterno }}">
 	</div>
 	</div>
 	<div class="form-group">
@@ -41,32 +47,25 @@
 		<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 		 </div>
-		<input name="" class="form-control" placeholder="Apellido Materno">
-	</div>
-	</div>
-	<div class="form-group">
-	<div class="input-group">
-		<div class="input-group-prepend">
-		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-		 </div>
-		<input name="" class="form-control" placeholder="Usuario">
-	</div>
-	</div>
-	<div class="form-group">
-	<div class="input-group">
-		<div class="input-group-prepend">
-		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-		 </div>
-		<input name="" class="form-control" placeholder="Contraseña">
+		<input name="apellidomaterno" class="form-control" placeholder="Apellido Materno" value="{{ $modificar[0]->apellidomaterno }}">
 	</div>
 	</div>
 
+	<div class="form-group">
+	<div class="input-group">
+		<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+		 </div>
+		<input name="contrasena" class="form-control" placeholder="Contraseña">
 	</div>
+	</div>
+
 	<div class="form-group">
 	<button type="submit" class="btn btn-primary btn-block">Modificar</button>
 	</div>
 	</form>
 </article>
+</div>
 </div>
 </div>
 </div>

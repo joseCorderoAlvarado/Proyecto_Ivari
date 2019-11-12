@@ -5,9 +5,9 @@
 	<div class="col-md-2">
 	<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
       <a class="nav-link" href="{{ url('registroProducto')}}">Alta Productos</a>
-      <a class="nav-link active"  href="{{ url('listaModificarProductos-pagina1')}}">Modificar Productos</a>
+      <a class="nav-link"  href="{{ url('listaModificarProductos-pagina1')}}">Modificar Productos</a>
       <a class="nav-link"  href="{{ url('registroUsuarioAdmin')}}">Alta Usuario</a>
-      <a class="nav-link" href="{{ url('modificarUsuarioAdm')}}">Modificar Usuario</a>
+      <a style="background: #003366" class="nav-link active" href="{{ url('listadoUsuario')}}">Modificar Usuario</a>
       <a class="nav-link" href="{{ url('altaProveedores')}}">Alta Proveedores</a>
       <a class="nav-link" href="{{ url('historialVentas')}}"> Ver Ventas</a>
       <a class="nav-link"  href="{{ url('seguimientoPedidos')}}"> Ver Pedidos</a>
@@ -32,8 +32,9 @@
 					<td>{{ $usuarios->nombrecompleto }}</td>
 					<td>{{ $usuarios->correoelectronico }}</td>
 					<td>{{ $usuarios->rol }}</td>
-					<td><form action="modificarProducto" method="post" enctype="multipart/form-data">
-	 				<input type="hidden" name="id" value={{ $usuarios->idpersona }}>
+					<td><form action="modificarUsuarioAdm" method="post" enctype="multipart/form-data">
+							{{ csrf_field() }}
+							<input type="hidden" name="id" value={{ $usuarios->idpersona }}>
 					<CENTER> <button type="submit" class="btn btn-primary btn-block">Modificar</button>  </CENTER>
 
 	</form></td>

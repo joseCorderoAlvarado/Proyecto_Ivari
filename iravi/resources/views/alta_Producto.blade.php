@@ -6,31 +6,32 @@
 <div class="row">
 <div class="col-md-2"style="margin-right: 100px">
   <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-      <a class="nav-link active" href="{{ url('registroProducto')}}">Alta Productos</a>
-      <a class="nav-link"  href="{{ url('listaModificarProductos-pagina1')}}">Modificar Productos</a>
-      <a class="nav-link"  href="{{ url('registroUsuarioAdmin')}}">Alta Usuario</a>
-      <a class="nav-link" href="{{ url('modificarUsuarioAdm')}}">Modificar Usuario</a>
-      <a class="nav-link" href="{{ url('altaProveedores')}}">Alta Proveedores</a>
-      <a class="nav-link" href="{{ url('historialVentas')}}"> Ver Ventas</a>
-      <a class="nav-link"  href="{{ url('seguimientoPedidos')}}"> Ver Pedidos</a>
+      <a style="background: #003366" class="nav-link active" href="{{ url('registroProducto')}}">Alta Productos</a>
+      <a  class="nav-link"  href="{{ url('listaModificarProductos-pagina1')}}">Modificar Productos</a>
+      <a  class="nav-link"  href="{{ url('registroUsuarioAdmin')}}">Alta Usuario</a>
+      <a  class="nav-link" href="{{ url('listadoUsuario')}}">Modificar Usuario</a>
+      <a  class="nav-link" href="{{ url('altaProveedores')}}">Alta Proveedores</a>
+      <a  class="nav-link" href="{{ url('historialVentas')}}"> Ver Ventas</a>
+      <a  class="nav-link"  href="{{ url('seguimientoPedidos')}}"> Ver Pedidos</a>
     </div>
 </div>
 
 
 <div class="col-md-6" >
-	<center><div class="Mensaje2">Recuerda no dejar ningun Espacio vacio</div></center>
+	
 	<center><div class="toggle toggle2">
             <span>Abrir Formulario</span>
 
 </div></center>
-<div class="card formulario1" style="background: transparent;">
+<center><div class="mensaje">Recuerda no dejar ning&uacute;n espacio vac&iacute;o</div></center>
+<div class="card formulario1" style="background: transparent; margin-bottom: 40px;">
   <article class="card-body" >
 	<h4 class="card-title text-center mb-4 mt-1">Registro de Productos</h4>
-	<hr style="margin-bottom: 40px;">
+	<hr style="margin-top: 40px;">
 	<form action="registroProductoGuardar" method="post" enctype="multipart/form-data">
 		{{ csrf_field() }}
 	<div class="form-group" >
-	<div class="input-group" style="background: transparent; margin-bottom: 40px;">
+	<div class="input-group" style="background: transparent; margin-top: 40px;">
 		<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
 		</div>
@@ -94,7 +95,7 @@
 			<span class="input-group-text">Introduce la(s) imagén(es) del producto	</span>
 		<input multiple="multiple"  name="fotos[]" type="file">
         	<div class="container-fluid">
-					<img src="images/LogoIravi.png" class="img-rounded">
+					<img src="images/logoIravi.png" class="img-rounded">
 			</div>
        	</div>
 	 </div>
@@ -106,8 +107,7 @@
 	</div>
 	</form>
 </div>
-	
-	<script src="js/form.js"></script>
+
 </article>
 </div>
 </div>

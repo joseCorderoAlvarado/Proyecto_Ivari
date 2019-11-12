@@ -9,19 +9,8 @@ use Illuminate\Http\Request;
 
 class registroUsuario extends Controller
 {
-	
-	public function mostrar()
-	{
-		if (session()->has('S_Rol') ) 
-		{
-			return redirect ('/');
-		}
-		else
-		{
-			return view ('registroUsuario');
-		}
-	}	
 
+<<<<<<< HEAD
 	public function guardar(Request $datos)
 	{
 		//dd($datos->all());
@@ -58,8 +47,17 @@ class registroUsuario extends Controller
 		$detallepersonadireccion->fk_direccion=$ultimoiddireccion;
 		$detallepersonadireccion->save();
 		return redirect('registroUsuario');
+=======
+public function mostrar(){
+if (session()->has('S_Rol') ) {
+	return redirect ('/');
+	}else{
+		return view ('registroUsuario');
+>>>>>>> b6d4af4cda9a47a08f738f3c4e085bcf8b743f90
 	}
+}
 
+<<<<<<< HEAD
 	public function mostrarAdmin()
 	{
 		if (session()->has('S_Rol') ) 
@@ -111,5 +109,44 @@ class registroUsuario extends Controller
 		$detallepersonadireccion->save();
 		return redirect('registroUsuarioAdmin');
 	}	
+=======
+public function guardar(Request $datos){
+//dd($datos->all());
+$persona = new persona;
+$persona->nombrepersona=$datos->input('nombre');
+$persona->apellidopaterno=$datos->input('app');
+$persona->apellidomaterno=$datos->input('apm');
+$persona->fechanacimiento=$datos->input('nacimiento');
+$persona->telefono=$datos->input('telefono');
+$persona->correoelectronico=$datos->input('correo');
+$persona->fkgenero=$datos->input('genero');
+$persona->save();
+$ultimoidpersona=$persona->idpersona;
+$usuario = new usuario;
+$usuario->idusuario = $datos->input('idusuario');
+$usuario->contrasena = $datos->input('contraseña');
+$usuario->fkpersona =  $ultimoidpersona;
+$usuario->fkrol = 3;
+$usuario->save();
+$direccion = new direccion;
+$direccion->calle = $datos->input('calle');
+$direccion->numint = $datos->input('ninterior');
+$direccion->numext = $datos->input('nexterior');
+$direccion->colonia = $datos->input('colonia');
+$direccion->municipio = $datos->input('municipio');
+$direccion->ciudad = $datos->input('ciudad');
+$direccion->pais = $datos->input('pais');
+$direccion->codigopostal = $datos->input('cp');
+$direccion->fktipo = $datos->input('tipodireccion');
+$direccion->save();
+$ultimoiddireccion=$direccion->id;
+$detallepersonadireccion= new detallepersonadireccion;
+$detallepersonadireccion->fkpersona=$ultimoidpersona;
+$detallepersonadireccion->fk_direccion=$ultimoiddireccion;
+$detallepersonadireccion->save();
+return redirect('registroUsuario');
+}
+
+>>>>>>> b6d4af4cda9a47a08f738f3c4e085bcf8b743f90
 }
 ?>

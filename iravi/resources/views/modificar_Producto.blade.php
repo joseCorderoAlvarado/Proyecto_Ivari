@@ -6,7 +6,7 @@
 <div class="row">
 <div class="col-md-2">
  <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-      <a class="nav-link" href="{{ url('registroProducto')}}">Alta Productos</a>
+      <a style="background: #003366" class="nav-link" href="{{ url('registroProducto')}}">Alta Productos</a>
       <a class="nav-link active"  href="{{ url('listaModificarProductos')}}">Modificar Productos</a>
       <a class="nav-link"  href="{{ url('registroUsuarioAdmin')}}">Alta Usuario</a>
       <a class="nav-link" href="{{ url('modificarUsuarioAdm')}}">Modificar Usuario</a>

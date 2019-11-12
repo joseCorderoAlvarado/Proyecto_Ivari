@@ -5,8 +5,7 @@
 {{-------------------------Alta Usuarios Administrador---------------------------}}
 <div class="container">	
 <div class="row">
-<div class="col-md-3"> </div>
-<div class="col-md-6"> 
+<div class="col-md-12"> 
 	<br>
 	<center><div class="toggle toggle2">
             <span>Desplazar</span>
@@ -23,7 +22,9 @@
 	<hr style="border-color: #666699">
 		<form  action="registroUsuarioGuardar" method="post" enctype="multipart/form-data">
 	{{ csrf_field() }}
-	<div class="form-group">
+	<div class="row">
+		<div class="col-md-6">
+				<div class="form-group">
 	<div class="input-group" style="background: transparent; margin-top: 40px;">
 		<div class="input-group-prepend">
 		    <span class="input-group-text" style="border-color: #666699"> <i class="fa fa-user"></i> </span>
@@ -48,7 +49,7 @@
 		<div class="input-group-prepend">
 		    <span class="input-group-text" style="border-color: #666699"> <i class="fa fa-lock"></i> </span>
 		 </div>
-		<input name="apm" class="form-control formulario_input" style="border-color: #666699" pattern="[A-Za-z]+"
+		<input type="text" name="apm" class="form-control formulario_input" style="border-color: #666699" pattern="[A-Za-z]+"
 		title="El apellido debe llevar solo letras" required>
 		<label class="formulario_label">Apellido Materno</label>
 	</div>
@@ -62,10 +63,59 @@
 		<input type="date" name="nacimiento" class="form-control" style="border-color: #666699" required>
 	</div>
 	</div>
+	
 	<div class="form-group">
 	<div class="input-group" style="margin-top: 40px;">
 		<div class="input-group-prepend">
 		    <span class="input-group-text" style="border-color: #666699"> <i class="fa fa-lock"></i> </span>
+		 </div>
+		<input type="email" name="correo" class="form-control formulario_input"  style="border-color: #666699">
+		<label class="formulario_label">Correo Electr&oacute;nico</label>
+	</div>
+	</div>
+	<div class="form-group">
+	<div class="input-group" style="margin-top: 40px;">
+		<div class="input-group-prepend">
+		    <span class="input-group-text" style="border-color: #666699"> <i class="fa fa-lock"></i> </span>
+		 </div>
+		<input type="password" name="contraseña" class="form-control formulario_input" style="border-color: #666699"
+		pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+		title="El password debe contener por lo menos una mayusucla, una minuscula, un numero y tener por lo menos ocho caracteres">
+		<label class="formulario_label">Contrase&ntilde;a</label>
+	</div>
+	</div>
+	<label>Sexo</label>
+	<div class="form-group">
+	<div class="input-group">
+		<div class="input-group-prepend">
+		    <span class="input-group-text" style="border-color: #666699"> <i class="fa fa-lock"></i> </span>
+		 </div>
+	<select name="genero">
+  <option value="1">Masculino</option>
+  <option value="2">Femenino</option>
+</select>
+	</div>
+	</div>
+<label>Tipo de env&iacute;o</label>
+	<div class="form-group">
+	<div class="input-group">
+		<div class="input-group-prepend">
+		    <span class="input-group-text" style="border-color: #666699"> <i class="fa fa-lock"></i> </span>
+		 </div>
+	<select name="tipodireccion">
+  <option value="1">Personal</option>
+  <option value="2">Envio</option>
+  <option value="3">Facturacion</option>
+  
+</select>
+	</div>
+	</div>
+		</div>
+		<div class="col-md-6">
+	<div class="form-group">
+	<div class="input-group" style="margin-top: 40px;">
+		<div class="input-group-prepend">
+		    <span class="input-group-text" style="border-color: #666699; float: left;"> <i class="fa fa-lock"></i> </span>
 		 </div>
 		<input name="calle" class="form-control formulario_input" style="border-color: #666699" pattern="[A-Za-z\s]+"
 		title="El nombre de la calle debe llevar solo letras y espacios" required>
@@ -160,65 +210,31 @@
 		<label class="formulario_label">Tel&eacute;fono</label>
 	</div>
 	</div>
-	<div class="form-group">
-	<div class="input-group" style="margin-top: 40px;">
-		<div class="input-group-prepend">
-		    <span class="input-group-text" style="border-color: #666699"> <i class="fa fa-lock"></i> </span>
-		 </div>
-		<input type="email" name="correo" class="form-control formulario_input"  style="border-color: #666699">
-		<label class="formulario_label">Correo Electr&oacute;nico</label>
+</div>
 	</div>
-	</div>
-	<div class="form-group">
-	<div class="input-group" style="margin-top: 40px;">
-		<div class="input-group-prepend">
-		    <span class="input-group-text" style="border-color: #666699"> <i class="fa fa-lock"></i> </span>
-		 </div>
-		<input type="password" name="contraseña" class="form-control formulario_input" style="border-color: #666699"
-		pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
-		title="El password debe contener por lo menos una mayusucla, una minuscula, un numero y tener por lo menos ocho caracteres">
-		<label class="formulario_label">Contrase&ntilde;a</label>
-	</div>
-	</div>
-	<label>Sexo</label>
-	<div class="form-group">
+	<div class="row">
+		<div class="col-md-4">
+			
+		</div>
+		<div class="col-md-4">
+			<div class="form-group">
 	<div class="input-group">
 		<div class="input-group-prepend">
-		    <span class="input-group-text" style="border-color: #666699"> <i class="fa fa-lock"></i> </span>
-		 </div>
-	<select name="genero">
-  <option value="1">Masculino</option>
-  <option value="2">Femenino</option>
-</select>
-	</div>
-	</div>
-<label>Tipo de env&iacute;o</label>
-	<div class="form-group">
-	<div class="input-group">
-		<div class="input-group-prepend">
-		    <span class="input-group-text" style="border-color: #666699"> <i class="fa fa-lock"></i> </span>
-		 </div>
-	<select name="tipodireccion">
-  <option value="1">Personal</option>
-  <option value="2">Envio</option>
-  <option value="3">Facturacion</option>
-  
-</select>
-	</div>
-	</div>
-<div class="form-group">
-	<div class="input-group">
-		<div class="input-group-prepend">
-			<button type="submit" class="formulario_btn" style="border-color: #003366; background-color: #003366">Registrar</button>
+			<center><button type="submit" class="formulario_btn" style="border-color: #003366; background-color: #003366">Registrar</button></center>
 		</div>
 	</div>
 	</div>
+		</div>
+		<div class="col-md-4">
+			
+		</div>
+	</div>
+
 	
 	</form>
 	</article>
 	</div>
 </div>
-<div class="col-md-3"></div>
 </div>
 </div>
 {{-------------------------Fin de alta usuario administrador---------------------------}}

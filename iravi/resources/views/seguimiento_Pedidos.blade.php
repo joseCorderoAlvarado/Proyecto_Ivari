@@ -7,10 +7,10 @@
       <a class="nav-link" href="{{ url('registroProducto')}}">Alta Productos</a>
       <a class="nav-link"  href="{{ url('listaModificarProductos-pagina1')}}">Modificar Productos</a>
       <a class="nav-link"  href="{{ url('registroUsuarioAdmin')}}">Alta Usuario</a>
-      <a class="nav-link" href="{{ url('modificarUsuarioAdm')}}">Modificar Usuario</a>
+      <a class="nav-link" href="{{ url('listadoUsuario')}}">Modificar Usuario</a>
       <a class="nav-link" href="{{ url('altaProveedores')}}">Alta Proveedores</a>
       <a class="nav-link" href="{{ url('historialVentas')}}"> Ver Ventas</a>
-      <a class="nav-link active"  href="{{ url('seguimientoPedidos')}}"> Ver Pedidos</a>
+      <a style="background: #003366" class="nav-link active"  href="{{ url('seguimientoPedidos')}}"> Ver Pedidos</a>
     </div>
 	</div>
 	<div class="col-md-6">

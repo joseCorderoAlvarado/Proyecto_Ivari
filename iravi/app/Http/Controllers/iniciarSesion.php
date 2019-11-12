@@ -12,11 +12,11 @@ use Illuminate\Http\Request;
 		if (session()->has('S_Rol') ) {
 		return redirect ('/');
 	}else{
-		
+
 		return view ('login');
 	}
 
-}	
+}
 
 		public function verificar (Request $datos)
 		{
@@ -26,12 +26,8 @@ use Illuminate\Http\Request;
 			$correo_Electronico = $persona_v->txtUsuario = $datos->input ('txtUsuario');
 			$contraseña = $usuario_v->txtContrasena = $datos->input ('txtContrasena');
 
-			//echo $correo_Electronico."jajajaja";
-			//echo $contraseña."jejeje";
-			
-			
 			//$correo_Electronico="javier_agustinrm@hotmail.com";
-			//$contraseña="1234";	
+			//$contraseña="1234";
 
 			//Creamos una varible usuario que se iguala a la tabla usuario
 			//con un inner join que hace referencia a las tablas relacionadas y los id y el fk relacionados
@@ -42,16 +38,16 @@ use Illuminate\Http\Request;
 		    join('persona', 'persona.idpersona', '=', 'usuario.fkpersona')
 		    ->select('persona.correoelectronico', 'usuario.contrasena')
 		    ->where('persona.correoelectronico', '=', $correo_Electronico)
-		    ->where('usuario.contrasena', '=', $contraseña) 
+		    ->where('usuario.contrasena', '=', $contraseña)
 		    ->get();
 
 		    //Este es el inner join realizado de una manera cosnulta directa a SQL
-			//	select persona.correoelectronico, usuario.contraseña from usuario 
-			//	inner join persona on usuario.fkpersona = persona.idpersona  
-			//	where persona.correoelectronico = $correo_Electronico 
-			//	and usuario.contraseña = $contraseña; 
+			//	select persona.correoelectronico, usuario.contraseña from usuario
+			//	inner join persona on usuario.fkpersona = persona.idpersona
+			//	where persona.correoelectronico = $correo_Electronico
+			//	and usuario.contraseña = $contraseña;
 
-			if ($fila=($resultadoUsuario)) 
+			if ($fila=($resultadoUsuario))
 			{
 				//buscar esos datos en la base de datos
 				$resultadoRol = persona::
@@ -60,36 +56,36 @@ use Illuminate\Http\Request;
 			    ->where('persona.correoelectronico', '=', $correo_Electronico)
 				->where('usuario.contrasena', '=', $contraseña)
 			    ->get();
-				
+
 				//echo $resultadoRol;
-				
+
 				//Se va a utilizar la sesion global
 			   if(strpos($resultadoRol, '3') == true){
 				    session(['S_Rol' => '3']);
 
 			       return redirect('/');
 			   }
-			   
+
 			   elseif  (strpos($resultadoRol, '1') == true){
-				   
+
 				   session(['S_Rol' => '1']);
 
-			       return redirect('/'); 
-				   
+			       return redirect('/');
+
 			   }
 			}
-		
+
 				 return redirect('login');
-			
-		
+
+
 		}
-		
-		
+
+
 		public function cerrarSesion (Request $datos)
 		{
 			//Matamos todos los datos de la sesion
 			Session()->flush();
-			  return redirect('/'); 
+			  return redirect('/');
 		}
 	}
 ?>

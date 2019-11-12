@@ -11,7 +11,9 @@
 	}
 
 </style>
-
+<script type="text/javascript">
+  
+</script>
 {{-------------------------Buscador---------------------------}}
 <div class="container-fluid">
 	<div class="row justify-content-center">
@@ -43,220 +45,76 @@
 				<a  style="color: 92d050; font-weight:bold;" class="nav-link" href="{{ url('historia')}}">Acerca de Iravi</a>
 			</div>
 		</div>
-		<div class="col-6">
-			<h2 id="text" class="text-center">Art&iacute;culos elegidos </h2>
-{{------------------------Productos---------------------------}}
-<div class="container">
-<div class="row">
-
-<div class="col-md-4">
-<div class="card" style="width: 15rem; border-color: #003366; border-width: 5px;">
-  <a href="#">
-  <img class="card-img-top" src="images/iconoCarrito.png" alt="Card image cap">
-  </a>
-  <div class="card-body">
-    <h5 id="text" class="card-title">T&iacute;tulo</h5>
-    <p id="text" class="card-text">Precio</p>
-  </div>
-</div>
-</div>
-
-</div>
-</div>
-{{--------------------Fin Productos---------------------------}}
-<br><br><br>
-{{--------------------Informacion de Productos---------------------------}}
-<div class="container">
-  <div class="row">
-    <div class="col-md-4">
-      <label id="text">Cantidad de productos:</label>
-    </div>
-    <div class="col-md-4">
-      <label>1</label>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-4">
-       <label>Importe:</label>
-    </div>
-    <div class="col-md-4">
-       <label>$389.00</label>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-4">
-       <label>Bonificaci&oacute;n:</label>
-    </div>
-    <div class="col-md-4">
-      <label>$156.47</label>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-4">
-       <label>Monto del pago:</label>
-    </div>
-    <div class="col-md-4">
-       <label>$232.53</label>
-    </div>
-  </div>  
-</div>
-{{--------------------Fin Informacion de Productos---------------------------}}
-<br><br><br><br>
-<h2 id="text" class="text-center">Por favor seleccione su método de pago</h2>
-<br><br>
-{{------------------------Seleccion de metodo de Pago---------------------------}}
-<div class="container">
-<div class="row">
-<div class="col-md-6">
-<div class="card" style="width: 15rem; height: 15em; padding: 8px; border-color: #003366; border-width: 5px;">
-    <input type="radio" id="metodoPago" name="metodoPago" value="sss"
-        checked>
-  <div class="card-body">
-    <h5 class="card-title">Paypal</h5>
-  <img class="card-img" src="images/paypalPago.png" alt="Card image cap">
-  </div>
-</div>
-</div>
 
 
+<div class="content">
+<!-- Multistep Form -->
+<div class="main">
+<form action="#" class="regform" method="get">
+<!-- Progressbar -->
+<ul id="progressbar">
+<li id="active1">Domicilio<span class="Ok" id="ok1">✔</span></li>
+<li id="active2">Seleccionar pago<span class="Ok" id="ok2">✔</span></li>
+<li id="active3">Env&iacute;o<span class="Ok" id="ok3">✔</span></li>
+<li id="active4">Confirmaci&oacute;n<span class="Ok" id="ok4">✔</span></li>
 
-<div class="col-md-6">
-<div class="card" style="width: 15rem; height: 15em; padding: 8px; border-color: #003366; border-width: 5px;" name="metodoPago" value="sss"
-        checked>
-        <input type="radio" id="metodoPago" name="metodoPago" value="sss"
-        checked>
-  <div class="card-body">
-    <h5 class="card-title">Tarjeta de Crédito</h5>
-  <img class="card-img" src="images/visa-MasertCard.png" alt="Card image cap">
-  </div>
+</ul>
+<!-- Fieldsets -->
+<fieldset id="first">
+<h2 class="title">Seleccione Domicilio</h2>
+<p class="subtitle">Domicilio de env&iacute;o</p>
+<div class="radio_btn">
+<input type="radio" name="gender" value="Domicilio 1"> Calle xxxx Nayarit #xxx</div><br>
+<div class="radio_btn">
+<input type="radio" name="gender" value="Domicilio 2"> Calle xxxx Nayarit #xxx</div><br>
+<div class="radio_btn">
+<input type="radio" name="gender" value="Domicilio 3"> Calle xxxx Nayarit #xxx
 </div>
-</div>
+<div align="center">
+<input id="next_btn1" onclick="next_step1()" type="button" value="Siguiente"></div>
+</fieldset>
+<fieldset id="second">
+<h2 class="title">Seleccione el metodo de pago</h2>
+<p class="subtitle">Metodos de pago disponibles:</p>
+<div class="radio_btn_pago">
+<input type="radio" name="Pago" value="Pago1"> PayPal </div><br>
+<div align="center">
+<input id="pre_btn1" onclick="prev_step1()" type="button" value="Anterior">
+<input id="next_btn2" name="next" onclick="next_step2()" type="button" value="Siguiente"></div>
+</fieldset>
 
-</div>
-</div>
-{{--------------------Fin metodo de Pago---------------------------}}
+<fieldset id="third">
+<h2 class="title">Educational Profiles</h2>
+<p class="subtitle">Step 2</p>
+<select class="options">
+<option>--Select Education--</option>
+<option>Post Graduate</option>
+<option>Graduate</option>
+<option>HSC</option>
+<option>SSC</option>
+</select>
+<div align="center">
+<input id="pre_btn2" onclick="prev_step2()" type="button" value="Anterior">
+<input id="next_btn3" name="next" onclick="next_step3()" type="button" value="Siguiente"></div>
+</fieldset>
 
-<br><br><br><br>
-<h2 id="text" class="text-center">Por favor seleccione su método de env&iacute;o </h2>
-<br><br>
-{{------------------------Seleccion de envio---------------------------}}
-<div class="container">
-<div class="row">
-
-<div class="col-md-3">
-<div class="card" style="width: 10rem; height: 10em; padding: 8px; border-color: #003366; border-width: 5px;">
-    <input type="radio" id="metodoEnvio" name="metodoEnvio" value="sss"
-        checked>
-  <div class="card-body">
-    <h5 class="card-title">Estafeta</h5>
-  <img class="card-img" src="images/Estafeta.png" alt="Card image cap">
-  </div>
+<fieldset id="four">
+<h2 class="title">Personal Details</h2>
+<p class="subtitle">Step 3</p>
+<input class="text_field" name="fname" placeholder="First Name" type="text">
+<input class="text_field" name="lname" placeholder="Last Name" type="text">
+<input class="text_field" name="cont" placeholder="Contact" type="text">
+<label>Gender</label>
+<input name="gender" type="radio" value="Male">Male
+<input name="gender" type="radio" value="Female">Female
+<textarea name="address" placeholder="Address">
+</textarea>
+<div align="center">
+<input id="pre_btn3" onclick="prev_step3()" type="button" value="Anterior">
+<input class="submit_btn" onclick="validation(event)" type="submit" value="Confirmar"></div>
+</fieldset>
+</form>
 </div>
 </div>
-
-
-<div class="col-md-3">
-<div class="card" style="width: 10rem; height: 10em; padding: 8px; border-color: #003366; border-width: 5px;">
-  <input type="radio" id="metodoEnvio" name="metodoEnvio" value="sss"
-        checked>
-  <div class="card-body">
-    <h5 class="card-title">DHL</h5>
-  <img class="card-img" src="images/dhl.svg.png" alt="Card image cap">
-  </div>
-</div>
-</div>
-
-
-<div class="col-md-3">
-<div class="card" style="width: 10rem; height: 10em; padding: 8px; border-color: #003366; border-width: 5px;">
-   <input type="radio" id="metodoEnvio" name="metodoEnvio" value="sss"
-        checked>
-  <div class="card-body">
-    <h5 class="card-title">Fedex</h5>
-  <img class="card-img" src="images/FedEXCabEnfocado.png" alt="Card image cap">
-  </div>
-</div>
-</div>
-
-<div class="col-md-3">
-<div class="card" style="width: 10rem; height: 10em; padding: 8px; border-color: #003366; border-width: 5px;">
-    <input type="radio" id="metodoEnvio" name="metodoEnvio" value="sss"
-        checked>
-  <div class="card-body ">
-    <h5 class="card-title">UPS</h5>
-   <center><img class="card-img" src="images/ups.svg" alt="Card image cap" style="width: 50px; height: 50px"></center>
-  </div>
-</div>
-</div>
-
-</div>
-</div>
-{{--------------------Fin de envio---------------------------}}
-<br><br><br><br>
-<h2 id="text" class="text-center">Por favor seleccione su direcci&oacute;n de env&iacute;o</h2>
-<br><br>
-{{------------------------Seleccion de direccion de envio---------------------------}}
-<div class="container">
-<div class="row">
-
-<div class="col-md-6">
-<div class="card" style="width: 15rem; padding: 8px; border-color: #003366; border-width: 5px;">
-    <input type="radio" id="metodoPago" name="metodoPago" value="sss"
-        checked>
-  <div class="card-body">
-    <p>
-      Pais: USA
-      Estado: Texas
-      Municipio: Kentuchy
-      Calle: London Street
-      Numero: 60 South
-      Referencia: Betweem Java Avenue and C# Street
-    </p>
-
-  </div>
-</div>
-</div>
-
-<div class="col-md-6">
-<div class="card" style="width: 15rem; padding: 8px; border-color: #003366; border-width: 5px;">
-    <input type="radio" id="metodoPago" name="metodoPago" value="sss"
-        checked>
-  <div class="card-body">
-    <p>
-      Pais: Canada
-      Estado: Vancuver
-      Municipio: Bahamas
-      Calle: Mexico Street
-      Numero: 30 West
-      Referencia: Betweem USA Street and Colombia Street
-    </p>
-
-  </div>
-</div>
-</div>
-
-</div>
-</div>
-{{--------------------Fin metodo de Pago---------------------------}}
-
-
-<div class="container-fluid"><br><br><br></div>
-
-{{------------------------Confirmacion Final---------------------------}}
-<div class="container text-center">
-<div class="row">
-
-<div class="col-md-12" ">
-  <a href="#" class="btn btn-primary" style="border-color: #003366; background-color:#003366;">Realizar pedido</a>
-</div>
-
-</div>
-</div>
-{{------------------------Fin de Confirmacion Final---------------------------}}
-		</div>
-		<div class="col-3">
-			
-		</div>
-	</div>
-</div>
+<script src="js/form.js"></script>
 @extends('layouts.footer')

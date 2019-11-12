@@ -34,7 +34,7 @@
 		<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
 		</div>
-		<input name="nombreproducto"  class="form-control formulario_input"  type="text">
+		<input name="nombreproducto"  class="form-control formulario_input"  type="text" required pattern="[A-Za-z]+" title="Solo letras">
 		<label class="formulario_label">Nombre del producto</label>
 	</div>
 	</div>
@@ -43,7 +43,7 @@
 		<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 		 </div>
-		<textarea name="descripcionproducto"  class="form-control formulario_input" ></textarea>
+		<textarea name="descripcionproducto"  class="form-control formulario_input" required pattern="[A-Za-z]+" title="Solo letras"></textarea>
 		<label class="formulario_label">Descripción del producto</label>
 	</div>
 	</div>

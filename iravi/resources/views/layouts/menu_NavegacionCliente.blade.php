@@ -24,7 +24,7 @@
 			<li	class="nav-item">
 				<a	class="nav-link">Bienvenido</a>
 			</li>
-			<a href="{{ url('compras_Carrito')}}">
+			<a href="{{ url('carritoCompras')}}">
 			<img src="images/iconoCarrito.png" width="30" height="30"	class="d-inline-block align-top">
             </a>
 		</ul>

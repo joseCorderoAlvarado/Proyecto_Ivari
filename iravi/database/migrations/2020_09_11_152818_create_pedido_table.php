@@ -15,7 +15,7 @@ class CreatePedidoTable extends Migration
     {
         Schema::create('pedido', function (Blueprint $table)
         {
-            $table-> string('foliopedido',45);
+            $table-> string('foliopedido',45)->unique();
             $table-> datetime('fecha');
             $table-> double('subtotal',13,2);
             $table-> double('descuento',13,2);

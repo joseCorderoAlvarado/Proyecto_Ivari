@@ -13,8 +13,8 @@ class tipodireccion extends Seeder
     public function run()
     {
         //
-        DB::table('tipodireccion')-> insert(array('tipo'=>'Personal'));
+  
         DB::table('tipodireccion')-> insert(array('tipo'=>'Envio'));
-        DB::table('tipodireccion')-> insert(array('tipo'=>'Facturacion'));
+       
     }
 }

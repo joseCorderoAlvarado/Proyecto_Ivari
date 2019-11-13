@@ -24,7 +24,7 @@ class CreateCarritotemporalTable extends Migration
             $table->integer('fkpersona')->unsigned();
             $table->foreign('fkpersona')->references('idpersona')->on('persona');
 
-            
+
         });
     }
 

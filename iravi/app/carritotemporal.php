@@ -7,4 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class carritotemporal extends Model
 {
     protected $table='carritotemporal';
+	public $timestamps = false;
 }

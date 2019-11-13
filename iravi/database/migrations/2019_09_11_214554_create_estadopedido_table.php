@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEstatusTable extends Migration
+class CreateEstadopedidoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,15 @@ class CreateEstatusTable extends Migration
      */
     public function up()
     {
-        Schema::create('estatus', function (Blueprint $table) {
-            $table->increments('id');
-            $table-> string('descripcion',100);
+        Schema::create('estadopedido', function (Blueprint $table)
+        {
+            $table-> increments('idestadopedido');
+            $table-> string('nombre_Estado',45);
+
+
         });
     }
+
     /**
      * Reverse the migrations.
      *
@@ -25,6 +29,6 @@ class CreateEstatusTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('estatus');
+        Schema::dropIfExists('estadopedido');
     }
 }

@@ -29,6 +29,8 @@ Route::post('registroUsuarioGuardar','registroUsuario@guardar');
 Route::post('InicioSesion','iniciarSesion@verificar');
 Route::Get('CerrarSesion','iniciarSesion@cerrarSesion');
 
+Route::post('carritoCompras','carritoCompras@guardarcarrito');
+
 //Login inicio de sesion
 Route::Get('login','iniciarSesion@mostrar');
 

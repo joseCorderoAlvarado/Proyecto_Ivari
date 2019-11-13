@@ -12,7 +12,6 @@ use Illuminate\Http\Request;
 		if (session()->has('S_Rol') ) {
 		return redirect ('/');
 	}else{
-
 		return view ('login');
 	}
 
@@ -35,7 +34,7 @@ use Illuminate\Http\Request;
 			//se hace la condición del where donde se consultan solo aquellos que posean los datos del correo y contraseña ingresados por el usuario.
 
 			$resultadoUsuario = usuario::
-		    join('persona', 'persona.idpersona', '=', 'usuario.fkpersona')
+		     join('persona', 'persona.idpersona', '=', 'usuario.fkpersona')
 		    ->select('persona.correoelectronico', 'usuario.contrasena')
 		    ->where('persona.correoelectronico', '=', $correo_Electronico)
 		    ->where('usuario.contrasena', '=', $contraseña)
@@ -46,7 +45,6 @@ use Illuminate\Http\Request;
 			//	inner join persona on usuario.fkpersona = persona.idpersona
 			//	where persona.correoelectronico = $correo_Electronico
 			//	and usuario.contraseña = $contraseña;
-
 			if ($fila=($resultadoUsuario))
 			{
 				//buscar esos datos en la base de datos
@@ -62,14 +60,14 @@ use Illuminate\Http\Request;
 				//Se va a utilizar la sesion global
 			   if(strpos($resultadoRol, '3') == true){
 				    session(['S_Rol' => '3']);
-
+            session(['S_identificador'=>$correo_Electronico]);
 			       return redirect('/');
 			   }
 
 			   elseif  (strpos($resultadoRol, '1') == true){
 
 				   session(['S_Rol' => '1']);
-
+           session(['S_identificador'=>$correo_Electronico]);
 			       return redirect('/');
 
 			   }

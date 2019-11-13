@@ -13,10 +13,10 @@ class CreateTipodireccionTable extends Migration
      */
     public function up()
     {
-        Schema::create('tipodireccion', function (Blueprint $table) 
+        Schema::create('tipodireccion', function (Blueprint $table)
         {
-            $table-> increments('idtipo');
-            $table-> enum('tipo',array('personal','envio','facturacion'));
+           $table-> increments('idtipo');
+            $table-> enum('tipo',array('envio'));
         });
     }
 

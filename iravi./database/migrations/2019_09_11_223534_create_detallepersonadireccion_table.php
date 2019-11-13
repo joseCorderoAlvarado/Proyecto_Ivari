@@ -14,15 +14,12 @@ class CreateDetallepersonadireccionTable extends Migration
     public function up()
     {
         Schema::create('detallepersonadireccion', function (Blueprint $table) {
-            
+
             $table->increments('iddetperdir');
-    
             $table->integer('fkpersona')->unsigned();
-            
             $table->foreign('fkpersona')->references('idpersona')->on('persona');
-            
             $table->integer('fk_direccion')->unsigned();
-            
+
             $table->foreign('fk_direccion')->references('iddireccion')->on('direccion');
         });
     }

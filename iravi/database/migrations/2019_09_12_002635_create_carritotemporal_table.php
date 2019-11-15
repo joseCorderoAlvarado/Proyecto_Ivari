@@ -18,11 +18,13 @@ class CreateCarritotemporalTable extends Migration
             $table->integer('cantidad');
             $table->integer('costo');
 
-            $table->integer('fkproducto')->unsigned()->unique();
+            $table->integer('fkproducto')->unsigned();
             $table->foreign('fkproducto')->references('idproducto')->on('producto');
 
-            $table->integer('fkpersona')->unsigned()->unique();
+            $table->integer('fkpersona')->unsigned();
             $table->foreign('fkpersona')->references('idpersona')->on('persona');
+
+            $table->primary(array('fkproducto','fkpersona'));
             $table->engine = "InnoDB";
 
         });

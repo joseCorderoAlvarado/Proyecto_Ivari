@@ -22,5 +22,15 @@ class direccion extends Seeder
         	'pais'=>'mexico',
         	'codigopostal'=>'63940',
         	'fktipo'=>'1'));
+			
+			DB::table('direccion')-> insert(array('calle'=>'Ceboruco',
+        	'numint'=>'100',
+        	'numext'=>'0',
+        	'colonia'=>'centro',
+        	'municipio'=>'Jala',
+        	'ciudad'=>'Jala',
+        	'pais'=>'mexico',
+        	'codigopostal'=>'63945',
+        	'fktipo'=>'1'));
     }
 }

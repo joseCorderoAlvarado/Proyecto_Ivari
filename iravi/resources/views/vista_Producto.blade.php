@@ -27,7 +27,7 @@
 								<br><br>
 							<form action="carritoCompras" method="post" enctype="multipart/form-data">
 								{{ csrf_field() }}
-								<input type="hidden" name="id" value={{ $tablaProductos[0]->idproducto}}>
+								<input type="hidden" name="idProducto" value={{ $tablaProductos[0]->idproducto}}>
 								Cantidad: <input type="number" name="cantidad" value="1" min="1" max="1000" step="1"/>
 								<hr>
 								<button  type="submit" class="formulario_btn" style="background:#003366">agregar al carrito</button>

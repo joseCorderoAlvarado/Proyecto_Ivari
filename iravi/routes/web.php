@@ -29,7 +29,12 @@ Route::post('registroUsuarioGuardar','registroUsuario@guardar');
 Route::post('InicioSesion','iniciarSesion@verificar');
 Route::Get('CerrarSesion','iniciarSesion@cerrarSesion');
 
-Route::post('carritoCompras','carritoCompras@guardarcarrito');
+
+//Controladores del carrito
+Route::Get('carritoCompras','controlador_carritoCompras@mostrar');
+Route::post('carritoCompras','controlador_carritoCompras@guardarcarrito');
+Route::post('modificarCarrito','controlador_carritoCompras@modificarCarrito');
+
 
 //Login inicio de sesion
 Route::Get('login','iniciarSesion@mostrar');
@@ -56,8 +61,7 @@ Route::Get('perfilUsuario','perfilUsuario@mostrar');
 //Bonificaciones
 Route::Get('bonificaciones','bonificaciones@mostrar');
 
-//Carrito de COmpras
-Route::Get('carritoCompras','carritoCompras@mostrar');
+
 
 //Descripcion Producto
 Route::Get('descripcionProducto','descripcionProducto@mostrar'); //Khe?

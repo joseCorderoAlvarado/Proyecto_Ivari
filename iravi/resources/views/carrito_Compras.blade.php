@@ -28,7 +28,11 @@ $totalCarrito = 0;
       </div>
     <div class="col-md-2">
     <p>   Eliminar:</p>
-      	<img src="\images\eliminar.png" width="80em" height="80em" class="d-inline-block align-top">
+    <form action="eliminarCarrito" method="post" enctype="multipart/form-data">
+          {{ csrf_field() }}
+            <input type="hidden" name="idProducto" value="{{$carrito2->idproducto}}">
+      <input type="image" img src="\images\eliminar.png" width="80em" height="80em" class="d-inline-block align-top">
+        </form>
 	   </div>
 		</div>
 	</div>

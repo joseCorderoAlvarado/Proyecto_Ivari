@@ -82,6 +82,31 @@ return redirect('carritoCompras');
 
 }
 
+public function eliminarCarrito (Request $datos){
+	//Para conseguir el id de la persona//
+	$correo_Electronico=session('S_identificador');
+	$consultaidpersona = DB::select('select idpersona from persona where correoelectronico=?',[$correo_Electronico]);
+	$idpersonaconvert= json_decode( json_encode($consultaidpersona), true);
+	$idpersona = implode($idpersonaconvert[0]);
+		//Fin  conseguir el id de la persona//
+
+
+	$idProducto=$datos->input('idProducto');
+
+
+
+$articuloCarritoCompras = carritotemporal::where('fkproducto', '=', $idProducto)
+                ->where('fkpersona', '=', $idpersona)
+                ->first();
+
+
+$articuloCarritoCompras->delete();
+
+
+return redirect('carritoCompras');
+
+}
+
 
 
 }

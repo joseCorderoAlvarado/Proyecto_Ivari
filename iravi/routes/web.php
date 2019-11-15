@@ -34,6 +34,8 @@ Route::Get('CerrarSesion','iniciarSesion@cerrarSesion');
 Route::Get('carritoCompras','controlador_carritoCompras@mostrar');
 Route::post('carritoCompras','controlador_carritoCompras@guardarcarrito');
 Route::post('modificarCarrito','controlador_carritoCompras@modificarCarrito');
+Route::post('eliminarCarrito','controlador_carritoCompras@eliminarCarrito');
+
 
 
 //Login inicio de sesion

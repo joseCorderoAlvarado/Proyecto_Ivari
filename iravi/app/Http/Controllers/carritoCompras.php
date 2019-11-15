@@ -23,6 +23,7 @@ f.idfotoproducto=( SELECT idfotoproducto FROM fotoproducto
 }
 return redirect ('/');
 }
+
 public function guardarcarrito(Request $data){
 $consultaidproducto = DB::table('producto')->get('idproducto')->toArray();
 $consultaprecio = DB::table('producto')->get('precio')->toArray();
@@ -40,5 +41,24 @@ $guardardatosCarrito=DB::table('carritotemporal')->insert(
 	 );
 return redirect('/');
 }
+
+public function guardarcarrito(Request $data){
+$consultaidproducto = DB::table('producto')->get('idproducto')->toArray();
+$consultaprecio = DB::table('producto')->get('precio')->toArray();
+$cantidad=$data->input('cantidad');
+$idproductoconvert =json_decode( json_encode($consultaidproducto), true);
+$idproducto=implode($idproductoconvert[0]);
+$precioconvert=json_decode( json_encode($consultaprecio), true);
+$precio=implode($precioconvert[0]);
+$correo_Electronico=session('S_identificador');
+$consultaidpersona = DB::select('select idpersona from persona where correoelectronico=?',[$correo_Electronico]);
+$idpersonaconvert= json_decode( json_encode($consultaidpersona), true);
+$idpersona = implode($idpersonaconvert[0]);
+$guardardatosCarrito=DB::table('carritotemporal')->insert(
+['cantidad'=>$cantidad,'costo'=> $precio ,'fkproducto'=> $idproducto , 'fkpersona'=> $idpersona]
+	 );
+return redirect('/');
+}
+
 }
 ?>

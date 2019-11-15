@@ -13,7 +13,7 @@ class CreateDireccionTable extends Migration
      */
     public function up()
     {
-        Schema::create('direccion', function (Blueprint $table) 
+        Schema::create('direccion', function (Blueprint $table)
         {
             $table-> increments('iddireccion');
             $table-> string('calle',50);
@@ -24,9 +24,10 @@ class CreateDireccionTable extends Migration
             $table-> string('ciudad',50);
             $table-> string('pais',50);
             $table-> string('codigopostal',8);
-    
+
             $table-> integer('fktipo')->unsigned();
             $table-> foreign('fktipo')->references('idtipo')->on('tipodireccion');
+            $table->engine = "InnoDB";
         });
     }
 

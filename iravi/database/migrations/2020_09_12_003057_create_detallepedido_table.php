@@ -21,6 +21,7 @@ class CreateDetallepedidoTable extends Migration
           $table->foreign('fkproducto')->references('idproducto')->on('producto');
           $table->String('fkfoliopedido',45);
           $table->foreign('fkfoliopedido')->references('foliopedido')->on('pedido');
+          $table->engine = "InnoDB";
       });
     }
 

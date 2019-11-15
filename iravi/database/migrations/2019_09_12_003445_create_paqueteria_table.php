@@ -16,6 +16,7 @@ class CreatePaqueteriaTable extends Migration
         Schema::create('paqueteria', function (Blueprint $table) {
             $table->increments('idpaqueteria');
             $table->string('nombre', 100);
+            $table->engine = "InnoDB";
         });
     }
 

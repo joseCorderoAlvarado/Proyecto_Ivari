@@ -22,6 +22,7 @@ class CreateProveedoresTable extends Migration
              $table->datetime('fechaingreso');
              $table->datetime('fechaegreso');
              $table->string('sedeprincipal',50);
+             $table->engine = "InnoDB";
         });
     }
 

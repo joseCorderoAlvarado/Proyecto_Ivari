@@ -19,7 +19,7 @@ class CreateHistorialpedidoTable extends Migration
                  $table->foreign('fkfoliopedido')->references('foliopedido')->on('pedido');
                  $table->integer('fkestadopedido')->unsigned();
                  $table->foreign('fkestadopedido')->references('idestadopedido')->on('estadopedido');
-
+                $table->engine = "InnoDB";
         });
     }
 

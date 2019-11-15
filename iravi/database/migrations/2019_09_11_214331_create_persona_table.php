@@ -13,7 +13,7 @@ class CreatePersonaTable extends Migration
      */
     public function up()
     {
-        Schema::create('persona', function (Blueprint $table) 
+        Schema::create('persona', function (Blueprint $table)
         {
             $table-> increments('idpersona');
             $table-> string('nombrepersona',50);
@@ -22,9 +22,10 @@ class CreatePersonaTable extends Migration
             $table-> datetime('fechanacimiento');
             $table-> string('correoelectronico',100);
             $table-> string('telefono',25);
-    
+
             $table-> integer('fkgenero')->unsigned();
             $table-> foreign('fkgenero')->references('idgenero')->on('genero');
+            $table->engine = "InnoDB";
         });
     }
 

@@ -21,6 +21,7 @@ class CreateDetallepersonadireccionTable extends Migration
             $table->integer('fk_direccion')->unsigned();
 
             $table->foreign('fk_direccion')->references('iddireccion')->on('direccion');
+            $table->engine = "InnoDB";
         });
     }
 

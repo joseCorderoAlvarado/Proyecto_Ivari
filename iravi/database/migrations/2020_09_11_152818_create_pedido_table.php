@@ -27,7 +27,7 @@ class CreatePedidoTable extends Migration
 
             $table-> integer('fkidpaqueteria')->unsigned();
             $table-> foreign('fkidpaqueteria')->references('idpaqueteria')->on('paqueteria');
-
+            $table->engine = "InnoDB";
         });
     }
 

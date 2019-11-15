@@ -13,14 +13,14 @@ class CreateProductoTable extends Migration
      */
     public function up()
     {
-        Schema::create('producto', function (Blueprint $table) 
+        Schema::create('producto', function (Blueprint $table)
         {
             $table-> increments('idproducto');
             $table-> string('nombreproducto',100);
             $table-> string('descripcionproducto',200);
             $table-> double('precio',8,5);
-            
-            
+
+
             $table-> integer('fkcategoria')->unsigned();
             $table-> foreign('fkcategoria')->references('idcategoria')->on('categoria');
 
@@ -29,6 +29,7 @@ class CreateProductoTable extends Migration
 
             $table-> integer('fkestatus')->unsigned();
             $table-> foreign('fkestatus')->references('id')->on('estatus');
+            $table->engine = "InnoDB";
         });
     }
 

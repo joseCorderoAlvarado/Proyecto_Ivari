@@ -20,7 +20,7 @@ class CreateFotoproductoTable extends Migration
 
             $table-> integer('fkproducto')->unsigned();
             $table-> foreign('fkproducto')->references('idproducto')->on('producto');
-
+            $table->engine = "InnoDB";
         });
     }
 

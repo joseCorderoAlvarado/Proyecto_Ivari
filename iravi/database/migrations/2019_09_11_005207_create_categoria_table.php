@@ -16,6 +16,7 @@ class CreateCategoriaTable extends Migration
         Schema::create('categoria', function (Blueprint $table) {
                  $table-> increments('idcategoria');
                  $table-> string('descripcion',100);
+                 $table->engine = "InnoDB";
         });
     }
 

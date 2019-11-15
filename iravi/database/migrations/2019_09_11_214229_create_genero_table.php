@@ -13,10 +13,11 @@ class CreateGeneroTable extends Migration
      */
     public function up()
     {
-        Schema::create('genero', function (Blueprint $table) 
+        Schema::create('genero', function (Blueprint $table)
         {
             $table-> increments('idgenero');
              $table-> string('sexo',15);
+             $table->engine = "InnoDB";
         });
     }
 

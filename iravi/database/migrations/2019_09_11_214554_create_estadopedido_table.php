@@ -17,7 +17,7 @@ class CreateEstadopedidoTable extends Migration
         {
             $table-> increments('idestadopedido');
             $table-> string('nombre_Estado',45);
-
+            $table->engine = "InnoDB";
 
         });
     }

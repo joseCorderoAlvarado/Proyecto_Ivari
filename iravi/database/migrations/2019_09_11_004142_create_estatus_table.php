@@ -16,6 +16,7 @@ class CreateEstatusTable extends Migration
         Schema::create('estatus', function (Blueprint $table) {
             $table->increments('id');
             $table-> string('descripcion',100);
+            $table->engine = "InnoDB";
         });
     }
     /**

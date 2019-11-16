@@ -2,17 +2,17 @@
 @include('layouts.menu_NavegacionCliente')
 <style type="text/css">
 	#text{color: #003366;}
-	
+
 	.nav-link.active{
 		background-color:#92d050 !important;
-		border-color: #92d050 !important; 
+		border-color: #92d050 !important;
 		border-style:solid;
 		font-weight: bold;
 	}
 
 </style>
 <script type="text/javascript">
-  
+
 </script>
 {{-------------------------Buscador---------------------------}}
 <div class="container-fluid">
@@ -63,16 +63,27 @@
 <fieldset id="first">
 <h2 class="title">Seleccione Domicilio</h2>
 <p class="subtitle">Domicilio de env&iacute;o</p>
+
+<!-- Cosas que se repiten (Domicilio) -->
+@foreach ($tablaDetalleDireccion as $direccion)
 <div class="radio_btn">
-<input type="radio" name="gender" value="Domicilio 1"> Calle xxxx Nayarit #xxx</div><br>
-<div class="radio_btn">
-<input type="radio" name="gender" value="Domicilio 2"> Calle xxxx Nayarit #xxx</div><br>
-<div class="radio_btn">
-<input type="radio" name="gender" value="Domicilio 3"> Calle xxxx Nayarit #xxx
+<input type="radio" name="Direccion" value="{{$direccion->iddireccion}}">
+<p>Calle: {{$direccion->calle}}  #{{$direccion->numext}}</p>
+<p>Interior: {{$direccion->numint}}</p>
+<p>Colonia {{$direccion->colonia}}</p>
+<p> {{$direccion->ciudad}}, {{$direccion->municipio}}, {{$direccion->codigopostal}}</p>
+<p> {{$direccion->pais}}</p>
 </div>
+<br>
+@endforeach
+<!-- Fin de las cosas que se repiten -->
+
 <div align="center">
-<input id="next_btn1" onclick="next_step1()" type="button" value="Siguiente"></div>
+<input id="next_btn1" onclick="next_step1()" type="button" value="Siguiente">
+</div>
 </fieldset>
+
+
 <fieldset id="second">
 <h2 class="title">Seleccione el metodo de pago</h2>
 <p class="subtitle">Metodos de pago disponibles:</p>
@@ -84,36 +95,54 @@
 </fieldset>
 
 <fieldset id="third">
-<h2 class="title">Educational Profiles</h2>
-<p class="subtitle">Step 2</p>
-<select class="options">
-<option>--Select Education--</option>
-<option>Post Graduate</option>
-<option>Graduate</option>
-<option>HSC</option>
-<option>SSC</option>
+<h2 class="title">Seleccion la paqueteria</h2>
+<p class="subtitle">Paqueterias disponibles</p>
+<select class="options" name="paqueteriaSeleccionada">
+
+<!-- Cosas que se repiten (paquetaria) -->
+@foreach ($tablaPaqueteria as $paqueteria)
+<option value="{{$paqueteria->idpaqueteria}}">
+{{$paqueteria->nombre}}
+</option>
+@endforeach
+<!--Fin Cosas que se repiten (paquetaria) -->
 </select>
 <div align="center">
 <input id="pre_btn2" onclick="prev_step2()" type="button" value="Anterior">
-<input id="next_btn3" name="next" onclick="next_step3()" type="button" value="Siguiente"></div>
+<input id="next_btn3" name="next" onclick="next_step3()" type="button" value="Siguiente">
+</div>
 </fieldset>
 
 <fieldset id="four">
-<h2 class="title">Personal Details</h2>
-<p class="subtitle">Step 3</p>
-<input class="text_field" name="fname" placeholder="First Name" type="text">
-<input class="text_field" name="lname" placeholder="Last Name" type="text">
-<input class="text_field" name="cont" placeholder="Contact" type="text">
-<label>Gender</label>
-<input name="gender" type="radio" value="Male">Male
-<input name="gender" type="radio" value="Female">Female
-<textarea name="address" placeholder="Address">
-</textarea>
+<h2 class="title">Productos que estas comprando</h2>
+<p class="subtitle">Verifica que todo este en orden</p>
+
+<!-- Cosas que se repiten (carrito) -->
+<?php $granTotal=0 ?>
+@foreach ($tablaCarrito as $carrito)
+
+<div align="center"  style="border: 1px #ccc solid; border-radius: 3px; padding: 10px; margin: auto;">
+<p>{{$carrito->nombreproducto}}</p>
+<p>Precio:{{$carrito->precio}}</p>
+<p>Cantidad:{{$carrito->cantidad}}</p>
+<p>Subtotal:{{$carrito->cantidad*$carrito->precio}}</p>
+</div>
+<?php $granTotal=$granTotal+ ($carrito->cantidad*$carrito->precio) ?>
+@endforeach
+<!--Fin Cosas que se repiten (carrito) -->
+
 <div align="center">
 <input id="pre_btn3" onclick="prev_step3()" type="button" value="Anterior">
-<input class="submit_btn" onclick="validation(event)" type="submit" value="Confirmar"></div>
+<input class="submit_btn" onclick="validation(event)" type="submit" value="Confirmar">
+</div>
+<div align="center">
+<p>Gran Total: </p>
+<p> {{$granTotal}} </p>
+</div>
 </fieldset>
+
 </form>
+
 </div>
 </div>
 <script src="js/form.js"></script>

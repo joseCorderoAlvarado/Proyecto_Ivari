@@ -17,6 +17,7 @@ class CreateTipodireccionTable extends Migration
         {
            $table-> increments('idtipo');
             $table-> enum('tipo',array('envio'));
+            $table->engine = "InnoDB";
         });
     }
 

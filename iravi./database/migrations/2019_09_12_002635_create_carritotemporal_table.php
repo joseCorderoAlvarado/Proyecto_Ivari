@@ -14,7 +14,7 @@ class CreateCarritotemporalTable extends Migration
     public function up()
     {
         Schema::create('carritotemporal', function (Blueprint $table) {
-            $table->increments('idcarrito');
+            //$table->increments('idcarrito');
             $table->integer('cantidad');
             $table->integer('costo');
 
@@ -24,6 +24,8 @@ class CreateCarritotemporalTable extends Migration
             $table->integer('fkpersona')->unsigned();
             $table->foreign('fkpersona')->references('idpersona')->on('persona');
 
+            $table->primary(array('fkproducto','fkpersona'));
+            $table->engine = "InnoDB";
 
         });
     }

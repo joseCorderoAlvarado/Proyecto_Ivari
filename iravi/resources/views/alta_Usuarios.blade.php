@@ -19,14 +19,15 @@
 	  <article class="card-body">
 		<h4 class="card-title text-center mb-4 mt-1" style="color: #003366">Registro Usuario </h4>
 		<hr style="border-color: #666699">
-			<form action="registroUsuarioAdminGuardar" method="post" enctype="multipart/form-data">
+			<form action="registroUsuarioGuardar" method="post" enctype="multipart/form-data">
 		{{ csrf_field() }}
 		<div class="form-group">
 		<div class="input-group">
 			<div class="input-group-prepend">
 			    <span class="input-group-text" style="border-color: #666699"> <i class="fa fa-user"></i> </span>
 			</div>
-			<input name="nombre" class="form-control" placeholder="Nombre" type="text" style="border-color: #666699">
+			<input name="nombre" class="form-control" placeholder="Nombre" type="text" style="border-color: #666699" pattern="[A-Za-z\s]+"
+		title="El nombre debe llevar solo letras y espacios" required>
 		</div>
 		</div>
 		<div class="form-group">
@@ -34,7 +35,8 @@
 			<div class="input-group-prepend">
 			    <span class="input-group-text" style="border-color: #666699"> <i class="fa fa-lock"></i> </span>
 			 </div>
-			<input name="app" class="form-control" placeholder="Apellido Paterno" style="border-color: #666699">
+			<input name="app" class="form-control" placeholder="Apellido Paterno" style="border-color: #666699" pattern="[A-Za-z]+"
+		title="El apellido debe llevar solo letras" required>
 		</div>
 		</div>
 		<div class="form-group">
@@ -42,7 +44,8 @@
 			<div class="input-group-prepend">
 			    <span class="input-group-text" style="border-color: #666699"> <i class="fa fa-lock"></i> </span>
 			 </div>
-			<input name="apm" class="form-control" placeholder="Apellido Materno" style="border-color: #666699">
+			<input name="apm" class="form-control" placeholder="Apellido Materno" style="border-color: #666699" pattern="[A-Za-z]+"
+		title="El apellido debe llevar solo letras" required>
 		</div>
 		</div>
 
@@ -55,12 +58,25 @@
 		</div>
 		</div>
 
+	<div class="form-group">
+	<div class="input-group" style="margin-top: 40px;">
+		<div class="input-group-prepend">
+		    <span class="input-group-text" style="border-color: #666699; float: left;"> <i class="fa fa-lock"></i> </span>
+		 </div>
+		<input placeholder="Calle" name="calle" class="form-control formulario_input" style="border-color: #666699" pattern="[A-Za-z\s]+"
+		title="El nombre de la calle debe llevar solo letras y espacios" required>
+		<label class="formulario_label">Calle</label>
+	</div>
+	</div>
+
 		<div class="form-group">
 		<div class="input-group">
 			<div class="input-group-prepend">
 			    <span class="input-group-text" style="border-color: #666699"> <i class="fa fa-lock"></i> </span>
 			 </div>
-			<input name="calle" class="form-control" placeholder="Calle" style="border-color: #666699">
+			<input placeholder="Colonia" name="colonia" class="form-control formulario_input" style="border-color: #666699" pattern="[A-Za-z\s]+"
+		title="El nombre de la colonia debe llevar solo letras y espacios" required> 
+		<label class="formulario_label">Colonia</label>
 		</div>
 		</div>
 
@@ -69,16 +85,9 @@
 			<div class="input-group-prepend">
 			    <span class="input-group-text" style="border-color: #666699"> <i class="fa fa-lock"></i> </span>
 			 </div>
-			<input name="colonia" class="form-control" placeholder="Colonia" style="border-color: #666699">
-		</div>
-		</div>
-
-		<div class="form-group">
-		<div class="input-group">
-			<div class="input-group-prepend">
-			    <span class="input-group-text" style="border-color: #666699"> <i class="fa fa-lock"></i> </span>
-			 </div>
-			<input name="ninterior" class="form-control" placeholder="Numero Interior" style="border-color: #666699">
+				<input placeholder="Numero Interior" name="ninterior" class="form-control formulario_input" style="border-color: #666699" pattern="[0-9]+"
+		title="El numero interior solo puede llevar numeros" >
+		<label class="formulario_label">N&uacute;mero Interior</label>
 		</div>
 		</div>
 
@@ -88,7 +97,9 @@
 			<div class="input-group-prepend">
 			    <span class="input-group-text" style="border-color: #666699"> <i class="fa fa-lock"></i> </span>
 			 </div>
-			<input name="nexterior" class="form-control" placeholder="Número Exterior" style="border-color: #666699">
+			<input placeholder="Numero Exterior" name="nexterior" class="form-control formulario_input" style="border-color: #666699" pattern="[0-9]+"
+		title="El numero exterior solo puede llevar numeros" required>
+		<label class="formulario_label">N&uacute;mero Exterior</label>
 		</div>
 		</div>
 		<div class="form-group">
@@ -96,7 +107,9 @@
 			<div class="input-group-prepend">
 			    <span class="input-group-text" style="border-color: #666699"> <i class="fa fa-lock"></i> </span>
 			 </div>
-			<input name="pais" class="form-control" placeholder="Pais" style="border-color: #666699">
+				<input placeholder="Pais" name="pais" class="form-control formulario_input" style="border-color: #666699" pattern="[A-Za-z\s]+"
+		title="El nombre del pais debe llevar solo letras y espacios" required> 
+		<label class="formulario_label">Pa&iacute;s</label>
 		</div>
 		</div>
 
@@ -105,7 +118,9 @@
 			<div class="input-group-prepend">
 			    <span class="input-group-text" style="border-color: #666699"> <i class="fa fa-lock"></i> </span>
 			 </div>
-			<input name="municipio" class="form-control" placeholder="Municipio" style="border-color: #666699">
+			<input placeholder="Municipio" name="municipio" class="form-control formulario_input" style="border-color: #666699" pattern="[A-Za-z\s]+"
+		title="El nombre del municipio debe llevar solo letras y espacios" required> 
+		<label class="formulario_label">Municipio</label>
 		</div>
 		</div>
 
@@ -114,7 +129,9 @@
 			<div class="input-group-prepend">
 			    <span class="input-group-text" style="border-color: #666699"> <i class="fa fa-lock"></i> </span>
 			 </div>
-			<input name="ciudad" class="form-control" placeholder="Ciudad" style="border-color: #666699">
+			<input placeholder="Ciudad" name="ciudad" class="form-control formulario_input" style="border-color: #666699" pattern="[A-Za-z\s]+"
+		title="El nombre de la ciudad debe llevar solo letras y espacios" required> 
+		<label class="formulario_label">Ciudad</label>
 		</div>
 		</div>
 
@@ -123,7 +140,9 @@
 			<div class="input-group-prepend">
 			    <span class="input-group-text" style="border-color: #666699"> <i class="fa fa-lock"></i> </span>
 			 </div>
-			<input name="cp" class="form-control" placeholder="Codigo Postal" style="border-color: #666699">
+				<input placeholder="Codigo Postal" name="cp" class="form-control formulario_input" style="border-color: #666699" pattern="[0-9]{5}"
+		title="El codigo postal debe contener solo numeros y tener una longitud de cinco caracteres" required> 
+		<label class="formulario_label">C&oacute;digo Postal</label>
 		</div>
 		</div>
 
@@ -132,7 +151,9 @@
 			<div class="input-group-prepend">
 			    <span class="input-group-text" style="border-color: #666699"> <i class="fa fa-lock"></i> </span>
 			 </div>
-			<input name="telefono" class="form-control" placeholder="Teléfono" style="border-color: #666699">
+			<input placeholder="Telefono" name="telefono" class="form-control formulario_input" style="border-color: #666699" pattern="[0-9]+"
+		title="El telefono debo contener solo numeros" required> 
+		<label class="formulario_label">Tel&eacute;fono</label>
 		</div>
 		</div>
 		<div class="form-group">
@@ -140,7 +161,8 @@
 			<div class="input-group-prepend">
 			    <span class="input-group-text" style="border-color: #666699"> <i class="fa fa-lock"></i> </span>
 			 </div>
-			<input name="correo" class="form-control" placeholder="Correo Electrónico" style="border-color: #666699">
+			<input placeholder="Email" type="email" name="correo" class="form-control formulario_input"  style="border-color: #666699">
+		<label class="formulario_label">Correo Electr&oacute;nico</label>
 		</div>
 		</div>
 		<div class="form-group">
@@ -148,7 +170,10 @@
 			<div class="input-group-prepend">
 			    <span class="input-group-text" style="border-color: #666699"> <i class="fa fa-lock"></i> </span>
 			 </div>
-			<input name="contraseña" class="form-control" placeholder="Contraseña" style="border-color: #666699">
+			<input placeholder="Password" type="password" name="contrasena" class="form-control formulario_input" style="border-color: #666699"
+		pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+		title="El password debe contener por lo menos una mayusucla, una minuscula, un numero y tener por lo menos ocho caracteres">
+		<label class="formulario_label">Contrase&ntilde;a</label>
 		</div>
 		</div>
 		<div class="form-group">

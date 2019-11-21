@@ -1,6 +1,10 @@
 <?php
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
+use App\usuario;
+use App\persona;
+use App\detallepersonadireccion;
+use App\direccion;
 use Illuminate\Http\Request;
 
 
@@ -17,6 +21,7 @@ if (session()->has('S_Rol') ) {
 }
 return redirect ('/');
 }
+
 public function guardar(Request $datos){
 //dd($datos->all());
 $persona = new persona;

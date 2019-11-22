@@ -54,10 +54,10 @@ public function realizarpedido(){
 	 		$idProducto = implode($idproductoconvert);
 			//fin de consulta para obtener los id de los productos del carrito
 	 		echo "$idProducto";
-			$articuloCarritoCompras = carritotemporal::where('fkproducto', '=', $idProducto)
-			                ->where('fkpersona', '=', $idpersona)
+//			$articuloCarritoCompras = carritotemporal::where('fkproducto', '=', $idProducto)
+	//		                ->where('fkpersona', '=', $idpersona)
 			                ->first();
-			$articuloCarritoCompras->delete();
+		//	$articuloCarritoCompras->delete();
      }
 	}
 }

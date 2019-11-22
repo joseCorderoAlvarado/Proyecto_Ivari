@@ -26,138 +26,118 @@
 <div class="container">
 	<div class="row" style="border: 1px gray solid; border-radius: 10px">
 		<div class="col-md-3" >
-			<center><span><h3>En preparaci&oacute;n</h3></span></center><br>
-			<center><span><h5><font style="color: gray">20 ventas</font></h5></span></center>
+			<center><span>
+						<form action="pedidosFiltrados" method="post" enctype="multipart/form-data">
+				 {{ csrf_field() }}
+				 <input type="hidden" name="estado" value=1>
+				  <button type="submit" class="btn btn-primary btn-block">Preparando</button></span></center> </form>
+
+
+
+			<center><span><h5><font style="color: gray">	@foreach ($estado1 as $estado)
+								{{ $estado->c }} pedidos
+						@endforeach
+						</font></h5></span></center>
 		</div>
 		<div class="col-md-3">
-			<center><span><h3>Listo para enviar</h3></span></center><br>
-			<center><span><h5><font style="color: gray">0 ventas</font></h5></span></center>
+			<form action="pedidosFiltrados" method="post" enctype="multipart/form-data">
+				{{ csrf_field() }}
+				<input type="hidden" name="estado" value=2>
+				<button type="submit" class="btn btn-primary btn-block">Listo para enviar</button></span></center> </form>
+			<center><span><h5><font style="color: gray">@foreach ($estado2 as $estado)
+								{{ $estado->c }} pedidos
+							@endforeach</font></h5></span></center>
 		</div>
 		<div class="col-md-3">
-			<center><span><h3>En tr&aacute;nsito</h3></span></center><br>
-			<center><span><h5><font style="color: gray">45 ventas</font></h5></span></center>
+			<form action="pedidosFiltrados" method="post" enctype="multipart/form-data">
+				{{ csrf_field() }}
+				<input type="hidden" name="estado" value=3>
+				<button type="submit" class="btn btn-primary btn-block">En tránsito</button></span></center> </form>			<center><span><h5><font style="color: gray">@foreach ($estado3 as $estado)
+								{{ $estado->c }} pedidos
+							@endforeach</font></h5></span></center>
 		</div>
 		<div class="col-md-3">
-			<center><span><h3>Finalizadas</h3></span></center><br>
-			<center><span><h5><font style="color: gray">15 ventas</font></h5></span></center>
+			<form action="pedidosFiltrados" method="post" enctype="multipart/form-data">
+				{{ csrf_field() }}
+				<input type="hidden" name="estado" value=4>
+				<button type="submit" class="btn btn-primary btn-block">Finalizadas</button></span></center> </form>			<center><span><h5><font style="color: gray">@foreach ($estado4 as $estado)
+								{{ $estado->c }} pedidos
+							@endforeach</font></h5></span></center>
 		</div>
 	</div>
 	<div class="row" style="height: 3em"><div class="col-md-12"></div></div>
 </div>
 <div class="container">
+	<h3>{{ $header }}</h3>
 
-<div class="row">
-	<div class="col-md-8 ">
-		Filtrar y ordenar
-			<div class="col-md-4 d-inline-block">
-			<form>
-            <div class="card-body row no-gutters align-items-center">
-             <div class="col">
-              <input class="form-control" type="search" placeholder="Buscar">
-             </div>
-            <div class="col-auto">
-            <button class="btn" type="submit">
-            <img src="images/iconoBuscar.png" width="30" height="30"	class="d-inline-block align-top">
-            </button>
-            </div>
-           </div>
-          </form>
-		</div>
-	</div>
-	<div class="col-md-2">
-
-	</div>
-	<div class="col-md-2" style="color: gray;">
-		80 ventas
 	</div>
 </div>
 </div>
 
 <div class="container" style="border: 1px #ccc solid; border-radius: 3px; padding: 10px; margin: auto;">
 
-		<div class="row">
-
-			<div class="col-md-8">
-			 	<input type="checkbox" name="" class="d-inline-block align-top"><span style="color: gray" class="d-inline-block align-top"><h5>Estado de la venta (En prepa...)</h5></span>
-
-		</div>
-		<div class="col-md-3">
-			<button class="btn btn-primary d-inline-block align-top">Ver informaci&oacute;n</button>
-		</div>
-		<div class="col-md-3">
-			<img src="images/Iravi.png" width="40em" height="40em" class="d-inline-block align-top">
-			<span style="color: gray" class="d-inline-block align-top">Nombre del comprador</span>
-		</div>
-
-
-	</div>
-	<hr style="border: 1px #ccc solid">
-
-		<div class="row">
-		<div class="col-md-4">
-			<img src="images/Iravi.png" width="80em" height="80em" class="d-inline-block align-top">
-			<span class="d-inline-block align-top"><h3>Nombre del producto</h3></span>
+	<hr style="border: 0.5px #ccc solid">
+	<div class="row">
+		<div class="col-md-2">
+			<span class="d-inline-block align-top"><h3>Folio</h3><p> <br></p></span>
 		</div>
 		<div class="col-md-2">
-			<span style="color: gray" class="d-inline-block align-top">Precio</span>
+			<span style="color: gray" class="d-inline-block align-top"><h3>Cliente</h3></span>
 		</div>
 
 		<div class="col-md-2">
-			<span style="color: gray" class="d-inline-block align-top">Cantidad</span>
+			<span style="color: gray" class="d-inline-block align-top"><h3>Direccion</h3></span>
 		</div>
 
 		<div class="col-md-2">
-			<span style="color: gray" class="d-inline-block align-top">Caracter&iacute;sticas</span>
+			<span style="color: gray" class="d-inline-block align-top"><h3>Fecha</h3></span>
 		</div>
+		<div class="col-md-1">
+			<span style="color: gray" class="d-inline-block align-top"><h3>Total</h3></span>
+		</div>
+		<div class="col-md-1">
+			<span style="color: gray" class="d-inline-block align-top"><h3>Estado</h3></span>
+		</div>
+		<div class="col-md-1">
 
-		<div class="col-md-2">
-			<span style="color: gray" class="d-inline-block align-top">Fecha</span>
-		</div>
 		</div>
 	</div>
-			<div class="row" style="height: 3em"><div class="col-md-12"></div></div>
-	<div class="container" style="border: 1px #ccc solid; border-radius: 3px; padding: 10px; margin: auto;">
+	@foreach ($pedidos as $pedidos)
 
 		<div class="row">
-
-			<div class="col-md-8">
-			 	<input type="checkbox" name="" class="d-inline-block align-top"><span style="color: gray" class="d-inline-block align-top"><h5>Estado de la venta (En tra...)</h5></span>
-
+		<div class="col-md-2">
+			<span class="d-inline-block align-top">{{ $pedidos->foliopedido }}</span><p> <br></p>
 		</div>
-		<div class="col-md-3">
-			<button class="btn btn-primary d-inline-block align-top">Seguir env&iacute;o</button>
-		</div>
-		<div class="col-md-3">
-			<img src="images/Iravi.png" width="40em" height="40em" class="d-inline-block align-top">
-			<span style="color: gray" class="d-inline-block align-top">Nombre del comprador</span>
+		<div class="col-md-2">
+			<span style="color: gray" class="d-inline-block align-top">{{ $pedidos->nombre }}</span>
 		</div>
 
+		<div class="col-md-2">
+			<span style="color: gray" class="d-inline-block align-top">{{ $pedidos->direccion }}</span>
+		</div>
+
+		<div class="col-md-2">
+			<span style="color: gray" class="d-inline-block align-top">{{ $pedidos->fecha }}</span>
+		</div>
+		<div class="col-md-1">
+			<span style="color: gray" class="d-inline-block align-top">${{ $pedidos->total }}</span>
+		</div>
+		<div class="col-md-1">
+			<span style="color: gray" class="d-inline-block align-top">{{ $pedidos->estadopedido }}</span>
+		</div>
+		 <div class="col-md-2"><form action="detallePedido" method="post" enctype="multipart/form-data">
+				 {{ csrf_field() }}
+				 <input type="hidden" name="id" value={{ $pedidos->foliopedido }}>
+				 <CENTER> <button type="submit" class="btn btn-primary btn-block">Detalles</button>  </CENTER>
+
+			 </form>
+		</div>
+		</div>
+		@endforeach
 
 	</div>
-	<hr style="border: 1px #ccc solid">
 
-		<div class="row">
-		<div class="col-md-4">
-			<img src="images/Iravi.png" width="80em" height="80em" class="d-inline-block align-top">
-			<span class="d-inline-block align-top"><h3>Nombre del producto</h3></span>
-		</div>
-		<div class="col-md-2">
-			<span style="color: gray" class="d-inline-block align-top">Precio</span>
-		</div>
-
-		<div class="col-md-2">
-			<span style="color: gray" class="d-inline-block align-top">Cantidad</span>
-		</div>
-
-		<div class="col-md-2">
-			<span style="color: gray" class="d-inline-block align-top">Caracter&iacute;sticas</span>
-		</div>
-
-		<div class="col-md-2">
-			<span style="color: gray" class="d-inline-block align-top">Fecha</span>
-		</div>
-		</div>
-	</div>
+			
 		<div class="row" style="height: 3em"><div class="col-md-12"></div></div>
 {{--------------------Inicio de Paginación----------------------}}
 <div class="container-fluid">

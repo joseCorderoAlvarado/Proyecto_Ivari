@@ -6,9 +6,7 @@ use App\carritotemporal;
 use App\producto;
 use DB;
 class controlador_carritoCompras extends Controller
-
 {
-
 	public function mostrar(){
 if (session()->has('S_Rol') ) {
 	if(session('S_Rol')==3){
@@ -39,17 +37,13 @@ public function guardarcarrito(Request $datos) {
 	$producto=producto::find($idProducto);
 	$costo=$producto->precio;
 //Fin de conseguir el precio//
-
-
 $carritoCompras = new carritotemporal;
 $carritoCompras->fkpersona=$idpersona;
 $carritoCompras->fkproducto=$idProducto;
 $carritoCompras->costo=$costo;
 $carritoCompras->cantidad=$datos->input('cantidad');
 $carritoCompras->save();
-
-
-return redirect('/');
+return redirect('carritoCompras	');
 }
 
 
@@ -76,10 +70,7 @@ $articuloCarritoCompras->fkproducto=$idProducto;
 $articuloCarritoCompras->costo=$costo;
 $articuloCarritoCompras->cantidad=$datos->input('cantidad');
 $articuloCarritoCompras->save();
-
-
 return redirect('carritoCompras');
-
 }
 
 public function eliminarCarrito (Request $datos){
@@ -89,25 +80,13 @@ public function eliminarCarrito (Request $datos){
 	$idpersonaconvert= json_decode( json_encode($consultaidpersona), true);
 	$idpersona = implode($idpersonaconvert[0]);
 		//Fin  conseguir el id de la persona//
-
-
 	$idProducto=$datos->input('idProducto');
-
-
-
 $articuloCarritoCompras = carritotemporal::where('fkproducto', '=', $idProducto)
                 ->where('fkpersona', '=', $idpersona)
                 ->first();
-
-
 $articuloCarritoCompras->delete();
-
-
 return redirect('carritoCompras');
 
 }
-
-
-
 }
 ?>

@@ -12,30 +12,7 @@
 
 </style>
 <script type="text/javascript">
-
 </script>
-{{-------------------------Buscador---------------------------}}
-<div class="container-fluid">
-	<div class="row justify-content-center">
-	   <div class="col-md-4"></div>
-		<div class="col-md-4"></div>
-        <div class="col-md-4">
-          <form>
-            <div class="card-body row no-gutters align-items-center">
-             <div class="col">
-              <input class="form-control" type="search" placeholder="Buscar">
-             </div>
-            <div class="col-auto">
-            <button class="btn" type="submit">
-            <img src="images/iconoBuscar.png" width="30" height="30"	class="d-inline-block align-top">
-            </button>
-            </div>
-           </div>
-          </form>
-        </div>
-    </div>
-</div>
-{{------------------------Fin de Buscador---------------------------}}
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-3">
@@ -50,7 +27,8 @@
 <div class="content">
 <!-- Multistep Form -->
 <div class="main">
-<form action="#" class="regform" method="get">
+<form action="paypal" class="regform" method="post">
+	  {{ csrf_field() }}
 <!-- Progressbar -->
 <ul id="progressbar">
 <li id="active1">Domicilio<span class="Ok" id="ok1">✔</span></li>
@@ -116,11 +94,9 @@
 <fieldset id="four">
 <h2 class="title">Productos que estas comprando</h2>
 <p class="subtitle">Verifica que todo este en orden</p>
-
 <!-- Cosas que se repiten (carrito) -->
 <?php $granTotal=0 ?>
 @foreach ($tablaCarrito as $carrito)
-
 <div align="center"  style="border: 1px #ccc solid; border-radius: 3px; padding: 10px; margin: auto;">
 <p>{{$carrito->nombreproducto}}</p>
 <p>Precio:{{$carrito->precio}}</p>
@@ -130,9 +106,21 @@
 <?php $granTotal=$granTotal+ ($carrito->cantidad*$carrito->precio) ?>
 @endforeach
 <!--Fin Cosas que se repiten (carrito) -->
-
 <div align="center">
 <input id="pre_btn3" onclick="prev_step3()" type="button" value="Anterior">
+<input id="total" type="text" hidden="hidden" name="total" value=<?php echo $granTotal ?>>
+	<input id="cantidad" type="text" hidden=hidden name="cantidad" value="
+		@foreach ($tablaCarrito as $carrito)
+		{{$carrito->cantidad}}
+		@endforeach">
+		<input id="precio" type="text" hidden=hidden name="precio" value="
+			@foreach ($tablaCarrito as $carrito)
+			{{$carrito->precio}}
+			@endforeach">
+	<input id="nombre" type="text" hidden=hidden name="nombre" value="
+				@foreach ($tablaCarrito as $carrito)
+				{{$carrito->nombreproducto}}
+				@endforeach">
 <input class="submit_btn" onclick="validation(event)" type="submit" value="Confirmar">
 </div>
 <div align="center">
@@ -140,9 +128,7 @@
 <p> {{$granTotal}} </p>
 </div>
 </fieldset>
-
 </form>
-
 </div>
 </div>
 <script src="js/form.js"></script>

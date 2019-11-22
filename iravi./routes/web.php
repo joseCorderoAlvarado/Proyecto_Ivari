@@ -52,7 +52,9 @@ Route::Get('comprasRealizadas','comprasRealizadas@mostrar');
 //Confirmacion de Compras
 Route::Get('confirmacionCompra','confirmacionCompra@mostrar');
 
-
+//proceso Pago
+Route::post('paypal','venta@procesarpago');
+Route::Get('venta','venta@realizarpedido');
 //Vista Producto
 Route::get('/vistaProducto{d}',['uses' =>'vistaProducto@mostrar']);
 

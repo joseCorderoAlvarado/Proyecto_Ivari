@@ -30,8 +30,7 @@
 		<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
 		</div>
-		<input  name="nombreproducto" class="form-control" placeholder="Nombre Producto" type="text"
-		value={{ $producto[0]->nombreproducto }}>
+		<input  name="nombreproducto" class="form-control" placeholder="Nombre Producto" type="text" required value="{{ $producto[0]->nombreproducto }}" >
 	</div> 
 	</div>
 	<div class="form-group">
@@ -39,7 +38,7 @@
 		<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 		 </div>
-		<textarea  name="descripcionproducto" class="form-control" placeholder="Descripción del Producto"
+		<textarea  name="descripcionproducto" class="form-control" placeholder="Descripción del Producto" required
 		>{{ $producto[0]->descripcionproducto }}</textarea>
 	</div>
 	</div>
@@ -87,7 +86,7 @@
         <div class="input-group-prepend">
           <span class="input-group-text" id="validationTooltipUsernamePrepend">$</span>
         </div>
-        <input name="precio" type="text" class="form-control" id="" placeholder="Precio" required
+        <input name="precio" type="text" class="form-control" id="" placeholder="Precio" pattern="[0-9\.]+" maxlength="14" required
 		value={{ $producto[0]->precio }} >
     </div>
 	</div>

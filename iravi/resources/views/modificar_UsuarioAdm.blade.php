@@ -31,7 +31,8 @@
 		<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
 		</div>
-		<input name="nombrepersona" class="form-control" placeholder="Nombre" type="text" value="{{ $modificar[0]->nombrepersona }}">
+		<input name="nombrepersona" class="form-control" placeholder="Nombre" type="text" value="{{ $modificar[0]->nombrepersona }}" pattern="[A-Za-z\s]+"
+		title="El nombre debe llevar solo letras y espacios" required>
 	</div>
 	</div>
 	<div class="form-group">
@@ -39,7 +40,8 @@
 		<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 		 </div>
-		<input name="apellidopaterno" class="form-control" placeholder="Apellido Paterno" value="{{ $modificar[0]->apellidopaterno }}">
+		<input name="apellidopaterno" class="form-control" placeholder="Apellido Paterno" value="{{ $modificar[0]->apellidopaterno }}" pattern="[A-Za-z]+"
+		title="El apellido debe llevar solo letras" required>
 	</div>
 	</div>
 	<div class="form-group">
@@ -47,7 +49,8 @@
 		<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 		 </div>
-		<input name="apellidomaterno" class="form-control" placeholder="Apellido Materno" value="{{ $modificar[0]->apellidomaterno }}">
+		<input name="apellidomaterno" class="form-control" placeholder="Apellido Materno" value="{{ $modificar[0]->apellidomaterno }}" pattern="[A-Za-z]+"
+		title="El apellido debe llevar solo letras" required>
 	</div>
 	</div>
 
@@ -56,7 +59,8 @@
 		<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 		 </div>
-		<input name="contrasena" class="form-control" placeholder="Contraseña">
+		<input name="contrasena" class="form-control" placeholder="Contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+		title="La contraseña debe contener por lo menos una mayusucla, una minuscula, un numero y tener por lo menos ocho caracteres" required>
 	</div>
 	</div>
 

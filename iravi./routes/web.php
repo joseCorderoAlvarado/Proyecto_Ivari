@@ -112,6 +112,10 @@ Route::get('listadoUsuario','listaUsuarios@mostrar');
 //Guardar cambios usuario
 Route::post('guardarCambiosUsuario','modificarUsuarioAdm@guardar');
 
+Route::post('detallePedido','detallePedido@mostrar');
+Route::post('pedidosFiltrados','seguimientoPedidos@filtrar');
+
+
 
 
 

@@ -27,7 +27,7 @@
 		<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
 		</div>
-		<input id="nombre" name="nombre" class="form-control" placeholder="Nombre del Proveedor" type="text">
+		<input id="nombre" name="nombre" class="form-control" placeholder="Nombre del Proveedor" required pattern="[A-Za-z]+" title="Solo letras" type="text">
 	</div>
 	</div>
 	<div class="form-group">
@@ -35,7 +35,7 @@
 		<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 		 </div>
-		<input name="sucursal" id="sucursal" class="form-control" placeholder="sucursal">
+		<input name="sucursal" id="sucursal" class="form-control" placeholder="sucursal" required="">
 	</div>
 	</div>
 	<div class="form-group">
@@ -43,7 +43,7 @@
 		<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 		 </div>
-		<input name="encargado" id="encargado" class="form-control" placeholder="Encargado">
+		<input name="encargado" id="encargado" class="form-control" placeholder="Encargado" required pattern="[A-Za-z]+" title="Solo letras">
 	</div>
 	</div>
 	<div class="form-group">
@@ -51,7 +51,7 @@
 		<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 		 </div>
-		<input type="date" name="fechaI" name="fechaI" class="form-control" placeholder="Fecha de ingreso">
+		<input type="date" name="fechaI" name="fechaI" class="form-control" required="" placeholder="Fecha de ingreso">
 	</div>
 	</div>
 	<div class="form-group">
@@ -59,7 +59,7 @@
 		<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 		 </div>
-		<input type="date" name="fechaE" id="fechaE" class="form-control" placeholder="Fecha de egreso">
+		<input type="date" name="fechaE" id="fechaE" class="form-control" required="" placeholder="Fecha de egreso">
 	</div>
 	</div>
     <div class="form-group">

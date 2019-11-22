@@ -3,9 +3,9 @@
 @extends('layouts.head')
 @include('layouts.menu_Navegacion')
 {{-------------------------Alta Usuarios Administrador---------------------------}}
-<div class="container">	
+<div class="container">
 <div class="row">
-<div class="col-md-12"> 
+<div class="col-md-12">
 	<br>
 	<center><div class="toggle toggle2">
             <span>Desplazar</span>
@@ -32,7 +32,7 @@
 		<input name="nombre" class="form-control formulario_input" type="text" style="border-color: #666699" pattern="[A-Za-z\s]+"
 		title="El nombre debe llevar solo letras y espacios" required>
 		<label class="formulario_label">Nombre</label>
-	</div> 
+	</div>
 	</div>
 	<div class="form-group">
 	<div class="input-group" style="margin-top: 40px;">
@@ -63,7 +63,7 @@
 		<input type="date" name="nacimiento" class="form-control" style="border-color: #666699" required>
 	</div>
 	</div>
-	
+
 	<div class="form-group">
 	<div class="input-group" style="margin-top: 40px;">
 		<div class="input-group-prepend">
@@ -78,8 +78,8 @@
 		<div class="input-group-prepend">
 		    <span class="input-group-text" style="border-color: #666699"> <i class="fa fa-lock"></i> </span>
 		 </div>
-		<input type="password" name="contraseña" class="form-control formulario_input" style="border-color: #666699"
-		pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+		<input type="password" name="contrasena" class="form-control formulario_input" style="border-color: #666699"
+		pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
 		title="El password debe contener por lo menos una mayusucla, una minuscula, un numero y tener por lo menos ocho caracteres">
 		<label class="formulario_label">Contrase&ntilde;a</label>
 	</div>
@@ -106,7 +106,7 @@
   <option value="1">Personal</option>
   <option value="2">Envio</option>
   <option value="3">Facturacion</option>
-  
+
 </select>
 	</div>
 	</div>
@@ -122,18 +122,18 @@
 		<label class="formulario_label">Calle</label>
 	</div>
 	</div>
-	
+
 	<div class="form-group">
 	<div class="input-group" style="margin-top: 40px;">
 		<div class="input-group-prepend">
 		    <span class="input-group-text" style="border-color: #666699"> <i class="fa fa-lock"></i> </span>
 		 </div>
 		<input name="colonia" class="form-control formulario_input" style="border-color: #666699" pattern="[A-Za-z\s]+"
-		title="El nombre de la colonia debe llevar solo letras y espacios" required> 
+		title="El nombre de la colonia debe llevar solo letras y espacios" required>
 		<label class="formulario_label">Colonia</label>
 	</div>
 	</div>
-	
+
 	<div class="form-group">
 	<div class="input-group" style="margin-top: 40px;">
 		<div class="input-group-prepend">
@@ -144,8 +144,8 @@
 		<label class="formulario_label">N&uacute;mero Interior</label>
 	</div>
 	</div>
-	
-	
+
+
 	<div class="form-group">
 	<div class="input-group" style="margin-top: 40px;">
 		<div class="input-group-prepend">
@@ -162,51 +162,51 @@
 		    <span class="input-group-text" style="border-color: #666699"> <i class="fa fa-lock"></i> </span>
 		 </div>
 		<input name="pais" class="form-control formulario_input" style="border-color: #666699" pattern="[A-Za-z\s]+"
-		title="El nombre del pais debe llevar solo letras y espacios" required> 
+		title="El nombre del pais debe llevar solo letras y espacios" required>
 		<label class="formulario_label">Pa&iacute;s</label>
 	</div>
 	</div>
-	
+
 	<div class="form-group">
 	<div class="input-group" style="margin-top: 40px;">
 		<div class="input-group-prepend">
 		    <span class="input-group-text" style="border-color: #666699"> <i class="fa fa-lock"></i> </span>
 		 </div>
 		<input name="municipio" class="form-control formulario_input" style="border-color: #666699" pattern="[A-Za-z\s]+"
-		title="El nombre del municipio debe llevar solo letras y espacios" required> 
+		title="El nombre del municipio debe llevar solo letras y espacios" required>
 		<label class="formulario_label">Municipio</label>
 	</div>
 	</div>
-	
+
 	<div class="form-group">
 	<div class="input-group" style="margin-top: 40px;">
 		<div class="input-group-prepend">
 		    <span class="input-group-text" style="border-color: #666699"> <i class="fa fa-lock"></i> </span>
 		 </div>
 		<input name="ciudad" class="form-control formulario_input" style="border-color: #666699" pattern="[A-Za-z\s]+"
-		title="El nombre de la ciudad debe llevar solo letras y espacios" required> 
+		title="El nombre de la ciudad debe llevar solo letras y espacios" required>
 		<label class="formulario_label">Ciudad</label>
 	</div>
 	</div>
-	
+
 		<div class="form-group">
 	<div class="input-group" style="margin-top: 40px;">
 		<div class="input-group-prepend">
 		    <span class="input-group-text" style="border-color: #666699"> <i class="fa fa-lock"></i> </span>
 		 </div>
 		<input name="cp" class="form-control formulario_input" style="border-color: #666699" pattern="[0-9]{5}"
-		title="El codigo postal debe contener solo numeros y tener una longitud de cinco caracteres" required> 
+		title="El codigo postal debe contener solo numeros y tener una longitud de cinco caracteres" required>
 		<label class="formulario_label">C&oacute;digo Postal</label>
 	</div>
 	</div>
-	
+
 	<div class="form-group">
 	<div class="input-group" style="margin-top: 40px;">
 		<div class="input-group-prepend">
 		    <span class="input-group-text" style="border-color: #666699"> <i class="fa fa-lock"></i> </span>
 		 </div>
 		<input name="telefono" class="form-control formulario_input" style="border-color: #666699" pattern="[0-9]+"
-		title="El telefono debo contener solo numeros" required> 
+		title="El telefono debo contener solo numeros" required>
 		<label class="formulario_label">Tel&eacute;fono</label>
 	</div>
 	</div>
@@ -214,7 +214,7 @@
 	</div>
 	<div class="row">
 		<div class="col-md-4">
-			
+
 		</div>
 		<div class="col-md-4">
 			<div class="form-group">
@@ -226,11 +226,11 @@
 	</div>
 		</div>
 		<div class="col-md-4">
-			
+
 		</div>
 	</div>
 
-	
+
 	</form>
 	</article>
 	</div>

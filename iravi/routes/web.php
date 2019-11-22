@@ -60,6 +60,13 @@ Route::get('/vistaProducto{d}',['uses' =>'vistaProducto@mostrar']);
 
 //Perfil de usuario
 Route::Get('perfilUsuario','perfilUsuario@mostrar');
+Route::Post('perfilUsuarioNombre','perfilUsuario@guardarNombre');
+Route::Post('perfilUsuarioApellidoP','perfilUsuario@guardarApellidoP');
+Route::Post('perfilUsuarioApellidoM','perfilUsuario@guardarApellidoM');
+Route::Post('perfilUsuarioCorreo','perfilUsuario@guardarCorreo');
+Route::Post('perfilUsuarioContra','perfilUsuario@guardarContraseña');
+Route::Post('agregarDirecciones','perfilUsuario@agregarDireccion');
+Route::Post('modificarDireccion','perfilUsuario@modificarDireccion');
 
 
 //Bonificaciones

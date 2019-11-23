@@ -37,12 +37,29 @@ public function guardarcarrito(Request $datos) {
 	$producto=producto::find($idProducto);
 	$costo=$producto->precio;
 //Fin de conseguir el precio//
+$carritoCompras = carritotemporal::where('fkproducto', '=', $idProducto)
+                ->where('fkpersona', '=', $idpersona)
+                ->first();
+
+	if($carritoCompras==null)			{
+		
 $carritoCompras = new carritotemporal;
 $carritoCompras->fkpersona=$idpersona;
 $carritoCompras->fkproducto=$idProducto;
 $carritoCompras->costo=$costo;
 $carritoCompras->cantidad=$datos->input('cantidad');
 $carritoCompras->save();
+
+}else{
+
+	$cantidadActual=$carritoCompras->cantidad;
+
+	$carritoCompras->fkproducto=$idProducto;
+	$carritoCompras->costo=$costo;
+	$carritoCompras->cantidad=$cantidadActual+$datos->input('cantidad');
+	$carritoCompras->save();
+}
+
 return redirect('carritoCompras	');
 }
 

@@ -22,7 +22,8 @@ class CreateConfirmacioncompraTable extends Migration
           $table-> integer('fkiddireccion');
           $table-> integer('fkidpaqueteria');
           $table-> float('totalProductos'); //Aqui de una vez guardamos el total, pero solo de los productos, no incluye envio
-
+          $table->timestamp('created_at');
+          $table->timestamp('updated_at');
           $table->engine = "InnoDB";
         });
     }

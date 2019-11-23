@@ -10,6 +10,7 @@ use App\pedido;
 use App\confirmacioncompra;
 use App\carritotemporal;
 use App\detallepedido;
+use App\historialpedido;
 use DB;
 use DateTime;
 class venta extends Controller
@@ -18,8 +19,20 @@ class venta extends Controller
 public function procesarpago(Request $datos){
 $cantidad=$datos->input('cantidad');
 $precio=$datos->input('precio');
-$total=$datos->input('total');
+
+$subtotal=$datos->input('subtotal');
 $nombre=$datos->input('nombre');
+
+$idPaqueteria=$datos->input('paqueteriaSeleccionada');
+$costoPaqueteria= paqueteria::where('idpaqueteria', '=', $idPaqueteria)
+						->first();
+
+$costoPaqueteria=$costoPaqueteria->precio;
+	$total=$subtotal+$costoPaqueteria;
+
+
+
+
 
 //Para conseguir el id de la persona//
 $correo_Electronico=session('S_identificador');
@@ -28,13 +41,14 @@ $idpersonaconvert= json_decode( json_encode($consultaidpersona), true);
 $idpersona = implode($idpersonaconvert[0]);
 	//Fin  conseguir el id de la persona//
 
+//Guardamos temporalmente esta infomracion para poder usarla despues de paypal
 $confirmacioncompra = new confirmacioncompra;
 $confirmacioncompra->fkidusuario=$idpersona;
 $confirmacioncompra->fkiddireccion=$datos->input('direccionSeleccionada');
 $confirmacioncompra->fkidpaqueteria=$datos->input('paqueteriaSeleccionada');
-$confirmacioncompra->totalProductos=$datos->input('total');
+$confirmacioncompra->totalProductos=$datos->input('subtotal');
 $confirmacioncompra->save();
-
+//Fin
 
 $paypal_business = "sb-l1ivw619927@business.example.com";
 	$paypal_currency = "MXN";
@@ -67,18 +81,14 @@ public function realizarpedido() {
 			//Fin  conseguir el id de la persona//
 
 
-			//Conseguimos los productos del carrito temporal para pasarlos al real
-			$articuloCarritoCompras = carritotemporal::where('fkpersona', '=', $idpersona)
-			                ->get();
+						//Para datos de la confirmacion//
+						$confirmacioncompra = confirmacioncompra::where('fkidusuario', '=', $idpersona)
+											->latest()->first();
 
-			$detallepedido= new detallepedido();
-
-
-
-
-
-
-
+											$idDireccion=$confirmacioncompra->fkiddireccion;
+											$idPaqueteria=$confirmacioncompra->fkidpaqueteria;
+											$subtotal=$confirmacioncompra->totalProductos;
+						//Fin datos//
 
 
 			//Nombre del folio
@@ -86,30 +96,55 @@ public function realizarpedido() {
 			$folio=$fecha->format('Y-m-d_H-i-s')."_".$idpersona;
 			//Fin Nombre del folio
 
+
+			//Guardamos los datos de la venta
 			$pedido= new pedido;
 			$pedido->foliopedido=$folio;
 			$pedido->fecha=	$fecha;
-			$pedido->subtotal=	$fecha;
+			$pedido->subtotal=	$subtotal;
+			$pedido->descuento=	0;//Modificacme
+				$pedido->fkidusuario=$idpersona;
+				$pedido->fkiddireccion=$idDireccion;
+				$pedido->fkidpaqueteria=$idPaqueteria;
+				$pedido->save();
+					//Fin de guardar datos de la venta
+
+
+			//Conseguimos los productos del carrito temporal para pasarlos al detalle de la venta
+			$articuloCarritoCompras = carritotemporal::where('fkpersona', '=', $idpersona)
+											->get();
+
+			foreach ($articuloCarritoCompras as $articulo ) {
+				$detallepedido = new detallepedido();
+				$detallepedido->cantidad=$articulo->cantidad;
+				$detallepedido->costo=$articulo->costo;
+				$detallepedido->fkproducto=$articulo->fkproducto;
+				$detallepedido->fkfoliopedido=$folio;
+					$detallepedido->save();
+			}
+			//Fin de transferencia
+
+
+			//Insertamos en el historial del pedido
+			$historialpedido = new historialpedido();
+			$historialpedido->fkfoliopedido=$folio;
+			$historialpedido->fkestadopedido=1;
+			$historialpedido->fecha=$fecha;
+			$historialpedido->save();
+			//Fin de la insercion en el historial
+
+		//Borramos el carrito Temporal y los datos de confirmacion
+			$articuloCarritoCompras->each->delete();
+			$confirmacioncompra = confirmacioncompra::where('fkidusuario', '=', $idpersona)
+								->get(); //Para borrar todos, en caso de que se hubiera producido errores
+				$confirmacioncompra->each->delete();
+			//Fin borrado
+
+			return redirect ('/');
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-//			$articuloCarritoCompras = carritotemporal::where('fkproducto', '=', $idProducto)
-	//		                ->where('fkpersona', '=', $idpersona)
-//			                ->first();
-		//	$articuloCarritoCompras->delete();
      }
 	}
 }

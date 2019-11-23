@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
         $this-> call (usuario::class);
         $this-> call (detallepersonadireccion::class);
         $this-> call (paqueteria::class);
+		$this-> call (estadopedido::class);
 
     }
 }

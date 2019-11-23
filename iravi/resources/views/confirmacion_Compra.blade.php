@@ -161,7 +161,8 @@ $('#exampleModal').on('show.bs.modal', function (event) {
 <!--Fin Cosas que se repiten (carrito) -->
 <div align="center">
 <input id="pre_btn3" onclick="prev_step3()" type="button" value="Anterior">
-<input id="total" type="text" hidden="hidden" name="total" value=<?php echo $granTotal ?>>
+<input id="total" type="text" hidden="hidden" name="subtotal" value={{$granTotal}}>
+
 	<input id="cantidad" type="text" hidden=hidden name="cantidad" value="
 		@foreach ($tablaCarrito as $carrito)
 		{{$carrito->cantidad}}
@@ -177,8 +178,12 @@ $('#exampleModal').on('show.bs.modal', function (event) {
 <input class="submit_btn" onclick="validation(event)" type="submit" value="Confirmar">
 </div>
 <div align="center">
+<p>Costo del Envio: </p>
+<p> xxx </p>
+</div>
+<div align="center">
 <p>Gran Total: </p>
-<p> {{$granTotal}} </p>
+<p> sss </p>
 </div>
 </fieldset>
 </form>

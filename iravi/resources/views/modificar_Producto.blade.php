@@ -11,7 +11,6 @@
       <a class="nav-link"  href="{{ url('registroUsuarioAdmin')}}">Alta Usuario</a>
       <a class="nav-link" href="{{ url('modificarUsuarioAdm')}}">Modificar Usuario</a>
       <a class="nav-link" href="{{ url('altaProveedores')}}">Alta Proveedores</a>
-      <a class="nav-link" href="{{ url('historialVentas')}}"> Ver Ventas</a>
       <a class="nav-link"  href="{{ url('seguimientoPedidos')}}"> Ver Pedidos</a>
     </div>
 </div> 

@@ -56,7 +56,7 @@ public function realizarpedido(){
 	 		echo "$idProducto";
 //			$articuloCarritoCompras = carritotemporal::where('fkproducto', '=', $idProducto)
 	//		                ->where('fkpersona', '=', $idpersona)
-			                ->first();
+//			                ->first();
 		//	$articuloCarritoCompras->delete();
      }
 	}

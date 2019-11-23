@@ -7,4 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class historialpedido extends Model
 {
         protected $table='historialpedido';
+    public $timestamps = false;
+
 }

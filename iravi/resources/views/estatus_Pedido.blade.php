@@ -23,151 +23,138 @@
 <div class="container-fluid">
 	<hr>
 </div>
-<div class="container">
-	<div class="row" style="border: 1px gray solid; border-radius: 10px">
-		<div class="col-md-3" >
-			<center><span><h3>En preparaci&oacute;n</h3></span></center><br>
-			<center><span><h5><font style="color: gray">20 ventas</font></h5></span></center>
-		</div>
-		<div class="col-md-3">
-			<center><span><h3>Listo para enviar</h3></span></center><br>
-			<center><span><h5><font style="color: gray">0 ventas</font></h5></span></center>
-		</div>
-		<div class="col-md-3">
-			<center><span><h3>En tr&aacute;nsito</h3></span></center><br>
-			<center><span><h5><font style="color: gray">45 ventas</font></h5></span></center>
-		</div>
-		<div class="col-md-3">
-			<center><span><h3>Finalizadas</h3></span></center><br>
-			<center><span><h5><font style="color: gray">15 ventas</font></h5></span></center>
-		</div>
-	</div>
-	<div class="row" style="height: 3em"><div class="col-md-12"></div></div>
-</div>
-<div class="container">
 
-<div class="row">
-	<div class="col-md-8 ">
-		Filtrar y ordenar
-			<div class="col-md-4 d-inline-block">
-			<form>
-            <div class="card-body row no-gutters align-items-center">
-             <div class="col">
-              <input class="form-control" type="search" placeholder="Buscar">
-             </div> 
-           </div>
-          </form>
-		</div>
-	</div>
-	<div class="col-md-2">
-
-	</div>
-</div>
-</div>
 
 <div class="col-md-2">
 			<span  style="color:blue" class="d-inline-block align-top" ><h3>Pedidos</h3></span>
 		</div>
 <div class="container" style="border: 1px #ccc solid; border-radius: 3px; padding: 10px; margin: auto;">
 
-	<hr style="border: 0.5px #ccc solid">
 
 		<div class="row">
-		<div class="col-md-2">
-			<span  style="color: gray" class="d-inline-block align-top">Folio</span>
+		<div class="col-md-1">
+			<span  style="color: gray" class="d-inline-block align-top"><h3>Folio</h3></span>
 		</div>
 		<div class="col-md-2">
-			<span style="color: gray" class="d-inline-block align-top">Cliente</span>
-		</div>
-
-		<div class="col-md-2">
-			<span style="color: gray" class="d-inline-block align-top">Direccion</span>
+			<span style="color: gray" class="d-inline-block align-top"><h3>Cliente</h3></span>
 		</div>
 
 		<div class="col-md-2">
-			<span style="color: gray" class="d-inline-block align-top">Fecha</span>
+			<span style="color: gray" class="d-inline-block align-top"><h3>Direccion</h3></span>
+		</div>
+
+		<div class="col-md-2">
+			<span style="color: gray" class="d-inline-block align-top"><h3>Fecha</h3></span>
 		</div>
 		<div class="col-md-1">
-			<span style="color: gray" class="d-inline-block align-top">Total</span>
+			<span style="color: gray" class="d-inline-block align-top"><h3>Total</h3></span>
 		</div>
 		<div class="col-md-1">
-			<span style="color: gray" class="d-inline-block align-top">Paqueteria</span>
+			<span style="color: gray" class="d-inline-block align-top"><h3>Estado</h3></span>
 		</div>
-		 <div class="col-md-2">
-			<select name="tipodireccion">
-  <option value="1">En preparación</option>
-  <option value="2">Listo para enviar</option>
-  <option value="3">En tránsito</option>
-  <option value="4">Finalizado</option>
-</select>
 		</div>
+	@foreach ($pedido as $pedido)
+	<div class="row">
+		<div class="col-md-1">
+			<span  style="color: gray" class="d-inline-block align-top">{{ $pedido->foliopedido }}</span>
+		</div>
+		<div class="col-md-2">
+			<span style="color: gray" class="d-inline-block align-top">{{ $pedido->nombre }}</span>
 		</div>
 
+		<div class="col-md-2">
+			<span style="color: gray" class="d-inline-block align-top">{{ $pedido->direccion }}</span>
+		</div>
+
+		<div class="col-md-2">
+			<span style="color: gray" class="d-inline-block align-top">{{ $pedido->fecha }}</span>
+		</div>
+		<div class="col-md-1">
+			<span style="color: gray" class="d-inline-block align-top">{{ $pedido->total }}</span>
+		</div>
+		<div class="col-md-2">
+			<form action="actualizarPedido" method="post" enctype="multipart/form-data">
+
+			<select name="estado">
+				<option value="1"<?php if($pedido->idestadopedido == 1): ?> selected="selected"<?php endif; ?>>En preparación</option>
+				<option value="2"<?php if($pedido->idestadopedido == 2): ?> selected="selected"<?php endif; ?>>Listo para enviar</option>
+				<option value="3"<?php if($pedido->idestadopedido == 3): ?> selected="selected"<?php endif; ?>>En tránsito</option>
+				<option value="4"<?php if($pedido->idestadopedido == 4): ?> selected="selected"<?php endif; ?>>Finalizado</option>
+			</select>
+		</div>
+		<div class="col-md-2">
+			<input type="hidden" name="id" value={{ $pedido->foliopedido }}>
+			{{ csrf_field() }}
+				<CENTER> <button type="submit" class="btn btn-primary btn-block">Actualizar</button>  </CENTER>
+
+			</form>
+		</div>
 	</div>
-		<div class="col-md-2">
-			<span  style="color:blue" class="d-inline-block align-top" ><h3>Productos</h3></span>
-		</div>	
+		@endforeach
+
+
+</div>
+			<span  style="color:blue" class="d-inline-block align-top" ><h2>Productos en el pedido</h2></span>
 	<hr style="border: 1px #ccc solid">
 		<div class="row">
 	   <div class="col-md-4">
-			<span  style="color: gray" class="d-inline-block align-top">Id</span>
+			<span  style="color: gray" class="d-inline-block align-top"><h3>Id</h3></span>
 		</div>
 		<div class="col-md-4">
-			<span  style="color: gray" class="d-inline-block align-top">Nombre del producto</span>
+			<span  style="color: gray" class="d-inline-block align-top"><h3>Nombre del producto</h3></span>
 		</div>
 		<div class="col-md-2">
-			<span style="color: gray" class="d-inline-block align-top">Precio</span>
+			<span style="color: gray" class="d-inline-block align-top"><h3>Precio</h3></span>
 		</div>
 
 		<div class="col-md-2">
-			<span style="color: gray" class="d-inline-block align-top">Cantidad</span>
+			<span style="color: gray" class="d-inline-block align-top"><h3>Cantidad</h3></span>
 		</div>
 		</div>
-		<div class="col-md-2">
-			<span  style="color:blue" class="d-inline-block align-top" ><h3>Historial</h3></span>
-		</div>
+@foreach ($productos as $productos)
+<div class="row">
+	<div class="col-md-4">
+		<span  style="color: gray" class="d-inline-block align-top">{{ $productos->idproducto }}</span>
+	</div>
+	<div class="col-md-4">
+		<span  style="color: gray" class="d-inline-block align-top">{{ $productos->nombreproducto }}</span>
+	</div>
+	<div class="col-md-2">
+		<span style="color: gray" class="d-inline-block align-top">${{ $productos->costo }}</span>
+	</div>
+
+	<div class="col-md-2">
+		<span style="color: gray" class="d-inline-block align-top">{{ $productos->cantidad }}</span>
+	</div>
+</div>
+@endforeach
+			<span  style="color:blue" class="d-inline-block align-top" ><h2>Historial del pedido</h2></span>
 		<div class="row">
 		
 	</div>
 		<div class="row">
 		<div class="col-md-4">
-			<span style="color: gray" class="d-inline-block align-top">Estatus</span>
+			<span style="color: gray" class="d-inline-block align-top"><h3>Fecha</h3></span>
 		</div>
 		<div class="col-md-2">
-			<span style="color: gray" class="d-inline-block align-top">Ultima modificacion</span>
+			<span style="color: gray" class="d-inline-block align-top"><h3>Estado</h3></span>
 		</div>
 		</div>
+@foreach ($historial as $historial)
+
+		<div class="row">
+	<div class="col-md-4">
+		<span style="color: gray" class="d-inline-block align-top">{{ $historial->fecha }}</span>
+	</div>
+	<div class="col-md-2">
+		<span style="color: gray" class="d-inline-block align-top">{{ $historial->nombre_Estado }}</span>
+	</div>
+</div>
+		@endforeach
+
 
 	</div>
 		<div class="row" style="height: 3em"><div class="col-md-12"></div></div>
-{{--------------------Inicio de Paginación----------------------}}
-<div class="container-fluid">
- <div class="row">
-   <div class="col-md-4">
-   </div>
-   <div class="col-md-4">
-    <nav aria-label="Page navigation example">
-       <ul class="pagination">
-         <li class="page-item">
-            <a class="page-link" href="#" aria-label="Previous">
-            <span aria-hidden="true">&laquo;</span>
-            </a>
-         </li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item">
-        <a class="page-link" href="#" aria-label="Next">
-        <span aria-hidden="true">&raquo;</span>
-        </a>
-        </li>
-      </ul>
-   </nav>
-  </div>
-  <div class="col-md-4">
-  </div>
- </div>
-</div>
-{{--------------------Fin de Paginación----------------------}}
+
 @extends('layouts.footer')
 

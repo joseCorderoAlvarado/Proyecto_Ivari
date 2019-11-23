@@ -6,14 +6,36 @@ use App\direccion;
 use App\detallepersonadireccion;
 use App\persona;
 use App\paqueteria;
+use App\pedido;
+use App\confirmacioncompra;
+use App\carritotemporal;
+use App\detallepedido;
 use DB;
+use DateTime;
 class venta extends Controller
 {
+
 public function procesarpago(Request $datos){
 $cantidad=$datos->input('cantidad');
 $precio=$datos->input('precio');
 $total=$datos->input('total');
 $nombre=$datos->input('nombre');
+
+//Para conseguir el id de la persona//
+$correo_Electronico=session('S_identificador');
+$consultaidpersona = DB::select('select idpersona from persona where correoelectronico=?',[$correo_Electronico]);
+$idpersonaconvert= json_decode( json_encode($consultaidpersona), true);
+$idpersona = implode($idpersonaconvert[0]);
+	//Fin  conseguir el id de la persona//
+
+$confirmacioncompra = new confirmacioncompra;
+$confirmacioncompra->fkidusuario=$idpersona;
+$confirmacioncompra->fkiddireccion=$datos->input('direccionSeleccionada');
+$confirmacioncompra->fkidpaqueteria=$datos->input('paqueteriaSeleccionada');
+$confirmacioncompra->totalProductos=$datos->input('total');
+$confirmacioncompra->save();
+
+
 $paypal_business = "sb-l1ivw619927@business.example.com";
 	$paypal_currency = "MXN";
 	$paypal_cursymbol = "&mxn";
@@ -33,27 +55,57 @@ $ppurl = "https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_cart";
 	$ppurl.= "&tax_cart=0.00";
 return redirect ($ppurl);
 }
-public function realizarpedido(){
-	if (session()->has('S_Rol') ) {
-		if(session('S_Rol')==3){
-			//consulta para obtener el id de la persona
-			$correo_Electronico=session('S_identificador');
-			$consultaidpersona = DB::select('select idpersona from persona where correoelectronico=?',[$correo_Electronico]);
-			$idpersonaconvert= json_decode( json_encode($consultaidpersona), true);
-			$idpersona = implode($idpersonaconvert[0]);
-			//fin de consulta id de la persona
 
-			//consulta para obtener los id de los productos del carrito
-		  $carrito=DB::select('select idproducto from producto p INNER JOIN carritotemporal c on
-	    p.idproducto=c.fkproducto inner join fotoproducto f on
-	    f.idfotoproducto=( SELECT idfotoproducto FROM fotoproducto
-	     AS f2 WHERE f2.fkproducto = p.idproducto LIMIT 1 ) WHERE c.fkpersona=?',[$idpersona]);
-			$array_num = count($carrito);
-     for ($i = 0; $i < $array_num; ++$i){
-		  $idproductoconvert= json_decode( json_encode($carrito[$i]), true);
-	 		$idProducto = implode($idproductoconvert);
-			//fin de consulta para obtener los id de los productos del carrito
-	 		echo "$idProducto";
+public function realizarpedido() {
+	if (session()->has('S_Rol') ) {
+
+		//Para conseguir el id de la persona//
+		$correo_Electronico=session('S_identificador');
+		$consultaidpersona = DB::select('select idpersona from persona where correoelectronico=?',[$correo_Electronico]);
+		$idpersonaconvert= json_decode( json_encode($consultaidpersona), true);
+		$idpersona = implode($idpersonaconvert[0]);
+			//Fin  conseguir el id de la persona//
+
+
+			//Conseguimos los productos del carrito temporal para pasarlos al real
+			$articuloCarritoCompras = carritotemporal::where('fkpersona', '=', $idpersona)
+			                ->get();
+
+			$detallepedido= new detallepedido();
+
+
+
+
+
+
+
+
+
+			//Nombre del folio
+			$fecha = new DateTime();
+			$folio=$fecha->format('Y-m-d_H-i-s')."_".$idpersona;
+			//Fin Nombre del folio
+
+			$pedido= new pedido;
+			$pedido->foliopedido=$folio;
+			$pedido->fecha=	$fecha;
+			$pedido->subtotal=	$fecha;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //			$articuloCarritoCompras = carritotemporal::where('fkproducto', '=', $idProducto)
 	//		                ->where('fkpersona', '=', $idpersona)
 //			                ->first();
@@ -61,6 +113,5 @@ public function realizarpedido(){
      }
 	}
 }
-}
-}
+
 ?>

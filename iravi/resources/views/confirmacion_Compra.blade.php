@@ -22,10 +22,12 @@
 </ul>
 <!-- Fieldsets -->
 <fieldset id="first">
+
 <h2 class="title">Seleccione Domicilio</h2>
 <p class="subtitle">Domicilio de env&iacute;o
 		<button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModal"
-		 data-whatever="@fat"><img src="images/agregar.png" width="30em" heigth="30em"></button>
+		 data-whatever="@fat"><img src="images/agregar.png" width="30em" heigth="30em"></button> </p>
+
 		 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -90,11 +92,12 @@ $('#exampleModal').on('show.bs.modal', function (event) {
   modal.find('.modal-body input').val(recipient)
 })
 </script>
-</p>
+<form action="paypal" class="regform" method="post">
 <!-- Cosas que se repiten (Domicilio) -->
 @foreach ($tablaDetalleDireccion as $direccion)
 <div class="radio_btn">
-<input type="radio" name="Direccion" value="{{$direccion->iddireccion}}">
+<input type="radio" name="direccionSeleccionada" value="{{$direccion->iddireccion}}">
+
 <p>Calle: {{$direccion->calle}}  #{{$direccion->numext}}</p>
 <p>Interior: {{$direccion->numint}}</p>
 <p>Colonia {{$direccion->colonia}}</p>
@@ -104,7 +107,7 @@ $('#exampleModal').on('show.bs.modal', function (event) {
 <br>
 @endforeach
 <!-- Fin de las cosas que se repiten -->
-<form action="paypal" class="regform" method="post">
+
 	  {{ csrf_field() }}
 <div align="center">
 <input id="next_btn1" onclick="next_step1()" type="button" value="Siguiente">
@@ -130,7 +133,7 @@ $('#exampleModal').on('show.bs.modal', function (event) {
 <!-- Cosas que se repiten (paquetaria) -->
 @foreach ($tablaPaqueteria as $paqueteria)
 <option value="{{$paqueteria->idpaqueteria}}">
-{{$paqueteria->nombre}}
+{{$paqueteria->nombre}}, ${{$paqueteria->precio}}
 </option>
 @endforeach
 <!--Fin Cosas que se repiten (paquetaria) -->

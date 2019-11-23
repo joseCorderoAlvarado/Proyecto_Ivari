@@ -50,7 +50,9 @@
 		<div class="col-md-6" >
 			<center>
 				<div class="mensaje2">
-					Bienvenido @Nombre de Usuario
+					<h2>
+					Bienvenido {{$usuarioDatos[0]->nombrepersona}} {{$usuarioDatos[0]->apellidopaterno}} {{$usuarioDatos[0]->apellidomaterno}}
+					</h2>
 				</div>
 			</center>
 			<center>
@@ -180,7 +182,7 @@
 								<div class="col-4">
 									<input id="text" type="text" name="txtTipo" contenteditable="false" style=" border: none; background-color: transparent; color: #9FA5AB;" value="{{$direccion->tipo}}">
 
-									<input id="text" type="hidden" name="txtDet" contenteditable="false" style=" border: none; background-color: transparent; color: #9FA5AB;" value="{{$direccion->iddetperdir}}">
+									<input id="text" type="hidden" name="txtDet" contenteditable="false" style=" border: none; background-color: transparent; color: #9FA5AB;" >
 
 								</div>
 								<div class="col-12" align="right">

@@ -51,7 +51,7 @@ Route::Get('comprasRealizadas','comprasRealizadas@mostrar');
 
 //Confirmacion de Compras
 Route::Get('confirmacionCompra','confirmacionCompra@mostrar');
-
+Route::post('nuevodomicilio','confirmacionCompra@nuevodomicilio');
 //proceso Pago
 Route::post('paypal','venta@procesarpago');
 Route::Get('venta','venta@realizarpedido');
@@ -121,11 +121,8 @@ Route::get('listadoUsuario','listaUsuarios@mostrar');
 //Guardar cambios usuario
 Route::post('guardarCambiosUsuario','modificarUsuarioAdm@guardar');
 
-//Pedidos y detalles pedido
 Route::post('detallePedido','detallePedido@mostrar');
 Route::post('pedidosFiltrados','seguimientoPedidos@filtrar');
-Route::post('actualizarPedido','detallePedido@actualizar');
-
 
 
 

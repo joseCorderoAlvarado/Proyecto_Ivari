@@ -1,18 +1,5 @@
 @extends('layouts.head')
 @include('layouts.menu_NavegacionCliente')
-<style type="text/css">
-	#text{color: #003366;}
-
-	.nav-link.active{
-		background-color:#92d050 !important;
-		border-color: #92d050 !important;
-		border-style:solid;
-		font-weight: bold;
-	}
-
-</style>
-<script type="text/javascript">
-</script>
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-3">
@@ -22,13 +9,9 @@
 				<a  style="color: 92d050; font-weight:bold;" class="nav-link" href="{{ url('historia')}}">Acerca de Iravi</a>
 			</div>
 		</div>
-
-
 <div class="content">
 <!-- Multistep Form -->
 <div class="main">
-<form action="paypal" class="regform" method="post">
-	  {{ csrf_field() }}
 <!-- Progressbar -->
 <ul id="progressbar">
 <li id="active1">Domicilio<span class="Ok" id="ok1">✔</span></li>
@@ -40,8 +23,74 @@
 <!-- Fieldsets -->
 <fieldset id="first">
 <h2 class="title">Seleccione Domicilio</h2>
-<p class="subtitle">Domicilio de env&iacute;o</p>
-
+<p class="subtitle">Domicilio de env&iacute;o
+		<button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModal"
+		 data-whatever="@fat"><img src="images/agregar.png" width="30em" heigth="30em"></button>
+		 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Nueva domicilio de Envio</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="nuevodomicilio" method="post" enctype="multipart/form-data">
+					  {{ csrf_field() }}
+          <div class="form-group">
+            <input type="text" class="form-control" id="calle"  name="calle" placeholder="calle" pattern="[A-Za-z\s]+"
+						title="El nombre de la calle debe llevar solo letras y espacios" required>
+          </div>
+					<div class="form-group">
+            <input type="text" class="form-control" id="ninterior"  name="ninterior" placeholder="Numero Interior"pattern="[0-9]+"
+						title="El numero interior solo puede llevar numeros">
+          </div>
+					<div class="form-group">
+            <input type="text" class="form-control" id="nexterior"  name="nexterior" placeholder="Numero Exterior"pattern="[0-9]+"
+						title="El numero exterior solo puede llevar numeros" required>
+          </div>
+					<div class="form-group">
+            <input type="text" class="form-control" id="colonia"  name="colonia" placeholder="Colonia"pattern="[A-Za-z\s]+"
+						title="El nombre de la colonia debe llevar solo letras y espacios" required>
+          </div>
+					<div class="form-group">
+            <input type="text" class="form-control" id="municipio"  name="municipio" placeholder="Municipio"pattern="[A-Za-z\s]+"
+						title="El nombre del municipio debe llevar solo letras y espacios" required>
+          </div>
+					<div class="form-group">
+            <input type="text" class="form-control" id="ciudad"  name="ciudad" placeholder="Ciudad" pattern="[A-Za-z\s]+"
+						title="El nombre de la ciudad debe llevar solo letras y espacios" required>
+          </div>
+					<div class="form-group">
+            <input type="text" class="form-control" id="pais"  name="pais" placeholder="Pais" pattern="[A-Za-z\s]+"
+						title="El nombre del pais debe llevar solo letras y espacios" required>
+          </div>
+					<div class="form-group">
+            <input type="text" class="form-control" id="cp"  name="cp" placeholder="Codigo Postal" pattern="[0-9]{5}"
+						title="El codigo postal debe contener solo numeros y tener una longitud de cinco caracteres" required>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="submit" class="btn btn-primary">Agregar domicilo</button>
+			</form>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+$('#exampleModal').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) // Button that triggered the modal
+  var recipient = button.data('whatever') // Extract info from data-* attributes
+  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+  var modal = $(this)
+  modal.find('.modal-title').text('New message to ' + recipient)
+  modal.find('.modal-body input').val(recipient)
+})
+</script>
+</p>
 <!-- Cosas que se repiten (Domicilio) -->
 @foreach ($tablaDetalleDireccion as $direccion)
 <div class="radio_btn">
@@ -55,7 +104,8 @@
 <br>
 @endforeach
 <!-- Fin de las cosas que se repiten -->
-
+<form action="paypal" class="regform" method="post">
+	  {{ csrf_field() }}
 <div align="center">
 <input id="next_btn1" onclick="next_step1()" type="button" value="Siguiente">
 </div>

@@ -26,6 +26,20 @@
 			</li>
 			<a href="{{ url('carritoCompras')}}">
 			<img src="images/iconoCarrito.png" width="30" height="30"	class="d-inline-block align-top">
+			<?php
+				$correo_Electronico = session('S_identificador');
+				$consultaid = DB::select('SELECT usuario.idusuario from usuario inner join persona on usuario.fkpersona = persona.idpersona where persona.correoelectronico=?',[$correo_Electronico]);
+				$idConversion = json_decode(json_encode($consultaid),true);
+				$idusuario = implode($idConversion[0]);
+				$totalDeCantidad = DB::select('SELECT sum(cantidad) from carritotemporal 
+							INNER JOIN persona ON carritotemporal.fkpersona = persona.idpersona
+							where carritotemporal.fkpersona=?', [$idusuario]);
+
+				$idConversionCant = json_decode(json_encode($totalDeCantidad),true);
+				$cantidadFinal = implode($idConversionCant[0]);
+
+				echo $cantidadFinal;
+			?>
             </a>
 		</ul>
 	</div>

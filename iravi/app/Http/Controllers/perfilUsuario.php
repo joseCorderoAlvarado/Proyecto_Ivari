@@ -26,7 +26,7 @@ class perfilUsuario extends Controller
 
 				$tipoDireccion = DB::select('SELECT idtipo, tipo from tipodireccion');
 
-				$direcciones = DB::select('SELECT direccion.calle, direccion.numint, direccion.numext, direccion.colonia, direccion.municipio, direccion.ciudad, direccion.pais, direccion.codigopostal, tipodireccion.tipo 
+				$direcciones = DB::select('SELECT direccion.calle, direccion.numint, direccion.numext, direccion.colonia, direccion.municipio, direccion.ciudad, direccion.pais, direccion.codigopostal, tipodireccion.tipo, detallepersonadireccion.fkpersona, detallepersonadireccion.fk_direccion 
 					from detallepersonadireccion 
 					inner join direccion 
 					on detallepersonadireccion.fk_direccion = direccion.iddireccion 
@@ -37,8 +37,6 @@ class perfilUsuario extends Controller
 				$usuarioDatos = DB::select('SELECT persona.idpersona, persona.nombrepersona, persona.apellidopaterno, persona.apellidomaterno, persona.correoelectronico, usuario.contrasena 
 					FROM iravibd.usuario 
 					inner join persona on usuario.fkpersona = persona.idpersona 
-					inner join detallepersonadireccion on persona.idpersona = detallepersonadireccion.fkpersona 
-					inner join direccion on detallepersonadireccion.fk_direccion = direccion.iddireccion  
 					where idusuario=?',[$idusuario]);
 
 				return view ('perfil_Usuario',['usuarioDatos'=>$usuarioDatos, 'tipoDireccion'=>$tipoDireccion, 'direcciones'=>$direcciones]);
@@ -99,7 +97,7 @@ class perfilUsuario extends Controller
 
 		$tipoDireccion = DB::select('SELECT idtipo, tipo from tipodireccion');
 
-		$direcciones = DB::select('SELECT direccion.calle, direccion.numint, direccion.numext, direccion.colonia, direccion.municipio, direccion.ciudad, direccion.pais, direccion.codigopostal, tipodireccion.tipo
+		$direcciones = DB::select('SELECT direccion.calle, direccion.numint, direccion.numext, direccion.colonia, direccion.municipio, direccion.ciudad, direccion.pais, direccion.codigopostal, tipodireccion.tipo, detallepersonadireccion.fkpersona, detallepersonadireccion.fk_direccion 
 			from detallepersonadireccion 
 			inner join direccion 
 			on detallepersonadireccion.fk_direccion = direccion.iddireccion 
@@ -163,13 +161,20 @@ class perfilUsuario extends Controller
 
 	public function modificarDireccion(Request $datos)
 	{
-		$idPersona=$datos->input('txtidPersona');
+		$idPersona=$datos->input('txtidPersona1');
 		$persona=persona::find($idPersona);
-		$idDetalle=$datos->input('txtDetalle');
-		$detalle=detallepersonadireccion::find($idDetalle);
 
-		$persona->correoelectronico=$datos->input('txtCorreoEditar');
-		$persona->save();
+		$fkdireccion=$datos->input('txtfkdireccion');
+
+		direccion::where('iddireccion',$fkdireccion)->update(array('calle'=>$datos->input('txtCalle')));
+		direccion::where('iddireccion',$fkdireccion)->update(array('numint'=>$datos->input('txtNumeroInt')));
+		direccion::where('iddireccion',$fkdireccion)->update(array('numext'=>$datos->input('txtNumeroExt')));
+		direccion::where('iddireccion',$fkdireccion)->update(array('colonia'=>$datos->input('txtColonia')));
+		direccion::where('iddireccion',$fkdireccion)->update(array('municipio'=>$datos->input('txtMunicipio')));
+		direccion::where('iddireccion',$fkdireccion)->update(array('ciudad'=>$datos->input('txtCiudad')));
+		direccion::where('iddireccion',$fkdireccion)->update(array('pais'=>$datos->input('txtPais')));
+		direccion::where('iddireccion',$fkdireccion)->update(array('codigopostal'=>$datos->input('txtCodigoP')));
+		direccion::where('iddireccion',$fkdireccion)->update(array('fktipo'=>$datos->input('txtTipoDireccion')));
 
 		return redirect ('perfilUsuario');
 	}

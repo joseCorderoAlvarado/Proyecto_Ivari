@@ -21,6 +21,9 @@ class DatabaseSeeder extends Seeder
          $this-> call (persona::class);
          $this-> call (direccion::class);
         $this-> call (usuario::class);
+        $this-> call (detallepersonadireccion::class);
+        $this-> call (paqueteria::class);
+		$this-> call (estadopedido::class);
 
     }
 }

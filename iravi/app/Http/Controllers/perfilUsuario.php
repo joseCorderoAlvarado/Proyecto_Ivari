@@ -178,5 +178,17 @@ class perfilUsuario extends Controller
 
 		return redirect ('perfilUsuario');
 	}
+
+	public function eliminarDireccion(Request $datos)
+	{
+
+		$fkdireccion=$datos->input('txtfkdireccion');
+
+
+		DB::delete('DELETE FROM detallepersonadireccion  where detallepersonadireccion.fk_direccion=?',[$fkdireccion]);
+		DB::delete('DELETE FROM direccion  where direccion.iddireccion=?',[$fkdireccion]);
+
+		return redirect ('perfilUsuario');
+	}
 }
 ?>

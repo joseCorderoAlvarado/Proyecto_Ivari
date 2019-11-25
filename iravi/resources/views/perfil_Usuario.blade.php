@@ -264,7 +264,7 @@
 
            		<div class="modal-body">
 	            	<input type="hidden" name="txtidPersona" value="{{$usuarioDatos[0]->idpersona}}">
-	            	<input id="text"type="text" name="txtNombreEditar" style="width: 400px; border: none; background-color: transparent; color: black; border-style: solid; border-color: blue;" value="{{$usuarioDatos[0]->nombrepersona}}" autofocus="value">
+	            	<input id="text"type="text" name="txtNombreEditar" style="width: 400px; border: none; background-color: transparent; color: black; border-style: solid; border-color: blue;" value="{{$usuarioDatos[0]->nombrepersona}}" autofocus="value"   pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="" maxlength="50">
 	            	<p class="text-warning"><small>No dejar este campo vacio.</small></p>
 	       		</div>
 	            
@@ -290,7 +290,7 @@
 
            		<div class="modal-body">
 	            	<input type="hidden" name="txtidPersona" value="{{$usuarioDatos[0]->idpersona}}">
-	            	<input id="text"type="text" name="txtApellidoPEditar" style="width: 400px; border: none; background-color: transparent; color: black; border-style: solid; border-color: blue;" value="{{$usuarioDatos[0]->apellidopaterno}}" autofocus="value">
+	            	<input id="text"type="text" name="txtApellidoPEditar" style="width: 400px; border: none; background-color: transparent; color: black; border-style: solid; border-color: blue;" value="{{$usuarioDatos[0]->apellidopaterno}}" autofocus="value" pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="" maxlength="50">
 	            	<p class="text-warning"><small>No dejar este campo vacio.</small></p>
 	       		</div>
 	            
@@ -315,7 +315,7 @@
 
            		<div class="modal-body">
 	            	<input type="hidden" name="txtidPersona" value="{{$usuarioDatos[0]->idpersona}}">
-	            	<input id="text"type="text" name="txtApellidoMEditar" style="width: 400px; border: none; background-color: transparent; color: black; border-style: solid; border-color: blue;" value="{{$usuarioDatos[0]->apellidomaterno}}" autofocus="value">
+	            	<input id="text"type="text" name="txtApellidoMEditar" style="width: 400px; border: none; background-color: transparent; color: black; border-style: solid; border-color: blue;" value="{{$usuarioDatos[0]->apellidomaterno}}" autofocus="value"  pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="" maxlength="50">
 	            	<p class="text-warning"><small>No dejar este campo vacio.</small></p>
 	       		</div>
 	            
@@ -340,7 +340,7 @@
 
            		<div class="modal-body">
 	            	<input type="hidden" name="txtidPersona" value="{{$usuarioDatos[0]->idpersona}}">
-	            	<input id="text"type="text" name="txtCorreoEditar" style="width: 400px; border: none; background-color: transparent; color: black; border-style: solid; border-color: blue;" value="{{$usuarioDatos[0]->correoelectronico}}" autofocus="value">
+	            	<input id="text"type="text" name="txtCorreoEditar" style="width: 400px; border: none; background-color: transparent; color: black; border-style: solid; border-color: blue;" value="{{$usuarioDatos[0]->correoelectronico}}" autofocus="value" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" required="" maxlength="100">
 	            	<p class="text-warning"><small>No dejar este campo vacio.</small></p>
 	       		</div>
 	            
@@ -365,7 +365,7 @@
 
            		<div class="modal-body">
 	            	<input type="hidden" name="txtidPersona" value="{{$usuarioDatos[0]->idpersona}}">
-	            	<input id="text"type="text" name="txtContraseñaEditar" style="width: 400px; border: none; background-color: transparent; color: black; border-style: solid; border-color: blue;" value="{{$usuarioDatos[0]->contrasena}}" autofocus="value">
+	            	<input id="text"type="text" name="txtContraseñaEditar" style="width: 400px; border: none; background-color: transparent; color: black; border-style: solid; border-color: blue;" value="{{$usuarioDatos[0]->contrasena}}" autofocus="value" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" maxlength="200" required="">
 	            	<p class="text-warning"><small>No dejar este campo vacio.</small></p>
 	       		</div>
 	            

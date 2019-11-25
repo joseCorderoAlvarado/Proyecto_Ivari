@@ -4,6 +4,11 @@
 <?php
 $totalCarrito = 0;
  ?>
+ <div class="container-fluid">
+   <div class="row">
+    <br><br><div class="alert alert-info" role="alert" align="center">Recuerda que Iravi cuenta con un sistema de bonificaciones que se aplica cada sexta compra con un 10% de regalo.</div><br><br>
+   </div>
+ </div>
 <div class="container-fluid" style="border: 1px #ccc solid; border-radius: 3px; padding: 10px; margin: auto;">
    <div class="row">
       <div class="col-2">

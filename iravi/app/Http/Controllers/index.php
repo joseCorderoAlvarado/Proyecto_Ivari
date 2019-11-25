@@ -43,7 +43,8 @@ class index extends Controller
 
 		$numeroPaginas= count($numeroPaginas);
 		$numeroPaginas= ceil($numeroPaginas/$productosPorPagina);
-		////Todo esto es para sacar el total de paginas que se haran
+		////Todo esto es para sacar el total de paginas que se haran}
+		
 
 		if (session()->has('S_Rol') )
 		{

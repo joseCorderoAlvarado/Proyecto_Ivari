@@ -67,6 +67,7 @@ Route::Post('perfilUsuarioCorreo','perfilUsuario@guardarCorreo');
 Route::Post('perfilUsuarioContra','perfilUsuario@guardarContraseña');
 Route::Post('agregarDirecciones','perfilUsuario@agregarDireccion');
 Route::Post('modificarDireccion','perfilUsuario@modificarDireccion');
+Route::Post('eliminarDireccion','perfilUsuario@eliminarDireccion');
 
 Route::Post('editarDireccion','editarDireccion@mostrar');
 

@@ -147,25 +147,58 @@
    <div class="col-md-4">
     <nav aria-label="Page navigation example">
        <ul class="pagination">
-         <li class="page-item">
-            <a class="page-link" href="#" aria-label="Previous">
-            <span aria-hidden="true">&laquo;</span>
-            </a>
-         </li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item">
-        <a class="page-link" href="#" aria-label="Next">
-        <span aria-hidden="true">&raquo;</span>
-        </a>
-        </li>
-      </ul>
+	{{------------------------Cosas que se repiten---------------------------}}
+@for ($i=1;$i<=$numeroPaginas;$i++)
+
+	 		@if ($i==1)
+				@if ($paginaActual==1)
+        		<li class="page-item disabled">
+					<a class="page-link" href="#" aria-label="Previous">
+					<span aria-hidden="true">&laquo;</span>
+					</a>
+			 </li>
+      	@else
+				<li class="page-item">
+					<a class="page-link" href="{{$rutaPaginacion}}{{$paginaActual-1}}" aria-label="Previous">
+					<span aria-hidden="true">&laquo;</span>
+					</a>
+			 </li>
+			@endif
+  		@endif
+
+		@if ($i==$paginaActual)
+		<li class="page-item active"><a class="page-link">{{$i}}</a></li>
+		@else
+		<li class="page-item"><a class="page-link" href="{{$rutaPaginacion}}{{$i}}">{{$i}}</a></li>
+    @endif
+
+
+
+				@if ($i==$numeroPaginas)
+						@if ($paginaActual==$numeroPaginas)
+			        <li class="page-item disabled">
+								<a class="page-link" href="#" aria-label="Next">
+								<span aria-hidden="true">&raquo;</span>
+								</a>
+						 </li>
+			      @else
+							<li class="page-item">
+								<a class="page-link" href="{{$rutaPaginacion}}{{$paginaActual+1}}" aria-label="Next">
+								<span aria-hidden="true">&raquo;</span>
+								</a>
+						 </li>
+						@endif
+			 @endif
+
+
+@endfor
+{{--------------------Fin de Paginación----------------------}}
+ </ul>
    </nav>
   </div>
+
   <div class="col-md-4">
   </div>
  </div>
 </div>
-{{--------------------Fin de Paginación----------------------}}
 @extends('layouts.footer')

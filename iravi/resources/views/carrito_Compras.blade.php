@@ -69,8 +69,11 @@ $totalCarrito = 0;
 		<div class="col-md-6">
 		</div>
 		<div class="col-md-2">
-			$xxxx
-			<br>
+			@if ($descuento=="true")
+       descuento: ${{$totalCarrito*0.1}}
+       @endif
+      <br>
+
 			${{$totalCarrito}}
 
 		</div>

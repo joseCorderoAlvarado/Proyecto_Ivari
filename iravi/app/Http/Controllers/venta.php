@@ -17,6 +17,15 @@ class venta extends Controller
 {
 
 public function procesarpago(Request $datos){
+
+	//Para conseguir el id de la persona//
+$correo_Electronico=session('S_identificador');
+$consultaidpersona = DB::select('select idpersona from persona where correoelectronico=?',[$correo_Electronico]);
+$idpersonaconvert= json_decode( json_encode($consultaidpersona), true);
+$idpersona = implode($idpersonaconvert[0]);
+	//Fin  conseguir el id de la persona//
+
+
 $cantidad=$datos->input('cantidad');
 $precio=$datos->input('precio');
 
@@ -28,18 +37,23 @@ $costoPaqueteria= paqueteria::where('idpaqueteria', '=', $idPaqueteria)
 						->first();
 
 $costoPaqueteria=$costoPaqueteria->precio;
-	$total=$subtotal+$costoPaqueteria;
+
+//total ventas
+$totalventas=DB::select('SELECT * from pedido where fkidusuario=?',[$idpersona]);
+	$totalventas=count($totalventas)+1;
+	if($totalventas%6==0){
+     $descuento=$subtotal*0.1;
+	$total=$subtotal+$costoPaqueteria-$descuento;
+	}else{
+		$total=$subtotal+$costoPaqueteria;
+	}
+//ssss
 
 
 
 
 
-//Para conseguir el id de la persona//
-$correo_Electronico=session('S_identificador');
-$consultaidpersona = DB::select('select idpersona from persona where correoelectronico=?',[$correo_Electronico]);
-$idpersonaconvert= json_decode( json_encode($consultaidpersona), true);
-$idpersona = implode($idpersonaconvert[0]);
-	//Fin  conseguir el id de la persona//
+
 
 //Guardamos temporalmente esta infomracion para poder usarla despues de paypal
 $confirmacioncompra = new confirmacioncompra;
@@ -91,6 +105,14 @@ public function realizarpedido() {
 						//Fin datos//
 
 
+$totalventas=DB::select('SELECT * from pedido where fkidusuario=?',[$idpersona]);
+	$totalventas=count($totalventas)+1;
+	if($totalventas%6==0){
+     $descuento=$subtotal*0.1;
+	}else{
+		     $descuento=0;
+	}
+
 			//Nombre del folio
 			$fecha = new DateTime();
 			$folio=$fecha->format('Y-m-d_H-i-s')."_".$idpersona;
@@ -102,7 +124,7 @@ public function realizarpedido() {
 			$pedido->foliopedido=$folio;
 			$pedido->fecha=	$fecha;
 			$pedido->subtotal=	$subtotal;
-			$pedido->descuento=	0;//Modificacme
+			$pedido->descuento=	$descuento;//Modificacme
 				$pedido->fkidusuario=$idpersona;
 				$pedido->fkiddireccion=$idDireccion;
 				$pedido->fkidpaqueteria=$idPaqueteria;

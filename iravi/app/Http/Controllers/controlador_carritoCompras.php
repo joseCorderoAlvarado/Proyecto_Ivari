@@ -18,10 +18,19 @@ if (session()->has('S_Rol') ) {
  p.idproducto=c.fkproducto inner join fotoproducto f on
 f.idfotoproducto=( SELECT idfotoproducto FROM fotoproducto
  AS f2 WHERE f2.fkproducto = p.idproducto LIMIT 1 ) WHERE c.fkpersona=?',[$idpersona]);
-	return view('carrito_Compras',['carrito'=>$carrito]);
+	$totalventas=DB::select('SELECT * from pedido where fkidusuario=?',[$idpersona]);
+	$totalventas=count($totalventas)+1;
+	if($totalventas%6==0){
+      $descuento="true";
+	}else{
+		$descuento="false";
+	}
+	return view('carrito_Compras',['carrito'=>$carrito,'descuento'=>$descuento]);
+
 }
 }
 return redirect ('/');
+
 }
 
 public function guardarcarrito(Request $datos) {

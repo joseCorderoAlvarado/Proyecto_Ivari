@@ -41,43 +41,46 @@ return true;
 function next_step1() {
 document.getElementById("first").style.display = "none";
 document.getElementById("second").style.display = "block";
-document.getElementById("active2").style.color = "green";
+document.getElementById("active2").style.color = "003366";
+document.getElementById("active1").style.color = "green";
 document.getElementById("ok1").style.display = "inline";
 }
 // Function that executes on click of first previous button.
 function prev_step1() {
 document.getElementById("first").style.display = "block";
 document.getElementById("second").style.display = "none";
-document.getElementById("active1").style.color = "green";
-document.getElementById("active2").style.color = "gray";
+document.getElementById("active1").style.color = "003366";
+document.getElementById("active2").style.color = "grey";
 document.getElementById("ok1").style.display = "none";
 }
 // Function that executes on click of second next button.
 function next_step2() {
 document.getElementById("second").style.display = "none";
 document.getElementById("third").style.display = "block";
-document.getElementById("active3").style.color = "green";
+document.getElementById("active3").style.color = "003366";
+document.getElementById("active2").style.color = "green";
 document.getElementById("ok2").style.display = "inline";
 }
 // Function that executes on click of second previous button.
 function prev_step2() {
 document.getElementById("third").style.display = "none";
 document.getElementById("second").style.display = "block";
-document.getElementById("active2").style.color = "green";
-document.getElementById("active3").style.color = "gray";
+document.getElementById("active2").style.color = "003366";
+document.getElementById("active3").style.color = "grey";
 document.getElementById("ok2").style.display = "none";
 }
 function next_step3(){
 document.getElementById("third").style.display = "none";
 document.getElementById("four").style.display = "block";
-document.getElementById("active4").style.color = "green";
+document.getElementById("active4").style.color = "003366";
+document.getElementById("active3").style.color = "green";
 document.getElementById("ok3").style.display = "inline";
 }
 function prev_step3() {
 document.getElementById("four").style.display = "none";
 document.getElementById("third").style.display = "block";
-document.getElementById("active3").style.color = "green";
-document.getElementById("active4").style.color = "gray";
+document.getElementById("active3").style.color = "003366";
+document.getElementById("active4").style.color = "grey";
 document.getElementById("ok3").style.display = "none";
 }
 

@@ -20,6 +20,9 @@
 			</div>
 		
 		<div class="col-6">
+			<?php
+			if ($consultaSeguimiento!="0")
+			{?>
 		
 			<div class="container">
 				<div class="card">
@@ -69,7 +72,7 @@
 										<tr>
 											<td width="20px">{{$consulta->nombreproducto}}</td>
 										</tr>
-									@endforeach;
+									@endforeach
 									</tbody>
 								</table>
 							 
@@ -79,15 +82,24 @@
 					 
 				</div>
 			</div>
-			<div>
-	
-			</div>
-			
-		</div>
-		<div class="col-3">
-			
-		</div>
-		</div>
-	</div>
+			<?php
+			}
+			else
+			{		
+			?>
+			<center>
+				<div class="form-title">
+					<h5 id="text">No tienes compras realizadas</h5>
+				</div>
 
+			</center>
+			<?php
+			}
+			?>
+		<div>
+	
+	</div>
+			
+</div>
+		
 @extends('layouts.footer')

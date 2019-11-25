@@ -84,7 +84,7 @@ padding:0;
 font-size:18px;
 }
 #active1{
-color:green;
+color:#003366;
 }
 fieldset{
 display:none;
@@ -172,23 +172,27 @@ color:#c1c5cc;
 font-family: sans-serif;
 }
 
-=======
 .container .mensaje{
     display: block;
 }
 
-<<<<<<< HEAD
 
 .container .mensaje{
     display: block;
 }
->>>>>>> a6e9869529daada6cbd6d604f20e17e03974f1b5
 
 
-==========
->>>>>>> 70f1a89ca4b62a1ab27efa3712498fd607e82b5f
+/*Estilos de notificacion del carrito*/
+.notificacion{
+        background-color: white;
+        display: block;
+        border-radius: 50%;
 
-
+        height: 22px;
+        width: 22px;
+        font-style: bold;
+        box-shadow:1px 1px 5px 1px rgba(0,0,0,0.3);
+    }
 
 /*Estilos de compras realizadas */
 

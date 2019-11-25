@@ -1,4 +1,14 @@
 {{-------------------------Menú de navegación---------------------------}}
+<style type="text/css">
+	.notificacion{
+		background-color: white;
+    	display: linear;
+    	border-radius: 50%;
+    	height: 22px;
+    	width: 22px;
+       	box-shadow:1px 1px 5px 1px rgba(0,0,0,0.3);
+	}
+</style>
 <div class="container-fluid" style="background-color: #003366">
 <div class="row">
 <div class="col-md-12">
@@ -26,6 +36,8 @@
 			</li>
 			<a href="{{ url('carritoCompras')}}">
 			<img src="images/iconoCarrito.png" width="30" height="30"	class="d-inline-block align-top">
+            </a>
+            <div id="car" class="notificacion" align="center">
 			<?php
 				$correo_Electronico = session('S_identificador');
 				$consultaid = DB::select('SELECT usuario.idusuario from usuario inner join persona on usuario.fkpersona = persona.idpersona where persona.correoelectronico=?',[$correo_Electronico]);
@@ -37,10 +49,14 @@
 
 				$idConversionCant = json_decode(json_encode($totalDeCantidad),true);
 				$cantidadFinal = implode($idConversionCant[0]);
-
-				echo $cantidadFinal;
+				if ($cantidadFinal>0) {
+					echo $cantidadFinal;
+				}else{
+					echo "0";
+				}
+				
 			?>
-            </a>
+			</div>
 		</ul>
 	</div>
 </nav>
@@ -48,4 +64,5 @@
 </div>
 <hr style="border-color: #003366; width: 100%; border-width: 3px">
 </div>
+
 {{-----------------------FinMenú de navegación---------------------------}}

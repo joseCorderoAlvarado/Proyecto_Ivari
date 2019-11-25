@@ -32,22 +32,30 @@ if (session()->has('S_Rol') ) {
                                     inner join historialpedido on pedido.foliopedido=historialpedido.fkfoliopedido 
                                     inner join estadopedido on historialpedido.fkestadopedido=estadopedido.idestadopedido
 														where pedido.fkidusuario=?',[$idusuario]);
-														
+				
+				if ($fechaB!=null)
+				{
+																		
 				$fechaConversion = json_decode(json_encode($fechaB),true);
 				$fechaconvertida = implode($fechaConversion[0]);
-														
-								$fechaBien = date("d/m/Y", strtotime($fechaconvertida));
+
+					$fechaBien = date("d/m/Y", strtotime($fechaconvertida));
 	
-	return view ('compras_Realizadas',['consultaSeguimiento'=>$consultaSeguimiento, 'fechaBien'=>$fechaBien]);
+					return view ('compras_Realizadas',['consultaSeguimiento'=>$consultaSeguimiento, 'fechaBien'=>$fechaBien]);
+				}
+				else
+				{
+						$consultaSeguimiento = "0";
+					return view ('compras_Realizadas',['consultaSeguimiento'=>$consultaSeguimiento]);
+				}
+														
+						
 	}
 
 }	
 return redirect ('/');
 }
 
-public function mostrarProductos (){
-	
-}
 
 }
 ?>

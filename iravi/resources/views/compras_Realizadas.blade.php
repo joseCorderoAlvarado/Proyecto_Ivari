@@ -72,7 +72,7 @@
 										<tr>
 											<td width="20px">{{$consulta->nombreproducto}}</td>
 										</tr>
-									@endforeach;
+									@endforeach
 									</tbody>
 								</table>
 							 

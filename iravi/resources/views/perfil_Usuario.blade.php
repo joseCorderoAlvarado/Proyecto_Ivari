@@ -37,21 +37,15 @@
 	<div class="row">
 		<div class="col-3">
 			<div  class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-<<<<<<< HEAD
 				<a  style="color: #003366; font-weight:bold;" class="nav-link" href="{{ url('comprasRealizadas')}}">
-=======
 				<a  style="color: 92d050; font-weight:bold;" class="nav-link letra" href="{{ url('comprasRealizadas')}}">
->>>>>>> 32809440cab645b43f901f595d9d85cd8d2d34ad
 					Compras realizadas
 				</a>
 				<a  class="nav-link active" href="{{ url('perfilUsuario')}}">
 					Mi Perfil
 				</a>
-<<<<<<< HEAD
 				<a  style="color: #003366; font-weight:bold;" class="nav-link" href="{{ url('historia')}}">
-=======
 				<a  style="color: 92d050; font-weight:bold;" class="nav-link letra" href="{{ url('historia')}}">
->>>>>>> 32809440cab645b43f901f595d9d85cd8d2d34ad
 					Acerca de Iravi
 				</a>
 			</div>

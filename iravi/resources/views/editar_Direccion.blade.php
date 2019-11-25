@@ -53,6 +53,13 @@
   					<h4 id="text">Datos de domicilios</h4>
 					<hr style="margin-bottom: 40px;">
 
+					<form action="eliminarDireccion" method="post" enctype="multipart/form-data">
+						{{ csrf_field() }}
+								<input type="hidden" name="txtfkdireccion" value="{{$direcciones[0]->iddireccion}}" align="center">
+
+								<button role="button" class="btn btn-large btn-primary" style="background-color: darkred; border-color: darkred;" data-toggle="modal">Eliminar direcci&oacute;n</button> 
+						</form>
+
 						<form action="modificarDireccion" method="post" enctype="multipart/form-data">
 						{{ csrf_field() }}
 
@@ -161,10 +168,13 @@
 									<input type="hidden" name="txtidPersona1" " value="{{$idPersona}}">
 									<input type="hidden" name="txtfkdireccion" value="{{$direcciones[0]->iddireccion}}">
 									<button role="button" class="btn btn-large btn-primary" data-toggle="modal">Modificar direcci&oacute;n</button> 
+
+
 								</div>
 							</div>
 						</div>
 						</form>
+						
 						
 					</hr>
 				</article>

@@ -17,17 +17,36 @@ if (session()->has('S_Rol') ) {
 		$idusuarioconvert= json_decode( json_encode($consultaidusuario), true);
 		$idusuario = implode($idusuarioconvert[0]);
 	
-	$consultaSeguimiento=DB::select('select foliopedido,pedido.fecha,descuento,paqueteria.nombre, producto.nombreproducto from pedido 
-									inner join detallepedido on pedido.foliopedido=detallepedido.fkfoliopedido 
-									inner join paqueteria on pedido.fkidpaqueteria=paqueteria.idpaqueteria 
-									inner join producto on detallepedido.fkproducto=producto.idproducto 
-									inner join historialpedido on pedido.foliopedido=historialpedido.fkfoliopedido 
-									where historialpedido.fkestadopedido=4 and pedido.fkidusuario=?',[$idusuario]); 
-	return view ('compras_Realizadas',['consultaSeguimiento'=>$consultaSeguimiento]);
+	$consultaSeguimiento=DB::select('select foliopedido,pedido.fecha,descuento,paqueteria.nombre, producto.nombreproducto, estadopedido.nombre_Estado from pedido 
+                                    inner join detallepedido on pedido.foliopedido=detallepedido.fkfoliopedido 
+                                    inner join paqueteria on pedido.fkidpaqueteria=paqueteria.idpaqueteria 
+                                    inner join producto on detallepedido.fkproducto=producto.idproducto 
+                                    inner join historialpedido on pedido.foliopedido=historialpedido.fkfoliopedido 
+                                    inner join estadopedido on historialpedido.fkestadopedido=estadopedido.idestadopedido
+                                    where pedido.fkidusuario=?',[$idusuario]); 
+									
+	$fechaB = DB::select('select pedido.fecha from pedido 
+														inner join detallepedido on pedido.foliopedido=detallepedido.fkfoliopedido 
+                                    inner join paqueteria on pedido.fkidpaqueteria=paqueteria.idpaqueteria 
+                                    inner join producto on detallepedido.fkproducto=producto.idproducto 
+                                    inner join historialpedido on pedido.foliopedido=historialpedido.fkfoliopedido 
+                                    inner join estadopedido on historialpedido.fkestadopedido=estadopedido.idestadopedido
+														where pedido.fkidusuario=?',[$idusuario]);
+														
+				$fechaConversion = json_decode(json_encode($fechaB),true);
+				$fechaconvertida = implode($fechaConversion[0]);
+														
+								$fechaBien = date("d/m/Y", strtotime($fechaconvertida));
+	
+	return view ('compras_Realizadas',['consultaSeguimiento'=>$consultaSeguimiento, 'fechaBien'=>$fechaBien]);
 	}
 
 }	
 return redirect ('/');
+}
+
+public function mostrarProductos (){
+	
 }
 
 }

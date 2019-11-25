@@ -20,51 +20,69 @@
 			</div>
 		
 		<div class="col-6">
+		
 			<div class="container">
 				<div class="card">
 					<div class="card-header">
 						<div class="clearfix">
 						<h3 class="card-title" id="align-left"> 
-							Folio Compra: 1
+							Folio Compra: {{$consultaSeguimiento[0]->foliopedido}}
 						</h3>
-						<button id="align" class="card-text button">En envío</button>
+						<button id="align" class="card-text button">{{$consultaSeguimiento[0]->nombre_Estado}}</button>
 						</div>
 						</div>
 					<div class="card-body">
 					<div class="card-columns">
 						<div class="card bg-light">
 							<div class="card-body text-center">
-								<label class="card-text">Fecha de Compra</label>
-								<button class="card-text button">27 de septiembre de 2019</button>
+								<label class="card-text"> Fecha de compra:</label>
+								<button class="card-text button">{{$fechaBien}}</button>
 							</div>
 						</div>
 						<div class="card bg-light">
 							<div class="card-body text-center">
-								<label class="card-text">Bonificaci&oacute;n </label><br>
-								<button class="card-text button">$227.00</button>
+								<label class="card-text">Bonificaci&oacute;n</label><br>
+								<button class="card-text button">${{$consultaSeguimiento[0]->descuento}}</button>
 							</div>
 						</div>
 						<div class="card bg-light">
 							<div class="card-body text-center">
 								<label class="card-text">M&eacute;todo de Env&iacute;o</label><br>
-								<button class="card-text button">DHL</button>
+								<button class="card-text button">{{$consultaSeguimiento[0]->nombre}}</button>
 							</div>
 						</div>
 					</div>
 					</div>
+					
 					<div class="card-footer">
 						<div class="card bg-light">
 							<div class="card-body text-center">
-								<label class="card-text">Productos </label>
-								<button class="card-text button"></button>
+								<table class="table table-hover table-striped">
+									<thead>
+										<tr>
+											<th width="20px">Nombre del producto</th>
+										</tr>
+									</thead>
+									<tbody>
+									@foreach($consultaSeguimiento as $consulta)
+										
+										<tr>
+											<td width="20px">{{$consulta->nombreproducto}}</td>
+										</tr>
+									@endforeach;
+									</tbody>
+								</table>
+							 
 							</div>
 						</div>
 					</div>
+					 
 				</div>
 			</div>
 			<div>
 	
 			</div>
+			
 		</div>
 		<div class="col-3">
 			

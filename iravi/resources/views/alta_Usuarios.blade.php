@@ -18,7 +18,7 @@
 	  <article class="card-body">
 		<h4 class="card-title text-center mb-4 mt-1" style="color: #003366">Registro Usuario </h4>
 		<hr style="border-color: #666699">
-			<form action="registroUsuarioGuardar" method="post" enctype="multipart/form-data">
+			<form action="registroUsuarioGuardarAdmin" method="post" enctype="multipart/form-data">
 		{{ csrf_field() }}
 		<div class="form-group">
 		<div class="input-group">
@@ -74,7 +74,7 @@
 			    <span class="input-group-text" style="border-color: #666699"> <i class="fa fa-lock"></i> </span>
 			 </div>
 			<input placeholder="Colonia" name="colonia" class="form-control formulario_input" style="border-color: #666699" pattern="[A-Za-z\s]+"
-		title="El nombre de la colonia debe llevar solo letras y espacios" required> 
+		title="El nombre de la colonia debe llevar solo letras y espacios" required>
 		<label class="formulario_label">Colonia</label>
 		</div>
 		</div>
@@ -107,7 +107,7 @@
 			    <span class="input-group-text" style="border-color: #666699"> <i class="fa fa-lock"></i> </span>
 			 </div>
 				<input placeholder="Pais" name="pais" class="form-control formulario_input" style="border-color: #666699" pattern="[A-Za-z\s]+"
-		title="El nombre del pais debe llevar solo letras y espacios" required> 
+		title="El nombre del pais debe llevar solo letras y espacios" required>
 		<label class="formulario_label">Pa&iacute;s</label>
 		</div>
 		</div>
@@ -118,7 +118,7 @@
 			    <span class="input-group-text" style="border-color: #666699"> <i class="fa fa-lock"></i> </span>
 			 </div>
 			<input placeholder="Municipio" name="municipio" class="form-control formulario_input" style="border-color: #666699" pattern="[A-Za-z\s]+"
-		title="El nombre del municipio debe llevar solo letras y espacios" required> 
+		title="El nombre del municipio debe llevar solo letras y espacios" required>
 		<label class="formulario_label">Municipio</label>
 		</div>
 		</div>
@@ -129,7 +129,7 @@
 			    <span class="input-group-text" style="border-color: #666699"> <i class="fa fa-lock"></i> </span>
 			 </div>
 			<input placeholder="Ciudad" name="ciudad" class="form-control formulario_input" style="border-color: #666699" pattern="[A-Za-z\s]+"
-		title="El nombre de la ciudad debe llevar solo letras y espacios" required> 
+		title="El nombre de la ciudad debe llevar solo letras y espacios" required>
 		<label class="formulario_label">Ciudad</label>
 		</div>
 		</div>
@@ -140,7 +140,7 @@
 			    <span class="input-group-text" style="border-color: #666699"> <i class="fa fa-lock"></i> </span>
 			 </div>
 				<input placeholder="Codigo Postal" name="cp" class="form-control formulario_input" style="border-color: #666699" pattern="[0-9]{5}"
-		title="El codigo postal debe contener solo numeros y tener una longitud de cinco caracteres" required> 
+		title="El codigo postal debe contener solo numeros y tener una longitud de cinco caracteres" required>
 		<label class="formulario_label">C&oacute;digo Postal</label>
 		</div>
 		</div>
@@ -151,7 +151,7 @@
 			    <span class="input-group-text" style="border-color: #666699"> <i class="fa fa-lock"></i> </span>
 			 </div>
 			<input placeholder="Telefono" name="telefono" class="form-control formulario_input" style="border-color: #666699" pattern="[0-9]+"
-		title="El telefono debo contener solo numeros" required> 
+		title="El telefono debo contener solo numeros" required>
 		<label class="formulario_label">Tel&eacute;fono</label>
 		</div>
 		</div>
@@ -170,7 +170,7 @@
 			    <span class="input-group-text" style="border-color: #666699"> <i class="fa fa-lock"></i> </span>
 			 </div>
 			<input placeholder="Password" type="password" name="contrasena" class="form-control formulario_input" style="border-color: #666699"
-		pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+		pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
 		title="El password debe contener por lo menos una mayusucla, una minuscula, un numero y tener por lo menos ocho caracteres">
 		<label class="formulario_label">Contrase&ntilde;a</label>
 		</div>

@@ -5,9 +5,9 @@
 	<div class="row">
 		<div class="col-2">
 			<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-				<a  class="nav-link" href="{{ url('comprasRealizadas')}}">Compras realizadas</a>
-				<a  class="nav-link" href="{{ url('perfilUsuario')}}">Mi Perfil</a>
-				<a  class="nav-link" href="{{ url('Historia')}}">Acerca de Iravi</a>
+				<a  class="nav-link" style="color: #003366; font-weight:bold;" href="{{ url('comprasRealizadas')}}">Compras realizadas</a>
+				<a  class="nav-link" style="color: #003366; font-weight:bold;" href="{{ url('perfilUsuario')}}">Mi Perfil</a>
+				<a  class="nav-link" style="color: #003366; font-weight:bold;" href="{{ url('Historia')}}">Acerca de Iravi</a>
 			</div>
 		</div>
 		<div class="col-8">
@@ -18,10 +18,10 @@
 							<div class="col-6">
 								<img src="storage{{$tablaFotosProducto[0]->ruta }}" class="card-img-left" style="width: 300px; height: 300px;">
 							</div>
-							<div class="col-2" >
-								<p><label><h3> {{$tablaProductos[0]->nombreproducto }}</h3></label></p>
+							<div class="col-5">
+								<h3> <label align="left">{{$tablaProductos[0]->nombreproducto }}</label></h3>
 								<label><h5>Descripci&oacute;n del producto</h5>
-								<p> {{$tablaProductos[0]->descripcionproducto }} </label></p>
+								 {{$tablaProductos[0]->descripcionproducto }} </label>
 								<label><h5>Precio</h5>
 								<label> ${{$tablaProductos[0]->precio }}</label>
 								<br><br>

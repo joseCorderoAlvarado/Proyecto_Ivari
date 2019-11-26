@@ -4,11 +4,11 @@
 <?php
 $totalCarrito = 0;
  ?>
- <div class="container-fluid">
-   <div class="row">
-    <br><br><div class="alert alert-info" role="alert" align="center">Recuerda que Iravi cuenta con un sistema de bonificaciones que se aplica cada sexta compra con un 10% de regalo.</div><br><br>
-   </div>
+
+ <div class="container-fluid" style="width: 900px;" >
+    <div class="alert alert-info" role="alert" align="center">Recuerda que Iravi cuenta con un sistema de bonificaciones que se aplica cada sexta compra con un 10% de regalo.</div>
  </div>
+ 
 <div class="container-fluid" style="border: 1px #ccc solid; border-radius: 3px; padding: 10px; margin: auto;">
    <div class="row">
       <div class="col-2">
@@ -86,8 +86,12 @@ $totalCarrito = 0;
 <div class="container">
 	<div class="row">
 		<div class="col-md-4">
+
 		</div>
-		<div class="col-md-4" style="text-align:center;">
+<div class="container-fluid" style="width: 800px;">
+    <div class="alert alert-warning" role="alert" align="center">Se agregar&aacute; un costo adicional variable entre $150 a $250 dependiendo de la paqueteria seleccionada</div>
+ </div>
+		<div class="col-md-12" align="center" style="text-align:center;">
 		<a href="{{ url('confirmacionCompra')}}">
 		<button type="button" class="formulario_btn" style="background:#003366;">Proceder al pago </button>
 		</a>

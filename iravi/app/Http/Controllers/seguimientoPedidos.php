@@ -108,7 +108,7 @@ public function filtrar(Request $data) {
                 $estado2= DB::select('SELECT count(h.fecha) as c FROM historialpedido h, pedido p where fkestadopedido=2 and fkestadopedido in(select max(fkestadopedido) from historialpedido where fkfoliopedido=p.foliopedido order by fecha desc) and p.foliopedido=h.fkfoliopedido;');
                 $estado3= DB::select('SELECT count(h.fecha) as c FROM historialpedido h, pedido p where fkestadopedido=3 and fkestadopedido in(select max(fkestadopedido) from historialpedido where fkfoliopedido=p.foliopedido order by fecha desc) and p.foliopedido=h.fkfoliopedido;');
                 $estado4= DB::select('SELECT count(h.fecha) as c FROM historialpedido h, pedido p where fkestadopedido=4 and fkestadopedido in(select max(fkestadopedido) from historialpedido where fkfoliopedido=p.foliopedido order by fecha desc) and p.foliopedido=h.fkfoliopedido;');
-                $pedidos = DB::select('SELECT p.foliopedido,concat(pe.nombrepersona," ",pe.apellidopaterno," ",pe.apellidomaterno) as nombre,concat(d.calle," #",d.numint, ", ", d.ciudad,", ", d.pais,", ",d.codigopostal)as direccion ,p.fecha, (p.subtotal-p.descuento) as total, e.nombre_Estado as estadopedido from pedido p, paqueteria pa, persona pe, usuario u, direccion d, estadopedido e where p.fkidpaqueteria=pa.idpaqueteria and u.fkpersona=pe.idpersona and p.fkidusuario=u.idusuario and p.fkiddireccion=d.iddireccion and e.idestadopedido in(select max(fkestadopedido) from historialpedido where fkfoliopedido=p.foliopedido order by fecha desc)and e.nombre_Estado=? order by fecha desc;',[$estado]);
+                $pedidos = DB::select('SELECT p.foliopedido,concat(pe.nombrepersona," ",pe.apellidopaterno," ",pe.apellidomaterno) as nombre,concat(d.calle," #",d.numint, ", ", d.ciudad,", ", d.pais,", ",d.codigopostal)as direccion ,p.fecha, (p.subtotal-p.descuento) as total, e.nombre_Estado as estadopedido from pedido p, paqueteria pa, persona pe, usuario u, direccion d, estadopedido e where p.fkidpaqueteria=pa.idpaqueteria and u.fkpersona=pe.idpersona and p.fkidusuario=u.idusuario and p.fkiddireccion=d.iddireccion and e.idestadopedido in(select max(fkestadopedido) from historialpedido where fkfoliopedido=p.foliopedido order by fecha desc)and e.idestadopedido=? order by fecha desc;',[$estado]);
                 switch($estado1){
                     case 1:$header="Pedidos en preparación";break;
                     case 2:$header="Pedidos listo para enviar";break;
@@ -117,8 +117,11 @@ public function filtrar(Request $data) {
                     default:break;
                 }
 
-
-                return view ('seguimiento_Pedidos',['pedidos'=>$pedidos,'header'=>$header,'estado1'=>$estado1,'estado2'=>$estado2,'estado3'=>$estado3,'estado4'=>$estado4]  );
+                $rutaPaginacion="seguimientoPedidos-pagina";
+                //Para sacar los elementos de la primera pagina
+                $numeroPaginas=1;
+                $paginaActual=1;
+                return view ('seguimiento_Pedidos',['pedidos'=>$pedidos,'header'=>$header,'estado1'=>$estado1,'estado2'=>$estado2,'estado3'=>$estado3,'estado4'=>$estado4,'numeroPaginas'=>$numeroPaginas,'paginaActual'=>$paginaActual, 'rutaPaginacion'=>$rutaPaginacion]);
             }
 						return redirect ('/');
   }

@@ -15,13 +15,8 @@
 	<div class="col-md-6">
 	<span><h1>LISTADO DE PRODUCTOS</h1></span>
 	</div>
-	<div class="col-md-4">
-	</div>
     </div>
 </div>
-
-<br><br>
-
 {{------------------------Productos---------------------------}}
 <div class="container">
 <div class="row">
@@ -30,15 +25,15 @@
 <div class="col-md-4">
 	<CENTER><span><h5>{{ $producto->idproducto }}</h5></span></CENTER>
 </div>
+<div class="col-md-2">
+	<img src="storage{{$producto->ruta}}" width="50em" height="50em" class="d-inline-block align-top">
+</div>
 <div class="col-md-4">
 	<CENTER>
-
-		<img src="storage{{$producto->ruta}}" width="50em" height="50em" class="d-inline-block align-top">
-
 		<span class="d-inline-block align-top"><h3>{{ $producto->nombreproducto }}</h3></span>
 	</CENTER>
 </div>
-<div class="col-md-4">
+<div class="col-md-2">
 	<form action="modificarProducto" method="post" enctype="multipart/form-data">
 	{{ csrf_field() }}
 	 <input type="hidden" name="id" value={{ $producto->idproducto }}>

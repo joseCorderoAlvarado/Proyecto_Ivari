@@ -17,7 +17,7 @@
 
 
 <div class="col-md-6" >
-	
+
 	<center><div class="toggle toggle2">
             <span>Abrir Formulario</span>
 
@@ -34,7 +34,7 @@
 		<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
 		</div>
-		<input name="nombreproducto"  class="form-control formulario_input"  type="text" required pattern="[A-Za-z]+" title="Solo letras">
+		<input name="nombreproducto"  class="form-control formulario_input"  type="text" required pattern="[A-Za-z\s]+" title="Solo letras">
 		<label class="formulario_label">Nombre del producto</label>
 	</div>
 	</div>
@@ -82,7 +82,7 @@
         <div class="input-group-prepend">
           <span class="input-group-text" id="validationTooltipUsernamePrepend">$</span>
         </div>
-        <input name="precio" type="text" class="form-control formulario_input" id="" required>
+        <input name="precio" type="text" class="form-control formulario_input"  required pattern="[0-9]+" maxlength="3">
         <label class="formulario_label">Precio</label>
     </div>
 	</div>

@@ -96,7 +96,7 @@ $('#exampleModal').on('show.bs.modal', function (event) {
 <!-- Cosas que se repiten (Domicilio) -->
 @foreach ($tablaDetalleDireccion as $direccion)
 <div class="radio_btn">
-<input type="radio" name="direccionSeleccionada" value="{{$direccion->iddireccion}}">
+<input type="radio" name="direccionSeleccionada" value="{{$direccion->iddireccion}}" required=required>
 
 <p>Calle: {{$direccion->calle}}  #{{$direccion->numext}}</p>
 <p>Interior: {{$direccion->numint}}</p>
@@ -178,12 +178,7 @@ $('#exampleModal').on('show.bs.modal', function (event) {
 <input class="submit_btn" onclick="validation(event)" type="submit" value="Confirmar">
 </div>
 <div align="center">
-<p>Costo del Envio: </p>
-<p> xxx </p>
-</div>
-<div align="center">
-<p>Gran Total: </p>
-<p> sss </p>
+<p>El costo de envio se añadira a tu pago automaticamente </p>
 </div>
 </fieldset>
 </form>

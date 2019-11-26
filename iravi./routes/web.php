@@ -88,7 +88,7 @@ Route::Get('descripcionProducto','descripcionProducto@mostrar'); //Khe?
 
 //Alta de usuario de amdin
 Route::get('registroUsuarioAdmin','registroUsuarioAdmin@mostrar');
-Route::post('registroUsuarioGuardar','registroUsuarioAdmin@guardar');
+Route::post('registroUsuarioGuardarAdmin','registroUsuarioAdmin@guardar');
 
 //Historial de ventas
 Route::Get('historialVentas','historialVentas@mostrar');

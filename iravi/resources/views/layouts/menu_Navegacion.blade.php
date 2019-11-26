@@ -25,14 +25,29 @@
 			<li	class="nav-item">
 				<a	class="nav-link" style="color: #fff">Bienvenido</a>
 			</li>
-			<a href="#">
-			<img src="images/iconoCarrito.png" width="30" height="30"	class="d-inline-block align-top">
-            </a>
+			<img src="images/iconoCarrito.png" width="30" id="carrito" height="30"	class="d-inline-block align-top" data-toggle="modal" data-target="#mensaje">
 		</ul>
 	</div>
 </nav>
 </div>
 </div>
-<hr style="border-color: #003366; width: 100%; border-width: 3px">
+<div id="mensaje" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            	<h4 class="modal-title">Aun no te registras</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+           	<form  action="Alerta" method="post" enctype="multipart/form-data">
+			{{ csrf_field() }}
+	        	<div class="modal-footer">
+					<button id="button" class="btn btn-primary" style="background-color: #003669; color: white;">Registrarte</button>
+				</div>
+	        </form>
+        </div>
+    </div>
+</div>
+
+
 </div>
 {{-----------------------FinMenú de navegación---------------------------}}

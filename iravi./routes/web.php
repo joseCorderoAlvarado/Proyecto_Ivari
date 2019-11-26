@@ -41,6 +41,10 @@ Route::post('eliminarCarrito','controlador_carritoCompras@eliminarCarrito');
 //Login inicio de sesion
 Route::Get('login','iniciarSesion@mostrar');
 
+//Alertas
+Route::post('Alerta','controladoresAlerta@AlertaCarrito');
+Route::post('Alerta','controladoresAlerta@AlertaCarritoAnadir');
+Route::post('Alerta','controladoresAlerta@AlertaCarritoAdmin');
 
 
 //Historia

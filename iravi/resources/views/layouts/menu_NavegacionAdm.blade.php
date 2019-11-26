@@ -34,9 +34,24 @@ echo $usuarioDatos[0]->nombrepersona;
 			<li	class="nav-item">
 				<a	class="nav-link" style="color: #fff">Bienvenido</a>
 			</li>
-			<a href="#">
-			<img src="images/iconoCarrito.png" width="30" height="30"	class="d-inline-block align-top">
-            </a>
+			<img src="images/iconoCarrito.png" width="30" height="30"	class="d-inline-block align-top" class="d-inline-block align-top" data-toggle="modal" data-target="#mensaje">
+			<div id="mensaje" class="modal fade">
+<div class="modal-dialog">
+	<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title">No tienes permisos para ver los productos</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			</div>
+
+			<form  action="Alerta" method="post" enctype="multipart/form-data">
+{{ csrf_field() }}
+			<div class="modal-footer">
+		<button id="button" class="btn btn-primary" style="background-color: #003669; color: white;">Aceptar</button>
+	</div>
+		</form>
+	</div>
+</div>
+</div>
 		</ul>
 	</div>
 </nav>

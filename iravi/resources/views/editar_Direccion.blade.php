@@ -65,82 +65,82 @@
 
 						<div class="form-group" style="background-color: #E0E0E0;">
 							<div class="row">
-								<div class="col-4">
+								<div class="col-2">
 									<label id="text">Calle:</label>
 								</div>
-								<div class="col-6">
-									<input id="text" type="text"  name="txtCalle" contenteditable="false" style=" border: solid; background-color: transparent;" value="{{$direcciones[0]->calle}}" pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="" maxlength="50">
+								<div class="col-5">
+									<input id="text" type="text"  name="txtCalle" contenteditable="false" style="width: 350px; border: solid; background-color: transparent;" value="{{$direcciones[0]->calle}}" pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="" maxlength="50">
 								</div>
 							</div>
 							
 							<div class="row">
-								<div class="col-4">
+								<div class="col-2">
 									<label id="text" >N&uacute;mero interior:</label>
 								</div>
 						
-								<div class="col-6">
-									<input id="text" type="text" name="txtNumeroInt" contenteditable="false" style=" border: solid; background-color: transparent; " value="{{$direcciones[0]->numint}}"  pattern="^{1,}[ a-zA-ZÁÉÍÓÚñáéíóú][\s]*" required="" maxlength="50">
+								<div class="col-5">
+									<input id="text" type="text" name="txtNumeroInt" contenteditable="false" style="width: 350px; border: solid; background-color: transparent; " value="{{$direcciones[0]->numint}}"  pattern="^{1,}[ a-zA-ZÁÉÍÓÚñáéíóú][\s]*" required="" maxlength="50">
 
 								</div>
 							</div>
 
 							<div class="row">
-								<div class="col-4">
+								<div class="col-2">
 									<label id="text" >N&uacute;mero exterior:</label>
 								</div>
 						
-								<div class="col-6">
-									<input id="text" type="text" name="txtNumeroExt" contenteditable="false" style=" border: solid; background-color: transparent; " value="{{$direcciones[0]->numext}}"  pattern="^{1,}[ a-zA-ZÁÉÍÓÚñáéíóú][\s]*" required="" maxlength="50">
+								<div class="col-5">
+									<input id="text" type="text" name="txtNumeroExt" contenteditable="false" style="width: 350px; border: solid; background-color: transparent; " value="{{$direcciones[0]->numext}}"  pattern="^{1,}[ a-zA-ZÁÉÍÓÚñáéíóú][\s]*" required="" maxlength="50">
 
 								</div>
 							</div>
 
 							<div class="row">
-								<div class="col-4">
+								<div class="col-2">
 									<label id="text">Colonia:</label>
 								</div>
-								<div class="col-6">
-									<input id="text" type="text" name="txtColonia" contenteditable="false" style=" border: solid; background-color: transparent; " value="{{$direcciones[0]->colonia}}" pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="" maxlength="50">
+								<div class="col-5">
+									<input id="text" type="text" name="txtColonia" contenteditable="false" style="width: 350px; border: solid; background-color: transparent; " value="{{$direcciones[0]->colonia}}" pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="" maxlength="50">
 								</div>
 							</div>
 							
 							<div class="row">
-								<div class="col-4">
+								<div class="col-2">
 									<label id="text" >C&oacute;digo P&oacute;stal:</label>
 								</div>
-								<div class="col-6">
-									<input id="text" type="text"  name="txtCodigoP" contenteditable="false"  style=" border: solid; background-color: transparent;"  value="{{$direcciones[0]->codigopostal}}"  pattern="^{1,}[\s]*" required="" maxlength="8">
+								<div class="col-5">
+									<input id="text" type="text"  name="txtCodigoP" contenteditable="false"  style="width: 350px; border: solid; background-color: transparent;"  value="{{$direcciones[0]->codigopostal}}"  pattern="^{1,}[\s]*" required="" maxlength="8">
 
 								</div>
 							</div>
 
 							<div class="row">
-								<div class="col-4">
+								<div class="col-2">
 									<label id="text">Municipio:</label>
 								</div>
-								<div class="col-6">
-									<input id="text" type="text"  name="txtMunicipio" contenteditable="false" style=" border: solid; background-color: transparent;"  value="{{$direcciones[0]->municipio}}"  pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="" maxlength="50">
+								<div class="col-5">
+									<input id="text" type="text"  name="txtMunicipio" contenteditable="false" style="width: 350px; border: solid; background-color: transparent;"  value="{{$direcciones[0]->municipio}}"  pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="" maxlength="50">
 
 								</div>
 							</div>
 
 							<div class="row">
-								<div class="col-4">
+								<div class="col-2">
 									<label id="text">Ciudad:</label>
 								</div>
-								<div class="col-6">
-									<input id="text" type="text"  name="txtCiudad" contenteditable="false" style="  border: solid; background-color: transparent;" value="{{$direcciones[0]->ciudad}}" pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="" maxlength="50">
+								<div class="col-5">
+									<input id="text" type="text"  name="txtCiudad" contenteditable="false" style="width: 350px; border: solid; background-color: transparent;" value="{{$direcciones[0]->ciudad}}" pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="" maxlength="50">
 
 								</div>
 								
 							</div>
 
 							<div class="row">
-								<div class="col-4">
+								<div class="col-2">
 									<label id="text">Pais:</label>
 								</div>
-								<div class="col-6">
-									<input id="text" type="text"  name="txtPais" contenteditable="false" style="  border: solid; background-color: transparent;" value="{{$direcciones[0]->pais}}" pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="" maxlength="50">
+								<div class="col-5">
+									<input id="text" type="text"  name="txtPais" contenteditable="false" style="width: 350px; border: solid; background-color: transparent;" value="{{$direcciones[0]->pais}}" pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="" maxlength="50">
 
 								</div>
 								

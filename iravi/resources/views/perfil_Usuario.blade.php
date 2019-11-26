@@ -59,16 +59,10 @@
 					</h2>
 				</div>
 			</center>
-			<center>
-				<div class="toggle toggle2">
-            		<span>
-            			Ver Perfil
-            		</span>
-				</div>
-			</center>
+			
 			<br>
 			<br>
-			<div class="card formulario1" style="background: transparent;"
+			<div style="background: transparent;"
   				<article class="card-body" >
 					<h4 class="card-title text-center mb-4 mt-1">Mi perfil</h4>
 					<hr style="margin-bottom: 40px;">

@@ -25,7 +25,7 @@
 			<div class="input-group-prepend">
 			    <span class="input-group-text" style="border-color: #666699"> <i class="fa fa-user"></i> </span>
 			</div>
-			<input name="nombre" class="form-control" placeholder="Nombre" type="text" style="border-color: #666699" pattern="[A-Za-z\s]+"
+			<input name="nombre" class="form-control" placeholder="Nombre"  style="border-color: #666699" pattern="[A-Za-z\s]+"
 		title="El nombre debe llevar solo letras y espacios" required>
 		</div>
 		</div>
@@ -164,23 +164,23 @@
 		<label class="formulario_label">Correo Electr&oacute;nico</label>
 		</div>
 		</div>
+
 		<div class="form-group">
-		<div class="input-group">
-			<div class="input-group-prepend">
-			    <span class="input-group-text" style="border-color: #666699"> <i class="fa fa-lock"></i> </span>
-			 </div>
-			<input placeholder="Password" type="password" name="contrasena" class="form-control formulario_input" style="border-color: #666699"
+		<div class="input-group frm-smn">
+		
+			<input placeholder="Password" type="password" name="contrasena" 
+			class="form-control formulario_input" style="border: #666699 1px solid;"
 		pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
 		title="El password debe contener por lo menos una mayusucla, una minuscula, un numero y tener por lo menos ocho caracteres">
 		<label class="formulario_label">Contrase&ntilde;a</label>
+	
 		</div>
 		</div>
+
 		<div class="form-group">
 		<div class="input-group">
-			<div class="input-group-prepend">
-			    <span class="input-group-text" style="border-color: #666699"> <i class="fa fa-lock"></i> </span>
-			 </div>
-		<select name="genero">
+		
+		<select name="genero" style="border: #666699 1px solid;">
 	  <option value="1">Masculino</option>
 	  <option value="2">Femenino</option>
 	</select>
@@ -189,10 +189,8 @@
 
 		<div class="form-group">
 		<div class="input-group">
-			<div class="input-group-prepend">
-			    <span class="input-group-text" style="border-color: #666699"> <i class="fa fa-lock"></i> </span>
-			 </div>
-		<select name="tipodireccion">
+		
+		<select name="tipodireccion" style="border: #666699 1px solid;">
 	  <option value="1">Personal</option>
 	  <option value="2">Envio</option>
 	  <option value="3">Facturacion</option>

@@ -34,19 +34,20 @@
 		<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
 		</div>
-		<input name="nombreproducto"  class="form-control formulario_input"  type="text" required pattern="[A-Za-z\s]+" title="Solo letras">
+		<input name="nombreproducto"  class="form-control formulario_input"  required pattern="[A-Za-z\s]+" title="Solo letras">
 		<label class="formulario_label">Nombre del producto</label>
 	</div>
 	</div>
-	<div class="form-group">
+	<br>
 	<div class="input-group">
-		<div class="input-group-prepend">
-		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-		 </div>
-		<textarea name="descripcionproducto"  class="form-control formulario_input" required pattern="[A-Za-z]+" title="Solo letras"></textarea>
+		<div class="input-group">
+		   
+		 
+		<textarea name="descripcionproducto" class="form-control formulario_input" required pattern="[A-Za-z]+" title="Solo letras"></textarea>
+		<br>
 		<label class="formulario_label">Descripción del producto</label>
 	</div>
-	</div>
+</div>
 
 	<div class="form-group" >
 	<div class="input-group">
@@ -82,7 +83,7 @@
         <div class="input-group-prepend">
           <span class="input-group-text" id="validationTooltipUsernamePrepend">$</span>
         </div>
-        <input name="precio" type="text" class="form-control formulario_input"  required pattern="[0-9]+" maxlength="3">
+        <input name="precio"  class="form-control formulario_input"  required pattern="[0-9]+" maxlength="3">
         <label class="formulario_label">Precio</label>
     </div>
 	</div>

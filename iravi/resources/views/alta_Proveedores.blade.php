@@ -26,7 +26,7 @@
 		<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
 		</div>
-		<input id="nombre" name="nombre" class="form-control" placeholder="Nombre del Proveedor" required pattern="[A-Za-z]+" title="Solo letras" type="text">
+		<input id="nombre" name="nombre" class="form-control" placeholder="Nombre del Proveedor" required pattern="[A-Za-z]+" title="Solo letras" >
 	</div>
 	</div>
 	<div class="form-group">

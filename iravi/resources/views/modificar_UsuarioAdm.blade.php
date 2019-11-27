@@ -30,7 +30,7 @@
 		<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
 		</div>
-		<input name="nombrepersona" class="form-control" placeholder="Nombre" type="text" value="{{ $modificar[0]->nombrepersona }}" pattern="[A-Za-z\s]+"
+		<input name="nombrepersona" class="form-control" placeholder="Nombre" value="{{ $modificar[0]->nombrepersona }}" pattern="[A-Za-z\s]+"
 		title="El nombre debe llevar solo letras y espacios" required>
 	</div>
 	</div>

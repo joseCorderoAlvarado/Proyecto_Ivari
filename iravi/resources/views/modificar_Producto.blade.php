@@ -26,14 +26,11 @@
 		<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
 		</div>
-		<input  name="nombreproducto" class="form-control" placeholder="Nombre Producto" type="text" required pattern="[A-Za-z\s]+" value="{{ $producto[0]->nombreproducto }}" >
+		<input  name="nombreproducto" class="form-control" placeholder="Nombre Producto"  required pattern="[A-Za-z\s]+" value="{{ $producto[0]->nombreproducto }}" >
 	</div>
 	</div>
 	<div class="form-group">
 	<div class="input-group">
-		<div class="input-group-prepend">
-		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-		 </div>
 		<textarea  name="descripcionproducto" class="form-control" placeholder="Descripción del Producto" required pattern="[A-Za-z]+"
 		>{{ $producto[0]->descripcionproducto }}</textarea>
 	</div>
@@ -77,7 +74,7 @@
         <div class="input-group-prepend">
           <span class="input-group-text" id="validationTooltipUsernamePrepend">$</span>
         </div>
-        <input name="precio" type="text" class="form-control" id="" placeholder="Precio" required pattern="[0-9\.]+" maxlength="3"
+        <input name="precio"  class="form-control" id="" placeholder="Precio" required pattern="[0-9\.]+" maxlength="3"
 		value={{ $producto[0]->precio }} >
     </div>
 	</div>
@@ -92,13 +89,14 @@
 			<span class="input-group-text">Cambiar foto	</span>
 		<input type="file" class="form-control" name="fotosModificar[]" id="fotosModificar" >
 		<input type="hidden" class="form-control" name="idfotos[]" id="idfotos" value="{{$foto->idfotoproducto}}">
-        	<div class="container-fluid">
+        	<div class="container-fluid"><br><br>
 					<img class="img-rounded" src="storage{{$foto->ruta}}" width="500em" height="300em">
 			</div>
        	</div>
 	 </div>
 	  <div id="form_alert"></div>
 </div>
+
 <?php  $i++?>
 @endforeach
 	<input type="hidden" class="form-control" name="totalfotos" id="totalfotos" value="{{$i}}">

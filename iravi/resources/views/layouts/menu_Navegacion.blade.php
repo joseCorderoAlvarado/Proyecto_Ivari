@@ -1,6 +1,6 @@
 {{-------------------------Menú de navegación---------------------------}}
 <div class="container-fluid" style="background-color: #003366">
-<div class="row">
+<div class="row"> 
 <div class="col-md-12">
 <nav class="navbar navbar-expand-lg	navbar-light bg-light" style="background-color: #003366 !important">
     <img src="images/iravi.png" width="30" height="30"	class="d-inline-block align-top" alt="">
@@ -35,15 +35,23 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-            	<h4 class="modal-title">Aun no te registras</h4>
+            	<h4 class="modal-title">A&uacute;n no inicias sesi&oacute;n</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
+
+            <div class="modal-footer">
            	<form  action="Alerta" method="post" enctype="multipart/form-data">
 			{{ csrf_field() }}
-	        	<div class="modal-footer">
-					<button id="button" class="btn btn-primary" style="background-color: #003669; color: white;">Registrarte</button>
-				</div>
+	        	
+					<button id="button" class="btn btn-primary" style="background-color: #003669; color: white;">Iniciar sesi&oacute;n</button>
+					
 	        </form>
+			<form  action="Alerta1" method="post" enctype="multipart/form-data">
+			{{ csrf_field() }}
+	        	<button id="button" class="btn btn-primary" style="background-color: #003669; color: white;">Registrarse</button>
+	        	 </form>
+	        </div>
+	      
         </div>
     </div>
 </div>

@@ -12,34 +12,34 @@
       <a class="nav-link"  href="{{ url('seguimientoPedidos')}}"> Ver Pedidos</a>
     </div>
 	</div>
-	<div class="col-md-6">
+	<div class="col-md-10">
         <span><h1>LISTADO DE USUARIOS</h1></span>
 		<br><br>
-		<table border="1px " class="table">
+		<div class="container">
 
-				<tr>
-					<th>Id</th>
-					<th>Nombre</th>
-					<th>Correo</th>
-					<th>Rol</th>
-					<th>Modificar</th>
+				<div class="row">
+					<div class="col-md-0">Id</div>
+					<div class="col-md-2">Nombre</div>
+					<div class="col-md-3">Correo</div>
+					<div class="col-md-3">Rol</div>
+					<div class="col-3">Modificar</div>
 
-				</tr>
+				</div>
 			@foreach ($tablaUsuarios as $usuarios)
-				<tr>
-					<td>{{ $usuarios->idpersona }}</td>
-					<td>{{ $usuarios->nombrecompleto }}</td>
-					<td>{{ $usuarios->correoelectronico }}</td>
-					<td>{{ $usuarios->rol }}</td>
-					<td><form action="modificarUsuarioAdm" method="post" enctype="multipart/form-data">
+				<div class="row">
+					<div class="col-md-0">{{ $usuarios->idpersona }}</div>
+					<div class="col-md-2">{{ $usuarios->nombrecompleto }}</div>
+					<div class="col-md-3">{{ $usuarios->correoelectronico }}</div>
+					<div class="col-md-3">{{ $usuarios->rol }}</div>
+					<div class="col-3"><form action="modificarUsuarioAdm" method="post" enctype="multipart/form-data">
 							{{ csrf_field() }}
 							<input type="hidden" name="id" value={{ $usuarios->idpersona }}>
 					<CENTER> <button type="submit" class="btn btn-primary btn-block">Modificar</button>  </CENTER>
 
-	</form></td>
-				</tr>
+	</form></div>
+				</div>
 			@endforeach
-		</table>
+		</div>
 		</div>
 	</div>
 
@@ -50,13 +50,7 @@
 
 <br><br>
 
-{{------------------------Productos---------------------------}}
-<div class="container">
-<div class="row">
 
-
-</div>
-</div>
 {{--------------------Fin Productos---------------------------}}
 
 

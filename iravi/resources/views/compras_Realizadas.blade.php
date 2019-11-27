@@ -66,25 +66,30 @@
 								<table class="table table-hover table-striped">
 									<thead>
 										<tr>
-											<th width="20px">Nombre del producto</th>
+											<td width="20px">Nombre del producto</td>
+											<td width="20px">Cantidad</td>
 										</tr>
 									</thead>
 									<tbody>
 										
 												
 											<?php
-												$NombreProd = DB::select('SELECT producto.nombreproducto
+												$NombreProd = DB::select('SELECT producto.nombreproducto, detallepedido.cantidad
 																		from detallepedido
 																	    inner join pedido on pedido.foliopedido=detallepedido.fkfoliopedido
 																		inner join producto on detallepedido.fkproducto=producto.idproducto
 																	    where pedido.foliopedido =?',[$consultaSeg->foliopedido]);
 											?>
 											@foreach($NombreProd as $nom)
-											<tr>
+										<tr>
 											<td width="20px">
 												{{$nom->nombreproducto}}
 												<br>
-												</td>
+											</td>
+											<td width="20px">
+												{{$nom->cantidad}}
+												<br>
+											</td>
 										</tr>
 											@endforeach
 											

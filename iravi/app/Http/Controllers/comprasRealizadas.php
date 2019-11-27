@@ -21,7 +21,7 @@ class comprasRealizadas extends Controller
 				$idusuarioconvert= json_decode( json_encode($consultaidusuario), true);
 				$idusuario = implode($idusuarioconvert[0]);
 
-				$consultaSeguimiento=DB::select('SELECT distinct pedido.foliopedido,pedido.fecha,descuento,paqueteria.nombre, estadopedido.nombre_Estado   
+				$consultaSeguimiento=DB::select('SELECT distinct pedido.foliopedido,pedido.fecha,descuento,paqueteria.nombre, estadopedido.nombre_Estado 
 													from pedido 
 													inner join paqueteria on pedido.fkidpaqueteria=paqueteria.idpaqueteria
 													inner join historialpedido on pedido.foliopedido=historialpedido.fkfoliopedido

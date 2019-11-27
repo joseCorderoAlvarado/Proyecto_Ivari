@@ -390,7 +390,7 @@
 						</div>
 								
 						<div class="col-5">
-							<input id="text"type="text" name="txtCalleAgregar" style="width: 350px; border: solid; border-color: blue; background-color: transparent; color: black;" value="">
+							<input id="text"type="text" name="txtCalleAgregar" style="width: 350px; border: solid; border-color: blue; background-color: transparent; color: black;" value="" pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="" maxlength="50">
 						</div>
 								
 					</div>
@@ -401,7 +401,7 @@
 						</div>
 								
 						<div class="col-5">
-							<input id="text"type="text" name="txtNumIntAgregar" style="width: 350px; border: solid; border-color: blue; background-color: transparent; color: black;" value="">
+							<input id="text"type="text" name="txtNumIntAgregar" style="width: 350px; border: solid; border-color: blue; background-color: transparent; color: black;" value="" pattern="^{1,}[ a-zA-ZÁÉÍÓÚñáéíóú][\s]*" required="" maxlength="50">
 						</div>
 								
 					</div>
@@ -412,7 +412,7 @@
 						</div>
 								
 						<div class="col-5">
-							<input id="text"type="text" name="txtNumExtAgregar" style="width: 350px; border: solid; border-color: blue; background-color: transparent; color: black;" value="">
+							<input id="text"type="text" name="txtNumExtAgregar" style="width: 350px; border: solid; border-color: blue; background-color: transparent; color: black;" value="" pattern="^{1,}[ a-zA-ZÁÉÍÓÚñáéíóú][\s]*" required="" maxlength="50">
 						</div>
 								
 					</div>
@@ -423,7 +423,7 @@
 						</div>
 								
 						<div class="col-5">
-							<input id="text"type="text" name="txtColoniaAgregar" style="width: 350px; border: solid; border-color: blue; background-color: transparent; color: black;" value="">
+							<input id="text"type="text" name="txtColoniaAgregar" style="width: 350px; border: solid; border-color: blue; background-color: transparent; color: black;" value="" pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="" maxlength="50">
 						</div>
 								
 					</div>
@@ -434,7 +434,7 @@
 						</div>
 								
 						<div class="col-5">
-							<input id="text"type="text" name="txtMunicipioAgregar" style="width: 350px; border: solid; border-color: blue; background-color: transparent; color: black;" value="">
+							<input id="text"type="text" name="txtMunicipioAgregar" style="width: 350px; border: solid; border-color: blue; background-color: transparent; color: black;" value="" pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="" maxlength="50">
 						</div>
 								
 					</div>
@@ -445,7 +445,7 @@
 						</div>
 								
 						<div class="col-5">
-							<input id="text"type="text" name="txtCiudadAgregar" style="width: 350px; border: solid; border-color: blue; background-color: transparent; color: black;" value="">
+							<input id="text"type="text" name="txtCiudadAgregar" style="width: 350px; border: solid; border-color: blue; background-color: transparent; color: black;" value="" pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="" maxlength="50">
 						</div>
 								
 					</div>
@@ -456,7 +456,7 @@
 						</div>
 								
 						<div class="col-5">
-							<input id="text"type="text" name="txtPaisAgregar" style="width: 350px; border: solid; border-color: blue; background-color: transparent; color: black;">
+							<input id="text"type="text" name="txtPaisAgregar" style="width: 350px; border: solid; border-color: blue; background-color: transparent; color: black;" pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="" maxlength="50">
 						</div>
 								
 					</div>
@@ -467,7 +467,7 @@
 						</div>
 								
 						<div class="col-5">
-							<input id="text"type="text" name="txtCodigoPAgregar" style="width: 350px; border: solid; border-color: blue; background-color: transparent; color: black;" value="">
+							<input id="text"type="text" name="txtCodigoPAgregar" style="width: 350px; border: solid; border-color: blue; background-color: transparent; color: black;" value="" pattern="^[0-9]{8}" required="" maxlength="8">
 						</div>
 								
 					</div>

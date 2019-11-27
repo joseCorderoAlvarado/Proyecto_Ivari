@@ -30,13 +30,13 @@
             </a>
 						<div>
 							<?php
-			$correo_Electronico = session('S_identificador');
-			$consultaid = DB::select('SELECT usuario.idusuario from usuario inner join persona on usuario.fkpersona = persona.idpersona where persona.correoelectronico=?',[$correo_Electronico]);
-			$idConversion = json_decode(json_encode($consultaid),true);
-			$idusuario = implode($idConversion[0]);
-			$usuarioDatos = DB::select('SELECT persona.idpersona, persona.nombrepersona, persona.apellidopaterno, persona.apellidomaterno FROM iravibd.usuario inner join persona on usuario.fkpersona = persona.idpersona where idusuario=?',[$idusuario]);
-			echo $usuarioDatos[0]->nombrepersona;
-			?>
+							$correo_Electronico = session('S_identificador');
+							$consultaid = DB::select('SELECT usuario.idusuario from usuario inner join persona on usuario.fkpersona = persona.idpersona where persona.correoelectronico=?',[$correo_Electronico]);
+							$idConversion = json_decode(json_encode($consultaid),true);
+							$idusuario = implode($idConversion[0]);
+							$usuarioDatos = DB::select('SELECT persona.idpersona, persona.nombrepersona, persona.apellidopaterno, persona.apellidomaterno FROM iravibd.usuario inner join persona on usuario.fkpersona = persona.idpersona where idusuario=?',[$idusuario]);
+							echo $usuarioDatos[0]->nombrepersona;
+						?>
 						</div>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="{{ url('CerrarSesion')}}">Cerrar Sesión</a>

@@ -110,6 +110,9 @@ class perfilUsuario extends Controller
 			inner join persona on usuario.fkpersona = persona.idpersona 
 			where idusuario=?',[$idusuario]);
 
+			session(['S_Rol' => '3']);
+            session(['S_identificador'=>$datos->input('txtCorreoEditar')]);
+
 
 		return view ('perfil_Usuario',['usuarioDatos'=>$usuarioDatos, 'tipoDireccion'=>$tipoDireccion, 'direcciones'=>$direcciones]);
 

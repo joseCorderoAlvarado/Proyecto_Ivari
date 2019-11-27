@@ -1,6 +1,6 @@
 @extends('layouts.head')
 @include('layouts.menu_NavegacionCliente')
-<br><br><br>
+<br><br>
 <div class="container">
 	<div class="row">
 		<div class="col-12">
@@ -8,7 +8,7 @@
 		</div>
 	</div>
 </div>
-<br><br><br>
+
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-3">
@@ -24,14 +24,15 @@
 			if ($consultaSeguimiento!="0")
 			{?>
 		
+			@foreach($consultaSeguimiento as $consultaSeg)
 			<div class="container">
 				<div class="card">
 					<div class="card-header">
 						<div class="clearfix">
 						<h3 class="card-title" id="align-left"> 
-							Folio Compra: {{$consultaSeguimiento[0]->foliopedido}}
+							Folio Compra: {{$consultaSeg->foliopedido}}
 						</h3>
-						<button id="align" class="card-text button">{{$consultaSeguimiento[0]->nombre_Estado}}</button>
+						<button id="align" class="card-text button">{{$consultaSeg->nombre_Estado}}</button>
 						</div>
 						</div>
 					<div class="card-body">
@@ -45,13 +46,13 @@
 						<div class="card bg-light">
 							<div class="card-body text-center">
 								<label class="card-text">Bonificaci&oacute;n</label><br>
-								<button class="card-text button">${{$consultaSeguimiento[0]->descuento}}</button>
+								<button class="card-text button">${{$consultaSeg->descuento}}</button>
 							</div>
 						</div>
 						<div class="card bg-light">
 							<div class="card-body text-center">
 								<label class="card-text">M&eacute;todo de Env&iacute;o</label><br>
-								<button class="card-text button">{{$consultaSeguimiento[0]->nombre}}</button>
+								<button class="card-text button">{{$consultaSeg->nombre}}</button>
 							</div>
 						</div>
 					</div>
@@ -67,12 +68,24 @@
 										</tr>
 									</thead>
 									<tbody>
-									@foreach($consultaSeguimiento as $consulta)
 										
-										<tr>
-											<td width="20px">{{$consulta->nombreproducto}}</td>
+												
+											<?php
+												$NombreProd = DB::select('SELECT producto.nombreproducto
+																		from detallepedido
+																	    inner join pedido on pedido.foliopedido=detallepedido.fkfoliopedido
+																		inner join producto on detallepedido.fkproducto=producto.idproducto
+																	    where pedido.foliopedido =?',[$consultaSeg->foliopedido]);
+											?>
+											@foreach($NombreProd as $nom)
+											<tr>
+											<td width="20px">
+												{{$nom->nombreproducto}}
+												<br>
+												</td>
 										</tr>
-									@endforeach
+											@endforeach
+											
 									</tbody>
 								</table>
 							 
@@ -82,6 +95,7 @@
 					 
 				</div>
 			</div>
+			@endforeach
 			<?php
 			}
 			else
@@ -91,15 +105,23 @@
 				<div class="form-title">
 					<h5 id="text">No tienes compras realizadas</h5>
 				</div>
-
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
 			</center>
 			<?php
 			}
 			?>
+
 		<div>
 	
 	</div>
 			
 </div>
+
+<br>
 		
 @extends('layouts.footer')

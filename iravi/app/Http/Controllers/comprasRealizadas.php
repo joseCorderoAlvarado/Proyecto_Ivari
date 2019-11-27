@@ -26,14 +26,14 @@ class comprasRealizadas extends Controller
 													inner join paqueteria on pedido.fkidpaqueteria=paqueteria.idpaqueteria
 													inner join historialpedido on pedido.foliopedido=historialpedido.fkfoliopedido
 													inner join estadopedido on historialpedido.fkestadopedido=estadopedido.idestadopedido
-												    where fkidusuario =?',[$idusuario]);
+												    where fkidusuario =? order by fecha desc',[$idusuario]);
 
 				$fechaB = DB::select('SELECT distinct pedido.fecha 
 										from pedido 
 										inner join paqueteria on pedido.fkidpaqueteria=paqueteria.idpaqueteria
 										inner join historialpedido on pedido.foliopedido=historialpedido.fkfoliopedido
 										inner join estadopedido on historialpedido.fkestadopedido=estadopedido.idestadopedido
-									    where fkidusuario =?',[$idusuario]);
+									    where fkidusuario =? order by fecha desc',[$idusuario]);
 
 				if ($fechaB!=null)
 				{

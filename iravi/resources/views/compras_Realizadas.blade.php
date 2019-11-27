@@ -20,6 +20,8 @@
 			</div>
 		
 		<div class="col-6">
+			<br>
+			<br>
 			<?php
 			if ($consultaSeguimiento!="0")
 			{?>
@@ -95,6 +97,8 @@
 					 
 				</div>
 			</div>
+			<br>
+			<br>
 			@endforeach
 			<?php
 			}

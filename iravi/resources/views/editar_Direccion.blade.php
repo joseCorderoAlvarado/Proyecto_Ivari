@@ -109,7 +109,7 @@
 									<label id="text" >C&oacute;digo P&oacute;stal:</label>
 								</div>
 								<div class="col-5">
-									<input id="text" type="text"  name="txtCodigoP" contenteditable="false"  style="width: 350px; border: solid; background-color: transparent;"  value="{{$direcciones[0]->codigopostal}}"  pattern="^[0-9]{8}" required="" maxlength="8">
+									<input id="text" type="text"  name="txtCodigoP" contenteditable="false"  style="width: 350px; border: solid; background-color: transparent;"  value="{{$direcciones[0]->codigopostal}}"  pattern="^[0-9]{5}" required="" maxlength="8">
 
 								</div>
 							</div>

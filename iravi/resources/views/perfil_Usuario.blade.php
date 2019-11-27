@@ -467,7 +467,7 @@
 						</div>
 								
 						<div class="col-5">
-							<input id="text"type="text" name="txtCodigoPAgregar" style="width: 350px; border: solid; border-color: blue; background-color: transparent; color: black;" value="" pattern="^[0-9]{8}" required="" maxlength="8">
+							<input id="text"type="text" name="txtCodigoPAgregar" style="width: 350px; border: solid; border-color: blue; background-color: transparent; color: black;" value="" pattern="^[0-9]{5}" required="" maxlength="8">
 						</div>
 								
 					</div>

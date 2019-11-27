@@ -16,14 +16,8 @@
 </div>
 
 
-<div class="col-md-6" >
-
-	<center><div class="toggle toggle2">
-            <span>Abrir Formulario</span>
-
-</div></center>
-<center><div class="mensaje">Recuerda no dejar ning&uacute;n espacio vac&iacute;o</div></center>
-<div class="card formulario1" style="background: transparent; margin-bottom: 40px;">
+<div class="col-md-6">
+<div class="card" style="background: transparent; margin-bottom: 40px;">
   <article class="card-body" >
 	<h4 class="card-title text-center mb-4 mt-1">Registro de Productos</h4>
 	<hr style="margin-top: 40px;">
@@ -41,8 +35,8 @@
 	<br>
 	<div class="input-group">
 		<div class="input-group">
-		   
-		 
+
+
 		<textarea name="descripcionproducto" class="form-control formulario_input" required pattern="[A-Za-z]+" title="Solo letras"></textarea>
 		<br>
 		<label class="formulario_label">Descripción del producto</label>

@@ -8,12 +8,6 @@
 <div class="col-md-12">
 	<br>
 	<center>
-          <div class="mensaje">
-        	<br><br>
-        	<center><h2 >BIENVENIDO A IRAVI</h2><br>
-        	<h5>Compra lo que quieras, cuando quieras. <br> Revisa nuestros cat&aacute;logos </h5>
-        	<br><br><br><br>
-        </div>
 <div id="registrarUsuario" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">

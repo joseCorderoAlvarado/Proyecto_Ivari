@@ -8,6 +8,18 @@
 <div class="col-md-12">
 	<br>
 	<center>
+		<div class="toggle toggle2">
+            <span>
+            	<div class="col-1">
+					<a href="#registrarUsuario" role="button" class="btn btn-large btn-primary" style="width: 200px;" data-toggle="modal">Mostrar formulario</a>
+				</div></span>
+        </div></center><br>
+          <div class="mensaje">
+        	<br><br>
+        	<center><h2 >BIENVENIDO A IRAVI</h2><br>
+        	<h5>Compra lo que quieras, cuando quieras. <br> Revisa nuestros cat&aacute;logos </h5>
+        	<br><br><br><br>
+        </div>
 <div id="registrarUsuario" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">

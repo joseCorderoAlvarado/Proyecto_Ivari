@@ -41,31 +41,11 @@
   <div class="card-body">
     <h5 class="card-title">{{$producto->nombreproducto}}</h5>
     <p class="card-text">${{$producto->precio}}</p>
-	@endforeach
-    <a class="btn btn-primary" data-toggle="modal" data-target="#mensaje">Añadir al carrito</a>
-    <div id="mensaje" class="modal fade">
-    	<div class="modal-dialog">
-        	<div class="modal-content">
-            	<h4 class="modal-title">A&uacute;n no inicias sesi&oacute;n</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            </div>
-           <div class="modal-footer">
-           	<form  action="Alerta" method="post" enctype="multipart/form-data">
-			{{ csrf_field() }}
-
-					<button id="button" class="btn btn-primary" style="background-color: #003669; color: white;">Iniciar sesi&oacute;n</button>
-	        </form>
-	        <form  action="Alerta1" method="post" enctype="multipart/form-data">
-			{{ csrf_field() }}
-					<button id="button" class="btn btn-primary" style="background-color: #003669; color: white;">Registrarse</button>
-				</div>
-	        </form>
-        </div>
-    </div>
-</div>
+    <a class="btn btn-primary">Añadir al carrito</a>
   </div>
 </div>
 </div>
+@endforeach
 	{{------------------------Fin de Cosas que se repiten---------------------------}}
 
 </div>

@@ -31,7 +31,7 @@
 	      <b style="color: #fff">Contacto</b>
 	    </p>
         <p align="center" style="color: #fff">
-	  	Tel: 324-102-3790
+	  	Contacto: Iravishop@gmail.com
 	    </p>
 	     <p align="center" style="color: #fff">
 	  	Enviamos pedidos de lunes a domingo

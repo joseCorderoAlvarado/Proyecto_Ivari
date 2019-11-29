@@ -10,15 +10,7 @@ use DB;
 	class listaProductos extends Controller
 	{
 		public function mostrar(){
-			$productos = DB::select('select    p.*, f.ruta 
-from producto p  inner join fotoproducto f on f.idfotoproducto=(
-SELECT idfotoproducto
-    FROM fotoproducto AS f2
-    WHERE f2.fkproducto = p.idproducto
-   
-    LIMIT 1
-    )
-');
+			$productos = DB::select('select p.*, f.ruta from producto p inner join fotoproducto f on f.idfotoproducto=( SELECT idfotoproducto FROM fotoproducto AS f2 WHERE f2.fkproducto = p.idproducto and p.fkestatus=1 LIMIT 1)');
 		
 			return view('lista_Productos',['productos'=>$productos]);
 		}

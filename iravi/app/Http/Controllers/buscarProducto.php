@@ -18,13 +18,7 @@ class buscarProducto extends Controller
 		//Para sacar los elementos de la pagina n
 		$productosPorPagina=9;
 		$inicio=$paginaActual*$productosPorPagina-$productosPorPagina;
-		$tablaProductos = DB::select('select    p.*, f.ruta
-		from producto p  inner join fotoproducto f on f.idfotoproducto=(
-		SELECT idfotoproducto
-		FROM fotoproducto AS f2
-		WHERE f2.fkproducto = p.idproducto
-
-		LIMIT 1
+		$tablaProductos = DB::select('select p.*, f.ruta from producto p inner join fotoproducto f on f.idfotoproducto=( SELECT idfotoproducto FROM fotoproducto AS f2 WHERE f2.fkproducto = p.idproducto and p.fkestatus=1 LIMIT 1
 		) where p.nombreproducto like ? 
 		limit ?,?'
 		,["%$busquedaNombre%",$inicio,$productosPorPagina]);
@@ -86,13 +80,7 @@ class buscarProducto extends Controller
 		//Para sacar los elementos de la pagina n
 		$productosPorPagina=9;
 		$inicio=$paginaActual*$productosPorPagina-$productosPorPagina;
-		$tablaProductos = DB::select('select    p.*, f.ruta
-		from producto p  inner join fotoproducto f on f.idfotoproducto=(
-		SELECT idfotoproducto
-		FROM fotoproducto AS f2
-		WHERE f2.fkproducto = p.idproducto
-
-		LIMIT 1
+		$tablaProductos = DB::select('select p.*, f.ruta from producto p inner join fotoproducto f on f.idfotoproducto=( SELECT idfotoproducto FROM fotoproducto AS f2 WHERE f2.fkproducto = p.idproducto and p.fkestatus=1 LIMIT 1
 		) where p.nombreproducto like ? 
 		limit ?,?'
 		,["%$busquedaNombre%",$inicio,$productosPorPagina]);
@@ -100,13 +88,7 @@ class buscarProducto extends Controller
 
 
 		//Todo esto es para sacar el total de paginas que se haran
-		$numeroPaginas = DB::select('select    p.*, f.ruta
-		from producto p  inner join fotoproducto f on f.idfotoproducto=(
-		SELECT idfotoproducto
-		FROM fotoproducto AS f2
-		WHERE f2.fkproducto = p.idproducto
-
-		LIMIT 1
+		$numeroPaginas = DB::select('select p.*, f.ruta from producto p inner join fotoproducto f on f.idfotoproducto=( SELECT idfotoproducto FROM fotoproducto AS f2 WHERE f2.fkproducto = p.idproducto and p.fkestatus=1 LIMIT 1
 		) where p.nombreproducto like ?  '
 		,["%$busquedaNombre%"]);
 		

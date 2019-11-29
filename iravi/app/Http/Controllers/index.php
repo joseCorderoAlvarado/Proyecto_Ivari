@@ -19,27 +19,13 @@ class index extends Controller
 		$inicio=0;
 		$paginaActual=1;
 		$productosPorPagina=9;
-		$tablaProductos = DB::select('select    p.*, f.ruta
-		from producto p  inner join fotoproducto f on f.idfotoproducto=(
-		SELECT idfotoproducto
-		FROM fotoproducto AS f2
-		WHERE f2.fkproducto = p.idproducto
-
-		LIMIT 1
-		) limit ?,?'
+		$tablaProductos = DB::select('select p.*, f.ruta from producto p inner join fotoproducto f on f.idfotoproducto=( SELECT idfotoproducto FROM fotoproducto AS f2 WHERE f2.fkproducto = p.idproducto and p.fkestatus=1 LIMIT 1) limit ?,?'
 		,[$inicio,$productosPorPagina]);
 			//Para sacar los elementos de la primera pagina
 
 
 		//Todo esto es para sacar el total de paginas que se haran
-		$numeroPaginas = DB::select('select    p.*, f.ruta
-		from producto p  inner join fotoproducto f on f.idfotoproducto=(
-		SELECT idfotoproducto
-		FROM fotoproducto AS f2
-		WHERE f2.fkproducto = p.idproducto
-
-		LIMIT 1
-		)');
+		$numeroPaginas = DB::select('select p.*, f.ruta from producto p inner join fotoproducto f on f.idfotoproducto=( SELECT idfotoproducto FROM fotoproducto AS f2 WHERE f2.fkproducto = p.idproducto and p.fkestatus=1 LIMIT 1)');
 
 		$numeroPaginas= count($numeroPaginas);
 		$numeroPaginas= ceil($numeroPaginas/$productosPorPagina);
@@ -82,27 +68,13 @@ class index extends Controller
 		//Para sacar los elementos de la pagina n
 		$productosPorPagina=9;
 		$inicio=$paginaActual*$productosPorPagina-$productosPorPagina;
-		$tablaProductos = DB::select('select    p.*, f.ruta
-		from producto p  inner join fotoproducto f on f.idfotoproducto=(
-		SELECT idfotoproducto
-		FROM fotoproducto AS f2
-		WHERE f2.fkproducto = p.idproducto
-
-		LIMIT 1
-		) limit ?,?'
+		$tablaProductos = DB::select('select p.*, f.ruta from producto p inner join fotoproducto f on f.idfotoproducto=( SELECT idfotoproducto FROM fotoproducto AS f2 WHERE f2.fkproducto = p.idproducto and p.fkestatus=1 LIMIT 1) limit ?,?'
 		,[$inicio,$productosPorPagina]);
 		//Para sacar los elementos de la pagina n
 
 
 		//Todo esto es para sacar el total de paginas que se haran
-		$numeroPaginas = DB::select('select    p.*, f.ruta
-		from producto p  inner join fotoproducto f on f.idfotoproducto=(
-		SELECT idfotoproducto
-		FROM fotoproducto AS f2
-		WHERE f2.fkproducto = p.idproducto
-
-		LIMIT 1
-		)');
+		$numeroPaginas = DB::select('select p.*, f.ruta from producto p inner join fotoproducto f on f.idfotoproducto=( SELECT idfotoproducto FROM fotoproducto AS f2 WHERE f2.fkproducto = p.idproducto and p.fkestatus=1 LIMIT 1)');
 
 		$numeroPaginas= count($numeroPaginas);
 		$numeroPaginas= ceil($numeroPaginas/$productosPorPagina);

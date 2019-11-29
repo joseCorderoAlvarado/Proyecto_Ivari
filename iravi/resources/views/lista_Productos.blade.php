@@ -19,16 +19,17 @@
 </div>
 {{------------------------Productos---------------------------}}
 <div class="container">
-<div class="row">
 	{{------------------------Cosas que se repiten---------------------------}}
 @foreach ($tablaProductos as $producto)
-<div class="col-md-4">
+		<div class="row">
+
+		<div class="col-md-2">
 	<CENTER><span><h5>{{ $producto->idproducto }}</h5></span></CENTER>
 </div>
 <div class="col-md-2">
 	<img src="storage{{$producto->ruta}}" width="50em" height="50em" class="d-inline-block align-top">
 </div>
-<div class="col-md-4">
+<div class="col-md-2">
 	<CENTER>
 		<span class="d-inline-block align-top"><h3>{{ $producto->nombreproducto }}</h3></span>
 	</CENTER>
@@ -41,10 +42,20 @@
 
 	</form>
 </div>
-@endforeach
+			<div class="col-md-2">
+				<form action="eliminarProducto" method="post" enctype="multipart/form-data">
+					{{ csrf_field() }}
+					<input type="hidden" name="id" value={{ $producto->idproducto }}>
+					<CENTER> <button type="submit" class="btn btn-primary btn-block">Eliminar</button>  </CENTER>
+
+				</form>
+			</div>
+		</div>
+
+
+	@endforeach
 	{{------------------------Fin de Cosas que se repiten---------------------------}}
 
-</div>
 </div>
 {{--------------------Fin Productos---------------------------}}
 

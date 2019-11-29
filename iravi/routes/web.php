@@ -115,6 +115,9 @@ Route::get('listaModificarProductos-pagina{p}',['uses' =>'listaModificarProducto
 Route::post('modificarProducto','modificarProducto@mostrar');
 Route::post('modificarProductoGuardar','modificarProducto@modificar');
 
+Route::post('eliminarProducto','listaModificarProductos@eliminar');
+
+
 
 
 
@@ -134,6 +137,8 @@ Route::post('guardarCambiosUsuario','modificarUsuarioAdm@guardar');
 Route::post('detallePedido','detallePedido@mostrar');
 Route::post('pedidosFiltrados','seguimientoPedidos@filtrar');
 Route::post('actualizarPedido','detallePedido@actualizar');
+
+
 
 
 

@@ -5,6 +5,7 @@ use App\usuario;
 use App\persona;
 use Illuminate\Http\Request;
 use DB;
+use App\producto;
 
 
 	class listaModificarProductos extends Controller
@@ -25,7 +26,7 @@ use DB;
 					from producto p  inner join fotoproducto f on f.idfotoproducto=(
 					SELECT idfotoproducto
 					FROM fotoproducto AS f2
-					WHERE f2.fkproducto = p.idproducto
+					WHERE f2.fkproducto = p.idproducto and p.fkestatus=1
 
 					LIMIT 1
 					) limit ?,?'
@@ -38,7 +39,7 @@ use DB;
 					from producto p  inner join fotoproducto f on f.idfotoproducto=(
 					SELECT idfotoproducto
 					FROM fotoproducto AS f2
-					WHERE f2.fkproducto = p.idproducto
+					WHERE f2.fkproducto = p.idproducto and p.fkestatus=1
 
 					LIMIT 1
 					)');
@@ -54,6 +55,18 @@ use DB;
 		}
 		return redirect ('/');
 	}
-}
+
+		public function eliminar(Request $data)
+		{
+			$idProducto=$data->input('id');
+			$producto=producto::find($idProducto);
+			$producto->fkestatus=2;
+			$producto->save();
+
+
+			return redirect ('/listaModificarProductos-pagina1');
+		}
+
+	}
 
 ?>

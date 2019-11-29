@@ -25,17 +25,17 @@
   <div class="carousel-inner" style="height: 300px;">
     <div class="carousel-item active">
        <div class="container">
-      <img class="d-block w-100" src="images/bannerDulces.png" alt="First slide">
+      <img class="d-block w-100" src="images/banner1.jpg" alt="First slide">
        </div>
     </div>
     <div class="carousel-item">
        <div class="container">
-      <img class="d-block w-100" src="images/banner1.png" alt="Second slide">
+      <img class="d-block w-100" src="images/banner2.jpg" alt="Second slide">
        </div>
     </div>
     <div class="carousel-item">
       <div class="container">
-      <img class="d-block w-100" src="images/banner2.png" alt="Third slide">
+      <img class="d-block w-100" src="images/banner3.jpg" alt="Third slide">
       </div>
     </div>
   </div>

@@ -16,7 +16,11 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-6">
-								<img src="storage{{$tablaFotosProducto[0]->ruta }}" class="card-img-left" style="width: 300px; height: 300px;">
+								<div class="column">
+								@foreach ($tablaFotosProducto as $foto)
+								<img src="storage{{$foto->ruta }}" alt="{{$tablaProductos[0]->nombreproducto }}" style="width:150px; margin-bottom:15px; height: 100px; " onclick="myFunction(this);">
+								@endforeach
+								</div>
 							</div>
 							<div class="col-5">
 								<h3> <label align="left">{{$tablaProductos[0]->nombreproducto }}</label></h3>
@@ -31,6 +35,14 @@
 								Cantidad: <input type="number" name="cantidad" value="1" min="1" max="1000" step="1"/>
 								<hr>
 								<button  type="submit" class="formulario_btn" style="background:#003366">agregar al carrito</button>
+								<div class="container con">
+ 										 <!-- cierra imagen -->
+ 									 <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  										<!-- imagen a expandir -->
+  									<img id="expandedImg" class="zoom" style="width:100%;  height:70%;">
+  										<!-- Texto de la imagen -->
+  									<div id="imgtext" hidden="hidden"></div>
+									</div>
 							</form>
 								</a>
 							</div>
@@ -38,13 +50,6 @@
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="col-6">
-		</div>
-		<div class="col-6">
-					@foreach ($tablaFotosProducto as $foto)
-					<img src="storage{{$foto->ruta }}" class="card-img-left" style="width: 100px; height: 100px;">
-					@endforeach
 		</div>
 	</div>
 </div>

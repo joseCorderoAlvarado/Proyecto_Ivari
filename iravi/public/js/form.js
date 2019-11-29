@@ -84,3 +84,15 @@ document.getElementById("active4").style.color = "grey";
 document.getElementById("ok3").style.display = "none";
 }
 
+function myFunction(imgs) {
+  // Obtiene la imagen a expandir
+  var expandImg = document.getElementById("expandedImg");
+  // obtiene el texto de la imagen
+  var imgText = document.getElementById("imgtext");
+  // usa el src de la imagen a la que se le hizo click para poderlo en el img
+  expandImg.src = imgs.src;
+  // usa el valor alt para establecerlo en el textp
+  imgText.innerHTML = imgs.alt;
+  // muestra el contenedor 	que estaba oculto con el atributo block
+  expandImg.parentElement.style.display = "block";
+}

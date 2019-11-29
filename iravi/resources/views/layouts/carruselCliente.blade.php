@@ -6,6 +6,13 @@
       <a class="nav-link letra"  href="{{ url('comprasRealizadas')}}">Compras realizadas</a>
      <a class="nav-link letra"  href="{{ url('perfilUsuario')}}">Mi perfil</a>
       <a class="nav-link letra"  href="{{ url('historia')}}">Acerca de Iravi</a>
+      <br>
+  	  <br>
+  	  <h5>CATEGORIAS</h5><br>
+  	  <a class="nav-link letra" href="{{ url('indexArtesanias')}}">Artesanias</a>
+       <a class="nav-link letra"  href="{{ url('indexDulces')}}">Dulces</a>
+        <a class="nav-link letra"  href="{{ url('indexMuebles')}}">Muebles</a>
+  	   <a class="nav-link letra"  href="{{ url('indexMostrar')}}">Mostrar todos</a>
     </div>
 </div>
 <div class="col-md-10">

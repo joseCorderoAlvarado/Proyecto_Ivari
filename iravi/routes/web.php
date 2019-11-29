@@ -55,6 +55,16 @@ Route::Get('historia','historia@mostrar');
 //Compras Realizadas
 Route::Get('comprasRealizadas','comprasRealizadas@mostrar');
 
+
+//index artesanias
+Route::Get('indexArtesanias','indexArtesanias@mostrar');
+//index dulces
+Route::Get('indexDulces','indexDulces@mostrar');
+//index muebles
+Route::Get('indexMuebles','indexMuebles@mostrar');
+//index muebles
+Route::Get('indexMostrar','indexMostrar@mostrar');
+
 //Confirmacion de Compras
 Route::Get('confirmacionCompra','confirmacionCompra@mostrar');
 Route::post('nuevodomicilio','confirmacionCompra@nuevodomicilio');
@@ -138,7 +148,8 @@ Route::post('detallePedido','detallePedido@mostrar');
 Route::post('pedidosFiltrados','seguimientoPedidos@filtrar');
 Route::post('actualizarPedido','detallePedido@actualizar');
 
-
+//Segunda vista
+Route::get('/vp{d}','vp@mostrar');
 
 
 

@@ -1,5 +1,5 @@
 @extends('layouts.head')
-@include('layouts.menu_Navegacion')
+@include('layouts.menu_NavegacionCliente')
 {{-------------------------Buscador---------------------------}}
 <div class="container-fluid">
 	<div class="row justify-content-center">
@@ -24,27 +24,26 @@
 </div>
 {{------------------------Fin de Buscador---------------------------}}
 
-@include('layouts.Carrusel')
-
+@include('layouts.carruselCliente')
 
 {{------------------------Productos---------------------------}}
 <div class="container">
 <div class="row">
 	{{------------------------Cosas que se repiten---------------------------}}
-@foreach ($tablaProductos as $producto)
-<div class="col-md-4">
-<div class="card2" style="width: 15rem;">
-  <a>
-  <img class="card-img-top" src="storage{{$producto->ruta}}" alt="Card image cap" style="height:230px;">
-  </a>
-  <div class="card-body">
-    <h5 class="card-title">{{$producto->nombreproducto}}</h5>
-    <p class="card-text">${{$producto->precio}}</p>
-    <a class="btn btn-primary"  href="vp{{$producto->idproducto}}" style="background-color: #003669; color: white;">Ver producto</a>
-  </div>
-</div>
-</div>
-@endforeach
+	@foreach ($tablaProductos as $producto)
+	<div class="col-md-4">
+	<div class="card2" style="width: 15rem;">
+	  <a href="vistaProducto{{$producto->idproducto}}">
+	  <img class="card-img-top" src="storage{{$producto->ruta}}" alt="Card image cap" style="height:230px;">
+	  </a>
+	  <div class="card-body">
+	    <h5 class="card-title">{{$producto->nombreproducto}}</h5>
+	    <p class="card-text">${{$producto->precio}}</p>
+	    <a href="#" class="btn btn-primary">Añadir al carrito</a>
+	  </div>
+	</div>
+	</div>
+	@endforeach
 	{{------------------------Fin de Cosas que se repiten---------------------------}}
 
 </div>
@@ -88,7 +87,9 @@
 
 				@if ($i==$numeroPaginas)
 						@if ($paginaActual==$numeroPaginas)
-			        <li class="page-item disabled">
+			        <li 
+				
+				class="page-item disabled">
 								<a class="page-link" href="#" aria-label="Next">
 								<span aria-hidden="true">&raquo;</span>
 								</a>
@@ -114,5 +115,4 @@
  </div>
 </div>
 {{--------------------Fin de Paginación----------------------}}
-
 @extends('layouts.footer')

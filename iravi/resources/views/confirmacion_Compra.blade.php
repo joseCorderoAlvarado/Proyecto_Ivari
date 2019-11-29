@@ -95,8 +95,8 @@ $('#exampleModal').on('show.bs.modal', function (event) {
 <form action="paypal" class="regform" method="post">
 <!-- Cosas que se repiten (Domicilio) -->
 @foreach ($tablaDetalleDireccion as $direccion)
-<div class="radio_btn">
-<input type="radio" name="direccionSeleccionada" value="{{$direccion->iddireccion}}" required=required>
+<div class="radio_btn" >
+<input type="radio" name="direccionSeleccionada" value="{{$direccion->iddireccion}}" required=required checked>
 
 <p>Calle: {{$direccion->calle}}  #{{$direccion->numext}}</p>
 <p>Interior: {{$direccion->numint}}</p>

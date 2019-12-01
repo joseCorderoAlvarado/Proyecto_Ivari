@@ -56,43 +56,46 @@
  <div class="row">
    <div class="col-md-4">
    </div>
-	 <div class="col-md-4">
-		<nav aria-label="Page navigation example">
-			 <ul class="pagination">
+   <div class="col-md-4">
+    <nav aria-label="Page navigation example">
+       <ul class="pagination">
 	{{------------------------Cosas que se repiten---------------------------}}
 @for ($i=1;$i<=$numeroPaginas;$i++)
 
-			@if ($i==1)
+	 		@if ($i==1)
 				@if ($paginaActual==1)
-				<li class="page-item disabled">
+        		<li class="page-item disabled">
 					<a class="page-link" href="#" aria-label="Previous">
 					<span aria-hidden="true">&laquo;</span>
 					</a>
 			 </li>
-				@else
+      	@else
 				<li class="page-item">
-					<a class="page-link" href="{{$rutaPaginacion}}pagina{{$paginaActual-1}}" aria-label="Previous">
+					<a class="page-link" href="{{$rutaPaginacion}}{{$paginaActual-1}}" aria-label="Previous">
 					<span aria-hidden="true">&laquo;</span>
 					</a>
 			 </li>
 			@endif
-		@endif
+  		@endif
 
 		@if ($i==$paginaActual)
 		<li class="page-item active"><a class="page-link">{{$i}}</a></li>
 		@else
-		<li class="page-item"><a class="page-link" href="{{$rutaPaginacion}}pagina{{$i}}">{{$i}}</a></li>
-		@endif
+		<li class="page-item"><a class="page-link" href="{{$rutaPaginacion}}{{$i}}">{{$i}}</a></li>
+    @endif
+
+
+
 				@if ($i==$numeroPaginas)
 						@if ($paginaActual==$numeroPaginas)
-							<li class="page-item disabled">
+			        <li class="page-item disabled">
 								<a class="page-link" href="#" aria-label="Next">
 								<span aria-hidden="true">&raquo;</span>
 								</a>
 						 </li>
-						@else
+			      @else
 							<li class="page-item">
-								<a class="page-link" href="{{$rutaPaginacion}}pagina{{$paginaActual+1}}" aria-label="Next">
+								<a class="page-link" href="{{$rutaPaginacion}}{{$paginaActual+1}}" aria-label="Next">
 								<span aria-hidden="true">&raquo;</span>
 								</a>
 						 </li>
@@ -102,9 +105,9 @@
 
 @endfor
 {{------------------------Fin de Cosas que se repiten---------------------------}}
-			</ul>
-	 </nav>
-	</div>
+      </ul>
+   </nav>
+  </div>
 
   <div class="col-md-4">
   </div>

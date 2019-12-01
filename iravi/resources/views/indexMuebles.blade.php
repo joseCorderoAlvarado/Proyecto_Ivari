@@ -33,6 +33,7 @@
 	@foreach ($tablaProductos as $producto)
 	<div class="col-md-4">
 	<div class="card2" style="width: 15rem;">
+	  <a>
 	  <img class="card-img-top" src="storage{{$producto->ruta}}" alt="Card image cap" style="height:230px;">
 	  </a>
 	  <div class="card-body">

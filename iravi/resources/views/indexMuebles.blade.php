@@ -33,13 +33,13 @@
 	@foreach ($tablaProductos as $producto)
 	<div class="col-md-4">
 	<div class="card2" style="width: 15rem;">
-	  <a>
+	  <a href="vistaProducto{{$producto->idproducto}}">
 	  <img class="card-img-top" src="storage{{$producto->ruta}}" alt="Card image cap" style="height:230px;">
 	  </a>
 	  <div class="card-body">
 	    <h5 class="card-title">{{$producto->nombreproducto}}</h5>
 	    <p class="card-text">${{$producto->precio}}</p>
-	    <a href="vistaProducto{{$producto->idproducto}}" class="btn btn-primary"  style="background-color: #003669; color: white;">Ver producto</a>
+	   <a class="btn btn-primary"  href="vistaProducto{{$producto->idproducto}}" style="background-color: #003669; color: white;">Ver producto</a>
 	  </div>
 	</div>
 	</div>

@@ -68,7 +68,7 @@ class indexArtesanias extends Controller
 
 	//Por mientas, luego se pueden funcionar las dos funciones
 	public function mostrarPaginacion($paginaActual){
-		$rutaPaginacion="pagina%";
+		$rutaPaginacion="paginaA%";
 		//Para sacar los elementos de la pagina n
 		$productosPorPagina=9;
 		$inicio=$paginaActual*$productosPorPagina-$productosPorPagina;

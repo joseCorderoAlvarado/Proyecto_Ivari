@@ -58,6 +58,7 @@ Route::Get('comprasRealizadas','comprasRealizadas@mostrar');
 
 //index artesanias
 Route::Get('indexArtesanias','indexArtesanias@mostrar');
+Route::get('paginaA%{p}',['uses' =>'indexArtesanias@mostrarPaginacion']);
 //index dulces
 Route::Get('indexDulces','indexDulces@mostrar');
 //index muebles

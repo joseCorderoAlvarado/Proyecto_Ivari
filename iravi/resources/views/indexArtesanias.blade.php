@@ -82,13 +82,9 @@
 		@else
 		<li class="page-item"><a class="page-link" href="{{$rutaPaginacion}}{{$i}}">{{$i}}</a></li>
     @endif
-
-
-
 				@if ($i==$numeroPaginas)
 						@if ($paginaActual==$numeroPaginas)
 			        <li
-
 				class="page-item disabled">
 								<a class="page-link" href="#" aria-label="Next">
 								<span aria-hidden="true">&raquo;</span>
@@ -102,8 +98,6 @@
 						 </li>
 						@endif
 			 @endif
-
-
 @endfor
 {{------------------------Fin de Cosas que se repiten---------------------------}}
       </ul>

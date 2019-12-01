@@ -23,8 +23,7 @@ class indexMuebles extends Controller
 		from producto p  inner join fotoproducto f on f.idfotoproducto=(
 		SELECT idfotoproducto
 		FROM fotoproducto AS f2
-		WHERE  p.fkcategoria=2 and p.fkestatus=1
-
+		WHERE  f2.fkproducto = p.idproducto and p.fkcategoria=2 and p.fkestatus=1
 		LIMIT 1
 		) limit ?,?'
 		,[$inicio,$productosPorPagina]);
@@ -36,8 +35,7 @@ class indexMuebles extends Controller
 		from producto p  inner join fotoproducto f on f.idfotoproducto=(
 		SELECT idfotoproducto
 		FROM fotoproducto AS f2
-		WHERE p.fkcategoria=2  and p.fkestatus=1
-
+		WHERE  f2.fkproducto = p.idproducto and p.fkcategoria=2 and p.fkestatus=1
 		LIMIT 1
 		)');
 
@@ -85,7 +83,7 @@ class indexMuebles extends Controller
 		from producto p  inner join fotoproducto f on f.idfotoproducto=(
 		SELECT idfotoproducto
 		FROM fotoproducto AS f2
-		WHERE p.fkcategoria=2  and p.fkestatus=1
+		WHERE f2.fkproducto = p.idproducto and p.fkcategoria=2 and p.fkestatus=1
 		LIMIT 1
 		) limit ?,?'
 		,[$inicio,$productosPorPagina]);
@@ -97,7 +95,8 @@ class indexMuebles extends Controller
 		from producto p  inner join fotoproducto f on f.idfotoproducto=(
 		SELECT idfotoproducto
 		FROM fotoproducto AS f2
-		WHERE p.fkcategoria=2 and p.fkestatus=1
+		WHERE  f2.fkproducto = p.idproducto and p.fkcategoria=2 and p.fkestatus=1
+
 		LIMIT 1
 		)');
 

@@ -14,7 +14,7 @@ class indexDulces extends Controller
 
 
 	public function mostrar(){
-		$rutaPaginacion="pagina%";
+		$rutaPaginacion="paginaB%";
 		//Para sacar los elementos de la primera pagina
 		$inicio=0;
 		$paginaActual=1;
@@ -65,7 +65,7 @@ class indexDulces extends Controller
 	}
 	//Por mientas, luego se pueden funcionar las dos funciones
 	public function mostrarPaginacion($paginaActual){
-		$rutaPaginacion="pagina%";
+		$rutaPaginacion="paginaB%";
 		//Para sacar los elementos de la pagina n
 		$productosPorPagina=9;
 		$inicio=$paginaActual*$productosPorPagina-$productosPorPagina;

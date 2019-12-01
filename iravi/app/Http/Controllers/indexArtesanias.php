@@ -63,9 +63,6 @@ class indexArtesanias extends Controller
 			return view('index',['tablaProductos'=>$tablaProductos,'paginaActual'=>$paginaActual,
 						'numeroPaginas'=>$numeroPaginas,'rutaPaginacion'=>$rutaPaginacion]);
 	}
-
-
-
 	//Por mientas, luego se pueden funcionar las dos funciones
 	public function mostrarPaginacion($paginaActual){
 		$rutaPaginacion="paginaA%";

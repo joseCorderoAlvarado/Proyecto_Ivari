@@ -60,7 +60,6 @@
        <ul class="pagination">
 	{{------------------------Cosas que se repiten---------------------------}}
 @for ($i=1;$i<=$numeroPaginas;$i++)
-
 	 		@if ($i==1)
 				@if ($paginaActual==1)
         		<li class="page-item disabled">
@@ -76,7 +75,6 @@
 			 </li>
 			@endif
   		@endif
-
 		@if ($i==$paginaActual)
 		<li class="page-item active"><a class="page-link">{{$i}}</a></li>
 		@else

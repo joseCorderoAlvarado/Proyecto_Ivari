@@ -61,11 +61,13 @@ Route::Get('indexArtesanias','indexArtesanias@mostrar');
 Route::get('paginaA%{p}',['uses' =>'indexArtesanias@mostrarPaginacion']);
 //index dulces
 Route::Get('indexDulces','indexDulces@mostrar');
+Route::get('paginaB%{p}',['uses' =>'indexDulces@mostrarPaginacion']);
 //index muebles
 Route::Get('indexMuebles','indexMuebles@mostrar');
+Route::get('paginaC%{p}',['uses' =>'indexMuebles@mostrarPaginacion']);
 //index muebles
 Route::Get('indexMostrar','indexMostrar@mostrar');
-
+Route::get('paginaD%{p}',['uses' =>'indexMostrar@mostrarPaginacion']);
 //Confirmacion de Compras
 Route::Get('confirmacionCompra','confirmacionCompra@mostrar');
 Route::post('nuevodomicilio','confirmacionCompra@nuevodomicilio');

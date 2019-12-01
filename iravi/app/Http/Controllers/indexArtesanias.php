@@ -14,7 +14,7 @@ class indexArtesanias extends Controller
 
 
 	public function mostrar(){
-		$rutaPaginacion="pagina%";
+		$rutaPaginacion="paginaA%";
 		//Para sacar los elementos de la primera pagina
 		$inicio=0;
 		$paginaActual=1;

@@ -126,7 +126,7 @@ $('#exampleModal').on('show.bs.modal', function (event) {
 </fieldset>
 
 <fieldset id="third">
-<h2 class="title">Seleccion la paqueteria</h2>
+<h2 class="title">Selecciona la paqueteria</h2>
 <p class="subtitle">Paqueterias disponibles</p>
 <select class="options" name="paqueteriaSeleccionada">
 

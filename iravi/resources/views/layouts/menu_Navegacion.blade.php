@@ -1,6 +1,6 @@
 {{-------------------------Menú de navegación---------------------------}}
 <div class="container-fluid" style="background-color: #003366">
-<div class="row"> 
+<div class="row">
 <div class="col-md-12">
 <nav class="navbar navbar-expand-lg	navbar-light bg-light" style="background-color: #003366 !important">
     <img src="images/iravi.png" width="30" height="30"	class="d-inline-block align-top" alt="">
@@ -43,16 +43,16 @@
             <div class="modal-footer">
            	<form  action="Alerta" method="post" enctype="multipart/form-data">
 			{{ csrf_field() }}
-	        	
+
 					<button id="button" class="btn btn-primary" style="background-color: #003669; color: white;">Iniciar sesi&oacute;n</button>
-					
+
 	        </form>
 			<form  action="Alerta1" method="post" enctype="multipart/form-data">
 			{{ csrf_field() }}
 	        	 <a  id="button" href="#registrarUsuario" role="button" class="btn btn-primary" style="background-color: #003669; color: white;" data-toggle="modal">Registrarse</a>
 	        	 </form>
 	        </div>
-	      
+
         </div>
     </div>
 </div>
@@ -169,7 +169,7 @@
 							<label id="text">Número Interior:</label>
 						</div>
 						<div class="col-5">
-							<input id="text"type="text" name="ninterior" style="width: 320px; border: solid; border-color: blue; background-color: transparent; color: black;" value="" required="" pattern="^{1,}[ a-zA-Z0-9ÁÉÍÓÚñáéíóú][\s]*">
+							<input id="text"type="text" name="ninterior" style="width: 320px; border: solid; border-color: blue; background-color: transparent; color: black;" value=""  pattern="^{1,}[ a-zA-Z0-9ÁÉÍÓÚñáéíóú][\s]*">
 						</div>
 					</div>
 					<div class="row">

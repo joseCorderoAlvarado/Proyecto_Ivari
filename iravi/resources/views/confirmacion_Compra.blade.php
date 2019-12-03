@@ -119,7 +119,7 @@ $('#exampleModal').on('show.bs.modal', function (event) {
 <h2 class="title">Seleccione el metodo de pago</h2>
 <p class="subtitle">Metodos de pago disponibles:</p>
 <div class="radio_btn_pago">
-<input type="radio" name="Pago" value="Pago1"> PayPal </div><br>
+<input type="radio" name="Pago" value="Pago1" checked> PayPal </div><br>
 <div align="center">
 <input id="pre_btn1" onclick="prev_step1()" type="button" value="Anterior">
 <input id="next_btn2" name="next" onclick="next_step2()" type="button" value="Siguiente"></div>

@@ -88,7 +88,7 @@
 
 				@if ($i==$numeroPaginas)
 						@if ($paginaActual==$numeroPaginas)
-			        <li class="page-item disabled">
+			        <li class="page-item">
 								<a class="page-link" href="#" aria-label="Next">
 								<span aria-hidden="true">&raquo;</span>
 								</a>

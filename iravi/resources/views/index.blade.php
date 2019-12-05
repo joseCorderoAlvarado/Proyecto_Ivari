@@ -54,9 +54,9 @@
 {{--------------------Inicio de Paginación----------------------}}
 <div class="container-fluid">
  <div class="row">
-   <div class="col-auto">
+   <div class="col-auto col-sm-4">
    </div>
-   <div class="col-auto">
+   <div class="col-auto col-sm-4">
     <nav aria-label="Page navigation example">
        <ul class="pagination">
 	{{------------------------Cosas que se repiten---------------------------}}
@@ -109,7 +109,7 @@
   </div>
 
 
-  <div class="col-auto">
+  <div class="col-auto col-sm-4">
   </div>
  </div>
 </div>

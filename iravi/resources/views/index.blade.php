@@ -3,9 +3,9 @@
 {{-------------------------Buscador---------------------------}}
 <div class="container-fluid">
 	<div class="row justify-content-center">
-	   <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4"></div>
-		<div class="col-md-4 col-sm-4 col-lg-4 col-xl-4"></div>
-        <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4">
+	   <div class="col-md-4"></div>
+		<div class="col-md-4"></div>
+        <div class="col-md-4">
           <form action="buscarProducto" method="post" enctype="multipart/form-data">
 		{{ csrf_field() }}
             <div class="card-body row no-gutters align-items-center">
@@ -32,7 +32,7 @@
 <div class="row">
 	{{------------------------Cosas que se repiten---------------------------}}
 @foreach ($tablaProductos as $producto)
-<div class="col-md-4 col-sm-4 col-lg-4 col-xl-4">
+<div class="col-md-4">
 <div class="card2" style="width: 15rem;">
   <a>
   <img class="card-img-top" src="storage{{$producto->ruta}}" alt="Card image cap" style="height:230px;">
@@ -54,9 +54,9 @@
 {{--------------------Inicio de Paginación----------------------}}
 <div class="container-fluid">
  <div class="row">
-   <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4">
+   <div class="col-md-4">
    </div>
-   <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4">
+   <div class="col-md-4">
     <nav aria-label="Page navigation example">
        <ul class="pagination">
 	{{------------------------Cosas que se repiten---------------------------}}
@@ -109,7 +109,7 @@
   </div>
 
 
-  <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4">
+  <div class="col-md-4">
   </div>
  </div>
 </div>

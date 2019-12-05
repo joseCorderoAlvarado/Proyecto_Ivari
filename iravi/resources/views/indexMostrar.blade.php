@@ -3,9 +3,9 @@
 {{-------------------------Buscador---------------------------}}
 <div class="container-fluid">
 	<div class="row justify-content-center">
-	   <div class="col-auto"></div>
-		<div class="col-auto"></div>
-        <div class="col-auto">
+	   <div class="col-md-4"></div>
+		<div class="col-md-4"></div>
+        <div class="col-md-4">
           <form action="buscarProducto" method="post" enctype="multipart/form-data">
 		{{ csrf_field() }}
             <div class="card-body row no-gutters align-items-center">
@@ -31,7 +31,7 @@
 <div class="row">
 	{{------------------------Cosas que se repiten---------------------------}}
 	@foreach ($tablaProductos as $producto)
-	<div class="col-auto">
+	<div class="col-md-4">
 	<div class="card2" style="width: 15rem;">
 	  <a href="vistaProducto{{$producto->idproducto}}">
 	  <img class="card-img-top" src="storage{{$producto->ruta}}" alt="Card image cap" style="height:230px;">

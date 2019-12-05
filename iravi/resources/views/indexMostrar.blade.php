@@ -39,7 +39,7 @@
 	  <div class="card-body">
 	    <h5 class="card-title">{{$producto->nombreproducto}}</h5>
 	    <p class="card-text">${{$producto->precio}}</p>
-	    <a href="#" class="btn btn-primary">Añadir al carrito</a>
+	    <a class="btn btn-primary"  href="vistaProducto{{$producto->idproducto}}" style="background-color: #003669; color: white;">Ver producto</a>
 	  </div>
 	</div>
 	</div>

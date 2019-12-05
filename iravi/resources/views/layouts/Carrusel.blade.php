@@ -1,14 +1,14 @@
 {{------------------------Carrusel---------------------------}}
 <div class="container-fluid">
 <div class="row">
-<div class="col-2">
+<div class="col-sm-2">
   <h5>CATEGORIAS</h5><br>
   <a class="nav-link letra" href="{{ url('indexArtesanias')}}">Artesanias</a>
    <a class="nav-link letra"  href="{{ url('indexDulces')}}">Dulces</a>
     <a class="nav-link letra"  href="{{ url('indexMuebles')}}">Muebles</a>
    <a class="nav-link letra"  href="{{ url('indexMostrar')}}">Mostrar todos</a>
 </div>
-<div class="col-10">
+<div class="col-sm-10">
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>

@@ -4,7 +4,7 @@
 <div class="container-fluid" style="background-color: #003366"	>
 	<hr style="border-color: #003366; width: 100%; border-width: 3px">
    <div class="row">
-	  <div class="col-4">
+	  <div class="col-sm-4">
 	   <p align="center">
 	    <b style="color: #fff"> Paga con Tarjeta de debito y Paypal </b>
 	   </p>
@@ -23,7 +23,7 @@
 	   	<img src="images/PayPal.png" style=" width: 300px; height: 100px;">
 	   </p>
 	  </div>
-	  <div class="col-4">
+	  <div class="col-sm-4">
         <p align="center">
         <img src="images/iravi.png" style=" width: 100px; height: 100px;">
         </p>
@@ -42,7 +42,7 @@
 	  	<img src="images/iconoTwiter.png" width="30" height="30"	class="d-inline-block align-top">
 	    </p>
 	  </div>
-	  <div class="col-4">
+	  <div class="col-sm-4">
 	  	<p align="center">
 	      <b style="color: #fff">Seguridad y rapidez </b>
 	    </p>

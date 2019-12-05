@@ -7,6 +7,5 @@
 		<link rel="stylesheet" type="text/css" href="css/estiloValidaciones.css">
 		<meta name="keywords" content="Free Style Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
 	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
     <body>

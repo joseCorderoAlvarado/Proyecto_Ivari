@@ -1,7 +1,7 @@
 {{------------------------Carrusel---------------------------}}
 <div class="container-fluid">
 <div class="row">
-<div class="col-md-2">
+<div class="col-2">
   <h5>CATEGORIAS</h5><br>
   <a class="nav-link letra" href="{{ url('indexArtesanias')}}">Artesanias</a>
    <a class="nav-link letra"  href="{{ url('indexDulces')}}">Dulces</a>

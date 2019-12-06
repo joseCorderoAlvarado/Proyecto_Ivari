@@ -169,7 +169,7 @@
 							<label id="text">Número Interior:</label>
 						</div>
 						<div class="col-5">
-							<input id="text"type="text" name="ninterior" style="width: 320px; border: solid; border-color: blue; background-color: transparent; color: black;"onkeypress="return checkNumeros(event)" value="" required="" pattern="^{1,}[ a-zA-Z0-9ÁÉÍÓÚñáéíóú][\s]*">
+							<input id="text"type="text" name="ninterior" style="width: 320px; border: solid; border-color: blue; background-color: transparent; color: black;"onkeypress="return checkNumeros(event)" value=""  pattern="^{1,}[ a-zA-Z0-9ÁÉÍÓÚñáéíóú][\s]*">
 						</div>
 					</div>
 					<div class="row">

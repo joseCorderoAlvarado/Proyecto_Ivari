@@ -108,7 +108,7 @@
 							<label id="text">Correo Electr&oacute;nico:</label>
 						</div>
 						<div class="col-5">
-							<input type="email" name="correo" class="form-control formulario_input"  style="width: 320px; border: solid; border-color: blue; background-color: transparent; color: black;" value="" onkeypress="return checkLetrasYNumerosYCaracteres(event)" required=""  pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$">
+							<input type="email" name="correo" class="form-control formulario_input"  style="width: 320px; border: solid; border-color: blue; background-color: transparent; color: black;" value=""  required=""  pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$">
 						</div>
 					</div>
 					<div class="row">
@@ -116,7 +116,7 @@
 							<label id="text">Contrase&ntilde;a:</label>
 						</div>
 						<div class="col-5">
-							<input type="password" name="contrasena" class="form-control formulario_input" style="width: 320px; border: solid; border-color: blue; background-color: transparent; color: black;" onkeypress="return checkLetrasYNumerosYCaracteres(event)"value=""
+							<input type="password" name="contrasena" class="form-control formulario_input" style="width: 320px; border: solid; border-color: blue; background-color: transparent; color: black;" value=""
 							pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
 							title="El password debe contener por lo menos una mayusucla, una minuscula, un numero y tener por lo menos ocho caracteres" required="">
 						</div>

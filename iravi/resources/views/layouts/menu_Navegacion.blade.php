@@ -1,6 +1,6 @@
 {{-------------------------Menú de navegación---------------------------}}
 <div class="container-fluid" style="background-color: #003366">
-<div class="row">
+<div class="row"> 
 <div class="col-md-12">
 <nav class="navbar navbar-expand-lg	navbar-light bg-light" style="background-color: #003366 !important">
     <img src="images/iravi.png" width="30" height="30"	class="d-inline-block align-top" alt="">
@@ -43,16 +43,16 @@
             <div class="modal-footer">
            	<form  action="Alerta" method="post" enctype="multipart/form-data">
 			{{ csrf_field() }}
-
+	        	
 					<button id="button" class="btn btn-primary" style="background-color: #003669; color: white;">Iniciar sesi&oacute;n</button>
-
+					
 	        </form>
 			<form  action="Alerta1" method="post" enctype="multipart/form-data">
 			{{ csrf_field() }}
 	        	 <a  id="button" href="#registrarUsuario" role="button" class="btn btn-primary" style="background-color: #003669; color: white;" data-toggle="modal">Registrarse</a>
 	        	 </form>
 	        </div>
-
+	      
         </div>
     </div>
 </div>
@@ -73,7 +73,7 @@
 							<label id="text">Nombre:</label>
 						</div>
 						<div class="col-5">
-							<input name="nombre" class="form-control formulario_input" type="text" style="width: 320px; border: solid; border-color: blue; background-color: transparent; color: black;" value="" pattern="[A-Za-z\s]+"
+							<input name="nombre" class="form-control formulario_input" type="text" style="width: 320px; border: solid; border-color: blue; background-color: transparent; color: black;" value="" onkeypress="return checkSoloLetras(event)" pattern="[A-Za-z\s]+"
 							title="El nombre debe llevar solo letras y espacios" required>
 						</div>
 					</div>
@@ -82,7 +82,7 @@
 							<label id="text">Apellido Paterno:</label>
 						</div>
 						<div class="col-5">
-							<input name="app" class="form-control formulario_input" type="text" style="width: 320px; border: solid; border-color: blue; background-color: transparent; color: black;" value="" pattern="[A-Za-z]+"
+							<input name="app" class="form-control formulario_input" type="text" style="width: 320px; border: solid; border-color: blue; background-color: transparent; color: black;" value="" onkeypress="return checkSoloLetras(event)" pattern="[A-Za-z]+"
 							title="El apellido debe llevar solo letras" required>
 						</div>
 					</div>
@@ -91,7 +91,7 @@
 							<label id="text">Apellido Materno:</label>
 						</div>
 						<div class="col-5">
-							<input type="text" name="apm" class="form-control formulario_input" style="width: 320px; border: solid; border-color: blue; background-color: transparent; color: black;" value="" pattern="[A-Za-z]+"
+							<input type="text" name="apm" class="form-control formulario_input" style="width: 320px; border: solid; border-color: blue; background-color: transparent; color: black;" value="" onkeypress="return checkSoloLetras(event)" pattern="[A-Za-z]+"
 							title="El apellido debe llevar solo letras" required>
 						</div>
 					</div>
@@ -108,7 +108,7 @@
 							<label id="text">Correo Electr&oacute;nico:</label>
 						</div>
 						<div class="col-5">
-							<input type="email" name="correo" class="form-control formulario_input"  style="width: 320px; border: solid; border-color: blue; background-color: transparent; color: black;" value="" required=""  pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$">
+							<input type="email" name="correo" class="form-control formulario_input"  style="width: 320px; border: solid; border-color: blue; background-color: transparent; color: black;" value="" onkeypress="return checkLetrasYNumerosYCaracteres(event)" required=""  pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$">
 						</div>
 					</div>
 					<div class="row">
@@ -116,7 +116,7 @@
 							<label id="text">Contrase&ntilde;a:</label>
 						</div>
 						<div class="col-5">
-							<input type="password" name="contrasena" class="form-control formulario_input" style="width: 320px; border: solid; border-color: blue; background-color: transparent; color: black;" value=""
+							<input type="password" name="contrasena" class="form-control formulario_input" style="width: 320px; border: solid; border-color: blue; background-color: transparent; color: black;" onkeypress="return checkLetrasYNumerosYCaracteres(event)"value=""
 							pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
 							title="El password debe contener por lo menos una mayusucla, una minuscula, un numero y tener por lo menos ocho caracteres" required="">
 						</div>
@@ -132,7 +132,7 @@
 							<label id="text">Sexo:</label>
 						</div>
 						<div class="col-5">
-							<select  name="genero" class="custom-select" style="width: 320px; border: solid; border-color: blue; background-color: transparent; color: black;">
+							<select  name="genero" class="custom-select" style="width: 320px; border: solid; border-color: blue; background-color: transparent; color: black;"onkeypress="return checkLetrasYNumerosYCaracteres(event)">
 				 	 			@foreach ($tipoGenero as $tipoGenero)
 										<option  value={{ $tipoGenero->idgenero }}>
 											{{ $tipoGenero->sexo }}
@@ -147,7 +147,7 @@
 						</div>
 
 						<div class="col-5">
-							<select  name="tipodireccion" class="custom-select" style="width: 320px; border: solid; border-color: blue; background-color: transparent; color: black;">
+							<select  name="tipodireccion" class="custom-select" style="width: 320px; border: solid; border-color: blue; background-color: transparent; color: black;"onkeypress="return checkLetrasYNumerosYCaracteres(event)">
 				 	 			@foreach ($tipoDireccion as $tipoDireccion)
 										<option  value={{ $tipoDireccion->idtipo }}>
 											{{ $tipoDireccion->tipo }}
@@ -161,7 +161,7 @@
 							<label id="text">Calle:</label>
 						</div>
 						<div class="col-5">
-							<input id="text"type="text" name="calle" style="width: 320px; border: solid; border-color: blue; background-color: transparent; color: black;" value="" required="">
+							<input id="text"type="text" name="calle" style="width: 320px; border: solid; border-color: blue; background-color: transparent; color: black;"onkeypress="return checkSoloLetras(event)" value="" required="">
 						</div>
 					</div>
 					<div class="row">
@@ -169,7 +169,7 @@
 							<label id="text">Número Interior:</label>
 						</div>
 						<div class="col-5">
-							<input id="text"type="text" name="ninterior" style="width: 320px; border: solid; border-color: blue; background-color: transparent; color: black;" value=""  pattern="^{1,}[ a-zA-Z0-9ÁÉÍÓÚñáéíóú][\s]*">
+							<input id="text"type="text" name="ninterior" style="width: 320px; border: solid; border-color: blue; background-color: transparent; color: black;"onkeypress="return checkNumeros(event)" value="" required="" pattern="^{1,}[ a-zA-Z0-9ÁÉÍÓÚñáéíóú][\s]*">
 						</div>
 					</div>
 					<div class="row">
@@ -177,7 +177,7 @@
 							<label id="text">Número Exterior:</label>
 						</div>
 						<div class="col-5">
-							<input id="text"type="text" name="nexterior" style="width: 320px; border: solid; border-color: blue; background-color: transparent; color: black;" value="" pattern="^{1,}[ a-zA-Z0-9ÁÉÍÓÚñáéíóú][\s]*" required="">
+							<input id="text"type="text" name="nexterior" style="width: 320px; border: solid; border-color: blue; background-color: transparent; color: black;"onkeypress="return checkNumeros(event)" value="" pattern="^{1,}[ a-zA-Z0-9ÁÉÍÓÚñáéíóú][\s]*" required="">
 						</div>
 					</div>
 					<div class="row">
@@ -185,7 +185,7 @@
 							<label id="text">Colonia:</label>
 						</div>
 						<div class="col-5">
-							<input id="text"type="text" name="colonia" style="width: 320px; border: solid; border-color: blue; background-color: transparent; color: black;" value="" required="" pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*">
+							<input id="text"type="text" name="colonia" style="width: 320px; border: solid; border-color: blue; background-color: transparent; color: black;"onkeypress="return checkSoloLetras(event)" value="" required="" pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*">
 						</div>
 					</div>
 					<div class="row">
@@ -193,7 +193,7 @@
 							<label id="text">Municipio:</label>
 						</div>
 						<div class="col-5">
-							<input id="text"type="text" name="municipio" style="width: 320px; border: solid; border-color: blue; background-color: transparent; color: black;" value="" pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="">
+							<input id="text"type="text" name="municipio" style="width: 320px; border: solid; border-color: blue; background-color: transparent; color: black;"onkeypress="return checkSoloLetras(event)" value="" pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="">
 						</div>
 					</div>
 					<div class="row">
@@ -201,7 +201,7 @@
 							<label id="text">Ciudad:</label>
 						</div>
 						<div class="col-5">
-							<input id="text"type="text" name="ciudad" style="width: 320px; border: solid; border-color: blue; background-color: transparent; color: black;" value="" pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="">
+							<input id="text"type="text" name="ciudad" style="width: 320px; border: solid; border-color: blue; background-color: transparent; color: black;"onkeypress="return checkSoloLetras(event)"value="" pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="">
 						</div>
 					</div>
 					<div class="row">
@@ -209,7 +209,7 @@
 							<label id="text">Pais:</label>
 						</div>
 						<div class="col-5">
-							<input id="text"type="text" name="pais" style="width: 320px; border: solid; border-color: blue; background-color: transparent; color: black;"pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="">
+							<input id="text"type="text" name="pais" style="width: 320px; border: solid; border-color: blue; background-color: transparent; color: black;"pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required=""onkeypress="return checkSoloLetras(event)">
 						</div>
 					</div>
 					<div class="row">
@@ -217,7 +217,7 @@
 							<label id="text">Código Postal:</label>
 						</div>
 						<div class="col-5">
-							<input id="text"type="text" name="cp" style="width: 320px; border: solid; border-color: blue; background-color: transparent; color: black;" value="" pattern="^[0-9]{5}" required>
+							<input id="text"type="text" name="cp" style="width: 320px; border: solid; border-color: blue; background-color: transparent; color: black;"onkeypress="return checkNumeros(event)" value="" pattern="^[0-9]{5}" required>
 						</div>
 					</div>
 					<div class="row">
@@ -225,7 +225,7 @@
 							<label id="text">Teléfono:</label>
 						</div>
 						<div class="col-5">
-							<input id="text"type="text" name="telefono" style="width: 320px; border: solid; border-color: blue; background-color: transparent; color: black;" value="" title="El telefono debo contener solo numeros" required=""  pattern="^[0-9]{10}">
+							<input id="text"type="text" name="telefono" style="width: 320px; border: solid; border-color: blue; background-color: transparent; color: black;"onkeypress="return checkNumeros(event)" value="" title="El telefono debo contener solo numeros" required=""  pattern="^[0-9]{10}">
 						</div>
 					</div>
 	            	<p class="text-warning"><small>No dejar este campo vacio.</small></p>
@@ -237,6 +237,67 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+	function checkSoloLetras(e) 
+	{
+    	tecla = (document.all) ? e.keyCode : e.which;
+
+    	//Tecla de retroceso para borrar, siempre la permite
+    	if (tecla == 8) {
+        	return true;
+    	}
+
+    	// Patron de entrada, en este caso solo acepta numeros y letras
+    	patron = /[A-Za-z]/;
+    	tecla_final = String.fromCharCode(tecla);
+    	return patron.test(tecla_final);
+	}
+
+	function checkLetrasYNumeros(e) 
+	{
+    	tecla = (document.all) ? e.keyCode : e.which;
+
+    	//Tecla de retroceso para borrar, siempre la permite
+    	if (tecla == 8) {
+        	return true;
+    	}
+
+    	// Patron de entrada, en este caso solo acepta numeros y letras
+    	patron = /[A-Za-z0-9]/;
+    	tecla_final = String.fromCharCode(tecla);
+    	return patron.test(tecla_final);
+	}
+
+	function checkNumeros(e) 
+	{
+    	tecla = (document.all) ? e.keyCode : e.which;
+
+    	//Tecla de retroceso para borrar, siempre la permite
+    	if (tecla == 8) {
+        	return true;
+    	}
+
+    	// Patron de entrada, en este caso solo acepta numeros y letras
+    	patron = /[0-9]/;
+    	tecla_final = String.fromCharCode(tecla);
+    	return patron.test(tecla_final);
+	}
+
+	function checkLetrasYNumerosYCaracteres(e) 
+	{
+    	tecla = (document.all) ? e.keyCode : e.which;
+
+    	//Tecla de retroceso para borrar, siempre la permite
+    	if (tecla == 8) {
+        	return true;
+    	}
+
+    	// Patron de entrada, en este caso solo acepta numeros y letras
+    	patron = /[^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$s]/;
+    	tecla_final = String.fromCharCode(tecla);
+    	return patron.test(tecla_final);
+	}
+</script>
 
 
 </div>

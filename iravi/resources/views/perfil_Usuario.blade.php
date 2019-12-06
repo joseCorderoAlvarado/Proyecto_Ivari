@@ -28,6 +28,7 @@
 		border-color: #003366; 
 		border-style:solid;
 	}
+	}
 
 
 	
@@ -139,7 +140,7 @@
 									<label id="text" >N&uacute;mero:</label>
 								</div>
 								<div class="col-2">
-									<input id="text" type="text" readonly="true" name="txtNumero" contenteditable="false" style=" border: none; background-color: transparent; color: #9FA5AB;" value="{{$direccion->numint}}" onkeypress="return checkNumeros(event)">
+									<input id="text" type="text" readonly="true" name="txtNumero" contenteditable="false" style=" border: none; background-color: transparent; color: #9FA5AB;" value="{{$direccion->numext}}" onkeypress="return checkNumeros(event)">
 
 								</div>
 							</div>

@@ -8,29 +8,29 @@
 		color: #9FA5AB;
 	}
 	#text {
-		color: #003366; 
+		color: #003366;
 	}
 	#button{
-		background-color: #003366; 
-		border-color: #003366; 
+		background-color: #003366;
+		border-color: #003366;
 
 		border-style:solid;
 	}
-	
+
 	.nav-link.active{
 		background-color:#92d050 !important;
-		border-color: #92d050 !important; 
+		border-color: #92d050 !important;
 		border-style:solid;
 		font-weight: bold;
 	}
-	
+
 	.card-body{
-		border-color: #003366; 
+		border-color: #003366;
 		border-style:solid;
 	}
 
 
-	
+
 </style>
 <br><br><br>
 <div class="container-fluid">
@@ -59,7 +59,7 @@
 					</h2>
 				</div>
 			</center>
-			
+
 			<br>
 			<br>
 			<div style="background: transparent;"
@@ -69,13 +69,13 @@
 						<div class="form-title">
 							<h5 id="text">Datos personales</h5>
 						</div>
-							
+
 						<div class="form-group" style="background-color: #E0E0E0;">
 							<div class="row">
 								<div class="col-4">
 									<label id="text">Nombre:</label>
 								</div>
-								
+
 								<div class="col-7">
 									<input id="nombre" type="text" name="txtNombre" readonly="true" style="width: 400px; border: none; background-color: transparent; color: #9FA5AB;" value="{{$usuarioDatos[0]->nombrepersona}}" onkeypress="return soloLetras(event)">
 								</div>
@@ -88,7 +88,7 @@
 								<div class="col-4">
 									<label id="text">Apellido Paterno:</label>
 								</div>
-								
+
 								<div class="col-7">
 									<input id="apellidopaterno" type="text" readonly="true" name="txtApellidoP" contenteditable="false" style="width: 400px;  border: none; background-color: transparent; color: #9FA5AB;" value="{{$usuarioDatos[0]->apellidopaterno}}" onkeypress="return soloLetras(event)">
 								</div>
@@ -101,7 +101,7 @@
 								<div class="col-4">
 									<label id="text">Apellido Materno:</label>
 								</div>
-				
+
 								<div class="col-7">
 									<input id="apellidomaterno" type="text" readonly="true" name="txtApellidoM"  contenteditable="false" style="width: 400px; border: none; background-color: transparent; color: #9FA5AB;" value="{{$usuarioDatos[0]->apellidomaterno}}" onkeypress="return checkSoloLetras(event)">
 								</div>
@@ -110,7 +110,7 @@
 								</div>
 							</div>
 						</div>
-		
+
 						<div class="form-title">
 							<br>
 							<br>
@@ -139,7 +139,7 @@
 									<label id="text" >N&uacute;mero:</label>
 								</div>
 								<div class="col-2">
-									<input id="numint" type="text" readonly="true" name="txtNumero" contenteditable="false" style=" border: none; background-color: transparent; color: #9FA5AB;" value="{{$direccion->numint}}" onkeypress="return checkNumeros(event)">
+									<input id="numint" type="text" readonly="true" name="txtNumero" contenteditable="false" style=" border: none; background-color: transparent; color: #9FA5AB;" value="{{$direccion->numext}}" onkeypress="return checkNumeros(event)">
 
 								</div>
 							</div>
@@ -160,7 +160,7 @@
 								</div>
 							</div>
 							<div class="row">
-								
+
 							</div>
 							<div class="row">
 								<div class="col-2">
@@ -177,7 +177,7 @@
 									<input id="ciudad" type="text" readonly="true" name="txtEstado" contenteditable="false" style="width:200px;  border: none; background-color: transparent; color: #9FA5AB;" value="{{$direccion->ciudad}}" onkeypress="return checkSoloLetras(event)">
 
 								</div>
-								
+
 							</div>
 							<div class="row">
 								<div class="col-2">
@@ -191,7 +191,7 @@
 									<br>
 									<input type="hidden" name="txtidPersona1" " value="{{$usuarioDatos[0]->idpersona}}">
 									<input type="hidden" name="txtfkdireccion" value="{{$direcciones[$i]->fk_direccion}}">
-									<button role="button" class="btn btn-large btn-primary" data-toggle="modal">Modificar direcci&oacute;n</button> 
+									<button role="button" class="btn btn-large btn-primary" data-toggle="modal">Modificar direcci&oacute;n</button>
 								</div>
 							</div>
 						</div>
@@ -209,7 +209,7 @@
 							<br>
 							<h5 id="text">Datos de usuario</h5>
 						</div>
-		
+
 						<div class="form-group" style="background-color: #E0E0E0;">
 							<div class="row">
 								<div class="col-2">
@@ -243,16 +243,16 @@
 	</div>
 </div>
 
-  
+
 <!-- Modal / Ventana / Overlay en HTML -->
 <div id="editarNombre" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
             	<h4 class="modal-title">Editar Nombre</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>           
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
-           	
+
            	<form  action="perfilUsuarioNombre" method="post" enctype="multipart/form-data">
 			{{ csrf_field() }}
 
@@ -261,11 +261,11 @@
 	            	<input id="nombre"type="text" name="txtNombreEditar" style="width: 400px; border: none; background-color: transparent; color: black; border-style: solid; border-color: blue;" value="{{$usuarioDatos[0]->nombrepersona}}" autofocus="value"   pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="" maxlength="50" onkeypress="return soloLetras(event)">
 	            	<p class="text-warning"><small>No dejar este campo vacio.</small></p>
 	       		</div>
-	            
+
 	        	<div class="modal-footer">
 					<button id="button" class="btn btn-primary" style="background-color: #003669; color: white;">Guardar Cambios</button>
 				</div>
-	        </form>   
+	        </form>
         </div>
     </div>
 </div>
@@ -276,9 +276,9 @@
         <div class="modal-content">
             <div class="modal-header">
             	<h4 class="modal-title">Editar Apellido Paterno</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>           
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
-           	
+
            	<form  action="perfilUsuarioApellidoP" method="post" enctype="multipart/form-data">
 			{{ csrf_field() }}
 
@@ -287,11 +287,11 @@
 	            	<input id="apellidopaterno"type="text" name="txtApellidoPEditar" style="width: 400px; border: none; background-color: transparent; color: black; border-style: solid; border-color: blue;" value="{{$usuarioDatos[0]->apellidopaterno}}" autofocus="value" pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="" maxlength="50" onkeypress="return soloLetras(event)">
 	            	<p class="text-warning"><small>No dejar este campo vacio.</small></p>
 	       		</div>
-	            
+
 	        	<div class="modal-footer">
 					<button id="button" class="btn btn-primary" style="background-color: #003669; color: white;">Guardar Cambios</button>
 				</div>
-	        </form>   
+	        </form>
         </div>
     </div>
 </div>
@@ -301,9 +301,9 @@
         <div class="modal-content">
             <div class="modal-header">
             	<h4 class="modal-title">Editar Apellido Materno</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>           
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
-           	
+
            	<form  action="perfilUsuarioApellidoM" method="post" enctype="multipart/form-data">
 			{{ csrf_field() }}
 
@@ -312,11 +312,11 @@
 	            	<input id="apellidomaterno"type="text" name="txtApellidoMEditar" style="width: 400px; border: none; background-color: transparent; color: black; border-style: solid; border-color: blue;" value="{{$usuarioDatos[0]->apellidomaterno}}" autofocus="value"  pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="" maxlength="50" onkeypress="return soloLetras(event)">
 	            	<p class="text-warning"><small>No dejar este campo vacio.</small></p>
 	       		</div>
-	            
+
 	        	<div class="modal-footer">
 					<button id="button" class="btn btn-primary" style="background-color: #003669; color: white;">Guardar Cambios</button>
 				</div>
-	        </form>   
+	        </form>
         </div>
     </div>
 </div>
@@ -326,9 +326,9 @@
         <div class="modal-content">
             <div class="modal-header">
             	<h4 class="modal-title">Editar Correo Electr&oacute;nico</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>           
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
-           	
+
            	<form  action="perfilUsuarioCorreo" method="post" enctype="multipart/form-data">
 			{{ csrf_field() }}
 
@@ -337,11 +337,11 @@
 	            	<input id="text"type="email" name="txtCorreoEditar" style="width: 400px; border: none; background-color: transparent; color: black; border-style: solid; border-color: blue;" value="{{$usuarioDatos[0]->correoelectronico}}" autofocus="value" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" required="" maxlength="100" onkeypress="return correo(event)">
 	            	<p class="text-warning"><small>No dejar este campo vacio.</small></p>
 	       		</div>
-	            
+
 	        	<div class="modal-footer">
 					<button id="button" class="btn btn-primary" style="background-color: #003669; color: white;">Guardar Cambios</button>
 				</div>
-	        </form>   
+	        </form>
         </div>
     </div>
 </div>
@@ -351,9 +351,9 @@
         <div class="modal-content">
             <div class="modal-header">
             	<h4 class="modal-title">Editar Contraseña</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>           
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
-           	
+
            	<form  action="perfilUsuarioContra" method="post" enctype="multipart/form-data">
 			{{ csrf_field() }}
 
@@ -362,11 +362,11 @@
 	            	<input id="contrasena"type="text" name="txtContraseñaEditar" style="width: 400px; border: none; background-color: transparent; color: black; border-style: solid; border-color: blue;" value="{{$usuarioDatos[0]->contrasena}}" autofocus="value" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" maxlength="200" required=""  onkeypress="return domicilio(event)">
 	            	<p class="text-warning"><small>No dejar este campo vacio.</small></p>
 	       		</div>
-	            
+
 	        	<div class="modal-footer">
 					<button id="button" class="btn btn-primary" style="background-color: #003669; color: white;">Guardar Cambios</button>
 				</div>
-	        </form>   
+	        </form>
         </div>
     </div>
 </div>
@@ -377,9 +377,9 @@
         <div class="modal-content">
             <div class="modal-header">
             	<h4 class="modal-title">Agregar Direcci&oacute;n</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>           
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
-           	
+
            	<form  action="agregarDirecciones" method="post" enctype="multipart/form-data">
 			{{ csrf_field() }}
 
@@ -388,88 +388,88 @@
 						<div class="col-2">
 							<label id="text">Calle:</label>
 						</div>
-								
+
 						<div class="col-5">
 							<input id="calle"type="text" name="txtCalleAgregar" style="width: 350px; border: solid; border-color: blue; background-color: transparent; color: black;" value="" pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="" maxlength="50" onkeypress="return soloLetras(event)">
 						</div>
-								
+
 					</div>
 
 					<div class="row">
 						<div class="col-2">
 							<label id="text">Número Interior:</label>
 						</div>
-								
+
 						<div class="col-5">
 							<input id="numint"type="text" name="txtNumIntAgregar" style="width: 350px; border: solid; border-color: blue; background-color: transparent; color: black;" value="" pattern="^{1,}[ a-zA-ZÁÉÍÓÚñáéíóú][\s]*" required="" maxlength="50" onkeypress="return domicilio(event)">
 						</div>
-								
+
 					</div>
 
 					<div class="row">
 						<div class="col-2">
 							<label id="text">Número Exterior:</label>
 						</div>
-								
+
 						<div class="col-5">
 							<input id="numint"type="text" name="txtNumExtAgregar" style="width: 350px; border: solid; border-color: blue; background-color: transparent; color: black;" value="" pattern="^{1,}[ a-zA-ZÁÉÍÓÚñáéíóú][\s]*"  maxlength="50" onkeypress="return domicilio(event)">
 						</div>
-								
+
 					</div>
 
 					<div class="row">
 						<div class="col-2">
 							<label id="text">Colonia:</label>
 						</div>
-								
+
 						<div class="col-5">
 							<input id="colonia"type="text" name="txtColoniaAgregar" style="width: 350px; border: solid; border-color: blue; background-color: transparent; color: black;" value="" pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="" maxlength="50" onkeypress="return soloLetras(event)">
 						</div>
-								
+
 					</div>
 
 					<div class="row">
 						<div class="col-2">
 							<label id="text">Municipio:</label>
 						</div>
-								
+
 						<div class="col-5">
 							<input id="municipio"type="text" name="txtMunicipioAgregar" style="width: 350px; border: solid; border-color: blue; background-color: transparent; color: black;" value="" pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="" maxlength="50" onkeypress="return soloLetras(event)">
 						</div>
-								
+
 					</div>
 
 					<div class="row">
 						<div class="col-2">
 							<label id="text">Ciudad:</label>
 						</div>
-								
+
 						<div class="col-5">
 							<input id="ciudad"type="text" name="txtCiudadAgregar" style="width: 350px; border: solid; border-color: blue; background-color: transparent; color: black;" value="" pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="" maxlength="50" onkeypress="return soloLetras(event)">
 						</div>
-								
+
 					</div>
 
 					<div class="row">
 						<div class="col-2">
 							<label id="text">Pais:</label>
 						</div>
-								
+
 						<div class="col-5">
 							<input id="pais"type="text" name="txtPaisAgregar" style="width: 350px; border: solid; border-color: blue; background-color: transparent; color: black;" pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="" maxlength="50" onkeypress="return soloLetras(event)">
 						</div>
-								
+
 					</div>
 
 					<div class="row">
 						<div class="col-2">
 							<label id="text">Código Postal:</label>
 						</div>
-								
+
 						<div class="col-5">
 							<input id="codigopostal"type="text" name="txtCodigoPAgregar" style="width: 350px; border: solid; border-color: blue; background-color: transparent; color: black;" value="" pattern="^[0-9]{5}" required="" maxlength="8" onkeypress="return checkNumeros(event)">
 						</div>
-								
+
 					</div>
 
 					<div class="row">
@@ -481,7 +481,7 @@
 							<select  name="txtTipoDireccion" class="custom-select" style="width: 350px;">
 				 	 			@foreach ($tipoDireccion as $tipoDireccion)
 										<option  value={{ $tipoDireccion->idtipo }}>
-											{{ $tipoDireccion->tipo }} 
+											{{ $tipoDireccion->tipo }}
 										</option>
 				  				@endforeach
 		       				</select>
@@ -491,11 +491,11 @@
 	            	<p class="text-warning"><small>No dejar este campo vacio.</small></p>
 	       		</div>
 	       		<input type="hidden" name="txtidPersona" value="{{$usuarioDatos[0]->idpersona}}">
-	            
+
 	        	<div class="modal-footer">
 					<button id="button" class="btn btn-primary" style="background-color: #003669; color: white;">Agregar Dirección</button>
 				</div>
-	        </form>   
+	        </form>
         </div>
     </div>
 </div>
@@ -559,7 +559,7 @@
         }
     }
 
-	function checkNumeros(e) 
+	function checkNumeros(e)
 	{
     	tecla = (document.all) ? e.keyCode : e.which;
 
@@ -573,7 +573,7 @@
     	tecla_final = String.fromCharCode(tecla);
     	return patron.test(tecla_final);
 	}
-	
+
 </script>
 
 

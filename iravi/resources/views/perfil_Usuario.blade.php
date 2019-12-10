@@ -28,7 +28,6 @@
 		border-color: #003366; 
 		border-style:solid;
 	}
-	}
 
 
 	
@@ -78,7 +77,7 @@
 								</div>
 								
 								<div class="col-7">
-									<input id="text"type="text" name="txtNombre" readonly="true" style="width: 400px; border: none; background-color: transparent; color: #9FA5AB;" value="{{$usuarioDatos[0]->nombrepersona}}" onkeypress="return checkSoloLetras(event)">
+									<input id="nombre" type="text" name="txtNombre" readonly="true" style="width: 400px; border: none; background-color: transparent; color: #9FA5AB;" value="{{$usuarioDatos[0]->nombrepersona}}" onkeypress="return soloLetras(event)">
 								</div>
 								<div class="col-1">
 									<a href="#editarNombre" role="button" class="btn btn-large btn-primary" data-toggle="modal">&rarr;</a>
@@ -91,7 +90,7 @@
 								</div>
 								
 								<div class="col-7">
-									<input id="text" type="text" readonly="true" name="txtApellidoP" contenteditable="false" style="width: 400px;  border: none; background-color: transparent; color: #9FA5AB;" value="{{$usuarioDatos[0]->apellidopaterno}}" onkeypress="return checkSoloLetras(event)">
+									<input id="apellidopaterno" type="text" readonly="true" name="txtApellidoP" contenteditable="false" style="width: 400px;  border: none; background-color: transparent; color: #9FA5AB;" value="{{$usuarioDatos[0]->apellidopaterno}}" onkeypress="return soloLetras(event)">
 								</div>
 								<div class="col-1">
 									<a href="#editarApellidoP" role="button" class="btn btn-large btn-primary" data-toggle="modal">&rarr;</a>
@@ -104,7 +103,7 @@
 								</div>
 				
 								<div class="col-7">
-									<input id="text" type="text" readonly="true" name="txtApellidoM"  contenteditable="false" style="width: 400px; border: none; background-color: transparent; color: #9FA5AB;" value="{{$usuarioDatos[0]->apellidomaterno}}" onkeypress="return checkSoloLetras(event)">
+									<input id="apellidomaterno" type="text" readonly="true" name="txtApellidoM"  contenteditable="false" style="width: 400px; border: none; background-color: transparent; color: #9FA5AB;" value="{{$usuarioDatos[0]->apellidomaterno}}" onkeypress="return checkSoloLetras(event)">
 								</div>
 								<div class="col-1">
 									<a href="#editarApellidoM" role="button" class="btn btn-large btn-primary" data-toggle="modal">&rarr;</a>
@@ -134,13 +133,13 @@
 									<label id="text">Calle:</label>
 								</div>
 								<div class="col-4">
-									<input id="text" type="text" readonly="true" name="txtCalle" contenteditable="false" style=" border: none; background-color: transparent; color: #9FA5AB;" value="{{$direccion->calle}}" onkeypress="return checkSoloLetras(event)">
+									<input id="calle" type="text" readonly="true" name="txtCalle" contenteditable="false" style=" border: none; background-color: transparent; color: #9FA5AB;" value="{{$direccion->calle}}" onkeypress="return domicilio(event)">
 								</div>
 								<div class="col-2">
 									<label id="text" >N&uacute;mero:</label>
 								</div>
 								<div class="col-2">
-									<input id="text" type="text" readonly="true" name="txtNumero" contenteditable="false" style=" border: none; background-color: transparent; color: #9FA5AB;" value="{{$direccion->numext}}" onkeypress="return checkNumeros(event)">
+									<input id="numint" type="text" readonly="true" name="txtNumero" contenteditable="false" style=" border: none; background-color: transparent; color: #9FA5AB;" value="{{$direccion->numint}}" onkeypress="return checkNumeros(event)">
 
 								</div>
 							</div>
@@ -149,14 +148,14 @@
 									<label id="text">Colonia:</label>
 								</div>
 								<div class="col-4">
-									<input id="text" type="text" readonly="true" name="txtColonia" contenteditable="false" style=" border: none; background-color: transparent; color: #9FA5AB;" value="{{$direccion->colonia}}" onkeypress="return checkSoloLetras(event)">
+									<input id="colonia" type="text" readonly="true" name="txtColonia" contenteditable="false" style=" border: none; background-color: transparent; color: #9FA5AB;" value="{{$direccion->colonia}}" onkeypress="return domicilio(event)">
 
 								</div>
 								<div class="col-2">
 									<label id="text" >C&oacute;digo P&oacute;stal:</label>
 								</div>
 								<div class="col-2">
-									<input id="text" type="text" readonly="true" name="txtCodigoP" contenteditable="false"  style=" border: none; background-color: transparent; color: #9FA5AB;" value="{{$direccion->codigopostal}}" onkeypress="return checkNumeros(event)">
+									<input id="codigopostal" type="text" readonly="true" name="txtCodigoP" contenteditable="false"  style=" border: none; background-color: transparent; color: #9FA5AB;" value="{{$direccion->codigopostal}}" onkeypress="return checkNumeros(event)">
 
 								</div>
 							</div>
@@ -168,14 +167,14 @@
 									<label id="text">Municipio:</label>
 								</div>
 								<div class="col-4">
-									<input id="text" type="text" readonly="true" name="txtMunicipio" contenteditable="false" style=" border: none; background-color: transparent; color: #9FA5AB;" value="{{$direccion->municipio}}" onkeypress="return checkSoloLetras(event)">
+									<input id="municipio" type="text" readonly="true" name="txtMunicipio" contenteditable="false" style=" border: none; background-color: transparent; color: #9FA5AB;" value="{{$direccion->municipio}}" onkeypress="return checkSoloLetras(event)">
 
 								</div>
 								<div class="col-2">
 									<label id="text">Ciudad:</label>
 								</div>
 								<div class="col-2">
-									<input id="text" type="text" readonly="true" name="txtEstado" contenteditable="false" style="width:200px;  border: none; background-color: transparent; color: #9FA5AB;" value="{{$direccion->ciudad}}" onkeypress="return checkSoloLetras(event)">
+									<input id="ciudad" type="text" readonly="true" name="txtEstado" contenteditable="false" style="width:200px;  border: none; background-color: transparent; color: #9FA5AB;" value="{{$direccion->ciudad}}" onkeypress="return checkSoloLetras(event)">
 
 								</div>
 								
@@ -214,10 +213,10 @@
 						<div class="form-group" style="background-color: #E0E0E0;">
 							<div class="row">
 								<div class="col-2">
-									<label id="text">Correo electr&oacute;nico:</label>
+									<label id="correoelectronico">Correo electr&oacute;nico:</label>
 								</div>
 								<div class="col-9">
-									<input id="text" type="text" readonly="true" name="txtCorreoE" contenteditable="false" style="width: 500px; border: none; background-color: transparent; color: #9FA5AB;" value="{{$usuarioDatos[0]->correoelectronico}}">
+									<input id="text" type="text" readonly="true" name="txtCorreoE" contenteditable="false" style="width: 500px; border: none; background-color: transparent; color: #9FA5AB;"   value="{{$usuarioDatos[0]->correoelectronico}}">
 
 								</div>
 								<div class="col-1">
@@ -229,7 +228,7 @@
 									<label id="text">Contrase&ntilde;a:</label>
 								</div>
 								<div class="col-9">
-									<input id="text" type="password" readonly="true" contenteditable="false" style=" border: none; background-color: transparent; color: #9FA5AB;" value="{{$usuarioDatos[0]->contrasena}}">
+									<input id="contrasena" type="password" readonly="true" contenteditable="false" style=" border: none; background-color: transparent; color: #9FA5AB;" value="{{$usuarioDatos[0]->contrasena}}" onkeypress="return domicilio(event)">
 								</div>
 								<div class="col-1">
 									<a href="#editarContraseña" role="button" class="btn btn-large btn-primary" data-toggle="modal">&rarr;</a>
@@ -259,7 +258,7 @@
 
            		<div class="modal-body">
 	            	<input type="hidden" name="txtidPersona" value="{{$usuarioDatos[0]->idpersona}}">
-	            	<input id="text"type="text" name="txtNombreEditar" style="width: 400px; border: none; background-color: transparent; color: black; border-style: solid; border-color: blue;" value="{{$usuarioDatos[0]->nombrepersona}}" autofocus="value"   pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="" maxlength="50" onkeypress="return checkSoloLetras(event)">
+	            	<input id="nombre"type="text" name="txtNombreEditar" style="width: 400px; border: none; background-color: transparent; color: black; border-style: solid; border-color: blue;" value="{{$usuarioDatos[0]->nombrepersona}}" autofocus="value"   pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="" maxlength="50" onkeypress="return soloLetras(event)">
 	            	<p class="text-warning"><small>No dejar este campo vacio.</small></p>
 	       		</div>
 	            
@@ -285,7 +284,7 @@
 
            		<div class="modal-body">
 	            	<input type="hidden" name="txtidPersona" value="{{$usuarioDatos[0]->idpersona}}">
-	            	<input id="text"type="text" name="txtApellidoPEditar" style="width: 400px; border: none; background-color: transparent; color: black; border-style: solid; border-color: blue;" value="{{$usuarioDatos[0]->apellidopaterno}}" autofocus="value" pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="" maxlength="50" onkeypress="return checkSoloLetras(event)">
+	            	<input id="apellidopaterno"type="text" name="txtApellidoPEditar" style="width: 400px; border: none; background-color: transparent; color: black; border-style: solid; border-color: blue;" value="{{$usuarioDatos[0]->apellidopaterno}}" autofocus="value" pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="" maxlength="50" onkeypress="return soloLetras(event)">
 	            	<p class="text-warning"><small>No dejar este campo vacio.</small></p>
 	       		</div>
 	            
@@ -310,7 +309,7 @@
 
            		<div class="modal-body">
 	            	<input type="hidden" name="txtidPersona" value="{{$usuarioDatos[0]->idpersona}}">
-	            	<input id="text"type="text" name="txtApellidoMEditar" style="width: 400px; border: none; background-color: transparent; color: black; border-style: solid; border-color: blue;" value="{{$usuarioDatos[0]->apellidomaterno}}" autofocus="value"  pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="" maxlength="50" onkeypress="return checkSoloLetras(event)">
+	            	<input id="apellidomaterno"type="text" name="txtApellidoMEditar" style="width: 400px; border: none; background-color: transparent; color: black; border-style: solid; border-color: blue;" value="{{$usuarioDatos[0]->apellidomaterno}}" autofocus="value"  pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="" maxlength="50" onkeypress="return soloLetras(event)">
 	            	<p class="text-warning"><small>No dejar este campo vacio.</small></p>
 	       		</div>
 	            
@@ -335,7 +334,7 @@
 
            		<div class="modal-body">
 	            	<input type="hidden" name="txtidPersona" value="{{$usuarioDatos[0]->idpersona}}">
-	            	<input id="text"type="text" name="txtCorreoEditar" style="width: 400px; border: none; background-color: transparent; color: black; border-style: solid; border-color: blue;" value="{{$usuarioDatos[0]->correoelectronico}}" autofocus="value" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" required="" maxlength="100">
+	            	<input id="text"type="email" name="txtCorreoEditar" style="width: 400px; border: none; background-color: transparent; color: black; border-style: solid; border-color: blue;" value="{{$usuarioDatos[0]->correoelectronico}}" autofocus="value" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" required="" maxlength="100" onkeypress="return correo(event)">
 	            	<p class="text-warning"><small>No dejar este campo vacio.</small></p>
 	       		</div>
 	            
@@ -360,7 +359,7 @@
 
            		<div class="modal-body">
 	            	<input type="hidden" name="txtidPersona" value="{{$usuarioDatos[0]->idpersona}}">
-	            	<input id="text"type="text" name="txtContraseñaEditar" style="width: 400px; border: none; background-color: transparent; color: black; border-style: solid; border-color: blue;" value="{{$usuarioDatos[0]->contrasena}}" autofocus="value" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" maxlength="200" required="">
+	            	<input id="contrasena"type="text" name="txtContraseñaEditar" style="width: 400px; border: none; background-color: transparent; color: black; border-style: solid; border-color: blue;" value="{{$usuarioDatos[0]->contrasena}}" autofocus="value" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" maxlength="200" required=""  onkeypress="return domicilio(event)">
 	            	<p class="text-warning"><small>No dejar este campo vacio.</small></p>
 	       		</div>
 	            
@@ -391,7 +390,7 @@
 						</div>
 								
 						<div class="col-5">
-							<input id="text"type="text" name="txtCalleAgregar" style="width: 350px; border: solid; border-color: blue; background-color: transparent; color: black;" value="" pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="" maxlength="50" onkeypress="return checkSoloLetras(event)">
+							<input id="calle"type="text" name="txtCalleAgregar" style="width: 350px; border: solid; border-color: blue; background-color: transparent; color: black;" value="" pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="" maxlength="50" onkeypress="return soloLetras(event)">
 						</div>
 								
 					</div>
@@ -402,7 +401,7 @@
 						</div>
 								
 						<div class="col-5">
-							<input id="text"type="text" name="txtNumIntAgregar" style="width: 350px; border: solid; border-color: blue; background-color: transparent; color: black;" value="" pattern="^{1,}[ a-zA-ZÁÉÍÓÚñáéíóú][\s]*" required="" maxlength="50" onkeypress="return checkNumeros(event)">
+							<input id="numint"type="text" name="txtNumIntAgregar" style="width: 350px; border: solid; border-color: blue; background-color: transparent; color: black;" value="" pattern="^{1,}[ a-zA-ZÁÉÍÓÚñáéíóú][\s]*" required="" maxlength="50" onkeypress="return domicilio(event)">
 						</div>
 								
 					</div>
@@ -413,7 +412,7 @@
 						</div>
 								
 						<div class="col-5">
-							<input id="text"type="text" name="txtNumExtAgregar" style="width: 350px; border: solid; border-color: blue; background-color: transparent; color: black;" value="" pattern="^{1,}[ a-zA-ZÁÉÍÓÚñáéíóú][\s]*" required="" maxlength="50" onkeypress="return checkNumeros(event)">
+							<input id="numint"type="text" name="txtNumExtAgregar" style="width: 350px; border: solid; border-color: blue; background-color: transparent; color: black;" value="" pattern="^{1,}[ a-zA-ZÁÉÍÓÚñáéíóú][\s]*"  maxlength="50" onkeypress="return domicilio(event)">
 						</div>
 								
 					</div>
@@ -424,7 +423,7 @@
 						</div>
 								
 						<div class="col-5">
-							<input id="text"type="text" name="txtColoniaAgregar" style="width: 350px; border: solid; border-color: blue; background-color: transparent; color: black;" value="" pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="" maxlength="50" onkeypress="return checkSoloLetras(event)">
+							<input id="colonia"type="text" name="txtColoniaAgregar" style="width: 350px; border: solid; border-color: blue; background-color: transparent; color: black;" value="" pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="" maxlength="50" onkeypress="return soloLetras(event)">
 						</div>
 								
 					</div>
@@ -435,7 +434,7 @@
 						</div>
 								
 						<div class="col-5">
-							<input id="text"type="text" name="txtMunicipioAgregar" style="width: 350px; border: solid; border-color: blue; background-color: transparent; color: black;" value="" pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="" maxlength="50" onkeypress="return checkSoloLetras(event)">
+							<input id="municipio"type="text" name="txtMunicipioAgregar" style="width: 350px; border: solid; border-color: blue; background-color: transparent; color: black;" value="" pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="" maxlength="50" onkeypress="return soloLetras(event)">
 						</div>
 								
 					</div>
@@ -446,7 +445,7 @@
 						</div>
 								
 						<div class="col-5">
-							<input id="text"type="text" name="txtCiudadAgregar" style="width: 350px; border: solid; border-color: blue; background-color: transparent; color: black;" value="" pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="" maxlength="50" onkeypress="return checkSoloLetras(event)">
+							<input id="ciudad"type="text" name="txtCiudadAgregar" style="width: 350px; border: solid; border-color: blue; background-color: transparent; color: black;" value="" pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="" maxlength="50" onkeypress="return soloLetras(event)">
 						</div>
 								
 					</div>
@@ -457,7 +456,7 @@
 						</div>
 								
 						<div class="col-5">
-							<input id="text"type="text" name="txtPaisAgregar" style="width: 350px; border: solid; border-color: blue; background-color: transparent; color: black;" pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="" maxlength="50" onkeypress="return checkSoloLetras(event)">
+							<input id="pais"type="text" name="txtPaisAgregar" style="width: 350px; border: solid; border-color: blue; background-color: transparent; color: black;" pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="" maxlength="50" onkeypress="return soloLetras(event)">
 						</div>
 								
 					</div>
@@ -468,7 +467,7 @@
 						</div>
 								
 						<div class="col-5">
-							<input id="text"type="text" name="txtCodigoPAgregar" style="width: 350px; border: solid; border-color: blue; background-color: transparent; color: black;" value="" pattern="^[0-9]{5}" required="" maxlength="8" onkeypress="return checkNumeros(event)>
+							<input id="codigopostal"type="text" name="txtCodigoPAgregar" style="width: 350px; border: solid; border-color: blue; background-color: transparent; color: black;" value="" pattern="^[0-9]{5}" required="" maxlength="8" onkeypress="return checkNumeros(event)">
 						</div>
 								
 					</div>
@@ -502,37 +501,63 @@
 </div>
 
 
-<div class="col-3">
 	<script type="text/javascript">
-	function checkSoloLetras(e) 
-	{
-    	tecla = (document.all) ? e.keyCode : e.which;
 
-    	//Tecla de retroceso para borrar, siempre la permite
-    	if (tecla == 8) {
-        	return true;
-    	}
+	 function soloLetras(e){
+       key = e.keyCode || e.which;
+       tecla = String.fromCharCode(key).toLowerCase();
+       letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+       especiales = "8-37-39-46";
 
-    	// Patron de entrada, en este caso solo acepta numeros y letras
-    	patron = /[A-Za-z]/;
-    	tecla_final = String.fromCharCode(tecla);
-    	return patron.test(tecla_final);
-	}
+       tecla_especial = false
+       for(var i in especiales){
+            if(key == especiales[i]){
+                tecla_especial = true;
+                break;
+            }
+        }
 
-	function checkLetrasYNumeros(e) 
-	{
-    	tecla = (document.all) ? e.keyCode : e.which;
+        if(letras.indexOf(tecla)==-1 && !tecla_especial){
+            return false;
+        }
+    }
+     function domicilio(e){
+       key = e.keyCode || e.which;
+       tecla = String.fromCharCode(key).toLowerCase();
+       letras = " abcdefghijklmnñopqrstuvwxyz0123456789";
+       especiales = "8-37-39-46";
 
-    	//Tecla de retroceso para borrar, siempre la permite
-    	if (tecla == 8) {
-        	return true;
-    	}
+       tecla_especial = false
+       for(var i in especiales){
+            if(key == especiales[i]){
+                tecla_especial = true;
+                break;
+            }
+        }
 
-    	// Patron de entrada, en este caso solo acepta numeros y letras
-    	patron = /[A-Za-z0-9]/;
-    	tecla_final = String.fromCharCode(tecla);
-    	return patron.test(tecla_final);
-	}
+        if(letras.indexOf(tecla)==-1 && !tecla_especial){
+            return false;
+        }
+    }
+
+     function correo(e){
+       key = e.keyCode || e.which;
+       tecla = String.fromCharCode(key).toLowerCase();
+       letras = " abcdefghijklmnñopqrstuvwxyz0123456789@-_.";
+       especiales = "8-37-39-46";
+
+       tecla_especial = false
+       for(var i in especiales){
+            if(key == especiales[i]){
+                tecla_especial = true;
+                break;
+            }
+        }
+
+        if(letras.indexOf(tecla)==-1 && !tecla_especial){
+            return false;
+        }
+    }
 
 	function checkNumeros(e) 
 	{
@@ -548,23 +573,9 @@
     	tecla_final = String.fromCharCode(tecla);
     	return patron.test(tecla_final);
 	}
+	
+</script>
 
-	function checkLetrasYNumerosYCaracteres(e) 
-	{
-    	tecla = (document.all) ? e.keyCode : e.which;
-
-    	//Tecla de retroceso para borrar, siempre la permite
-    	if (tecla == 8) {
-        	return true;
-    	}
-
-    	// Patron de entrada, en este caso solo acepta numeros y letras
-    	patron = /[^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$s]/;
-    	tecla_final = String.fromCharCode(tecla);
-    	return patron.test(tecla_final);
-	}
-</script>		
-</div>
 
 	<br><br><br><br>
 @extends('layouts.footer')

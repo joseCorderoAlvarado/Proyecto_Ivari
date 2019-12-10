@@ -69,7 +69,7 @@
 									<label id="text">Calle:</label>
 								</div>
 								<div class="col-5">
-									<input id="text" type="text"  name="txtCalle" contenteditable="false" style="width: 350px; border: solid; background-color: transparent;" value="{{$direcciones[0]->calle}}" pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="" maxlength="50" onkeypress="return checkSoloLetras(event)">
+									<input id="text" type="text"  name="txtCalle" contenteditable="false" style="width: 350px; border: solid; background-color: transparent;" value="{{$direcciones[0]->calle}}" pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="" maxlength="50" onkeypress="return soloLetras(event)">
 								</div>
 							</div>
 							
@@ -79,7 +79,7 @@
 								</div>
 						
 								<div class="col-5">
-									<input id="text" type="text" name="txtNumeroInt" contenteditable="false" style="width: 350px; border: solid; background-color: transparent; " value="{{$direcciones[0]->numint}}"  pattern="^{1,}[ a-zA-ZÁÉÍÓÚñáéíóú][\s]*" onkeypress="return checkNumeros(event)"required="" maxlength="50" >
+									<input id="text" type="text" name="txtNumeroInt" contenteditable="false" style="width: 350px; border: solid; background-color: transparent; " value="{{$direcciones[0]->numint}}"  pattern="^{1,}[ a-zA-ZÁÉÍÓÚñáéíóú][\s]*" onkeypress="return domicilio(event)"required="" maxlength="50" >
 
 								</div>
 							</div>
@@ -90,7 +90,7 @@
 								</div>
 						
 								<div class="col-5">
-									<input id="text" type="text" name="txtNumeroExt" contenteditable="false" style="width: 350px; border: solid; background-color: transparent; " value="{{$direcciones[0]->numext}}"  pattern="^{1,}[ a-zA-ZÁÉÍÓÚñáéíóú][\s]*" required="" maxlength="50"  onkeypress="return checkNumeros(event)">
+									<input id="text" type="text" name="txtNumeroExt" contenteditable="false" style="width: 350px; border: solid; background-color: transparent; " value="{{$direcciones[0]->numext}}"  pattern="^{1,}[ a-zA-ZÁÉÍÓÚñáéíóú][\s]*"  maxlength="50"  onkeypress="return domicilio(event)">
 
 								</div>
 							</div>
@@ -100,7 +100,7 @@
 									<label id="text">Colonia:</label>
 								</div>
 								<div class="col-5">
-									<input id="text" type="text" name="txtColonia" contenteditable="false" style="width: 350px; border: solid; background-color: transparent; " value="{{$direcciones[0]->colonia}}" pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="" maxlength="50" onkeypress="return checkSoloLetras(event)">
+									<input id="text" type="text" name="txtColonia" contenteditable="false" style="width: 350px; border: solid; background-color: transparent; " value="{{$direcciones[0]->colonia}}" pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="" maxlength="50" onkeypress="return soloLetras(event)">
 								</div>
 							</div>
 							
@@ -119,7 +119,7 @@
 									<label id="text">Municipio:</label>
 								</div>
 								<div class="col-5">
-									<input id="text" type="text"  name="txtMunicipio" contenteditable="false" style="width: 350px; border: solid; background-color: transparent;"  value="{{$direcciones[0]->municipio}}"  pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="" maxlength="50" onkeypress="return checkSoloLetras(event)">
+									<input id="text" type="text"  name="txtMunicipio" contenteditable="false" style="width: 350px; border: solid; background-color: transparent;"  value="{{$direcciones[0]->municipio}}"  pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="" maxlength="50" onkeypress="return soloLetras(event)">
 
 								</div>
 							</div>
@@ -129,7 +129,7 @@
 									<label id="text">Ciudad:</label>
 								</div>
 								<div class="col-5">
-									<input id="text" type="text"  name="txtCiudad" contenteditable="false" style="width: 350px; border: solid; background-color: transparent;" value="{{$direcciones[0]->ciudad}}" pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="" maxlength="50" onkeypress="return checkSoloLetras(event)">
+									<input id="text" type="text"  name="txtCiudad" contenteditable="false" style="width: 350px; border: solid; background-color: transparent;" value="{{$direcciones[0]->ciudad}}" pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="" maxlength="50" onkeypress="return soloLetras(event)">
 
 								</div>
 								
@@ -140,7 +140,7 @@
 									<label id="text">Pais:</label>
 								</div>
 								<div class="col-5">
-									<input id="text" type="text"  name="txtPais" contenteditable="false" style="width: 350px; border: solid; background-color: transparent;" value="{{$direcciones[0]->pais}}" pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="" maxlength="50" onkeypress="return checkSoloLetras(event)">
+									<input id="text" type="text"  name="txtPais" contenteditable="false" style="width: 350px; border: solid; background-color: transparent;" value="{{$direcciones[0]->pais}}" pattern="^[ a-zA-ZÁÉÍÓÚñáéíóú]{1,}[\s]*" required="" maxlength="50" onkeypress="return soloLetras(event)">
 
 								</div>
 								
@@ -165,7 +165,7 @@
 
 								<div class="col-12" align="center">
 									<br>
-									<input type="hidden" name="txtidPersona1" " value="{{$idPersona}}">
+									<input type="hidden" name="txtidPersona1"  value="{{$idPersona}}">
 									<input type="hidden" name="txtfkdireccion" value="{{$direcciones[0]->iddireccion}}">
 									<button role="button" class="btn btn-large btn-primary" data-toggle="modal">Modificar direcci&oacute;n</button> 
 
@@ -186,6 +186,80 @@
 <div class="col-3">
 			
 </div>
+<script type="text/javascript">
+
+	 function soloLetras(e){
+       key = e.keyCode || e.which;
+       tecla = String.fromCharCode(key).toLowerCase();
+       letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+       especiales = "8-37-39-46";
+
+       tecla_especial = false
+       for(var i in especiales){
+            if(key == especiales[i]){
+                tecla_especial = true;
+                break;
+            }
+        }
+
+        if(letras.indexOf(tecla)==-1 && !tecla_especial){
+            return false;
+        }
+    }
+     function domicilio(e){
+       key = e.keyCode || e.which;
+       tecla = String.fromCharCode(key).toLowerCase();
+       letras = " abcdefghijklmnñopqrstuvwxyz0123456789";
+       especiales = "8-37-39-46";
+
+       tecla_especial = false
+       for(var i in especiales){
+            if(key == especiales[i]){
+                tecla_especial = true;
+                break;
+            }
+        }
+
+        if(letras.indexOf(tecla)==-1 && !tecla_especial){
+            return false;
+        }
+    }
+
+     function correo(e){
+       key = e.keyCode || e.which;
+       tecla = String.fromCharCode(key).toLowerCase();
+       letras = " abcdefghijklmnñopqrstuvwxyz0123456789@-_.";
+       especiales = "8-37-39-46";
+
+       tecla_especial = false
+       for(var i in especiales){
+            if(key == especiales[i]){
+                tecla_especial = true;
+                break;
+            }
+        }
+
+        if(letras.indexOf(tecla)==-1 && !tecla_especial){
+            return false;
+        }
+    }
+
+	function checkNumeros(e) 
+	{
+    	tecla = (document.all) ? e.keyCode : e.which;
+
+    	//Tecla de retroceso para borrar, siempre la permite
+    	if (tecla == 8) {
+        	return true;
+    	}
+
+    	// Patron de entrada, en este caso solo acepta numeros y letras
+    	patron = /[0-9]/;
+    	tecla_final = String.fromCharCode(tecla);
+    	return patron.test(tecla_final);
+	}
+	
+</script>
 
 	<br><br><br><br>
 @extends('layouts.footer')

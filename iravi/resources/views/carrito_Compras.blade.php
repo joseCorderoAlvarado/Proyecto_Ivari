@@ -69,7 +69,7 @@ $totalCarrito = 0;
 		<div class="col-md-4">
 			Bonificacion:
 			<br>
-			Total
+		<h3>	Total </h3>
 		</div>
 		<div class="col-md-6">
 		</div>
@@ -78,7 +78,7 @@ $totalCarrito = 0;
        descuento: ${{$totalCarrito*0.1}}
        @endif
 			<br>
-		<h1>	${{$totalCarrito}} </h1>
+		<h3>	${{$totalCarrito}} </h3>
 		</div>
 	</div>
 </div>

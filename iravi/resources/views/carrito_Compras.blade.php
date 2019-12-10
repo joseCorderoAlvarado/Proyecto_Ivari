@@ -69,7 +69,7 @@ $totalCarrito = 0;
 		<div class="col-md-4">
 			Bonificacion:
 			<br>
-		<h3>	Total </h3>
+			Total
 		</div>
 		<div class="col-md-6">
 		</div>

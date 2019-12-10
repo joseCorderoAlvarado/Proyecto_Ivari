@@ -165,7 +165,7 @@
 							<label id="text">Número Interior:</label>
 						</div>
 						<div class="col-5">
-							<input id="text"type="text" name="ninterior" style="width: 320px; border: solid; border-color: blue; background-color: transparent; color: black;"onkeypress="return domicilio(event)" value="" required="">
+							<input id="text"type="text" name="ninterior" style="width: 320px; border: solid; border-color: blue; background-color: transparent; color: black;"onkeypress="return domicilio(event)" value="">
 						</div>
 					</div>
 					<div class="row">
@@ -173,7 +173,7 @@
 							<label id="text">Número Exterior:</label>
 						</div>
 						<div class="col-5">
-							<input id="text"type="text" name="nexterior" style="width: 320px; border: solid; border-color: blue; background-color: transparent; color: black;"onkeypress="return domicilio(event)" value="">
+							<input id="text"type="text" name="nexterior" style="width: 320px; border: solid; border-color: blue; background-color: transparent; color: black;"onkeypress="return domicilio(event)" value="" required="">
 						</div>
 					</div>
 					<div class="row">

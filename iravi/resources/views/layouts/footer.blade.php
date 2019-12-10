@@ -20,7 +20,7 @@
 	   	</ul>
 	   </p>
 	   <p>
-	   	<img src="images/PayPal.png" style=" width: 300px; height: 100px;">
+	   	<img src="images/PayPal.png" style=" width: 150px; height: 100px;">
 	   </p>
 	  </div>
 	  <div class="col-sm-4">
